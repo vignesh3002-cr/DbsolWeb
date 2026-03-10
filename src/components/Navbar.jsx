@@ -1,64 +1,209 @@
 import { useState } from "react";
+import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navbar() {
+export default function Header() {
 
-const [menu,setMenu] = useState(false)
+const [servicesOpen,setServicesOpen] = useState(false);
+const [industriesOpen,setIndustriesOpen] = useState(false);
+const [darkMode,setDarkMode] = useState(false);
 
-return (
+const toggleDarkMode = () =>{
+setDarkMode(!darkMode)
+document.documentElement.classList.toggle("dark")
+}
 
-<nav className="bg-white shadow-md fixed w-full z-50">
+return(
 
-<div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<header className="fixed z-50 w-full transition bg-white shadow-md dark:bg-gray-900">
+
+<div className="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl">
+
+{/* LOGO */}
 
 <h1 className="text-2xl font-bold text-blue-600">
-Dbsol
+DBSol
 </h1>
 
-<ul className="hidden md:flex gap-8 font-medium">
 
-<li className="hover:text-blue-600 cursor-pointer">
+{/* NAVIGATION */}
+<div className="flex gap-8">
+<ul className="items-center hidden gap-10 font-medium md:flex">
+
+<li className="cursor-pointer hover:text-blue-600">
 Home
 </li>
 
-<li className="hover:text-blue-600 cursor-pointer">
+
+{/* SERVICES MENU */}
+
+<li
+className="relative"
+onMouseEnter={()=>setServicesOpen(true)}
+onMouseLeave={()=>setServicesOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+
 Services
+
+{servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{servicesOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-64 p-6 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+Finance & Operations
 </li>
 
-<li className="hover:text-blue-600 cursor-pointer">
+<li className="cursor-pointer hover:text-blue-600">
+Dynamics 365 Business & Fundamentals
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Web Development
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+App Development
+</li>
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+
+</li>
+
+
+{/* INDUSTRIES MENU */}
+
+<li
+className="relative"
+onMouseEnter={()=>setIndustriesOpen(true)}
+onMouseLeave={()=>setIndustriesOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+
 Industries
+
+{industriesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{industriesOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+IT / ITES
 </li>
 
-<li className="hover:text-blue-600 cursor-pointer">
+<li className="cursor-pointer hover:text-blue-600">
+Manufacturing
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Retail & Wholesale
+</li>
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+
+</li>
+
+
+<li className="cursor-pointer hover:text-blue-600">
+About Us
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
 Contact
 </li>
 
 </ul>
 
+
+{/* DARK MODE BUTTON */}
+
 <button
-onClick={()=>setMenu(!menu)}
-className="md:hidden"
+onClick={toggleDarkMode}
+className={`relative flex items-center w-14 h-7 rounded-full p-1 transition-all duration-500 ${
+darkMode ? "bg-black" : "bg-yellow-400"
+}`}
 >
 
-☰
+<motion.div
+layout
+transition={{type:"spring", stiffness:700, damping:30}}
+className={`right-0 flex items-center justify-center w-5 h-5 bg-white rounded-full shadow-md ${
+  darkMode? "absolute right-1":""
+}`
+}>
 
-</button>
+{darkMode ? (
 
-</div>
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="white"
+viewBox="0 0 24 24"
+stroke="white"
+className="w-4 h-4"
+>
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+d="M21 12.79A9 9 0 0111.21 3
+7 7 0 1018 21
+9 9 0 0021 12.79z"
+/>
+</svg>
 
-{menu && (
+) : (
 
-<div className="md:hidden bg-white px-6 pb-4">
-
-<p className="py-2">Home</p>
-<p className="py-2">Services</p>
-<p className="py-2">Industries</p>
-<p className="py-2">Contact</p>
-
-</div>
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="orange"
+viewBox="0 0 24 24"
+stroke="orange"
+className="w-4 h-4"
+>
+<circle cx="12" cy="12" r="5"/>
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9 0-1.41 1.41M6.46 17.54l-1.41 1.41"/>
+</svg>
 
 )}
 
-</nav>
+</motion.div>
+
+</button>
+</div>
+</div>
+
+</header>
 
 )
 

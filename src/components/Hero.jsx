@@ -2,13 +2,13 @@ export default function Hero() {
 
 return (
 
-<section className="h-screen flex items-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+<section className="flex items-center h-screen text-white bg-gradient-to-r from-blue-600 to-indigo-700">
 
-<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+<div className="grid items-center gap-10 px-6 mx-auto max-w-7xl md:grid-cols-2">
 
 <div>
 
-<h1 className="text-4xl md:text-5xl font-bold leading-tight">
+<h1 className="text-4xl font-bold leading-tight md:text-5xl">
 
 Empowering Businesses with  
 <span className="text-yellow-300"> Dynamics 365 F&O</span>
@@ -17,19 +17,19 @@ Empowering Businesses with
 
 <p className="mt-6 text-lg">
 
-DBSol delivers enterprise solutions including Microsoft Dynamics 365 Finance & Operations implementation, modern web development and scalable mobile applications.
+Dbsol delivers enterprise solutions including Microsoft Dynamics 365 Finance & Operations implementation, modern web development and scalable mobile applications.
 
 </p>
 
-<div className="mt-8 flex gap-4">
+<div className="flex gap-4 mt-8">
 
-<button className="bg-yellow-400 text-black px-6 py-3 rounded-xl">
+<button className="px-6 py-3 text-black bg-yellow-400 rounded-xl">
 
 Explore Services
 
 </button>
 
-<button className="border px-6 py-3 rounded-xl">
+<button className="px-6 py-3 border rounded-xl">
 
 Contact Us
 
