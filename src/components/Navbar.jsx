@@ -6,6 +6,7 @@ export default function Header() {
 
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
+const [solutionOpen,setSolutionOpen]=useState(false);
 const [darkMode,setDarkMode] = useState(false);
 
 const toggleDarkMode = () =>{
@@ -86,6 +87,59 @@ App Development
 </AnimatePresence>
 
 </li>
+{/*Solution */}
+<li
+className="relative"
+onMouseEnter={()=>setSolutionOpen(true)}
+onMouseLeave={()=>setSolutionOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+Solutions
+
+{solutionOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{solutionOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+Financial Management System
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Human Resource Management System
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Supply Chain Management System
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Warehouse Management System
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Inventory Management System
+</li>
+
+
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+</li>
+
 
 
 {/* INDUSTRIES MENU */}
@@ -127,6 +181,16 @@ Manufacturing
 <li className="cursor-pointer hover:text-blue-600">
 Retail & Wholesale
 </li>
+<li className="cursor-pointer hover:text-blue-600">
+Hospitality
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Professional Services
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Health Care
+</li>
+
 
 </motion.ul>
 
