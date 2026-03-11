@@ -1,55 +1,105 @@
-export default function Services() {
+import { motion } from "framer-motion"
+import { FaLaptopCode, FaMobileAlt, FaChartLine, FaCloud } from "react-icons/fa"
+
+export default function Services(){
 
 const services = [
 
 {
-title:"Dynamics 365 F&O Solutions",
-desc:"Enterprise ERP implementation, customization and consulting."
+title:"Finance & Operations",
+desc:"Optimize enterprise financial management and streamline operations using advanced ERP solutions powered by Microsoft Dynamics.",
+icon:<FaChartLine size={40}/>
 },
 
 {
-title:"Web Development",
-desc:"Responsive websites using modern technologies like React."
+title:"Dynamics 365 Business & Fundamentals",
+desc:"Transform business productivity with Microsoft Dynamics 365 solutions that integrate CRM, ERP, and cloud services seamlessly.",
+icon:<FaCloud size={40}/>
 },
 
 {
-title:"Mobile App Development",
-desc:"High performance Android and iOS applications."
+title:"Responsive Website Development",
+desc:"We design modern, scalable and fully responsive websites that deliver high performance and outstanding user experience.",
+icon:<FaLaptopCode size={40}/>
+},
+
+{
+title:"Android & iOS App Development",
+desc:"Build powerful mobile applications with intuitive UI and high performance for Android and iOS platforms.",
+icon:<FaMobileAlt size={40}/>
 }
 
 ]
 
-return (
+return(
 
-<section className="py-20 bg-gray-100">
+<section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
 
-<div className="max-w-7xl mx-auto px-6">
+<div className="px-6 mx-auto max-w-7xl">
 
-<h2 className="text-4xl font-bold text-center mb-12">
+{/* SECTION TITLE */}
 
-Our Services
+<div className="mb-16 text-center">
+
+<h2 className="mb-4 text-4xl font-bold">
+
+Our Professional Services
 
 </h2>
 
-<div className="grid md:grid-cols-3 gap-8">
+<p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+
+We deliver innovative technology solutions that help businesses transform,
+scale and succeed in the digital era.
+
+</p>
+
+</div>
+
+{/* SERVICES GRID */}
+
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
 
 {services.map((service,index)=>(
 
-<div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+<motion.div
+key={index}
+initial={{opacity:0, y:50}}
+whileInView={{opacity:1, y:0}}
+transition={{duration:0.6, delay:index*0.2}}
+whileHover={{scale:1.05}}
+className="relative p-8 transition bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-2xl group"
+>
 
-<h3 className="text-xl font-semibold mb-4">
+{/* Icon */}
+
+<div className="mb-6 text-blue-600 transition group-hover:scale-110">
+
+{service.icon}
+
+</div>
+
+{/* Title */}
+
+<h3 className="mb-4 text-xl font-semibold">
 
 {service.title}
 
 </h3>
 
-<p className="text-gray-600">
+{/* Description */}
+
+<p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
 
 {service.desc}
 
 </p>
 
-</div>
+{/* Hover Glow */}
+
+<div className="absolute inset-0 transition opacity-0 rounded-2xl group-hover:opacity-100 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
+
+</motion.div>
 
 ))}
 
