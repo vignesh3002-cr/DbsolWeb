@@ -8,6 +8,7 @@ const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
 const [solutionOpen,setSolutionOpen]=useState(false);
 const [darkMode,setDarkMode] = useState(false);
+const [menu,setMenu] = useState(false)
 
 const toggleDarkMode = () =>{
 setDarkMode(!darkMode)
@@ -21,14 +22,38 @@ return(
 <div className="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl">
 
 {/* LOGO */}
+<div className="flex items-center gap-3 cursor-pointer group">
 
-<h1 className="text-2xl font-bold text-blue-600">
+{/* Company Name */}
+
+<h1 className="text-2xl font-bold tracking-wide text-blue-600">
 DBSol
 </h1>
 
+{/* Divider */}
+
+<div className="w-px h-6 bg-gray-300"></div>
+
+{/* Microsoft Partner Badge */}
+
+<div className="flex items-center gap-2 transition-all duration-300 group-hover:scale-105">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+alt="Microsoft Logo"
+className="w-5 h-5"
+/>
+
+<p className="text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-nowrap">
+Microsoft Partner
+</p>
+
+</div>
+
+</div>
 
 {/* NAVIGATION */}
-<div className="flex gap-8">
+<div className="flex gap-4 md:gap-8">
 <ul className="items-center hidden gap-10 font-medium md:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
@@ -210,9 +235,14 @@ Contact
 </li>
 
 </ul>
+<button
+onClick={()=>setMenu(!menu)}
+className="text-xl md:hidden"
+>
+{menu? '✕' : '☰'}
 
 
-{/* DARK MODE BUTTON */}
+</button>
 
 <button
 onClick={toggleDarkMode}
@@ -266,7 +296,197 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </button>
 </div>
 </div>
+{menu && (
 
+<div className="px-6 pb-4 bg-white md:hidden">
+<ul className="gap-12 font-medium flex-direction: column">
+
+<li className="cursor-pointer hover:text-blue-600">
+Home
+</li>
+
+
+{/* SERVICES MENU */}
+
+<li
+className="relative"
+onMouseEnter={()=>setServicesOpen(true)}
+onMouseLeave={()=>setServicesOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+
+Services
+
+{servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{servicesOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-64 p-6 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+Finance & Operations
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Dynamics 365 Business & Fundamentals
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Web Development
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+App Development
+</li>
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+
+</li>
+{/*Solution */}
+<li
+className="relative"
+onMouseEnter={()=>setSolutionOpen(true)}
+onMouseLeave={()=>setSolutionOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+Solutions
+
+{solutionOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{solutionOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+Financial Management System
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Human Resource Management System
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Supply Chain Management System
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Warehouse Management System
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Inventory Management System
+</li>
+
+
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+</li>
+
+
+
+{/* INDUSTRIES MENU */}
+
+<li
+className="relative"
+onMouseEnter={()=>setIndustriesOpen(true)}
+onMouseLeave={()=>setIndustriesOpen(false)}
+>
+
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+
+Industries
+
+{industriesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+
+</div>
+
+<AnimatePresence>
+
+{industriesOpen && (
+
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+>
+
+<li className="cursor-pointer hover:text-blue-600">
+IT / ITES
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Manufacturing
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Retail & Wholesale
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Hospitality
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Professional Services
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+Health Care
+</li>
+
+
+</motion.ul>
+
+)}
+
+</AnimatePresence>
+
+</li>
+
+
+<li className="cursor-pointer hover:text-blue-600">
+About Us
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+Contact
+</li>
+
+</ul>
+{/*<p className="py-2">Home</p>
+<p className="py-2">Services</p>
+<p className="py-2">Industries</p>
+<p className="py-2">Contact</p>*/}
+</div>
+
+)}
 </header>
 
 )
