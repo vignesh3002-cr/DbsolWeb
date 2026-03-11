@@ -1,35 +1,92 @@
-export default function Hero() {
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
-return (
+export default function Hero(){
 
-<section className="flex items-center h-screen text-white bg-gradient-to-r from-blue-600 to-indigo-700">
+const slides = [
 
-<div className="grid items-center gap-10 px-6 mx-auto max-w-7xl md:grid-cols-2">
+{
+title:"Microsoft Dynamics 365 Finance & Operations Solutions",
+desc:"Empowering enterprises with scalable ERP solutions, seamless financial management, and operational excellence.",
+img:"https://images.unsplash.com/photo-1551434678-e076c223a692"
+},
 
-<div>
+{
+title:"Professional Web Development",
+desc:"Building modern, responsive, and scalable websites for businesses using cutting-edge technologies.",
+img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+},
 
-<h1 className="text-4xl font-bold leading-tight md:text-5xl">
+{
+title:"Mobile App Development",
+desc:"Creating powerful Android and iOS applications designed to deliver exceptional user experiences.",
+img:"https://images.unsplash.com/photo-1551650975-87deedd944c3"
+}
 
-Empowering Businesses with  
-<span className="text-yellow-300"> Dynamics 365 F&O</span>
+]
+
+const [current,setCurrent] = useState(0)
+
+useEffect(()=>{
+
+const interval = setInterval(()=>{
+
+setCurrent((prev)=>(prev+1)%slides.length)
+
+},5000)
+
+return ()=>clearInterval(interval)
+
+},[])
+
+return(
+
+<section className="relative w-full h-screen overflow-hidden">
+
+{/* Background Image */}
+
+<img
+src={slides[current].img}
+className="absolute object-cover w-full h-full transition-all duration-1000"
+/>
+
+{/* Dark overlay */}
+
+<div className="absolute inset-0 bg-black/60"></div>
+
+{/* Content */}
+
+<div className="relative z-10 flex items-center h-full px-6 mx-auto max-w-7xl">
+
+<motion.div
+key={current}
+initial={{opacity:0, y:40}}
+animate={{opacity:1, y:0}}
+transition={{duration:0.8}}
+className="max-w-2xl text-white"
+>
+
+<h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+
+{slides[current].title}
 
 </h1>
 
-<p className="mt-6 text-lg">
+<p className="mb-8 text-lg text-gray-200">
 
-Dbsol delivers enterprise solutions including Microsoft Dynamics 365 Finance & Operations implementation, modern web development and scalable mobile applications.
+{slides[current].desc}
 
 </p>
 
-<div className="flex gap-4 mt-8">
+<div className="flex gap-4">
 
-<button className="px-6 py-3 text-black bg-yellow-400 rounded-xl">
+<button className="px-6 py-3 font-semibold transition bg-blue-600 rounded-lg hover:bg-blue-700">
 
 Explore Services
 
 </button>
 
-<button className="px-6 py-3 border rounded-xl">
+<button className="px-6 py-3 transition border border-white rounded-lg hover:bg-white hover:text-black">
 
 Contact Us
 
@@ -37,17 +94,25 @@ Contact Us
 
 </div>
 
-</div>
-
-<div>
-
-<img
-src="https://illustrations.popsy.co/blue/digital-nomad.svg"
-alt="business"
-className="w-full"
-/>
+</motion.div>
 
 </div>
+
+{/* Slide Indicators */}
+
+<div className="absolute flex gap-3 -translate-x-1/2 bottom-10 left-1/2">
+
+{slides.map((_,index)=>(
+
+<button
+key={index}
+onClick={()=>setCurrent(index)}
+className={`w-3 h-3 rounded-full ${
+current===index ? "bg-white" : "bg-gray-400"
+}`}
+></button>
+
+))}
 
 </div>
 

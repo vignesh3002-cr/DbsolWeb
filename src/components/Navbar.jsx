@@ -480,10 +480,6 @@ Contact
 </li>
 
 </ul>
-{/*<p className="py-2">Home</p>
-<p className="py-2">Services</p>
-<p className="py-2">Industries</p>
-<p className="py-2">Contact</p>*/}
 </div>
 
 )}
