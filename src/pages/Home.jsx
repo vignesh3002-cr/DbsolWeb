@@ -2,11 +2,11 @@ import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
 import Industries from "../components/Industries"
-import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 import WhyChooseUs from "../components/WhyChooseUs"
 import TrustedClients from "../components/TrustedClient"
-
+import CallToAction from "../components/CallToAction"
+import Testimonials from "../components/Testimonial"
 export default function Home(){
 
 return(
@@ -19,7 +19,8 @@ return(
 <Industries/>
 <WhyChooseUs/>
 <TrustedClients/>
-<Contact/>
+<Testimonials/>
+<CallToAction/>
 <Footer/>
 
 </>

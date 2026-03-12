@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -27,7 +28,10 @@ return(
 {/* Company Name */}
 
 <h1 className="text-2xl font-bold tracking-wide text-blue-600">
+  <NavLink
+  to="/">
 DBSol
+</NavLink>
 </h1>
 
 {/* Divider */}
@@ -57,7 +61,13 @@ Microsoft Partner
 <ul className="items-center hidden gap-10 font-medium md:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
+<NavLink
+  to="/"
+  className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
 Home
+</NavLink>
 </li>
 
 
@@ -227,11 +237,22 @@ Health Care
 
 
 <li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/aboutUs"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
 About Us
+</NavLink>
 </li>
 
 <li className="cursor-pointer hover:text-blue-600">
-Contact
+<NavLink
+  to="/contact"
+  className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>Contact Us</NavLink>
 </li>
 
 </ul>
@@ -472,11 +493,11 @@ Health Care
 
 
 <li className="cursor-pointer hover:text-blue-600">
-About Us
+<Link to="/AboutUs">About Us</Link>
 </li>
 
 <li className="cursor-pointer hover:text-blue-600">
-Contact
+Contact Us
 </li>
 
 </ul>
