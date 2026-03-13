@@ -377,8 +377,7 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 {menu && (
 
 <div className="px-6 pb-4 bg-white md:hidden">
-<ul className="gap-12 font-medium flex-direction: column">
-
+<ul className="flex flex-col gap-6 font-medium">
 <li className="cursor-pointer hover:text-blue-600">
 Home
 </li>
@@ -388,11 +387,10 @@ Home
 
 <li
 className="relative"
-onMouseEnter={()=>setServicesOpen(true)}
-onMouseLeave={()=>setServicesOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div onClick={()=>setServicesOpen(!servicesOpen)}
+className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
 
 Services
 
@@ -409,8 +407,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
->
+className="mt-3 ml-4 space-y-3">
 
 <li className="cursor-pointer hover:text-blue-600">
 Finance & Operations
@@ -438,11 +435,9 @@ App Development
 {/*Solution */}
 <li
 className="relative"
-onMouseEnter={()=>setSolutionOpen(true)}
-onMouseLeave={()=>setSolutionOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div onClick={()=>setSolutionOpen(!solutionOpen)} className="flex items-center gap-2 cursor-pointer">
 Solutions
 
 {solutionOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
@@ -458,7 +453,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+className="mt-3 ml-4 space-y-3"
 >
 
 <li className="cursor-pointer hover:text-blue-600">
@@ -494,11 +489,9 @@ Inventory Management System
 
 <li
 className="relative"
-onMouseEnter={()=>setIndustriesOpen(true)}
-onMouseLeave={()=>setIndustriesOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div onClick={()=>setIndustriesOpen(!industriesOpen)} className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
 
 Industries
 
@@ -515,27 +508,27 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark:bg-gray-800"
+className="mt-3 ml-4 space-y-3"
 >
 
-<li className="cursor-pointer hover:text-blue-600">
 IT / ITES
+<li className="cursor-pointer">
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
 Manufacturing
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
 Retail & Wholesale
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
 Hospitality
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
 Professional Services
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
 Health Care
 </li>
 
@@ -550,7 +543,7 @@ Health Care
 
 
 <li className="cursor-pointer hover:text-blue-600">
-<Link to="/AboutUs">About Us</Link>
+About Us
 </li>
 
 <li className="cursor-pointer hover:text-blue-600">
