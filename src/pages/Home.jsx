@@ -7,6 +7,7 @@ import WhyChooseUs from "../components/WhyChooseUs"
 import TrustedClients from "../components/TrustedClient"
 import CallToAction from "../components/CallToAction"
 import Testimonials from "../components/Testimonial"
+import ERPImplementationProcess from "../components/ERP"
 export default function Home(){
 
 return(
@@ -17,6 +18,7 @@ return(
 <Hero/>
 <Services/>
 <Industries/>
+<ERPImplementationProcess/>
 <WhyChooseUs/>
 <TrustedClients/>
 <Testimonials/>

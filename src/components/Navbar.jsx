@@ -159,21 +159,31 @@ className="absolute left-0 w-56 p-4 space-y-3 bg-white rounded-lg shadow-xl dark
 >
 
 <li className="cursor-pointer hover:text-blue-600">
-Financial Management System
+<NavLink to="/FinancialManagementSystem" className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+Financial Management System</NavLink>
 </li>
 
 <li className="cursor-pointer hover:text-blue-600">
-Human Resource Management System
+  <NavLink to="/HumanResourceManagementSystem" className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+Human Resource Management System</NavLink>
 </li>
 
 <li className="cursor-pointer hover:text-blue-600">
-Supply Chain Management System
+  <NavLink to="/SCMS" className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+Supply Chain Management System</NavLink>
 </li>
 <li className="cursor-pointer hover:text-blue-600">
-Warehouse Management System
+  <NavLink to="/WMS"  className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+Warehouse Management System</NavLink>
 </li>
 <li className="cursor-pointer hover:text-blue-600">
-Inventory Management System
+<NavLink to="/IMS" className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+ >Inventory Management System</NavLink>
 </li>
 
 
@@ -304,6 +314,28 @@ About Us
 </NavLink>
 </li>
 
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/CaseStudies"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Case Studies
+</NavLink>
+</li>
+{/*
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Careers
+</NavLink>
+</li>
+*/}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
   to="/contact"

@@ -15,6 +15,14 @@ import Healthcare from "./pages/industries/HealthCare";
 import Education from "./pages/industries/Education";
 import Hospitality from "./pages/industries/Hospitality";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
+import FinancialManagementSystem from "./pages/solutions/financialManagementSystem";
+import HumanResourceManagementSystem from "./pages/solutions/HumanResourceManagementSystem";
+import SupplyChainManagementSystem from "./pages/solutions/SCMS";
+import WarehouseManagementSystem from "./pages/solutions/WMS";
+import InventoryManagementSystem from "./pages/solutions/IMS";
+import Careers from "./pages/Careers";
+import CaseStudies from "./pages/CaseStudy";
+import CaseStudyDetail from "./pages/CaseStudiesDetail";
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +43,14 @@ function App() {
       <Route path="/Education" element={<Education/>}></Route>
       <Route path="/Hospitality" element={<Hospitality/>}></Route>
       <Route path="/ProfessionalServices" element={<ProfessionalServices/>}></Route>
+      <Route path="/FinancialManagementSystem" element={<FinancialManagementSystem/>}></Route>
+      <Route path="/HumanResourceManagementSystem" element={<HumanResourceManagementSystem/>}></Route>
+      <Route path="/SCMS" element={<SupplyChainManagementSystem/>}></Route>
+      <Route path="/WMS" element={<WarehouseManagementSystem/>}></Route>
+      <Route path="/IMS" element={<InventoryManagementSystem/>}></Route>
+      <Route path="/careers" element={<Careers/>}></Route>
+      <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
+      <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
     </Routes>
     </BrowserRouter>
   );

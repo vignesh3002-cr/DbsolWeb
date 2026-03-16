@@ -162,7 +162,6 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 </section>
 
-
 {/* IMPLEMENTATION PROCESS */}
 
 <section className="py-24">
