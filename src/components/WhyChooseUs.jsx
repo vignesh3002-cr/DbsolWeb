@@ -53,7 +53,7 @@ return(
 
 <div className="mb-20 text-center">
 
-<h2 className="mb-4 text-4xl font-bold">
+<h2 className="mb-4 text-4xl font-bold dark:text-blue-600">
 
 Why Choose DBSol
 

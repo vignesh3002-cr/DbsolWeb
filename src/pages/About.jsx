@@ -1,234 +1,281 @@
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
-import { FaLightbulb, FaHandshake, FaRocket } from "react-icons/fa"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
+import CountUp from "react-countup"
+import TrustedClients from "../components/TrustedClient"
 
 export default function About(){
 
 return(
-    <>
+
+<div className="min-h-screen text-black transition-colors duration-500 bg-white dark:bg-gray-900 dark:text-white">
+
 <Navbar/>
-<div className="bg-gray-50 dark:bg-gray-900">
 
-{/* Hero Section */}
+{/* HERO */}
 
-<section className="relative flex items-center justify-center h-[350px]">
-
-{/* Background Image */}
+<section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-alt="about background"
+src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
 className="absolute inset-0 object-cover w-full h-full"
 />
 
-{/* Dark Overlay */}
-
 <div className="absolute inset-0 bg-black/60"></div>
-
-{/* Content */}
 
 <div className="relative z-10 text-center text-white">
 
-<h1 className="mb-3 text-4xl font-bold md:text-5xl">
-About Us
-</h1>
+<motion.h1
+initial={{opacity:0,y:40}}
+animate={{opacity:1,y:0}}
+className="text-5xl font-bold"
+>
 
-<p className="text-sm font-semibold text-gray-200">
+About Our Company
 
-<Link to="/" className="hover:text-blue-400">
-Home
-</Link>
+</motion.h1>
 
-<span className="mx-4 text-xl">»</span>
-
-<span className="text-blue-400">
-About Us
-</span>
-
+<p className="mt-4 text-gray-200">
+<Link to="/">Home</Link> ➜ <span className="text-blue-400">About</span>
 </p>
 
 </div>
 
 </section>
-{/* Company Story */}
 
-<section className="py-20">
+
+{/* COMPANY INTRO */}
+
+<section className="py-24">
 
 <div className="grid items-center max-w-6xl gap-12 px-6 mx-auto md:grid-cols-2">
 
-<motion.img
-initial={{opacity:0,x:-40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.7}}
-src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-className="shadow-xl rounded-2xl"
+<img
+src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
+className="shadow-lg rounded-xl"
 />
 
-<motion.div
-initial={{opacity:0,x:40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.7}}
->
+<div>
 
-<h2 className="mb-6 text-3xl font-bold text-gray-800 dark:text-white">
-Our Story
+<h2 className="mb-6 text-4xl font-bold">
+Who We Are
 </h2>
 
 <p className="mb-4 text-gray-600 dark:text-gray-300">
-
-DBSol was founded with a clear vision — to help organizations
-modernize their business operations through intelligent digital
-solutions.
-
-</p>
-
-<p className="mb-4 text-gray-600 dark:text-gray-300">
-
-Our team combines deep expertise in enterprise systems, cloud
-technology, and application development to deliver solutions
-that are both powerful and user-friendly.
-
+We are a leading ERP consulting and digital transformation company specializing in Microsoft Dynamics 365 Finance & Operations, Business Central, and enterprise-grade web and mobile applications.
 </p>
 
 <p className="text-gray-600 dark:text-gray-300">
-
-From startups to large enterprises, we partner with clients
-to build technology that drives measurable business results.
-
+Our mission is to help businesses streamline operations, improve financial visibility, and achieve scalable growth using cutting-edge technology solutions.
 </p>
 
-</motion.div>
+</div>
 
 </div>
 
 </section>
 
-{/* Mission Vision Values */}
+{/* MISSION & VISION - PREMIUM */}
 
-<section className="py-24 bg-white dark:bg-gray-800">
+<section className="relative overflow-hidden py-28 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
 
-<div className="max-w-6xl px-6 mx-auto mb-16 text-center">
+{/* Background Glow */}
+<div className="absolute w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl top-[-100px] left-[-100px]"></div>
+<div className="absolute w-[400px] h-[400px] bg-indigo-400/20 rounded-full blur-3xl bottom-[-100px] right-[-100px]"></div>
 
-<h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-Our Core Values
+<div className="relative z-10 max-w-6xl px-6 mx-auto">
+
+<h2 className="mb-20 text-4xl font-bold text-center">
+Our Mission & Vision
 </h2>
 
-<p className="text-gray-500">
-The principles that guide everything we build.
-</p>
+<div className="grid gap-16 md:grid-cols-2">
 
+{/* MISSION */}
+
+<motion.div
+initial={{opacity:0, x:-60}}
+whileInView={{opacity:1, x:0}}
+transition={{duration:0.8}}
+className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 rounded-2xl"
+>
+
+{/* Floating Icon */}
+<div className="absolute text-6xl text-blue-500 opacity-10 top-4 right-6">
+🚀
 </div>
 
-<div className="grid max-w-6xl gap-10 px-6 mx-auto md:grid-cols-3">
-
-{/* Innovation */}
-
-<motion.div
-whileHover={{scale:1.05}}
-className="p-10 text-center shadow-lg bg-gray-50 dark:bg-gray-900 rounded-2xl"
->
-
-<FaLightbulb className="mx-auto mb-4 text-4xl text-blue-600"/>
-
-<h3 className="mb-3 text-xl font-semibold text-gray-800 dark:text-white">
-Innovation
+<h3 className="mb-4 text-2xl font-semibold text-blue-600">
+Our Mission
 </h3>
 
-<p className="text-gray-500">
-
-We continuously explore new technologies and creative
-solutions to help our clients stay ahead in a rapidly
-evolving digital landscape.
-
+<p className="mb-4 text-gray-600 dark:text-gray-300">
+Our mission is to empower businesses by delivering intelligent ERP solutions that streamline operations, enhance productivity, and enable data-driven decision-making.
 </p>
+
+<p className="text-gray-600 dark:text-gray-300">
+We focus on building scalable, secure, and future-ready systems using modern technologies like Microsoft Dynamics 365, cloud computing, and automation frameworks.
+</p>
+
+{/* Highlights */}
+<ul className="mt-6 space-y-2 text-gray-700 dark:text-gray-300">
+<li>✔ Optimize business processes</li>
+<li>✔ Deliver scalable ERP solutions</li>
+<li>✔ Enable digital transformation</li>
+</ul>
 
 </motion.div>
 
-{/* Trust */}
+
+{/* VISION */}
 
 <motion.div
-whileHover={{scale:1.05}}
-className="p-10 text-center shadow-lg bg-gray-50 dark:bg-gray-900 rounded-2xl"
+initial={{opacity:0, x:60}}
+whileInView={{opacity:1, x:0}}
+transition={{duration:0.8}}
+className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 rounded-2xl"
 >
 
-<FaHandshake className="mx-auto mb-4 text-4xl text-blue-600"/>
+{/* Floating Icon */}
+<div className="absolute text-6xl text-indigo-500 opacity-10 top-4 right-6">
+🌍
+</div>
 
-<h3 className="mb-3 text-xl font-semibold text-gray-800 dark:text-white">
-Trust & Transparency
+<h3 className="mb-4 text-2xl font-semibold text-indigo-600">
+Our Vision
 </h3>
 
-<p className="text-gray-500">
-
-We build long-term partnerships based on honesty,
-accountability, and consistent delivery of value.
-
+<p className="mb-4 text-gray-600 dark:text-gray-300">
+Our vision is to become a global leader in ERP consulting and digital innovation by helping organizations achieve operational excellence and sustainable growth.
 </p>
+
+<p className="text-gray-600 dark:text-gray-300">
+We aim to bridge the gap between technology and business by delivering world-class solutions that drive efficiency, innovation, and long-term success.
+</p>
+
+{/* Highlights */}
+<ul className="mt-6 space-y-2 text-gray-700 dark:text-gray-300">
+<li>✔ Global ERP leadership</li>
+<li>✔ Innovation-driven solutions</li>
+<li>✔ Long-term client success</li>
+</ul>
 
 </motion.div>
 
-{/* Excellence */}
-
-<motion.div
-whileHover={{scale:1.05}}
-className="p-10 text-center shadow-lg bg-gray-50 dark:bg-gray-900 rounded-2xl"
->
-
-<FaRocket className="mx-auto mb-4 text-4xl text-blue-600"/>
-
-<h3 className="mb-3 text-xl font-semibold text-gray-800 dark:text-white">
-Execution Excellence
-</h3>
-
-<p className="text-gray-500">
-
-Our team focuses on quality engineering and efficient
-project delivery to ensure every solution meets
-enterprise standards.
-
-</p>
-
-</motion.div>
+</div>
 
 </div>
 
 </section>
 
-{/* Stats */}
 
-<section className="py-20">
+{/* WHY CHOOSE US */}
+
+<section className="py-24">
+
+<div className="max-w-6xl px-6 mx-auto">
+
+<h2 className="mb-16 text-4xl font-bold text-center">
+Why Choose Us
+</h2>
+
+<div className="grid gap-10 md:grid-cols-3">
+
+{[
+"Expert Dynamics 365 Consultants",
+"End-to-End Implementation",
+"Custom Business Solutions",
+"Industry-Specific Expertise",
+"Scalable Cloud Solutions",
+"24/7 Support & Maintenance"
+].map((item,index)=>(
+
+<motion.div
+key={index}
+whileHover={{y:-10}}
+className="p-8 text-center bg-gray-100 shadow-lg dark:bg-gray-800 rounded-xl"
+>
+
+<p className="text-lg font-semibold">{item}</p>
+
+</motion.div>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
+<TrustedClients/>
+
+{/* STATS */}
+
+<section className="py-24 bg-gray-100 dark:bg-gray-800">
 
 <div className="grid max-w-6xl gap-10 px-6 mx-auto text-center md:grid-cols-4">
 
-<div>
-<h3 className="text-4xl font-bold text-blue-600">50+</h3>
-<p className="text-gray-500">Projects Delivered</p>
-</div>
+{[
+"50+ Projects",
+"10+ Industries",
+"95% Satisfaction",
+"5+ Years Experience"
+].map((item,index)=>(
 
-<div>
-<h3 className="text-4xl font-bold text-blue-600">20+</h3>
-<p className="text-gray-500">Enterprise Clients</p>
-</div>
+<motion.div
+key={index}
+initial={{opacity:0,y:30}}
+whileInView={{opacity:1,y:0}}
+className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
+>
 
-<div>
-<h3 className="text-4xl font-bold text-blue-600">8+</h3>
-<p className="text-gray-500">Industries Served</p>
-</div>
+<p className="text-xl font-bold">{item}</p>
 
-<div>
-<h3 className="text-4xl font-bold text-blue-600">5+</h3>
-<p className="text-gray-500">Years Experience</p>
-</div>
+</motion.div>
+
+))}
 
 </div>
 
 </section>
 
+{/* FINAL CTA */}
+
+<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 via-blue-700 to-purple-700 dark:from-gray-800">
+
+<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
+Ready to Transform Your Business?
+</h2>
+
+<p className="max-w-2xl mx-auto mb-8 text-blue-100">
+We help companies implement ERP systems, automate workflows, and scale faster with modern digital solutions.
+</p>
+
+<div className="flex justify-center gap-6">
+
+<a
+href="/contact"
+className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+>
+Contact Us
+</a>
+
+<a
+href="/services"
+className="px-8 py-4 font-semibold border border-white rounded-lg hover:bg-white hover:text-blue-600"
+>
+Explore Services
+</a>
+
 </div>
+
+</section>
+
 <Footer/>
 
-</>
-)
+</div>
 
+)
 }

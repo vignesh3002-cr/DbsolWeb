@@ -58,7 +58,7 @@ Microsoft Partner
 
 {/* NAVIGATION */}
 <div className="flex gap-4 md:gap-8">
-<ul className="items-center hidden gap-10 font-medium md:flex">
+<ul className="items-center hidden gap-10 font-medium dark:text-white md:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink

@@ -140,7 +140,7 @@ initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 src="https://images.unsplash.com/photo-1526498460520-4c246339dccb"
-className="rounded-xl shadow-xl"
+className="shadow-xl rounded-xl"
 />
 
 </div>
@@ -154,11 +154,11 @@ className="rounded-xl shadow-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="mb-14 text-4xl font-bold text-center text-gray-800 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
 Our Mobile Development Expertise
 </h2>
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 dark:text-white">
 
 {features.map((item,index)=>(
 
@@ -197,11 +197,11 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="mb-14 text-4xl font-bold text-center text-gray-800 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
 Our Mobile App Development Process
 </h2>
 
-<div className="grid gap-10 md:grid-cols-4">
+<div className="grid gap-10 text-gray-400 md:grid-cols-4">
 
 {["Idea & Strategy","UI/UX Design","Development","Launch & Support"].map((step,index)=>(
 
@@ -234,9 +234,9 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
 
-<h2 className="mb-6 text-4xl font-bold">
+<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Launch Your Mobile App Today
 </h2>
 

@@ -41,7 +41,7 @@ return(
 
 <div className="mb-16 text-center">
 
-<h2 className="mb-4 text-4xl font-bold">
+<h2 className="mb-4 text-4xl font-bold dark:text-blue-600">
 
 Our Professional Services
 
@@ -58,7 +58,7 @@ scale and succeed in the digital era.
 
 {/* SERVICES GRID */}
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid gap-10 cursor-pointer md:grid-cols-2 lg:grid-cols-4 dark:text-white">
 
 {services.map((service,index)=>(
 

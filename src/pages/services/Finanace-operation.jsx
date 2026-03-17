@@ -128,11 +128,11 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
 Core Capabilities
 </h2>
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 dark:text-white">
 
 {features.map((item,index)=>(
 <motion.div
@@ -168,7 +168,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
 Our Implementation Process
 </h2>
 
@@ -187,7 +187,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 {index+1}
 </div>
 
-<h3 className="text-lg font-semibold">
+<h3 className="text-lg font-semibold dark:text-gray-400">
 {step}
 </h3>
 
@@ -203,9 +203,9 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 {/* CALL TO ACTION */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
 
-<h2 className="mb-6 text-4xl font-bold">
+<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Transform Your Financial Operations
 </h2>
 

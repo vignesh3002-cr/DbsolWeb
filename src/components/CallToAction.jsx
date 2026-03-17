@@ -9,7 +9,7 @@ return(
 
 {/* Animated background circles */}
 
-<div className="absolute inset-0 overflow-hidden">
+<div className="absolute inset-0 overflow-hidden dark:bg-gray-900">
 
 <div className="absolute rounded-full w-72 h-72 bg-white/10 blur-3xl top-10 left-10 animate-pulse"></div>
 
@@ -28,7 +28,7 @@ className="p-16 border shadow-2xl bg-white/10 backdrop-blur-xl border-white/20 r
 
 {/* Heading */}
 
-<h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
+<h2 className="mb-6 text-4xl font-bold text-white dark:text-blue-600 md:text-5xl">
 
 Ready to Transform Your Business?
 

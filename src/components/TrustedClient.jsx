@@ -24,21 +24,21 @@ const clients = [
 
 return(
 
-<section className="py-24 bg-white dark:bg-gray-900 overflow-hidden">
+<section className="py-24 overflow-hidden bg-white dark:bg-gray-900 dark:text-white">
 
-<div className="max-w-7xl mx-auto px-6">
+<div className="px-6 mx-auto max-w-7xl">
 
 {/* Title */}
 
-<div className="text-center mb-16">
+<div className="mb-16 text-center">
 
-<h2 className="text-4xl font-bold mb-4">
+<h2 className="mb-4 text-4xl font-bold dark:text-white">
 
 Trusted By Leading Companies
 
 </h2>
 
-<p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+<p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
 
 Businesses across multiple industries trust our expertise in delivering
 enterprise technology solutions and digital transformation services.
@@ -70,7 +70,7 @@ className="flex items-center justify-center min-w-[150px]"
 
 <img
 src={logo}
-className="h-10 grayscale hover:grayscale-0 transition duration-300"
+className="h-10 transition duration-300"
 />
 
 </div>

@@ -56,7 +56,7 @@ Contact Us
 
 <section className="py-20">
 
-<div className="grid max-w-6xl gap-10 px-6 mx-auto md:grid-cols-3">
+<div className="grid max-w-6xl gap-10 px-6 mx-auto md:grid-cols-3 dark:text-white">
 
 {/* Phone */}
 

@@ -37,7 +37,7 @@ return(
 
 <div className="mb-20 text-center">
 
-<h2 className="mb-4 text-4xl font-bold">
+<h2 className="mb-4 text-4xl font-bold dark:text-blue-600">
 
 Industries We Empower
 
@@ -55,7 +55,7 @@ with powerful digital transformation strategies.
 
 {/* Industry Grid */}
 
-<div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5 justify-items-center">
+<div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
 
 {industries.map((item,index)=>(
 

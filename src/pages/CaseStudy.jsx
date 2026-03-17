@@ -156,7 +156,7 @@ Result: {item.result}
 Our Impact
 </h2>
 
-<div className="grid gap-10 md:grid-cols-4">
+<div className="grid gap-10 md:grid-cols-4 dark:text-gray-300">
 
 {[
 "50+ Projects Delivered",
@@ -190,9 +190,9 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-800">
 
-<h2 className="mb-6 text-4xl font-bold">
+<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Want to Become Our Next Success Story?
 </h2>
 
