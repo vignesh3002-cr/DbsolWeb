@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import hero1 from "../assets/home1.jpg"  
 import hero2 from "../assets/home2.jpg"
-import hero3 from "../assets/home3.jpg"
+import Hero3 from "../assets/home3.jpg"
 
 export default function Hero(){
 
@@ -23,7 +23,7 @@ img:hero2
 {
 title:"Mobile App Development",
 desc:"Creating powerful Android and iOS applications designed to deliver exceptional user experiences.",
-img:hero3
+img:Hero3
 }
 
 ]
