@@ -30,7 +30,7 @@ return(
 <h1 className="text-2xl font-bold tracking-wide text-blue-600">
   <NavLink
   to="/">
-DBSol
+Dbsol
 </NavLink>
 </h1>
 
