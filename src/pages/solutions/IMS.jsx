@@ -114,10 +114,6 @@ Inventory Management System
 
 <span className="mx-2">➜</span>
 
-<Link to="/solutions" className="hover:text-blue-400">Solutions</Link>
-
-<span className="mx-2">➜</span>
-
 <span className="text-blue-400">Inventory Management</span>
 
 </p>

@@ -8,7 +8,7 @@ const slides = [
 {
 title:"Microsoft Dynamics 365 Finance & Operations Solutions",
 desc:"Empowering enterprises with scalable ERP solutions, seamless financial management, and operational excellence.",
-img:"https://images.unsplash.com/photo-1551434678-e076c223a692"
+img:""
 },
 
 {
