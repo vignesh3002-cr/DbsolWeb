@@ -30,7 +30,7 @@ return(
 <h1 className="text-2xl font-bold tracking-wide text-blue-600">
   <NavLink
   to="/">
-Db Sol
+Dbsol
 </NavLink>
 </h1>
 
@@ -66,7 +66,7 @@ Microsoft Partner
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
-HOME
+Home
 </NavLink>
 </li>
 
