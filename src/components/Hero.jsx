@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import hero1 from "../assets/home1.jpg"  
+import hero2 from "../assets/home2.jpg"
+import hero3 from "../assets/home3.jpg"
 
 export default function Hero(){
 
@@ -8,19 +11,23 @@ const slides = [
 {
 title:"Microsoft Dynamics 365 Finance & Operations Solutions",
 desc:"Empowering enterprises with scalable ERP solutions, seamless financial management, and operational excellence.",
+<<<<<<< HEAD
 img:""
+=======
+img:hero1
+>>>>>>> b38c8a1d791d00bdab6c32b9bee712baac9ccb34
 },
 
 {
 title:"Professional Web Development",
 desc:"Building modern, responsive, and scalable websites for businesses using cutting-edge technologies.",
-img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+img:hero2
 },
 
 {
 title:"Mobile App Development",
 desc:"Creating powerful Android and iOS applications designed to deliver exceptional user experiences.",
-img:"https://images.unsplash.com/photo-1551650975-87deedd944c3"
+img:hero3
 }
 
 ]
