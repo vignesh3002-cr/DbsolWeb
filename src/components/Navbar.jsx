@@ -66,7 +66,7 @@ Microsoft Partner
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
-Home
+HOME
 </NavLink>
 </li>
 
