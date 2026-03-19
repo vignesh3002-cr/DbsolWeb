@@ -25,14 +25,12 @@ return(
 {/* LOGO */}
 <div className="flex items-center gap-3 cursor-pointer group">
 
-{/* Company Name */}
-
-<h1 className="text-2xl font-bold tracking-wide text-blue-600">
+ Company Name <h1 className="text-2xl font-bold tracking-wide text-blue-600">
   <NavLink
   to="/">
 Dbsol
 </NavLink>
-</h1>
+</h1> 
 
 {/* Divider */}
 

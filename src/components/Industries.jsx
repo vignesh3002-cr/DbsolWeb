@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import {
 FaUniversity,
 FaIndustry,
@@ -15,15 +16,15 @@ export default function Industries(){
 
 const industries = [
 
-{title:"Finance", icon:<FaUniversity size={28}/>},
-{title:"Manufacturing", icon:<FaIndustry size={28}/>},
-{title:"Retail", icon:<FaShoppingBag size={28}/>},
-{title:"Logistics", icon:<FaTruck size={28}/>},
-{title:"Healthcare", icon:<FaHeartbeat size={28}/>},
-{title:"Education", icon:<FaGraduationCap size={28}/>},
-{title:"Hospitality", icon:<FaHotel size={28}/>},
-{title:"IT / ITES", icon:<FaLaptopCode size={28}/>},
-{title:"Professional Services", icon:<FaBriefcase size={28}/>}
+{title:"Finance",path:"/FinanceBanking", icon:<FaUniversity size={28}/>},
+{title:"Manufacturing", path:"/Manufacturing", icon:<FaIndustry size={28}/>},
+{title:"Retail", path:"/Retail&Wholesale", icon:<FaShoppingBag size={28}/>},
+{title:"Logistics", path:"/LogisticsSupplyChain", icon:<FaTruck size={28}/>},
+{title:"Healthcare", path:"/HealthCare",icon:<FaHeartbeat size={28}/>},
+{title:"Education", path:"/ProfessionalServices", icon:<FaGraduationCap size={28}/>},
+{title:"Hospitality", path:"/Hospitality", icon:<FaHotel size={28}/>},
+{title:"IT / ITES", path:"/IT.ITES",icon:<FaLaptopCode size={28}/>},
+{title:"Professional Services", path:"/ProfessionalServices", icon:<FaBriefcase size={28}/>}
 
 ]
 
@@ -58,7 +59,7 @@ with powerful digital transformation strategies.
 <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
 
 {industries.map((item,index)=>(
-
+<Link to={item.path} key={index}>
 <motion.div
 key={index}
 initial={{opacity:0, y:40}}
@@ -93,7 +94,7 @@ className="flex flex-col items-center cursor-pointer group"
 </p>
 
 </motion.div>
-
+</Link>
 ))}
 
 </div>

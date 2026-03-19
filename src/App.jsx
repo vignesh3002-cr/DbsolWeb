@@ -23,9 +23,11 @@ import InventoryManagementSystem from "./pages/solutions/IMS";
 import Careers from "./pages/Careers";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/aboutUs" element={<About/>}></Route>

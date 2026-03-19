@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { FaLaptopCode, FaMobileAlt, FaChartLine, FaCloud } from "react-icons/fa"
-
+import { NavLink } from "react-router-dom"
 export default function Services(){
 
 const services = [
@@ -8,25 +8,29 @@ const services = [
 {
 title:"Finance & Operations",
 desc:"Optimize enterprise financial management and streamline operations using advanced ERP solutions powered by Microsoft Dynamics.",
-icon:<FaChartLine size={40}/>
+icon:<FaChartLine size={40}/>,
+path:"/finance-operation"
 },
 
 {
 title:"Dynamics 365 Business & Fundamentals",
 desc:"Transform business productivity with Microsoft Dynamics 365 solutions that integrate CRM, ERP, and cloud services seamlessly.",
-icon:<FaCloud size={40}/>
+icon:<FaCloud size={40}/>,
+path:"/Dynamics365Business"
 },
 
 {
 title:"Responsive Website Development",
 desc:"We design modern, scalable and fully responsive websites that deliver high performance and outstanding user experience.",
-icon:<FaLaptopCode size={40}/>
+icon:<FaLaptopCode size={40}/>,
+path:"/Webdevelopment"
 },
 
 {
 title:"Android & iOS App Development",
 desc:"Build powerful mobile applications with intuitive UI and high performance for Android and iOS platforms.",
-icon:<FaMobileAlt size={40}/>
+icon:<FaMobileAlt size={40}/>,
+path:"/MobileAppDevelopment"
 }
 
 ]
@@ -59,16 +63,16 @@ scale and succeed in the digital era.
 {/* SERVICES GRID */}
 
 <div className="grid gap-10 cursor-pointer md:grid-cols-2 lg:grid-cols-4 dark:text-white">
-
 {services.map((service,index)=>(
-
+    
+<NavLink to={service.path} key={index} >
 <motion.div
 key={index}
 initial={{opacity:0, y:50}}
 whileInView={{opacity:1, y:0}}
 transition={{duration:0.6, delay:index*0.2}}
 whileHover={{scale:1.05}}
-className="relative p-8 transition bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-2xl group"
+className="relative flex flex-col h-full p-8 transition bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-2xl group"
 >
 
 {/* Icon */}
@@ -100,6 +104,7 @@ className="relative p-8 transition bg-white shadow-lg dark:bg-gray-800 rounded-2
 <div className="absolute inset-0 transition opacity-0 rounded-2xl group-hover:opacity-100 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
 
 </motion.div>
+</NavLink>
 
 ))}
 
