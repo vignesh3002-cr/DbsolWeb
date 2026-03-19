@@ -411,7 +411,13 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 <div className="px-6 pb-4 bg-white md:hidden">
 <ul className="flex flex-col gap-6 font-medium">
 <li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
 Home
+</NavLink>
 </li>
 
 
