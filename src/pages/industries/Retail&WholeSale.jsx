@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg"
+src="/images/R&W_1.jpeg"
 alt="retail industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -146,7 +146,7 @@ inventory management, and enhance customer experiences.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg"
+src="/images/R&W_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

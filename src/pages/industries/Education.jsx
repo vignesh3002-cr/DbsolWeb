@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg"
+src="/images/ET_1.jpeg"
 alt="education technology"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -148,7 +148,7 @@ student engagement.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg"
+src="/images/ET_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

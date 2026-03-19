@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg"
+src="/images/MIS_1.jpeg"
 alt="manufacturing industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -146,7 +146,7 @@ their operations for better decision-making.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg"
+src="/images/MIS_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

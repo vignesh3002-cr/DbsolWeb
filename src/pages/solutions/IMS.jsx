@@ -88,7 +88,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg"
+src="/images/IMS_1.jpeg"
 alt="Inventory Management"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -161,7 +161,7 @@ and avoid stockouts or overstocking.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg"
+src="/images/IMS_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

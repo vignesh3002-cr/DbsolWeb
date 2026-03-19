@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+src="/images/PS_1.jpeg"
 alt="professional services"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -147,7 +147,7 @@ improve client engagement, and enhance business performance.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg"
+src="/images/PS_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

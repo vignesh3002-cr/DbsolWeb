@@ -13,7 +13,7 @@ title:"Manufacturing ERP Implementation",
 industry:"Manufacturing",
 desc:"Implemented Dynamics 365 Finance & Operations...",
 result:"40% improvement in operational efficiency",
-image:"https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg"
+image:"/images/Manufacturing.jpeg"
 },
 
 {
@@ -22,7 +22,7 @@ title:"Retail Inventory Optimization",
 industry:"Retail",
 desc:"Developed an inventory management solution...",
 result:"35% reduction in inventory costs",
-image:"https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg"
+image:"/images/Retail_1.jpeg"
 },
 
 {
@@ -31,7 +31,7 @@ title:"Healthcare ERP Transformation",
 industry:"Healthcare",
 desc:"Implemented a healthcare ERP platform...",
 result:"50% faster financial reporting",
-image:"https://images.unsplash.com/photo-1576091160550-2173dba999ef"
+image:"/images/Healthcare_1.jfif"
 },
 
 {
@@ -40,7 +40,7 @@ title:"Logistics Supply Chain Automation",
 industry:"Logistics",
 desc:"Designed an advanced supply chain management system...",
 result:"60% faster order fulfillment",
-image:"https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg"
+image:"/images/Logistics_1.jpeg"
 }
 
 ]
@@ -56,7 +56,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+src="/images/Casestudy.jpeg"
 alt="Case Studies"
 className="absolute inset-0 object-cover w-full h-full"
 />

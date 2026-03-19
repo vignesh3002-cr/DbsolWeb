@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg"
+src="/images/HC_1.jpeg"
 alt="healthcare technology"
 className="absolute inset-0 object-cover w-full h-full"
 />"
@@ -146,7 +146,7 @@ experiences, and maintain secure healthcare data management.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg"
+src="/images/HC_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

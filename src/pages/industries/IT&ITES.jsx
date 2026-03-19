@@ -65,7 +65,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+src="/images/IT_1.jfif"
 alt="IT industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -140,7 +140,7 @@ platforms to drive innovation and operational excellence.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+src="/images/IT_2.jfif"
 className="shadow-xl rounded-xl"
 />
 
