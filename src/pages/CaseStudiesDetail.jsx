@@ -12,7 +12,7 @@ const cases = {
 manufacturing:{
 title:"Manufacturing ERP Implementation",
 industry:"Manufacturing",
-image:"https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg",
+image:"/images/Manufacturing.jpeg",
 challenge:"The client faced operational inefficiencies due to disconnected financial and production systems.",
 solution:"We implemented Microsoft Dynamics 365 Finance & Operations to unify financial management, production planning, and supply chain processes.",
 result:"40% increase in operational efficiency and improved reporting visibility."
@@ -21,7 +21,7 @@ result:"40% increase in operational efficiency and improved reporting visibility
 retail:{
 title:"Retail Inventory Optimization",
 industry:"Retail",
-image:"https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg",
+image:"/images/Retail_1.jpeg",
 challenge:"Retail chain struggled with stock management across multiple warehouses.",
 solution:"We built an advanced inventory management system integrated with ERP.",
 result:"35% reduction in inventory costs and improved stock accuracy."
@@ -30,7 +30,7 @@ result:"35% reduction in inventory costs and improved stock accuracy."
 healthcare:{
 title:"Healthcare ERP Transformation",
 industry:"Healthcare",
-image:"https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+image:"/images/healthcare_1.jfif",
 challenge:"Healthcare provider had slow financial reporting and manual administrative processes.",
 solution:"Implemented ERP automation and financial reporting dashboards.",
 result:"50% faster financial reporting and better operational transparency."
@@ -39,7 +39,7 @@ result:"50% faster financial reporting and better operational transparency."
 logistics:{
 title:"Logistics Supply Chain Automation",
 industry:"Logistics",
-image:"https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg",
+image:"/images/Logistics_1.jpeg",
 challenge:"Manual logistics operations caused delays in order fulfillment.",
 solution:"Implemented supply chain automation with real-time tracking.",
 result:"60% faster order processing and improved delivery performance."

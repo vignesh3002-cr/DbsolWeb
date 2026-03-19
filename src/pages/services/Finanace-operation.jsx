@@ -38,7 +38,7 @@ return (
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
+src="/images/F&O_img1.jpg"
 alt="finance operations"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -113,7 +113,7 @@ operational efficiency and financial transparency.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+src="/images/F&O_img2.jpg"
 className="shadow-xl rounded-xl"
 />
 

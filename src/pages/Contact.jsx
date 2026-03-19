@@ -17,7 +17,7 @@ return(
 {/* Background Image */}
 
 <img
-src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+src="/images/Contact_us.jfif"
 alt="contact background"
 className="absolute inset-0 object-cover w-full h-full"
 />

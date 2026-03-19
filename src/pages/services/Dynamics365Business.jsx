@@ -58,7 +58,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.unsplash.com/photo-1454165205744-3b78555e5572"
+src="/images/Ms365_img1.jpg"
 alt="Dynamics 365"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -132,7 +132,7 @@ seamless integration and optimized performance.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+src="/images/Ms365_img2.jpg"
 className="shadow-xl rounded-xl"
 />
 

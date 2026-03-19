@@ -65,7 +65,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.unsplash.com/photo-1551650975-87deedd944c3"
+src="/images/MobAppDev_img1.jpg"
 alt="mobile development"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -139,7 +139,7 @@ digital experiences.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.unsplash.com/photo-1526498460520-4c246339dccb"
+src="/images/MobAppDev_img2.jpg"
 className="shadow-xl rounded-xl"
 />
 

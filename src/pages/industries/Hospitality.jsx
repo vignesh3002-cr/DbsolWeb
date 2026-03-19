@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
+src="/images/HT_1.jpeg"
 alt="hospitality industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -147,7 +147,7 @@ and deliver personalized services to guests.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg"
+src="/images/HT_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg"
+src="/images/F&B_1.jpeg"
 alt="finance industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -145,7 +145,7 @@ gain real-time insights into their financial operations.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg"
+src="/images/F&B_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

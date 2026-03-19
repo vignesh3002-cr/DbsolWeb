@@ -65,7 +65,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+src="/images/WebDev_img1.jpg"
 alt="web development"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -139,7 +139,7 @@ your business needs.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+src="/images/WebDev_img2.jpg"
 className="shadow-xl rounded-xl"
 />
 

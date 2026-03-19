@@ -65,7 +65,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/6693656/pexels-photo-6693656.jpeg"
+src="/images/FM_img_1.jpeg"
 className="absolute inset-0 object-cover w-full h-full"
 alt="financial management"
 />
@@ -140,7 +140,7 @@ and make data-driven decisions.
 </motion.div>
 
 <motion.img
-src="https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg"
+src="/images/FM_img_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

@@ -78,7 +78,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg"
+src="/images/SCMS_1.jpeg"
 alt="Supply Chain"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -151,7 +151,7 @@ logistics efficiency with advanced analytics tools.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/5025663/pexels-photo-5025663.jpeg"
+src="/images/SCMS_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 

@@ -76,7 +76,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+src="/images/HR_1.jpeg"
 alt="Human Resource Management"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -148,7 +148,7 @@ make data-driven workforce decisions.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+src="/images/HR_1.jpeg"
 className="shadow-xl rounded-xl"
 />
 

@@ -72,7 +72,7 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg"
+src="/images/L&SC_1.jpeg"
 alt="logistics industry"
 className="absolute inset-0 object-cover w-full h-full"
 />
@@ -146,7 +146,7 @@ networks for faster and more reliable deliveries.
 initial={{opacity:0,x:40}}
 whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
-src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg"
+src="/images/L&SC_2.jpeg"
 className="shadow-xl rounded-xl"
 />
 
