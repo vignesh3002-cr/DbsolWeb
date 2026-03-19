@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import hero1 from "../assets/home1.jpg"  
-import hero2 from "../assets/home2.jpg"
-import hero3 from "../assets/home3.jpg"
 
 export default function Hero(){
 
