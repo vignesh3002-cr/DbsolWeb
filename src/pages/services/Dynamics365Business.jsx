@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Integration from "../../components/IntegrationSteps"
 
 import {
 FaChartPie,
@@ -185,7 +186,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 </section>
 
-
+<Integration/>
 {/* BUSINESS MODULES */}
 
 <section className="py-24">

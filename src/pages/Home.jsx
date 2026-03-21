@@ -8,6 +8,7 @@ import TrustedClients from "../components/TrustedClient"
 import CallToAction from "../components/CallToAction"
 import Testimonials from "../components/Testimonial"
 import ERPImplementationProcess from "../components/ERP"
+import VideoTestimonials from "./VideoTestimonials"
 export default function Home(){
 
 return(

@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
+import Integration from "../../components/IntegrationSteps"
 import {
 FaChartLine,
 FaFileInvoiceDollar,
@@ -277,7 +277,7 @@ className="p-6 text-center bg-white shadow-lg dark:bg-gray-800 rounded-xl"
 </div>
 
 </section>
-
+<Integration/>
 {/* BENEFITS */}
 
 <section className="py-24">

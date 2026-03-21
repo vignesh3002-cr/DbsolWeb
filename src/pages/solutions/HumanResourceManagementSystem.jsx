@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
+import Integration from "../../components/IntegrationSteps"
 import {
 FaUsers,
 FaUserCheck,
@@ -224,7 +224,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-xl"
+className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-100"} dark:bg-gray-800 rounded-xl`}
 >
 
 <p className="font-medium text-gray-700 dark:text-gray-200">
@@ -276,7 +276,7 @@ className="p-6 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 </div>
 
 </section>
-
+<Integration/>
 
 {/* BUSINESS IMPACT */}
 
@@ -302,7 +302,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
+className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-green-100":"bg-blue-100"} dark:bg-gray-900`}
 >
 
 <p className="font-semibold">

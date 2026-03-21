@@ -13,9 +13,21 @@ return(
 
 {/* Main Footer */}
 
-<div className="grid gap-12 px-6 pb-16 mx-auto max-w-7xl md:grid-cols-4">
+<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
 {/* Company Info */}
+<div className="inset-0 min-w-56">
+
+<video
+  src="/images/ERP_vedio.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="object-cover w-full h-full"
+></video>
+
+</div>
 
 <div>
 
@@ -66,7 +78,7 @@ and cross-platform mobile applications.
 
 {/* Quick Links */}
 
-<div>
+<div className="w-fit">
 
 <h3 className="mb-6 font-semibold text-white">
 Quick Links
@@ -92,36 +104,6 @@ Industries
 
 <li className="transition cursor-pointer hover:text-white">
 Contact
-</li>
-
-</ul>
-
-</div>
-
-{/* Services */}
-
-<div>
-
-<h3 className="mb-6 font-semibold text-white">
-Our Services
-</h3>
-
-<ul className="space-y-3 text-sm">
-
-<li className="transition hover:text-white">
-Dynamics 365 Finance & Operations
-</li>
-
-<li className="transition hover:text-white">
-Dynamics 365 Business & Fundamentals
-</li>
-
-<li className="transition hover:text-white">
-Responsive Website Development
-</li>
-
-<li className="transition hover:text-white">
-Android & iOS App Development
 </li>
 
 </ul>

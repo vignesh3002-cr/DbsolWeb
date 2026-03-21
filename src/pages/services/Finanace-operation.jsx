@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { FaChartLine, FaCogs, FaDatabase, FaShieldAlt } from "react-icons/fa"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
-
+import Integration from "../../components/IntegrationSteps"
 export default function FinanceOperations() {
 const features = [
 {
@@ -152,73 +152,9 @@ className="shadow-xl rounded-xl"
 </div>
 
 </section>
-
-{/* INTEGRATION ARCHITECTURE */}
-
-{/* INTEGRATION ARCHITECTURE */}
-
-<section className="py-28 bg-gray-50 dark:bg-gray-900">
-
-<div className="max-w-6xl px-6 mx-auto text-center">
-
-<h2 className="mb-6 text-4xl font-bold">
-How We Integrate With Your Existing Systems
-</h2>
-
-<p className="max-w-2xl mx-auto mb-16 text-gray-500">
-We seamlessly connect Microsoft Dynamics 365 with your legacy systems,
-third-party tools, and cloud infrastructure for a unified business ecosystem.
-</p>
-
-<div className="grid items-center gap-6 md:grid-cols-3">
-
-{steps.map((item, index) => (
-
-  <div key={index} className="flex items-center gap-4">
-
-    {/* Card */}
-    <div>
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="relative h-32 p-6 overflow-hidden bg-white shadow-lg w-72 rounded-xl"
-    >
-
-      {/* Background Image */}
-      <img
-        src={item.img}
-        alt={item.title}
-        className="absolute inset-0 object-cover w-full h-full"
-      />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10"></div>
-
-      {/* Content */}
-      <div className="relative text-white">
-      </div>
-
-    </motion.div>
-    <div>
-        <h3 className="font-semibold">{item.title}</h3>
-        <p className="text-sm">{item.desc}</p>
-    </div>
-    </div>
-
-    {/* Arrow (only if not last item) */}
-    {index !== steps.length - 1 && index!==2 && (
-      <div><img className="w-36"src="/images/right.png"/></div>
-    )}
-  
-  </div>
-
-))}
-
-</div>
-
-</div>
-
-</section>
-
+{
+<Integration/>
+}
 {/* KEY FEATURES */}
 
 <section className="py-20 bg-white dark:bg-gray-800">
@@ -259,7 +195,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 </section>
 
-{/* IMPLEMENTATION PROCESS 
+
 
 <section className="py-24">
 

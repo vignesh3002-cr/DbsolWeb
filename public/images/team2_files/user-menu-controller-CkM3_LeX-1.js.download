@@ -1,0 +1,1 @@
+import{a as e}from"./stimulus-helpers-Bg5ApOVk-1.js";import r from"./ez-base-controller-DuL8VR07-1.js";import"./stimulus-Cq41p_up-1.js";class t extends r{connect(){new window.SiteHeaderDecorator().init({context:this.element})}}e({name:"user-menu",import:t});export{t as default};
