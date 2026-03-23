@@ -9,7 +9,7 @@ window.scrollTo({top:0,behavior:"smooth"})
 
 return(
 
-<footer className="relative pt-20 text-gray-300 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+<footer className="relative pt-20 text-gray-300 bg-black">
 
 {/* Main Footer */}
 
@@ -19,7 +19,7 @@ return(
 <div className="inset-0 min-w-56">
 
 <video
-  src="/images/ERP_vedio.mp4"
+  src="/images/Solution_System.mp4"
   autoPlay
   loop
   muted

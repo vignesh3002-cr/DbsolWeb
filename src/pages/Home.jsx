@@ -20,6 +20,7 @@ return(
 <Services/>
 <Industries/>
 <ERPImplementationProcess/>
+<VideoTestimonials/>
 <WhyChooseUs/>
 <TrustedClients/>
 <Testimonials/>
