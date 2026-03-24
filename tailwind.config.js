@@ -11,7 +11,24 @@ export default {
         syne: ["'Syne'", "sans-serif"],
         jakarta: ["'Plus Jakarta Sans'", "sans-serif"],
       },
- 
+     keyframes: {
+    dmReveal: { "0%":{"opacity":"0","transform":"translateY(28px)"},"100%":{"opacity":"1","transform":"translateY(0)"} },
+    dmGlow:   { "0%,100%":{"opacity":".38"},"50%":{"opacity":".72"} },
+    dmPulse:  { "0%,100%":{"transform":"scale(1)","opacity":"1"},"50%":{"transform":"scale(1.3)","opacity":".6"} },
+    dmSlide:  { "from":{"opacity":"0","transform":"translateY(10px)"},"to":{"opacity":"1","transform":"translateY(0)"} },
+    dmMqee:   { "from":{"transform":"translateX(0)"},"to":{"transform":"translateX(-50%)"} },
+    dmBlink:  { "0%,100%":{"opacity":"1"},"50%":{"opacity":".3"} },
+    dmRipple: { "0%":{"transform":"scale(1)","opacity":".6"},"100%":{"transform":"scale(2.4)","opacity":"0"} },
+  },
+  animation: {
+    "dm-reveal":  "dmReveal 0.65s cubic-bezier(0.4,0,0.2,1) forwards",
+    "dm-glow":    "dmGlow 8s ease-in-out infinite",
+    "dm-pulse":   "dmPulse 2.2s ease-in-out infinite",
+    "dm-slide":   "dmSlide 0.45s ease both",
+    "dm-marquee": "dmMqee 28s linear infinite",
+    "dm-blink":   "dmBlink 1.4s ease infinite",
+    "dm-ripple":  "dmRipple 2.2s ease-out infinite",
+  },
       /* ── Brand & accent colors ── */
       colors: {
         gold: {

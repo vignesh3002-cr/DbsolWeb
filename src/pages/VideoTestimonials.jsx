@@ -1,16 +1,3 @@
-/**
- * TestimonialsSection.jsx
- * Tailwind CSS v3.4.17  |  React 18+
- *
- * Prerequisites in your project:
- *   1. npm install tailwindcss@3.4.17 postcss autoprefixer
- *   2. Copy tailwind.config.js (provided alongside this file) to your project root
- *   3. In your global CSS:
- *        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
- *        @tailwind base;
- *        @tailwind components;
- *        @tailwind utilities;
- */
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
@@ -275,7 +262,7 @@ function VideoModal({ videoId, onClose }) {
 function TimelineBlock() {
   return (
     <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-5">
-      <p className="text-[10px] text-[#444] tracking-[0.12em] uppercase font-semibold mb-[18px]">
+      <p className="text-[14px] text-[#444] tracking-[0.12em] uppercase font-semibold mb-[18px]">
         Our Migration Process
       </p>
       {TIMELINE.map((step, i) => (
@@ -295,14 +282,14 @@ function TimelineBlock() {
             </div>
             {i < TIMELINE.length - 1 && (
               <div
-                className="w-px flex-1 my-[3px]"
+                className="w-4px flex-1 my-[3px]"
                 style={{ background: "rgba(212,168,83,0.12)" }}
               />
             )}
           </div>
           {/* Right: text */}
           <div className={i < TIMELINE.length - 1 ? "pb-2" : ""}>
-            <p className="text-xs font-semibold text-[#ccc] mb-0.5">{step.label}</p>
+            <p className="text-xs font-bold text-[#c2b41c] mb-0.5">{step.label}</p>
             <p className="text-[11px] text-[#484848] leading-relaxed">{step.desc}</p>
           </div>
         </div>
@@ -390,9 +377,12 @@ export default function TestimonialsSection() {
 
       <section
         ref={sectionRef}
-        className="relative overflow-hidden bg-[#f5f5f5] font-jakarta text-white
+        className="relative overflow-hidden bg-[#e5e5e5] font-jakarta text-white
                    py-[12px] md:py-[24px]"
       >
+                      <h2 className="mb-8 text-[clamp(48px,8vw,60px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+Client Success Stories
+</h2>
         {/* ── Particle background ── */}
         <div className="absolute inset-0 pointer-events-none opacity-65">
           <ParticleCanvas />
@@ -428,26 +418,13 @@ export default function TestimonialsSection() {
 
         {/* ── Content wrapper ── */}
         <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 xl:px-11">
-
           {/* ── HEADER ─────────────────────────────────────────────────── */}
           <div className="mb-11" style={reveal("0.05s")}>
             {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 rounded-full px-[18px] py-1.5 mb-[22px]"
-              style={{ background: "rgba(212,168,83,0.08)", border: "1px solid rgba(212,168,83,0.22)" }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full inline-block animate-tm-pulse"
-                style={{ background: "#D4A853" }}
-              />
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#D4A853" }}>
-                Client Success Stories
-              </span>
-            </div>
 
             {/* Headline */}
-            <h2 className="font-syne font-extrabold leading-[1.06] tracking-[-0.03em] text-gray-800 mb-[18px]
-                           text-[clamp(28px,8vw,40px)] md:text-[clamp(38px,4.5vw,58px)]">
+            <h2 className="font-serif font-extrabold leading-[1.06] tracking-[-0.03em] text-white mb-[18px]
+                           text-[clamp(48px,8vw,60px)] md:text-[clamp(58px,5vw,80px)]">
               Real migrations.<br />
               <span
                 className="text-transparent bg-clip-text"
@@ -485,7 +462,7 @@ export default function TestimonialsSection() {
                     className="text-[11px] px-[13px] py-[5px] rounded-full"
                     style={{
                       background: accent ? t.accentAlpha16 : "rgba(255,255,255,0.04)",
-                      border:     `1px solid ${accent ? t.accentAlpha40 : "rgba(255,255,255,0.08)"}`,
+                      border:     `2px solid ${accent ? t.accentAlpha40 : "rgba(255,255,255,0.08)"}`,
                       color:      accent ? t.accentHex : "#585858",
                       fontWeight: accent ? 600 : 400,
                       letterSpacing: accent ? "0.08em" : "0.02em",
@@ -579,7 +556,7 @@ export default function TestimonialsSection() {
                              rounded-xl px-3.5 py-2 backdrop-blur-2xl"
                   style={{
                     background:  "rgba(6,6,8,0.82)",
-                    border:      `1px solid ${t.accentAlpha28}`,
+                    border:      `2px solid ${t.accentAlpha28}`,
                     boxShadow:   "0 8px 28px rgba(0,0,0,0.45)",
                     transition:  "border-color 0.4s ease",
                   }}
@@ -589,7 +566,7 @@ export default function TestimonialsSection() {
                                text-[11px] font-bold"
                     style={{
                       background: t.accentAlpha20,
-                      border:     `1.5px solid ${t.accentAlpha55}`,
+                      border:     `2px solid ${t.accentAlpha55}`,
                       color:      t.accentHex,
                     }}
                   >
@@ -597,14 +574,14 @@ export default function TestimonialsSection() {
                   </div>
                   <div>
                     <p className="text-[13px] font-semibold text-[#eee] leading-none mb-0.5">{t.speaker}</p>
-                    <p className="text-[10px] text-[#555] leading-none">{t.role}</p>
+                    <p className="text-[10px] text-[#c3c3c3] leading-none">{t.role}</p>
                   </div>
                 </div>
 
                 {/* Duration badge (top-right) */}
                 <div
                   className="absolute top-3.5 right-3.5 rounded-lg px-3 py-[5px]
-                             text-[11px] text-[#666] backdrop-blur-xl"
+                             text-[11px] text-[#c4c4c4] backdrop-blur-xl"
                   style={{
                     background: "rgba(6,6,8,0.75)",
                     border:     "1px solid rgba(255,255,255,0.07)",
@@ -621,11 +598,11 @@ export default function TestimonialsSection() {
                     key={p.key}
                     onClick={() => switchPhase(p.key)}
                     className="phase-btn flex-1 py-2.5 rounded-xl cursor-pointer
-                               font-[family-name:inherit] text-[11px] md:text-xs font-medium
+                               font-[family-name:inherit] text-[11px] md:text-xs font-semibold
                                tracking-[0.04em] transition-all duration-[220ms]"
                     style={{
                       background:   phase === p.key ? `${p.color}12` : "transparent",
-                      border:       `1px solid ${phase === p.key ? p.color + "45" : "rgba(255,255,255,0.07)"}`,
+                      border:       `2px solid ${phase === p.key ? p.color + "45" : "rgba(255,255,255,0.07)"}`,
                       color:        phase === p.key ? p.color : "#555",
                     }}
                   >
@@ -789,10 +766,10 @@ export default function TestimonialsSection() {
               <a
                 href="#contact"
                 className="ts-cta block text-center no-underline px-6 py-[15px] rounded-xl
-                           text-[13px] font-semibold tracking-[0.06em] font-[family-name:inherit]
+                           text-[20px] font-semibold tracking-[0.06em] font-[family-name:inherit]
                            transition-all duration-[250ms]"
                 style={{
-                  border:     "1px solid rgba(212,168,83,0.38)",
+                  border:     "2px solid rgba(212,168,83,0.38)",
                   color:      "#D4A853",
                   background: "rgba(212,168,83,0.04)",
                 }}
@@ -814,9 +791,9 @@ export default function TestimonialsSection() {
                 </span>
               </div>
           {/* ── MARQUEE BAR ─────────────────────────────────────────────── */}
-          <div className="mt-12 md:mt-[72px]" style={reveal("0.4s")}>
+          <div className="mt-4" style={reveal("0.4s")}>
             <div className="border-t border-white/[0.05] pt-7">
-              <p className="text-[10px] text-[#383838] tracking-[0.14em] uppercase font-semibold text-center mb-4">
+              <p className="text-[16px] text-[#383838] tracking-[0.14em] uppercase font-semibold text-center mb-4">
                 Services we deliver
               </p>
               {/* Marquee with fade masks */}
@@ -831,14 +808,14 @@ export default function TestimonialsSection() {
                   {[...SERVICES, ...SERVICES].map((s, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center gap-1.5 px-4 py-[7px] rounded-full text-xs whitespace-nowrap"
+                      className="inline-flex items-center gap-1.5 px-4 py-[7px] rounded-full text-xs whitespace-nowrap font-semibold"
                       style={{
                         border: "1px solid rgba(212,168,83,0.16)",
                         color:  "rgba(212,168,83,0.65)",
                       }}
                     >
                       <span
-                        className="inline-block w-1 h-1 rounded-full opacity-55"
+                        className="inline-block w-1 h-1 font-semibold rounded-full opacity-55"
                         style={{ background: "#D4A853" }}
                       />
                       {s}

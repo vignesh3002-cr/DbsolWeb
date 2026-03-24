@@ -9,6 +9,7 @@ import CallToAction from "../components/CallToAction"
 import Testimonials from "../components/Testimonial"
 import ERPImplementationProcess from "../components/ERP"
 import VideoTestimonials from "./VideoTestimonials"
+import DataMigrationSection from "./DataMigrationSection"
 export default function Home(){
 
 return(
@@ -21,6 +22,7 @@ return(
 <Industries/>
 <ERPImplementationProcess/>
 <VideoTestimonials/>
+<DataMigrationSection/>
 <WhyChooseUs/>
 <TrustedClients/>
 <Testimonials/>
