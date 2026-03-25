@@ -262,7 +262,7 @@ function AnimStat({ stat, visible, delay = 0 }) {
     >
       <span className="text-[10px]" style={{ color: stat.color }}>{stat.icon}</span>
       <span
-        className="font-bold leading-none text-white font-syne"
+        className="font-bold leading-none text-green-500 font-syne"
         style={{ fontSize: "clamp(22px,3vw,30px)", letterSpacing: "-0.03em" }}
       >
         {display}
@@ -502,7 +502,7 @@ export default function DataMigrationSection() {
       <section
         ref={sectionRef}
         className="relative overflow-hidden text-white dm-root"
-        style={{ background: "#050507", padding: "108px 0 120px" }}
+        style={{ background: "white", padding: "68px 0 120px" }}
       >
 
         {/* ── Particle BG ── */}
@@ -562,23 +562,13 @@ export default function DataMigrationSection() {
           ══════════════════════════════════════════ */}
           <div className="mb-16" style={reveal("0.04s")}>
             {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2.5 rounded-full px-5 py-[7px] mb-6"
-              style={{ background: "rgba(212,168,83,0.08)", border: "1px solid rgba(212,168,83,0.22)" }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full inline-block"
-                style={{ background: "#D4A853", animation: "dmPulse 2.2s ease-in-out infinite" }}
-              />
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#D4A853" }}>
-                Data Migration Transparency
-              </span>
-            </div>
-
-            <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+         <h2 className="mb-12 text-[clamp(38px,6vw,58px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+Data Migration Transperancy
+</h2>
+            <div className="flex flex-col justify-between gap-32 lg:flex-row lg:items-end">
               <div>
                 <h2
-                  className="dm-font-syne font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
+                  className="dm-font-syne text-blue-400 font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
                   style={{ fontSize: "clamp(30px,5vw,58px)" }}
                 >
                   Your data arrives<br />
@@ -610,7 +600,7 @@ export default function DataMigrationSection() {
                   <div className="w-2 h-2 rounded-full" style={{ background: "#6BBF7A" }} />
                 </div>
                 <div>
-                  <p className="text-[11px] font-semibold text-white leading-none">Live Tracking Active</p>
+                  <p className="text-[11px] font-semibold text-red-600 leading-none">Live Tracking Active</p>
                   <p className="text-[9px] text-[#4a4a4a] mt-0.5">Azure DevOps · LCS</p>
                 </div>
               </div>

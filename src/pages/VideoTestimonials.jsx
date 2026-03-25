@@ -380,7 +380,7 @@ export default function TestimonialsSection() {
         className="relative overflow-hidden bg-[#e5e5e5] font-jakarta text-white
                    py-[12px] md:py-[24px]"
       >
-                      <h2 className="mb-8 text-[clamp(48px,8vw,60px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+                      <h2 className="mb-8 text-[clamp(38px,6vw,60px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
 Client Success Stories
 </h2>
         {/* ── Particle background ── */}
@@ -790,41 +790,6 @@ Client Success Stories
                   NDA-protected client engagements
                 </span>
               </div>
-          {/* ── MARQUEE BAR ─────────────────────────────────────────────── */}
-          <div className="mt-4" style={reveal("0.4s")}>
-            <div className="border-t border-white/[0.05] pt-7">
-              <p className="text-[16px] text-[#383838] tracking-[0.14em] uppercase font-semibold text-center mb-4">
-                Services we deliver
-              </p>
-              {/* Marquee with fade masks */}
-              <div
-                className="overflow-hidden"
-                style={{
-                  maskImage: "linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%)",
-                }}
-              >
-                <div className="flex gap-3.5 animate-marquee" style={{ width: "max-content" }}>
-                  {[...SERVICES, ...SERVICES].map((s, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1.5 px-4 py-[7px] rounded-full text-xs whitespace-nowrap font-semibold"
-                      style={{
-                        border: "1px solid rgba(212,168,83,0.16)",
-                        color:  "rgba(212,168,83,0.65)",
-                      }}
-                    >
-                      <span
-                        className="inline-block w-1 h-1 font-semibold rounded-full opacity-55"
-                        style={{ background: "#D4A853" }}
-                      />
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
       </section>
