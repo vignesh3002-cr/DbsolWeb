@@ -3,8 +3,29 @@ import { Link } from "react-router-dom"
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 export default function Contact(){
-
+ const form  = useRef();
+ const sendEmail = (e) =>{
+    e.preventDefault();
+ emailjs.sendForm(
+        "service_zakxdhu",
+        "template_f8if95g",
+        form.current,
+        "WqsGjD4ltQ3Kgu4PA"
+    )
+    .then(
+        (result)=>{
+            console.log(result.text);
+            alert("Message sent successfully!");
+        },
+    (error)=>{
+        console.log(error.text);
+        alert("Failed to send message.");
+    }
+    );
+ }
 return(
 <>
 <Navbar/>
@@ -117,39 +138,44 @@ className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
 Send Us a Message
 </h2>
 
-<form className="grid gap-8 md:grid-cols-2">
 
+<form ref={form} onSubmit={sendEmail} className="grid gap-8 md:grid-cols-2">
 <input
 type="text"
+name="name"
 placeholder="Full Name"
 className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 />
 
 <input
 type="email"
+name="email"
 placeholder="Email Address"
 className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 />
 
 <input
 type="text"
+name="company"
 placeholder="Company Name"
 className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 />
 
 <input
 type="text"
+name="phone"
 placeholder="Phone Number"
 className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 />
 
 <textarea
 rows="5"
+name="message"
 placeholder="Describe your project or requirement..."
 className="p-4 border rounded-lg md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
 ></textarea>
 
-<button
+<button type="submit"Send Message
 className="py-4 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
 >
 
