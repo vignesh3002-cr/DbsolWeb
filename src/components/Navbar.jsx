@@ -93,32 +93,32 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-white rounded-lg shadow-xl bg-grid-subtle dark:bg-gray-800"
+className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
  <NavLink  
  to="/finance-operation"
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
 Finance & Operations</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink to="/Dynamics365Business"  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
 Dynamics 365 Business & Fundamentals</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink to="/Webdevelopment"  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
 Web Development</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink to="/MobileAppDevelopment" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
 App Development</NavLink>
 </li>
 
@@ -152,34 +152,34 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-56 p-4 space-y-3 text-white rounded-lg bg-grid-subtle sadow-xl dark:bg-gray-800"
+className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
 <NavLink to="/FinancialManagementSystem" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? " border-b-2 border-blue-600 pb-1" : ""}>
 Financial Management System</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/HumanResourceManagementSystem" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? " border-b-2 border-blue-600 pb-1" : ""}>
 Human Resource Management System</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/SCMS" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? " border-b-2 border-blue-600 pb-1" : ""}>
 Supply Chain Management System</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/WMS"  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
+  isActive ? " border-b-2 border-blue-600 pb-1" : ""}>
 Warehouse Management System</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
 <NavLink to="/IMS" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? " border-b-2 border-blue-600 pb-1" : ""}
  >Inventory Management System</NavLink>
 </li>
 
@@ -219,73 +219,73 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 z-50 w-56 p-4 space-y-3 text-white rounded-lg shadow-2xl bg-grid-subtle dark:bg-gray-800"
+className="absolute left-0 z-50 w-56 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink
   to="/FinanceBanking"
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
 >
 Finance & Banking</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink
   to="/IT.ITES"
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
 >
 IT / ITES</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/Manufacturing"
    className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Manufacturing</NavLink>
 </li>
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/Retail&Wholesale"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Retail & Wholesale</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink to="/LogisticsSupplyChain"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Logistic Supply Chain</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer">
   <NavLink to="/HealthCare"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Health Care</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
   <NavLink to="/Education"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Education Institute</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
     <NavLink to="/ProfessionalServices"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    > 
 Professional Services</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer ">
     <NavLink to="/Hospitality"
    className={({isActive}) =>
-   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
    >
 Hospitality</NavLink>
 </li>

@@ -378,7 +378,7 @@ export default function TestimonialsSection() {
       <section
         ref={sectionRef}
         className="relative overflow-hidden bg-[#e5e5e5] font-jakarta text-white
-                   py-[12px] md:py-[24px]"
+                   py-[8px] md:py-[8px]"
       >
                       <h2 className="mb-8 text-[clamp(38px,6vw,60px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
 Client Success Stories

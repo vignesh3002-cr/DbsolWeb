@@ -30,7 +30,7 @@ const industries = [
 
 return(
 
-<section className="py-28 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+<section className="py-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
 
 <div className="px-6 mx-auto max-w-7xl">
 

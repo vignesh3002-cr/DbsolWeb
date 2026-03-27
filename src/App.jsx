@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import "./App.jsx";
 import Contact from "./pages/Contact";
 import FinanceOperations from "./pages/services/Finanace-operation";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
