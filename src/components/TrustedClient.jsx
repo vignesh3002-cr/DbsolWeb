@@ -24,7 +24,7 @@ const clients = [
 
 return(
 
-<section className="py-24 overflow-hidden bg-white dark:bg-gray-900 dark:text-white">
+<section className="py-8 overflow-hidden bg-white dark:bg-gray-900 dark:text-white">
 
 <div className="px-6 mx-auto max-w-7xl">
 

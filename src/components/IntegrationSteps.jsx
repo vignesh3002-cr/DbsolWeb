@@ -53,13 +53,13 @@ third-party tools, and cloud infrastructure for a unified business ecosystem.
 
 {steps.map((item, index) => (
 
-  <div key={index} className="flex items-center gap-4">
+  <div key={index} className="flex flex-col items-center gap-4 f md:flex-row">
 
     {/* Card */}
     <div>
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="relative h-32 p-6 overflow-hidden bg-white shadow-lg w-72 rounded-xl"
+      className="relative w-[clamp(180px,20vw,1000px)] h-[clamp(100px,10vw,300px)] p-6 overflow-hidden bg-white shadow-lg rounded-xl"
     >
 
       {/* Background Image */}
@@ -82,11 +82,18 @@ third-party tools, and cloud infrastructure for a unified business ecosystem.
         <p className="text-sm">{item.desc}</p>
     </div>
     </div>
-
+    <div className="hidden md:inline-block">
     {/* Arrow (only if not last item) */}
     {index !== steps.length - 1 && index!==2 && (
-      <div><img className="w-36"src="/images/right.png"/></div>
+      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.png" deg/></div>
     )}
+    </div>
+    <div className="inline-block md:hidden">
+          {/* Arrow (only if not last item) */}
+    {index !== steps.length - 1 && (
+      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.png" deg/></div>
+    )}
+    </div>
   
   </div>
 

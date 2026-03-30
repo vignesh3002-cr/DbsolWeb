@@ -45,7 +45,7 @@ icon:<FaAward size={30}/>
 
 return(
 
-<section ref={ref} className="text-white py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+<section ref={ref} className="py-8 text-white bg-gradient-to-br from-gray-900 via-gray-800 to-black">
 
 <div className="px-6 mx-auto max-w-7xl">
 

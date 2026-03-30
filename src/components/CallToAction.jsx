@@ -5,7 +5,7 @@ export default function CallToAction(){
 
 return(
 
-<section className="relative py-32 overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700">
+<section className="relative py-8 overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700">
 
 {/* Animated background circles */}
 
