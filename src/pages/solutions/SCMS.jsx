@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Integration from "../../components/IntegrationSteps" 
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
@@ -227,7 +228,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-xl"
+className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-50"} dark:bg-gray-800 rounded-xl`}
 >
 
 <p className="font-medium text-gray-700 dark:text-gray-200">
@@ -244,7 +245,9 @@ className="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-xl"
 
 </section>
 {/* MODULES */}
-
+{
+    <Integration />
+}
 <section className="py-24">
 
 <div className="max-w-6xl px-6 mx-auto">
@@ -304,7 +307,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
+className={`p-6 shadow-lg ${index%2==0? "bg-gradient-to-r from-purple-400 to-orange-300":"bg-green-200"} dark:bg-gray-800 rounded-xl`}
 >
 
 <p className="font-semibold">
