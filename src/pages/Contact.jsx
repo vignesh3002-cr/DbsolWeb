@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+import { useEffect,useState } from "react"
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -7,6 +8,21 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 export default function Contact(){
  const form  = useRef();
+   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+
+    const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:+91 9994883682";
+    } else {
+      navigator.clipboard.writeText("+91 9994883682");
+      alert("Phone number copied! You can paste it to call.");
+    }
+  };
+
  const sendEmail = (e) =>{
     e.preventDefault();
  emailjs.sendForm(
@@ -83,14 +99,15 @@ Contact Us
 
 <motion.div
 whileHover={{scale:1.05}}
-className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
+onClick={handleClick}
+className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl cursor-pointer"
 >
 
 <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600"/>
 
 <h3 className="mb-2 text-lg font-semibold">Phone</h3>
 
-<p className="text-gray-500">+91 98765 43210</p>
+<p className="text-gray-500">+91 9994883682</p>
 
 </motion.div>
 
@@ -98,15 +115,15 @@ className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
 
 <motion.div
 whileHover={{scale:1.05}}
-className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
+className="p-10 text-center bg-white shadow-lg cursor-pointer dark:bg-gray-800 rounded-2xl"
 >
-
+<a href="mailto:jayakumar.k@dbsoltechnologies.com">
 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600"/>
 
 <h3 className="mb-2 text-lg font-semibold">Email</h3>
 
-<p className="text-gray-500">contact@dbsol.in</p>
-
+<p className="text-gray-500">jayakumar.k@dbsoltechnologies.com</p>
+</a>
 </motion.div>
 
 {/* Address */}
@@ -115,13 +132,18 @@ className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
 whileHover={{scale:1.05}}
 className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
 >
-
+<a
+  href="https://maps.app.goo.gl/khLbGNhEMZSXr7VH6"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 <FaMapMarkerAlt className="mx-auto mb-4 text-3xl text-blue-600"/>
 
 <h3 className="mb-2 text-lg font-semibold">Office</h3>
 
-<p className="text-gray-500">Chennai, Tamil Nadu, India</p>
-
+<p className="text-gray-500">VP Chindhan Ave
+Chennai, Tamil Nadu, India</p>
+</a>
 </motion.div>
 
 </div>
@@ -203,7 +225,7 @@ Our Location
 
 <iframe
 title="company location"
-src="https://www.google.com/maps?q=Chennai&output=embed"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332101.68832345324!2d79.94720254802596!3d13.008628940473582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f638bae20f87%3A0x6e87491d6d266f6!2sVP%20Chindhan%20Ave%2C%20Senthil%20Nagar%2C%20Urapakkam%2C%20Tamil%20Nadu%20603210!5e0!3m2!1sen!2sin!4v1774953009145!5m2!1sen!2sin%22"
 width="100%"
 height="400"
 className="border-0"
