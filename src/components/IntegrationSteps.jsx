@@ -36,15 +36,15 @@ return(
  <>
 {/* INTEGRATION ARCHITECTURE */}
 
-<section className="py-28 bg-gray-50 dark:bg-gray-900">
+<section className="py-8 bg-gray-50 dark:bg-gray-900">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-6 text-4xl font-bold">
+<h2 className="mb-6 text-4xl font-bold dark:text-white">
 How We Integrate With Your Existing Systems
 </h2>
 
-<p className="max-w-2xl mx-auto mb-16 text-gray-500">
+<p className="max-w-2xl mx-auto mb-16 text-gray-500 dark:text-gray-300">
 We seamlessly connect Microsoft Dynamics 365 with your legacy systems,
 third-party tools, and cloud infrastructure for a unified business ecosystem.
 </p>
@@ -78,8 +78,8 @@ third-party tools, and cloud infrastructure for a unified business ecosystem.
 
     </motion.div>
     <div>
-        <h3 className="font-semibold">{item.title}</h3>
-        <p className="text-sm">{item.desc}</p>
+        <h3 className="font-semibold dark:text-white">{item.title}</h3>
+        <p className="text-sm dark:text-gray-300">{item.desc}</p>
     </div>
     </div>
     <div className="hidden md:inline-block">

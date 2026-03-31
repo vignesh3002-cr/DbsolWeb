@@ -157,13 +157,17 @@ className="shadow-xl rounded-xl"
 }
 {/* KEY FEATURES */}
 
-<section className="py-20 bg-white dark:bg-gray-800">
+<section className="py-20  bg-white dark:bg-gray-800">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 Core Capabilities
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+  Empower organizations to manage finances with accuracy and efficiency—leveraging intelligent insights, automating key processes, centralizing critical data, and ensuring strong compliance and security.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 dark:text-white">
 
@@ -197,14 +201,17 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 
 
-<section className="py-24">
+<section className="py-24 pt-14">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 Our Implementation Process
 </h2>
 
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+  Implementation Process ensures a smooth and effective journey from idea to execution—starting with expert consulting, followed by strategic planning, seamless implementation, and continuous optimization for better performance and growth.
+</p>
 <div className="grid gap-10 md:grid-cols-4">
 
 {["Consulting","Planning","Implementation","Optimization"].map((step,index)=>(

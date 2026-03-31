@@ -159,13 +159,17 @@ className="shadow-xl rounded-xl"
 
 {/* FEATURES */}
 
-<section className="py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900">
+<section className="py-20 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Key HR Features
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300"> 
+    enabling efficient employee records, automated recruitment and onboarding, accurate attendance and payroll processing, insightful performance analytics, and seamless management of remote teams.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -181,11 +185,11 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 {item.icon}
 </div>
 
-<h3 className="mb-2 text-lg font-semibold">
+<h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500 dark:text-gray-300">
+<p className="text-sm text-gray-500 dark:text-gray-400">
 {item.desc}
 </p>
 
@@ -201,13 +205,17 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 
 {/* HR WORKFLOW */}
 
-<section className="py-24">
+<section className="py-20 pt-10">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="text-4xl font-bold text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl mx-auto mb-5 font-bold text-gray-800 mb-14 dark:text-white">
 HR Management Workflow
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    HR Management Workflow ensures a structured employee lifecycle—from candidate recruitment and onboarding to attendance tracking, payroll processing, performance management, and continuous employee development.
+</p>
 
 <div className="grid gap-10 md:grid-cols-5">
 
@@ -243,13 +251,17 @@ className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-50"} dark:bg-gra
 
 {/* MODULES */}
 
-<section className="py-24">
+<section className="py-24 pt-10">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl mb-5 font-bold text-center text-gray-800 mb-14 dark:text-white">
 Core HR Modules
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Core HR Modules provide a complete framework for managing the workforce—covering employee information, recruitment, payroll, performance, attendance, training, compliance, and HR analytics for informed decision-making.
+</p>
 
 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 

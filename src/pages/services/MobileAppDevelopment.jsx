@@ -149,13 +149,16 @@ className="shadow-xl rounded-xl"
 
 {/* FEATURES */}
 
-<section className="py-20 bg-white dark:bg-gray-800">
+<section className="py-20 pt-10 bg-white dark:bg-gray-800">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 Our Mobile Development Expertise
 </h2>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
+    Experience a seamless blend of modern UI/UX and robust engineering designed to scale alongside your business goals.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 dark:text-white">
 
@@ -191,13 +194,17 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 {/* DEVELOPMENT PROCESS */}
 
-<section className="py-24">
+<section className="py-20 pt-14">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-6 dark:text-blue-600">
 Our Mobile App Development Process
 </h2>
+
+<p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
+    Establishing a transparent and structured mobile app development process is key to building trust and ensuring a high-quality final product.
+</p>
 
 <div className="grid gap-10 text-gray-400 md:grid-cols-4">
 

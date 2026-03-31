@@ -151,14 +151,17 @@ className="shadow-xl rounded-xl"
 
 {/* FEATURES */}
 
-<section className="py-24 bg-white dark:bg-gray-800">
+<section className="py-24 pt-14 bg-white dark:bg-gray-800">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Key Features
 </h2>
 
+<p >
+    enabling automated accounting, efficient budget and expense management, real-time analytics, centralized data access, secure transactions, and continuous performance monitoring.
+</p>
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
 {features.map((item,index)=>(
@@ -173,11 +176,11 @@ className="p-8 text-center shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
 {item.icon}
 </div>
 
-<h3 className="mb-2 text-lg font-semibold">
+<h3 className="mb-2 text-lg font-semibold dark:text-white ">
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500">
+<p className="text-sm text-black dark:text-gray-300">
 {item.desc}
 </p>
 
@@ -193,13 +196,18 @@ className="p-8 text-center shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
 
 {/* FINANCIAL WORKFLOW */}
 
-<section className="py-24">
+<section className="py-24 pt-14">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="text-4xl font-bold text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Financial Workflow
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Financial Workflow ensures smooth and accurate financial operations—from recording transactions and processing accounts to allocating budgets, generating reports, and analyzing performance for better decision-making.
+
+</p>
 
 <div className="grid gap-10 md:grid-cols-5">
 
@@ -234,13 +242,18 @@ className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-50"} dark:bg-gra
 
 {/* CORE MODULES */}
 
-<section className="py-24">
+<section className="py-24 pt-5">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-6 dark:text-white">
 Core Financial Modules
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Core Financial Modules provide a comprehensive foundation for managing enterprise finances—covering general ledger, payables and receivables, budget planning, cash flow management, reporting, tax management, and expense tracking for complete financial control.
+
+</p>
 
 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
@@ -279,7 +292,7 @@ className="p-6 text-center bg-white shadow-lg dark:bg-gray-800 rounded-xl"
 <Integration/>
 {/* BENEFITS */}
 
-<section className="py-24">
+<section className="py-24 ">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
@@ -300,8 +313,8 @@ Business Benefits
 key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-orange-300":"bg-green-200"} dark:bg-gray-800 rounded-xl`}
+transition={{delay:index*0.3}}
+className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-orange-300  dark:text-white dark:bg-gray-600":"bg-green-200  dark:text-white dark:bg-gray-600"}  rounded-xl`}
 >
 
 <p className="font-semibold">

@@ -150,13 +150,16 @@ className="shadow-xl rounded-xl"
 
 {/* FEATURES */}
 
-<section className="py-20 bg-white dark:bg-gray-800">
+<section className="py-20 bg-white dark:bg-gray-800 pt-10">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 Our Web Development Expertise
 </h2>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
+    Delivering modern, responsive, and high-performance web solutions with creative design, strong SEO, and secure backend systems to enhance user experience and business growth.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 dark:text-white">
 
@@ -193,13 +196,16 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 {/* DEVELOPMENT PROCESS */}
 
-<section className="py-24">
+<section className="py-20 pt-12">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 Our Development Process
 </h2>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
+    Streamlining development through strategic planning, thoughtful design, efficient development, and seamless launch to deliver high-quality digital solutions.
+</p>
 
 <div className="grid gap-10 md:grid-cols-4 dark:text-gray-400">
 

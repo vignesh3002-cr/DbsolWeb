@@ -144,15 +144,19 @@ className="shadow-xl rounded-xl"
 
 {/* FEATURES */}
 
-<section className="py-20 bg-white dark:bg-gray-800">
+<section className="py-8 bg-white dark:bg-gray-800">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 
 Key Business Capabilities
 
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Empowering organizations with integrated tools and intelligent solutions to streamline operations, enhance decision-making, and drive business growth. Our capabilities are designed to improve efficiency, strengthen customer relationships, and enable seamless digital transformation across all business functions.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -189,16 +193,18 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 <Integration/>
 {/* BUSINESS MODULES */}
 
-<section className="py-24">
+<section className="py-24 pt-10">
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-blue-600">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
 
 Business Modules We Implement
 
 </h2>
 
+<p className="max-w-3xl mx-auto mb-16 dark:text-gray-300 text-center">Empowering your business with integrated modules for finance, sales, supply chain, and customer service to ensure smooth operations and enhanced productivity.
+</p>
 <div className="grid gap-10 md:grid-cols-4">
 
 {["Finance","Sales","Supply Chain","Customer Service"].map((item,index)=>(

@@ -40,11 +40,12 @@ return(
 
 <section className="py-8 bg-gray-100 dark:bg-gray-900">
 
-<div className="max-w-6xl px-6 mx-auto">
+<div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-16 text-4xl font-bold text-center text-gray-800 dark:text-white">
+<h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
 ERP Implementation Process
 </h2>
+<p className="mb-16 dark:text-gray-300">Driving seamless ERP implementation through strategic planning, smart design, smooth integration, and continuous support for optimized business performance.</p>
 
 <div className="relative">
 
@@ -72,7 +73,7 @@ index%2===0 ? "justify-start":"justify-end"
 {step.title}
 </h3>
 
-<p className="text-gray-600 dark:text-gray-300">
+<p className="max-w-2xl text-gray-600 dark:text-gray-300">
 {step.desc}
 </p>
 
