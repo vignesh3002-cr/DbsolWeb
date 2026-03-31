@@ -256,7 +256,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
+className={`p-6 shadow-lg ${index%2==0?"bg-yellow-100":"bg-red-100"} dark:bg-gray-800 rounded-xl`}
 >
 
 <p className="font-semibold">{item}</p>

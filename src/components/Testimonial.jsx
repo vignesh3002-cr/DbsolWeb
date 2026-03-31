@@ -41,7 +41,7 @@ review:"Professional team with deep technical expertise. They built our mobile a
 
 return(
 
-<section className="py-24 bg-gray-50 dark:bg-gray-900">
+<section className="py-8 bg-gray-50 dark:bg-gray-900">
 
 <div className="px-6 mx-auto max-w-7xl">
 

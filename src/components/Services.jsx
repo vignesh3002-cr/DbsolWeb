@@ -37,7 +37,7 @@ path:"/MobileAppDevelopment"
 
 return(
 
-<section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
+<section className="py-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
 
 <div className="px-6 mx-auto max-w-7xl">
 

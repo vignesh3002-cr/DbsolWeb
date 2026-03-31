@@ -262,7 +262,7 @@ function AnimStat({ stat, visible, delay = 0 }) {
     >
       <span className="text-[10px]" style={{ color: stat.color }}>{stat.icon}</span>
       <span
-        className="font-bold leading-none text-white font-syne"
+        className="font-bold leading-none text-green-500 font-syne"
         style={{ fontSize: "clamp(22px,3vw,30px)", letterSpacing: "-0.03em" }}
       >
         {display}
@@ -502,7 +502,7 @@ export default function DataMigrationSection() {
       <section
         ref={sectionRef}
         className="relative overflow-hidden text-white dm-root"
-        style={{ background: "#050507", padding: "108px 0 120px" }}
+        style={{ background: "white", padding: "8px 0 0px" }}
       >
 
         {/* ── Particle BG ── */}
@@ -562,24 +562,14 @@ export default function DataMigrationSection() {
           ══════════════════════════════════════════ */}
           <div className="mb-16" style={reveal("0.04s")}>
             {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2.5 rounded-full px-5 py-[7px] mb-6"
-              style={{ background: "rgba(212,168,83,0.08)", border: "1px solid rgba(212,168,83,0.22)" }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full inline-block"
-                style={{ background: "#D4A853", animation: "dmPulse 2.2s ease-in-out infinite" }}
-              />
-              <span className="text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: "#D4A853" }}>
-                Data Migration Transparency
-              </span>
-            </div>
-
-            <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+         <h2 className="mb-12 text-[clamp(28px,6vw,52px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+Data Migration Transperancy
+</h2>
+            <div className="flex flex-col justify-between gap-32 lg:flex-row lg:items-end">
               <div>
                 <h2
-                  className="dm-font-syne font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
-                  style={{ fontSize: "clamp(30px,5vw,58px)" }}
+                  className=" font-serif text-blue-400 font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
+                  style={{ fontSize: "clamp(20px,5vw,48px)" }}
                 >
                   Your data arrives<br />
                   <span
@@ -610,7 +600,7 @@ export default function DataMigrationSection() {
                   <div className="w-2 h-2 rounded-full" style={{ background: "#6BBF7A" }} />
                 </div>
                 <div>
-                  <p className="text-[11px] font-semibold text-white leading-none">Live Tracking Active</p>
+                  <p className="text-[11px] font-semibold text-red-600 leading-none">Live Tracking Active</p>
                   <p className="text-[9px] text-[#4a4a4a] mt-0.5">Azure DevOps · LCS</p>
                 </div>
               </div>
@@ -798,7 +788,7 @@ export default function DataMigrationSection() {
                     {p.phase}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className={`text-[13px] font-semibold leading-none mb-1 ${i === activePhase ? "text-white" : "text-[#666]"}`}>
+                    <p className={`text-[13px] font-semibold leading-none mb-1 ${i === activePhase ? "text-gray-800" : "text-[#666]"}`}>
                       {p.title}
                     </p>
                     <p className="text-[11px] text-[#3a3a3a] truncate">{p.tools[0]} · {p.tools[1]}</p>
@@ -819,13 +809,13 @@ export default function DataMigrationSection() {
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className="flex items-center justify-center w-8 h-8 text-sm rounded-xl shrink-0"
-                    style={{ background: "rgba(107,191,122,0.12)", border: "1px solid rgba(107,191,122,0.25)" }}
+                    className="flex items-center justify-center w-8 h-8 text-sm font-bold text-white bg-green-200 rounded-xl shrink-0"
+                    style={{border: "1px solid rgba(107,191,122,0.25)" }}
                   >
                     ✓
                   </div>
                   <div>
-                    <p className="text-[12px] font-semibold text-white mb-1">Data Integrity Guarantee</p>
+                    <p className="text-[12px] font-semibold text-green-600 mb-1">Data Integrity Guarantee</p>
                     <p className="text-[11px] text-[#555] leading-relaxed">
                       We guarantee 100% record reconciliation between source and target. Any discrepancy is our responsibility to resolve — before go-live, at no additional cost.
                     </p>
@@ -838,232 +828,7 @@ export default function DataMigrationSection() {
           {/* ══════════════════════════════════════════
               TOOLS SECTION — DMF · LCS · Azure DevOps
           ══════════════════════════════════════════ */}
-          <div
-            ref={toolRef}
-            className="rounded-[22px] overflow-hidden mb-6"
-            style={{
-              background: "rgba(255,255,255,0.018)",
-              border: "1px solid rgba(255,255,255,0.07)",
-              ...reveal("0.3s"),
-            }}
-          >
-            <div
-              className="flex flex-wrap items-center justify-between gap-4 px-6 py-6 md:px-8"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
-            >
-              <div>
-                <p className="text-[10px] text-[#444] tracking-[0.14em] uppercase font-semibold mb-1">
-                  Our Toolstack
-                </p>
-                <h3 className="text-xl font-bold text-white dm-font-syne">DMF · LCS · Azure DevOps</h3>
-              </div>
-              <p className="text-[13px] text-[#555] max-w-[380px]">
-                Three Microsoft-native platforms working in concert — so your migration is traceable at every step.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0">
-              {/* Tool list */}
-              <div
-                className="flex flex-col gap-2 p-5"
-                style={{ borderRight: "1px solid rgba(255,255,255,0.05)" }}
-              >
-                {TOOLS.map((tool, i) => (
-                  <ToolCard
-                    key={tool.id}
-                    tool={tool}
-                    isActive={i === activeTool}
-                    onClick={() => setActiveTool(i)}
-                  />
-                ))}
-              </div>
-
-              {/* Tool detail */}
-              <div className={`p-6 md:p-8 dm-tool-detail ${activeTool !== activeTool ? "out" : ""}`}>
-                <div className="flex items-start gap-5 mb-6">
-                  {/* Big logo */}
-                  <div
-                    className="w-16 h-16 rounded-[18px] flex items-center justify-center text-[15px] font-bold dm-font-syne shrink-0"
-                    style={{
-                      background: `rgba(${at.rgb},0.14)`,
-                      border: `2px solid rgba(${at.rgb},0.3)`,
-                      color: at.color,
-                      boxShadow: `0 8px 32px rgba(${at.rgb},0.15)`,
-                    }}
-                  >
-                    {at.logo}
                   </div>
-                  <div>
-                    <div
-                      className="inline-flex items-center gap-1.5 text-[9px] font-semibold tracking-[0.1em] uppercase
-                                 px-2.5 py-1 rounded-full mb-2"
-                      style={{
-                        background: `rgba(${at.rgb},0.1)`,
-                        border: `1px solid rgba(${at.rgb},0.25)`,
-                        color: at.color,
-                      }}
-                    >
-                      {at.badge}
-                    </div>
-                    <h3 className="text-2xl font-bold leading-tight text-white dm-font-syne">{at.fullName}</h3>
-                    <p className="text-[12px] text-[#444] mt-0.5">{at.vendor}</p>
-                  </div>
-                </div>
-
-                <p className="text-[14px] text-[#888] leading-[1.8] mb-6">{at.desc}</p>
-
-                {/* Capabilities */}
-                <div>
-                  <p className="text-[10px] text-[#3a3a3a] tracking-[0.12em] uppercase font-semibold mb-3">
-                    What we use it for
-                  </p>
-                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                    {at.capabilities.map((cap, ci) => (
-                      <div
-                        key={cap}
-                        className="dm-capability-item flex items-center gap-2.5 px-4 py-2.5 rounded-xl"
-                        style={{
-                          background: "rgba(255,255,255,0.025)",
-                          border: "1px solid rgba(255,255,255,0.06)",
-                          animationDelay: `${ci * 0.06}s`,
-                          opacity: toolVis ? 1 : 0,
-                          animation: toolVis ? `dmSlide 0.45s ease ${ci * 0.06}s both` : "none",
-                        }}
-                      >
-                        <span className="text-[8px]" style={{ color: at.color }}>◆</span>
-                        <span className="text-[12px] text-[#aaa]">{cap}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom bar */}
-                <div
-                  className="flex items-center gap-3 pt-5 mt-6"
-                  style={{ borderTop: `1px solid rgba(${at.rgb},0.08)` }}
-                >
-                  <div
-                    className="w-2 h-2 rounded-full"
-                    style={{ background: at.color, animation: "dmPulse 2s ease-in-out infinite" }}
-                  />
-                  <span className="text-[11px] text-[#444]">
-                    Live in every active migration project
-                  </span>
-                  <a
-                    href="#contact"
-                    className="ml-auto text-[11px] font-semibold tracking-[0.06em] no-underline
-                               px-4 py-2 rounded-xl transition-all duration-200"
-                    style={{
-                      background: `rgba(${at.rgb},0.08)`,
-                      border: `1px solid rgba(${at.rgb},0.25)`,
-                      color: at.color,
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.background = `rgba(${at.rgb},0.16)`;
-                      e.currentTarget.style.transform = "translateY(-1px)";
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.background = `rgba(${at.rgb},0.08)`;
-                      e.currentTarget.style.transform = "translateY(0)";
-                    }}
-                  >
-                    Ask us how →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ══════════════════════════════════════════
-              BOTTOM CTA BANNER
-          ══════════════════════════════════════════ */}
-          <div
-            className="rounded-[22px] px-7 md:px-12 py-9 flex flex-col md:flex-row items-start md:items-center gap-8 justify-between mb-14"
-            style={{
-              background: "rgba(212,168,83,0.03)",
-              border: "1px solid rgba(212,168,83,0.13)",
-              ...reveal("0.38s"),
-            }}
-          >
-            <div className="flex-1">
-              <p
-                className="text-[11px] tracking-[0.12em] uppercase font-semibold mb-3"
-                style={{ color: "#D4A853" }}
-              >
-                What your team sees — always
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
-                {[
-                  "Record counts — source vs. target",
-                  "Validation error logs (zero tolerance)",
-                  "Sprint velocity in Azure DevOps",
-                  "Environment status in LCS",
-                  "Cutover readiness checklist",
-                  "Reconciliation sign-off tracker",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-[12px] text-[#666]">
-                    <span className="text-[8px] shrink-0" style={{ color: "#D4A853" }}>◆</span>
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <a
-              href="#contact"
-              className="dm-cta-btn shrink-0 inline-flex items-center gap-2 no-underline
-                         font-semibold text-[13px] tracking-[0.06em] px-7 py-4 rounded-2xl"
-              style={{
-                background: "linear-gradient(135deg,rgba(212,168,83,0.18),rgba(212,168,83,0.08))",
-                border: "1px solid rgba(212,168,83,0.42)",
-                color: "#D4A853",
-              }}
-            >
-              Start Your Migration Audit &rarr;
-            </a>
-          </div>
-
-          {/* ══════════════════════════════════════════
-              MARQUEE
-          ══════════════════════════════════════════ */}
-          <div style={reveal("0.44s")}>
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 28 }}>
-              <p className="text-[10px] text-[#303030] tracking-[0.14em] uppercase font-semibold text-center mb-4">
-                Migration capabilities
-              </p>
-              <div
-                className="overflow-hidden"
-                style={{
-                  maskImage: "linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%)",
-                }}
-              >
-                <div
-                  className="flex gap-3"
-                  style={{ animation: "dmMqee 28s linear infinite", width: "max-content" }}
-                >
-                  {[
-                    "DMF Framework", "LCS Environment Mgmt", "Azure DevOps CI/CD",
-                    "Data Cleansing", "Entity Mapping", "Staging Validation",
-                    "Cutover Planning", "Rollback Strategy", "Zero Downtime Migration",
-                    "Post Go-Live Reconciliation", "DMF Framework", "LCS Environment Mgmt",
-                    "Azure DevOps CI/CD", "Data Cleansing", "Entity Mapping",
-                    "Staging Validation", "Cutover Planning", "Rollback Strategy",
-                  ].map((s, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[11px] whitespace-nowrap"
-                      style={{ border: "1px solid rgba(212,168,83,0.13)", color: "rgba(212,168,83,0.55)" }}
-                    >
-                      <span className="inline-block w-1 h-1 rounded-full opacity-50" style={{ background: "#D4A853" }} />
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </section>
     </>
   );
