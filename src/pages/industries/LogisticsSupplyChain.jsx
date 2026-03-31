@@ -161,9 +161,10 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Logistics Industry Challenges
 </h2>
+<p className="text-center mb-20 max-w-2xl mx-auto">Limited End-to-End Shipment Tracking, lack of Real-Time Logistics Insights, poor Coordination Across Stakeholders.</p>
 
 <div className="grid gap-8 md:grid-cols-2">
 
@@ -196,9 +197,11 @@ className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Our Logistics Solutions
 </h2>
+<p className="text-center mb-20 max-w-2xl mx-auto">Optimize route planning and delivery schedules using Dynamics 365 to reduce costs, improve delivery speed, and enhance overall transportation efficiency.</p>
+
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -254,10 +257,10 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
+className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-400 to-gray-600":"bg-gradient-to-r from-green-400 to-pink-600"} dark:bg-gray-800 rounded-xl`}
 >
 
-<p className="font-semibold">{item}</p>
+<p className=" text-white text-lg font-serif">{item}</p>
 
 </motion.div>
 ))}

@@ -255,10 +255,10 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className="p-6 shadow-lg bg-gray-50 rounded-xl dark:bg-gray-900"
+className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-400 to-gray-600":"bg-gradient-to-r from-green-400 to-pink-600"} dark:bg-gray-800 rounded-xl`}
 >
 
-<p className="font-semibold">{item}</p>
+<p className=" text-white text-lg font-serif">{item}</p>
 
 </motion.div>
 ))}
