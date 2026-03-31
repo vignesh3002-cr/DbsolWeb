@@ -10,6 +10,7 @@ import Testimonials from "../components/Testimonial"
 import ERPImplementationProcess from "../components/ERP"
 import VideoTestimonials from "./VideoTestimonials"
 import DataMigrationSection from "./DataMigrationSection"
+import ResourceLibrary from "../components/ResiurceLibrary"
 export default function Home(){
 
 return(
@@ -23,6 +24,7 @@ return(
 <ERPImplementationProcess/>
 <VideoTestimonials/>
 <DataMigrationSection/>
+<ResourceLibrary/>
 <WhyChooseUs/>
 <TrustedClients/>
 <Testimonials/>

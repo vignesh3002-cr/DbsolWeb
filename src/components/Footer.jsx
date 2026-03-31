@@ -119,17 +119,28 @@ Contact Us
 </h3>
 
 <ul className="space-y-3 text-sm text-gray-400">
-
 <li>
-📍 Chennai, Tamil Nadu, India
+✉ jayakumar.k@dbsoltechnologies.com
 </li>
-
 <li>
-📞 +91 98765 43210
+📞 +91 9994883682
 </li>
-
 <li>
-✉ contact@dbsol.in
+📍 VP Chindhan Ave
+Chennai, Tamil Nadu, India
+</li>
+<li>
+  <div className="overflow-hidden shadow-lg rounded-lg">
+
+<iframe
+title="company location"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332101.68832345324!2d79.94720254802596!3d13.008628940473582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f638bae20f87%3A0x6e87491d6d266f6!2sVP%20Chindhan%20Ave%2C%20Senthil%20Nagar%2C%20Urapakkam%2C%20Tamil%20Nadu%20603210!5e0!3m2!1sen!2sin!4v1774953009145!5m2!1sen!2sin%22"
+width="100%"
+height="150"
+className="border-0"
+></iframe>
+
+</div>
 </li>
 
 </ul>
