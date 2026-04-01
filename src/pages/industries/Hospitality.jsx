@@ -162,10 +162,10 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Hospitality Industry Challenges
 </h2>
-
+<p className="text-center mb-20 max-w-2xl mx-auto">Lack of real-time data on occupancy, revenue, and operations affects decision-making. Dynamics 365 provides live dashboards and analytics to improve operational visibility.</p>
 <div className="grid gap-8 md:grid-cols-2">
 
 {challenges.map((item,index)=>(
@@ -197,10 +197,10 @@ className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Our Hospitality Technology Solutions
 </h2>
-
+<p className="text-center mb-20 max-w-2xl mx-auto">Our Hospitality Technology Solutions, powered by Microsoft Dynamics 365, streamline operations and enhance guest experiences through integrated systems.</p>
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
 {solutions.map((item,index)=>(

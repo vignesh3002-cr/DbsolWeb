@@ -165,7 +165,7 @@ className="shadow-xl rounded-xl"
 <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Professional Services Challenges
 </h2>
-<p classname="text-center mb-20 max-w-2xl mx-auto">Professional services firms often use multiple disconnected systems for finance, HR, and project management, leading to data silos and poor collaboration across teams.</p>
+<p className="text-center mb-20 max-w-2xl mx-auto">Professional services firms often use multiple disconnected systems for finance, HR, and project management, leading to data silos and poor collaboration across teams.</p>
 
 <div className="grid gap-8 md:grid-cols-2">
 
@@ -198,9 +198,10 @@ className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Our Professional Services Solutions
 </h2>
+<p className="text-center mb-20 max-w-2xl mx-auto">Manage projects efficiently from initiation to completion using structured planning tools, timelines, and resource allocation features in Dynamics 365.</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
