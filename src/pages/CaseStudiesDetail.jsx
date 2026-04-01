@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { useParams, Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import UATSection from "../components/UAT"
 
 export default function CaseStudyDetail(){
 
@@ -60,7 +61,6 @@ return(
 <Navbar/>
 
 {/* HERO */}
-
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
@@ -94,7 +94,7 @@ className="text-5xl font-bold"
 </div>
 
 </section>
-
+<UATSection></UATSection>
 
 {/* CHALLENGE */}
 

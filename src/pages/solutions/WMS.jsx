@@ -136,7 +136,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 text-center md:text-left text-4xl font-bold text-gray-800 dark:text-white">
 Smart Warehouse Operations
 </h2>
 
@@ -179,9 +179,13 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Key Warehouse Features
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Optimize warehouse operations with automation, real-time inventory visibility, and intelligent picking and fulfillment processes. Enhance accuracy with advanced tracking technologies and gain actionable insights through data-driven analytics for improved efficiency and control.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 

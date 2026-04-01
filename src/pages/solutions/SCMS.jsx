@@ -126,7 +126,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 text-center md:text-left text-4xl font-bold text-gray-800 dark:text-white">
 Smart Supply Chain Platform
 </h2>
 
@@ -167,10 +167,13 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Key Supply Chain Features
 </h2>
 
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300 text-center">
+    Enhance end-to-end supply chain efficiency with integrated logistics, real-time inventory tracking, and intelligent order management. Leverage advanced analytics and global visibility to optimize operations, reduce costs, and ensure seamless coordination across every stage of the supply chain.
+</p>
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
 {features.map((item,index)=>(
@@ -185,7 +188,7 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 {item.icon}
 </div>
 
-<h3 className="mb-2 text-lg font-semibold">
+<h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
 {item.title}
 </h3>
 
@@ -252,9 +255,13 @@ className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-50"} dark:bg-gra
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Core SCM Modules
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Streamline supply chain operations with integrated modules that manage procurement, suppliers, inventory, and logistics. Enhance efficiency with intelligent demand forecasting, optimized transportation, and data-driven analytics for better decision-making and operational control.
+</p>
 
 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
@@ -289,9 +296,13 @@ className="p-6 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-5 text-4xl font-bold text-gray-800 dark:text-white">
 Business Impact
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300">
+    Accelerate order fulfillment, reduce inventory costs, and improve logistics efficiency with enhanced visibility across the entire supply chain for smarter, faster decision-making.
+</p>
 
 <div className="grid gap-10 md:grid-cols-4">
 
@@ -327,7 +338,7 @@ className={`p-6 shadow-lg ${index%2==0? "bg-gradient-to-r from-purple-400 to-ora
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-600">
+<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-600 dark:from-gray-700">
 
 <h2 className="mb-6 text-4xl font-bold">
 Optimize Your Supply Chain Operations

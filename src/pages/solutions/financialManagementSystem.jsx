@@ -116,7 +116,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white text-center md:text-left">
 Smart Financial Management
 </h2>
 
@@ -159,7 +159,7 @@ className="shadow-xl rounded-xl"
 Key Features
 </h2>
 
-<p >
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300">
     enabling automated accounting, efficient budget and expense management, real-time analytics, centralized data access, secure transactions, and continuous performance monitoring.
 </p>
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -296,9 +296,13 @@ className="p-6 text-center bg-white shadow-lg dark:bg-gray-800 rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-5 text-4xl font-bold text-gray-800 dark:text-white">
 Business Benefits
 </h2>
+
+<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
+    Drive smarter financial operations with enhanced accuracy, real-time insights, and streamlined reporting processes—empowering organizations to improve efficiency, ensure compliance, and make confident data-driven decisions.
+</p>
 
 <div className="grid gap-10 md:grid-cols-4">
 
@@ -334,7 +338,7 @@ className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-oran
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-700">
 
 <h2 className="mb-6 text-4xl font-bold">
 Transform Your Financial Operations
