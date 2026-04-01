@@ -96,10 +96,10 @@ Client Success Stories
 <section className="py-24">
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Real Business Impact
 </h2>
-
+<p className="text-center mb-10 max-w-2xl mx-auto">Streamlines manufacturing and financial processes through automation, reducing manual work and increasing overall productivity.</p>
 <div className="grid gap-10 md:grid-cols-2">
 
 {cases.map((item,index)=>(

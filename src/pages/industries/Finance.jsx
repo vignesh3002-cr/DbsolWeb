@@ -163,7 +163,7 @@ className="shadow-xl rounded-xl"
 <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Financial Industry Challenges
 </h2>
-    <p className="text-center mb-20 max-w-2xl mx-auto">financial institutions use Dynamics 365 to manage evolving regulations, ensure compliance, and reduce operational risk.</p>
+    <p className="text-center mb-20 max-w-2xl mx-auto">Financial institutions use Dynamics 365 to manage evolving regulations, ensure compliance, and reduce operational risk.</p>
 <div className="grid gap-8 md:grid-cols-2">
 
 {challenges.map((item,index)=>(

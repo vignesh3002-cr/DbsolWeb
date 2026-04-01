@@ -86,10 +86,10 @@ Our mission is to help businesses streamline operations, improve financial visib
 
 <div className="relative z-10 max-w-6xl px-6 mx-auto">
 
-<h2 className="mb-20 text-4xl font-bold text-center">
+<h2 className="mb-4 text-4xl font-bold text-center">
 Our Mission & Vision
 </h2>
-
+<p className="text-center mb-20 max-w-2xl mx-auto">We envision empowering businesses with scalable mobile and web platforms for sustainable success.</p>
 <div className="grid gap-16 md:grid-cols-2">
 
 {/* MISSION */}
@@ -176,9 +176,10 @@ We aim to bridge the gap between technology and business by delivering world-cla
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="mb-16 text-4xl font-bold text-center">
+<h2 className="mb-4 text-4xl font-bold text-center">
 Why Choose Us
 </h2>
+<p className="text-center mb-20 max-w-2xl mx-auto">Build trust. Inspire loyalty. We deliver powerful Dynamics 365 solutions and high-impact web and mobile apps that drive results.</p>
 
 <div className="grid gap-10 md:grid-cols-3">
 
@@ -213,8 +214,10 @@ className="p-8 text-center bg-gray-100 shadow-lg dark:bg-gray-800 rounded-xl"
 
 {/* STATS */}
 
-<section className="py-24 bg-gray-100 dark:bg-gray-800">
-
+<section className="py-8 bg-gray-100 dark:bg-gray-800">
+<h2 className="mb-12 text-4xl font-bold text-gray-800 text-center dark:text-white">
+Our Impact
+</h2>
 <div className="grid max-w-6xl gap-10 px-6 mx-auto text-center md:grid-cols-4">
 
 {[
