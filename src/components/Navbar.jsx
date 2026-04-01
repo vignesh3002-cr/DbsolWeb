@@ -17,14 +17,22 @@ document.documentElement.classList.toggle("dark")
 }
 
 return(
+<div className="relative">
+<header className="fixed z-40 w-full transition bg-white shadow-md dark:bg-gray-900">
 
-<header className="fixed z-50 w-full transition bg-white shadow-md dark:bg-gray-900">
-
-<div className="flex items-center justify-between max-w-full px-2.5 py-2.5 mx-auto">
+<div className="flex items-center justify-between max-w-full px-4 py-2.5 mx-auto">
 
 {/* LOGO */}
-<div className="flex items-center gap-1 cursor-pointer lg:gap-3 group">
- <h1 className="font-bold tracking-wide text-blue-600 sm:text-xl lg:text-2xl ">
+<div className="flex items-center gap-4 cursor-pointer lg:gap-3 group">
+  <button
+onClick={()=>setMenu(!menu)}
+className="text-2xl md:hidden"
+>
+{menu? '✕' : '☰'}
+
+
+</button>
+ <h1 className="text-2xl font-bold tracking-wide text-blue-600 ">
   <NavLink
   to="/">
 Dbsol
@@ -342,14 +350,7 @@ Careers
 </li>
 
 </ul>
-<button
-onClick={()=>setMenu(!menu)}
-className="text-xl md:hidden"
->
-{menu? '✕' : '☰'}
 
-
-</button>
 
 <button
 onClick={toggleDarkMode}
@@ -403,10 +404,11 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </button>
 </div>
 </div>
+</header>
 {menu && (
 
-<div className="px-6 pb-4 bg-white lg:hidden">
-<ul className="flex flex-col gap-6 font-medium">
+<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.2}} className="fixed left-0 z-40 w-9/12 px-6 py-6 pb-10 bg-white border-b border-r border-gray-400 top-12 lg:hidden">
+<ul className="flex flex-col gap-6 text-2xl font-semibold">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/"
@@ -670,10 +672,10 @@ Contact Us</NavLink>
 </li>
 
 </ul>
-</div>
+</motion.div>
 
 )}
-</header>
+</div>
 
 )
 
