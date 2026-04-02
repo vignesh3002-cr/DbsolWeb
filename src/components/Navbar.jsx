@@ -23,10 +23,10 @@ return(
 <div className="flex items-center justify-between max-w-full px-4 py-2.5 mx-auto">
 
 {/* LOGO */}
-<div className="flex items-center gap-4 cursor-pointer lg:gap-3 group">
+<div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
   <button
 onClick={()=>setMenu(!menu)}
-className="text-2xl md:hidden"
+className="text-2xl lg:hidden"
 >
 {menu? '✕' : '☰'}
 
@@ -63,7 +63,7 @@ Microsoft Partner
 
 {/* NAVIGATION */}
 <div className="flex gap-4">
-<ul className="hidden font-medium md:text-sm md:gap-4 lg:gap-8 lg:text-base dark:text-white md:flex">
+<ul className="hidden font-medium lg:gap-6 lg:text-base dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink

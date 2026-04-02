@@ -267,7 +267,7 @@ function AnimStat({ stat, visible, delay = 0 }) {
       >
         {display}
       </span>
-      <span className="text-[10px] text-[#484848] tracking-[0.1em] uppercase leading-snug max-w-[80px]">
+      <span className="text-[10px] text-[#484848] tracking-[0.1em] uppercase leading-snug max-w-[80px] dark:text-white/85">
         {stat.label}
       </span>
     </div>
@@ -341,8 +341,8 @@ function DataPipeline({ visible }) {
               />
             </div>
             <div className="text-center">
-              <p className="text-[11px] font-semibold text-white leading-none mb-0.5 whitespace-nowrap">{node.label}</p>
-              <p className="text-[9px] text-[#444] whitespace-nowrap">{node.sub}</p>
+              <p className="text-[11px] font-semibold text-gray-600 leading-none mb-0.5 whitespace-nowrap dark:text-white">{node.label}</p>
+              <p className="text-[9px] text-[#444] whitespace-nowrap dark:text-white/70">{node.sub}</p>
             </div>
           </div>
         ))}
@@ -501,12 +501,12 @@ export default function DataMigrationSection() {
 
       <section
         ref={sectionRef}
-        className="relative overflow-hidden text-white dm-root"
-        style={{ background: "white", padding: "8px 0 0px" }}
+        className="relative overflow-hidden text-white dm-root dark:bg-gray-900"
+        style={{ padding: "8px 0 0px" }}
       >
 
         {/* ── Particle BG ── */}
-        <div className="absolute inset-0 pointer-events-none opacity-55">
+        <div className="absolute inset-0 pointer-events-none opacity-55 dark:bg-gray-950">
           <ParticleCanvas />
         </div>
 
@@ -562,14 +562,17 @@ export default function DataMigrationSection() {
           ══════════════════════════════════════════ */}
           <div className="mb-16" style={reveal("0.04s")}>
             {/* Badge */}
-         <h2 className="mb-12 text-[clamp(28px,6vw,52px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+         <h2 className="mb-2 text-[clamp(32px,6vw,56px)] font-bold text-center text-gray-950 dark:text-white">
 Data Migration Transperancy
-</h2>
+</h2> 
+      <p className=" dark:text-white/90 text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto">
+                  We don't move a single record without a paper trail. Our DMF-driven process, tracked inside Microsoft LCS and Azure DevOps, gives you full transparency from first extract to go-live cutover.
+                </p>
             <div className="flex flex-col justify-between gap-32 lg:flex-row lg:items-end">
               <div>
                 <h2
                   className=" font-serif text-blue-400 font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
-                  style={{ fontSize: "clamp(20px,5vw,48px)" }}
+                  style={{ fontSize: "clamp(30px,6vw,56px)" }}
                 >
                   Your data arrives<br />
                   <span
@@ -582,15 +585,13 @@ Data Migration Transperancy
                     complete. Verified. Safe.
                   </span>
                 </h2>
-                <p className="text-[15px] text-[#575757] max-w-[540px] leading-[1.8]">
-                  We don't move a single record without a paper trail. Our DMF-driven process, tracked inside Microsoft LCS and Azure DevOps, gives you full transparency from first extract to go-live cutover.
-                </p>
+          
               </div>
 
               {/* Live indicator */}
               <div
-                className="flex items-center self-start gap-3 px-5 py-3 shrink-0 rounded-2xl lg:self-auto"
-                style={{ background: "rgba(107,191,122,0.07)", border: "1px solid rgba(107,191,122,0.2)" }}
+                className="flex items-center self-start gap-3 px-5 py-3 bg-green-50 shrink-0 rounded-2xl lg:self-auto"
+                style={{border: "1px solid rgba(107,191,122,0.2)" }}
               >
                 <div className="relative flex items-center justify-center w-4 h-4">
                   <div
@@ -634,14 +635,14 @@ Data Migration Transperancy
           >
             <div className="flex items-center justify-between mb-8">
               <div>
-                <p className="text-[10px] text-[#444] tracking-[0.14em] uppercase font-semibold mb-1">
+                <p className="text-[10px] text-[#444] tracking-[0.14em] uppercase font-semibold mb-1 dark:text-white">
                   Live Migration Pipeline
                 </p>
-                <p className="text-[13px] text-[#777]">End-to-end data flow — AX 2012 to D365 F&O</p>
+                <p className="text-[13px] text-[#777] dark:text-white/70">End-to-end data flow — AX 2012 to D365 F&O</p>
               </div>
               <div
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-[11px] font-semibold"
-                style={{ background: "rgba(212,168,83,0.08)", border: "1px solid rgba(212,168,83,0.2)", color: "#D4A853" }}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-[11px] font-semibold bg-orange-50"
+                style={{ border: "1px solid rgba(212,168,83,0.2)", color: "#D4A853" }}
               >
                 <span style={{ animation: "dmBlink 1.4s ease infinite" }}>●</span> DMF Active
               </div>
@@ -670,15 +671,15 @@ Data Migration Transperancy
                 {DMF_PHASES.map((p, i) => (
                   <button
                     key={p.id}
-                    className="dm-phase-btn"
+                    className="dm-phase-btn dark:text-white/90"
                     onClick={() => switchPhase(i)}
                     style={{
                       background: i === activePhase ? `rgba(${p.rgb},0.1)` : "transparent",
                       borderColor: i === activePhase ? `rgba(${p.rgb},0.35)` : "rgba(255,255,255,0.07)",
-                      color: i === activePhase ? p.color : "#555",
+                      color: i === activePhase ? p.color : "",
                     }}
                   >
-                    <span className="mr-1.5 text-[10px]">{p.phase}</span>
+                    <span className="mr-1.5 text-[10px] dark:text-white/90">{p.phase}</span>
                     {p.short}
                   </button>
                 ))}
@@ -707,7 +708,7 @@ Data Migration Transperancy
                         Phase {ap.phase}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white dm-font-syne">{ap.title}</h3>
+                    <h3 className="text-lg font-bold text-black/90 dm-font-syne dark:text-white">{ap.title}</h3>
                   </div>
                   {/* Stat badge */}
                   <div
@@ -715,7 +716,7 @@ Data Migration Transperancy
                     style={{ background: `rgba(${ap.rgb},0.07)`, border: `1px solid rgba(${ap.rgb},0.2)` }}
                   >
                     <p className="text-lg font-bold leading-none dm-font-syne" style={{ color: ap.color }}>{ap.stat.value}</p>
-                    <p className="text-[9px] text-[#444] tracking-wide mt-1 uppercase">{ap.stat.label}</p>
+                    <p className="text-[9px] text-[#444] tracking-wide mt-1 uppercase dark:text-white/80">{ap.stat.label}</p>
                   </div>
                 </div>
 
@@ -723,7 +724,7 @@ Data Migration Transperancy
 
                 {/* Tools used */}
                 <div>
-                  <p className="text-[10px] text-[#3a3a3a] tracking-[0.12em] uppercase font-semibold mb-3">
+                  <p className="text-[10px] text-[#3a3a3a] tracking-[0.12em] uppercase font-semibold mb-3 dark:text-white/90">
                     Tools Used
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -757,7 +758,7 @@ Data Migration Transperancy
                       }}
                     />
                   ))}
-                  <span className="ml-auto text-[11px] text-[#444]">{activePhase + 1} of {DMF_PHASES.length}</span>
+                  <span className="ml-auto text-[11px] text-[#444] dark:text-white/60">{activePhase + 1} of {DMF_PHASES.length}</span>
                 </div>
               </div>
             </div>
@@ -788,10 +789,10 @@ Data Migration Transperancy
                     {p.phase}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className={`text-[13px] font-semibold leading-none mb-1 ${i === activePhase ? "text-gray-800" : "text-[#666]"}`}>
+                    <p className={`text-[13px] font-semibold leading-none mb-1 ${i === activePhase ? "text-gray-800 dark:text-white" : "text-[#666] dark:text-white/70"}`}>
                       {p.title}
                     </p>
-                    <p className="text-[11px] text-[#3a3a3a] truncate">{p.tools[0]} · {p.tools[1]}</p>
+                    <p className="text-[11px] text-[#3a3a3a] truncate dark:text-white/60">{p.tools[0]} · {p.tools[1]}</p>
                   </div>
                   {i === activePhase && (
                     <div
@@ -816,7 +817,7 @@ Data Migration Transperancy
                   </div>
                   <div>
                     <p className="text-[12px] font-semibold text-green-600 mb-1">Data Integrity Guarantee</p>
-                    <p className="text-[11px] text-[#555] leading-relaxed">
+                    <p className="text-[11px] text-[#555] leading-relaxed dark:text-white/50">
                       We guarantee 100% record reconciliation between source and target. Any discrepancy is our responsibility to resolve — before go-live, at no additional cost.
                     </p>
                   </div>

@@ -380,9 +380,12 @@ export default function TestimonialsSection() {
         className="relative overflow-hidden bg-[#e5e5e5] font-jakarta text-white
                    py-[8px] md:py-[8px]"
       >
-                      <h2 className="mb-8 text-[clamp(38px,6vw,60px)] font-sans font-extrabold text-center tracking-tight bg-gradient-to-r text-transparent bg-clip-text from-gray-500 via-gray-800 to-black drop-shadow-lg dark:text-white">
+                      <h2 className="mb-2 text-[clamp(38px,6vw,60px)] font-bold text-center text-gray-950 dark:text-white">
 Client Success Stories
 </h2>
+      <p className="text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto">
+        We help businesses grow through smart D365 F&O solutions, intuitive web platforms, and powerful mobile apps—turning challenges into success stories.
+        </p>
         {/* ── Particle background ── */}
         <div className="absolute inset-0 pointer-events-none opacity-65">
           <ParticleCanvas />
@@ -423,7 +426,7 @@ Client Success Stories
             {/* Badge */}
 
             {/* Headline */}
-            <h2 className="font-serif font-extrabold leading-[1.06] tracking-[-0.03em] text-white mb-[18px]
+            <h2 className="font-serif font-extrabold leading-[1.06] tracking-[-0.03em] text-inherit mb-[18px]
                            text-[clamp(48px,8vw,60px)] md:text-[clamp(58px,5vw,80px)]">
               Real migrations.<br />
               <span
