@@ -61,7 +61,7 @@ return(
 <Navbar/>
 
 {/* HERO */}
-<section className="relative flex items-center justify-center h-[420px]">
+<section className="relative flex items-center justify-center h-[420px]">   
 
 <img
 src={caseData.image}

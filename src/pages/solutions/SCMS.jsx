@@ -208,13 +208,17 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 
 {/* SUPPLY CHAIN WORKFLOW */}
 
-<section className="py-24">
+<section className="py-10 mb-10">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="text-4xl font-bold text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-gray-800 mb-5 dark:text-white">
 Supply Chain Workflow
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300 text-center">
+supply chain with a structured, end-to-end workflow that ensures efficiency, visibility, and control at every stage. From sourcing reliable suppliers and optimizing inventory levels to managing orders, logistics, and timely deliveries, this process is designed to enhance coordination, reduce costs, and improve overall operational performance.
+</p>
 
 <div className="grid gap-10 md:grid-cols-5">
 
@@ -318,8 +322,11 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className={`p-6 shadow-lg ${index%2==0? "bg-gradient-to-r from-purple-400 to-orange-300":"bg-green-200"} dark:bg-gray-800 rounded-xl`}
->
+className={`p-6 shadow-lg ${
+  index % 2 == 0
+    ? "bg-gradient-to-r from-purple-400 to-orange-300 dark:from-gray-900 dark:to-gray-900 text-black dark:text-gray-300"
+    : "bg-green-200 dark:bg-gray-900 text-black dark:text-gray-300"
+} rounded-xl`}>
 
 <p className="font-semibold">
 {item}
@@ -338,7 +345,7 @@ className={`p-6 shadow-lg ${index%2==0? "bg-gradient-to-r from-purple-400 to-ora
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-600 dark:from-gray-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-600 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Optimize Your Supply Chain Operations

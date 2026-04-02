@@ -112,7 +112,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="text-center md:text-left mb-6 text-4xl font-bold text-gray-800 dark:text-white">
 
 Build Powerful Digital Experiences
 

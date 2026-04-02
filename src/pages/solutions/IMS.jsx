@@ -136,7 +136,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 md:text-left text-center text-4xl font-bold text-gray-800 dark:text-white">
 Smart Inventory Control
 </h2>
 
@@ -177,9 +177,13 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Key Inventory Features
 </h2>
+
+<p className="max-w-3xl mx-auto mb-14 text-center text-gray-600 dark:text-gray-300">
+    Enhance inventory management with powerful features that provide real-time visibility, improve accuracy through barcode and RFID support, enable seamless multi-warehouse control, automate stock replenishment, and deliver actionable insights with advanced analytics and synchronized data across all locations.
+</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -195,11 +199,11 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 {item.icon}
 </div>
 
-<h3 className="mb-2 text-lg font-semibold">
+<h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500 dark:text-gray-300">
+<p className="text-sm text-gray-500 dark:text-gray-300">    
 {item.desc}
 </p>
 
@@ -220,9 +224,13 @@ className="p-8 border border-gray-200 shadow-lg backdrop-blur-lg bg-white/70 dar
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="text-4xl font-bold text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-gray-800 mb-5 dark:text-white">
 Inventory Workflow
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300">
+    Streamline inventory operations with a structured workflow that ensures accurate stock handling from receiving and recording to continuous monitoring, efficient order processing, and timely replenishment for uninterrupted business operations.
+</p>
 
 <div className="grid gap-10 md:grid-cols-5">
 
@@ -259,9 +267,13 @@ className={`p-6 shadow-lg ${index%2==0?"bg-green-50":"bg-indigo-50"} dark:bg-gra
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-white">
 Core Inventory Modules
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300">
+    Strengthen inventory management with core modules that enable accurate stock tracking, efficient purchasing, seamless supplier integration, demand forecasting, auditing, and insightful reporting—ensuring optimized inventory levels and smarter decision-making.
+</p>
 
 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
@@ -296,9 +308,13 @@ className="p-6 text-center bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-5 text-4xl font-bold text-gray-800 dark:text-white">
 Business Impact
 </h2>
+
+<p className="max-w-2xl mx-auto mb-16 text-gray-600 dark:text-gray-300">
+Drive strong business performance with reduced stockouts, lower inventory costs, improved accuracy, and faster order processing—ensuring better efficiency, optimized stock levels, and enhanced customer satisfaction.
+</p>
 
 <div className="grid gap-10 md:grid-cols-4">
 
@@ -314,8 +330,11 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-gradient-to-r from-purple-400 to-orange-300":"bg-green-200"} dark:bg-gray-800 rounded-xl`}
->
+className={`p-6 shadow-lg ${
+  index % 2 == 0
+    ? "shadow-lg bg-gradient-to-r from-purple-400 to-orange-300 dark:from-gray-800 dark:to-gray-800 text-black dark:text-gray-300"
+    : "shadow 1g bg-green-200 dark:bg-gray-800 text-black dark:text-gray-300"
+} rounded-xl`}>
 
 <p className="font-semibold">
 {item}
@@ -334,7 +353,7 @@ className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-gradient-to-r from-purple
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-700 dark:from-gray-800 dark:bg-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Gain Full Control of Your Inventory

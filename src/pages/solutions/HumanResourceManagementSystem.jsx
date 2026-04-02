@@ -317,8 +317,11 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-gradient-to-r from-purple-400 to-orange-300":"bg-green-200"} dark:bg-gray-800 rounded-xl`}
->
+className={`p-6 shadow-lg ${
+  index % 2 == 0
+    ? "bg-gradient-to-r from-purple-400 to-orange-300 dark:from-gray-700 dark:to-gray-900 text-black dark:text-gray-300"
+    : "bg-green-200 dark:bg-gray-900 md:text-black dark:text-gray-300"
+} rounded-xl`}>
 
 <p className="font-semibold">
 {item}
@@ -337,7 +340,7 @@ className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-gradient-to-r from-purple
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-700 dark:to-gray-900">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Empower Your Workforce with Smart HR Technology
@@ -352,7 +355,7 @@ for workforce management, recruitment, payroll, and analytics.
 
 <Link
 to="/contact"
-className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+className="px-8 py-4 font-semibold  bg-white text-blue-700 rounded-lg hover:bg-gray-100"
 >
 
 Request HRMS Demo
