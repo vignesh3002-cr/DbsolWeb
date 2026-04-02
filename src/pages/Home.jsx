@@ -22,8 +22,8 @@ return(
 <Services/>
 <Industries/>
 <ERPImplementationProcess/>
-<VideoTestimonials/>
 <DataMigrationSection/>
+<VideoTestimonials/>
 <ResourceLibrary/>
 <WhyChooseUs/>
 <TrustedClients/>
