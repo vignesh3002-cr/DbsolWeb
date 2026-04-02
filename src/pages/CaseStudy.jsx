@@ -99,7 +99,7 @@ Client Success Stories
 <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Real Business Impact
 </h2>
-<p className="text-center mb-10 max-w-2xl mx-auto">Streamlines manufacturing and financial processes through automation, reducing manual work and increasing overall productivity.</p>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-10 max-w-2xl mx-auto">Streamlines manufacturing and financial processes through automation, reducing manual work and increasing overall productivity.</p>
 <div className="grid gap-10 md:grid-cols-2">
 
 {cases.map((item,index)=>(
