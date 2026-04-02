@@ -122,7 +122,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 text-center md:text-left text-4xl font-bold text-gray-800 dark:text-white">
 Modern HR Management Platform
 </h2>
 
@@ -296,10 +296,13 @@ className="p-6 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-5 text-4xl font-bold text-gray-800 dark:text-white">
 Business Impact
 </h2>
 
+<p className="max-w-2xl mx-auto mb-14 text-gray-600 dark:text-gray-300">
+    HR operations with intelligent automation, faster recruitment processes, and enhanced workforce productivity. Gain deeper insights into employee performance and organizational efficiency, enabling smarter decision-making and a more agile, data-driven workplace.
+</p>
 <div className="grid gap-10 md:grid-cols-4">
 
 {[
@@ -334,7 +337,7 @@ className={`p-6 shadow-lg rounded-xl ${index%2==0? "bg-gradient-to-r from-purple
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 to-blue-600">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-700 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Empower Your Workforce with Smart HR Technology

@@ -45,7 +45,7 @@ return(
 <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
 ERP Implementation Process
 </h2>
-<p className="mb-16 dark:text-gray-300">Driving seamless ERP implementation through strategic planning, smart design, smooth integration, and continuous support for optimized business performance.</p>
+<p className="max-w-2xl mb-16 text-center mx-auto dark:text-gray-300">Driving seamless ERP implementation through strategic planning, smart design, smooth integration, and continuous support for optimized business performance.</p>
 
 <div className="relative">
 

@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
+
 export default function CaseStudies(){
 
 const cases=[
