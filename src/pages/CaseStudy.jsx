@@ -2,11 +2,9 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-<<<<<<< HEAD
+
 import RoleBasedTraining from "../components/trainingController"
-=======
 import RoleplayScenario from "../components/roleplay"
->>>>>>> 4c34a465c17dd7d4c50b71c59b253de5a57e9775
 
 export default function CaseStudies(){
 
