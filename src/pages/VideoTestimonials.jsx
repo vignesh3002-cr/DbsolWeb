@@ -262,7 +262,7 @@ function VideoModal({ videoId, onClose }) {
 function TimelineBlock() {
   return (
     <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-5">
-      <p className="text-[14px] text-[#444] tracking-[0.12em] uppercase font-semibold mb-[18px]">
+      <p className="text-[14px] text-[#444] tracking-[0.12em] uppercase font-semibold mb-[18px] dark:text-white/90">
         Our Migration Process
       </p>
       {TIMELINE.map((step, i) => (
@@ -290,7 +290,7 @@ function TimelineBlock() {
           {/* Right: text */}
           <div className={i < TIMELINE.length - 1 ? "pb-2" : ""}>
             <p className="text-xs font-bold text-[#c2b41c] mb-0.5">{step.label}</p>
-            <p className="text-[11px] text-[#484848] leading-relaxed">{step.desc}</p>
+            <p className="text-[11px] text-[#484848] leading-relaxed dark:text-white/60">{step.desc}</p>
           </div>
         </div>
       ))}
@@ -377,13 +377,13 @@ export default function TestimonialsSection() {
 
       <section
         ref={sectionRef}
-        className="relative overflow-hidden bg-[#e5e5e5] font-jakarta text-white
+        className="relative overflow-hidden bg-[#e5e5e5] dark:bg-slate-900 font-jakarta text-white
                    py-[8px] md:py-[8px]"
       >
                       <h2 className="mb-2 text-[clamp(38px,6vw,60px)] font-bold text-center text-gray-950 dark:text-white">
 Client Success Stories
 </h2>
-      <p className="text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto">
+      <p className="text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto dark:text-white/60">
         We help businesses grow through smart D365 F&O solutions, intuitive web platforms, and powerful mobile apps—turning challenges into success stories.
         </p>
         {/* ── Particle background ── */}
@@ -440,7 +440,7 @@ Client Success Stories
               </span>
             </h2>
 
-            <p className="text-sm md:text-base text-[#585858] max-w-[500px] leading-[1.78]">
+            <p className="text-sm md:text-base text-[#585858] max-w-[500px] leading-[1.78] dark:text-white/60">
               From AX 2012 to modern cloud ERP — our clients talk about what the transformation actually felt like from the inside.
             </p>
           </div>
@@ -457,8 +457,8 @@ Client Success Stories
               <div className="flex flex-wrap gap-2 mb-5">
                 {[
                   { label: t.tag,       accent: true },
-                  { label: t.migration, accent: false },
-                  { label: t.industry,  accent: false },
+                  { label: t.migration, accent: true },
+                  { label: t.industry,  accent: true },
                 ].map(({ label, accent }, li) => (
                   <span
                     key={li}
@@ -483,8 +483,6 @@ Client Success Stories
                 style={{
                   border:      "1px solid rgba(255,255,255,0.07)",
                   aspectRatio: "16 / 7.5",
-                  boxShadow:   "rgb(255 255 255 / 65%) 0px 20px 60px, rgba(107, 191, 122, 0.1) 0px 0px 0px 1px",
-                  transition:  "box-shadow 0.4s ease",
                 }}
               >
                 {/* Thumbnail */}
@@ -656,7 +654,7 @@ Client Success Stories
                     <span>{currentPhase?.icon}</span>
                     {currentPhase?.label}
                   </p>
-                  <p className="text-[13.5px] md:text-[15px] text-[#b8b8b8] leading-[1.85] italic m-0">
+                  <p className="text-[13.5px] md:text-[15px] text-black/50 dark:text-[#b8b8b8] leading-[1.85] italic m-0">
                     &ldquo;{t[phase]}&rdquo;
                   </p>
                 </div>
@@ -677,7 +675,7 @@ Client Success Stories
                     <span className="font-syne font-bold text-green-600 text-[15px] md:text-[19px] tracking-tight leading-none">
                       <AnimCounter target={s.value} visible={statsVisible} />
                     </span>
-                    <span className="text-[9px] tracking-[0.1em] uppercase text-[#4a4a4a] font-bold">{s.label}</span>
+                    <span className="text-[9px] tracking-[0.1em] uppercase text-[#4a4a4a] font-bold dark:text-white/60">{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -715,12 +713,11 @@ Client Success Stories
                     </div>
                     <div className="flex-1 min-w-0">
                       <p
-                        className="text-[13px] font-semibold leading-none mb-0.5 truncate"
-                        style={{ color: i === active ? "black" : "#aaa" }}
+                        className={`text-[13px] font-semibold leading-none mb-0.5 truncate ${i===active? "text-black dark:text-white":"text-black/50 dark:text-white/60"}`}
                       >
                         {item.speaker}
                       </p>
-                      <p className="text-[10px] text-[#444] truncate">{item.role}</p>
+                      <p className="text-[10px] text-[#444] dark:text-white/50 truncate">{item.role}</p>
                     </div>
                     <span
                       className="text-[9px] px-2 py-[3px] rounded-full shrink-0 tracking-[0.06em] uppercase"
@@ -736,9 +733,7 @@ Client Success Stories
 
                   {/* Quote snippet */}
                   <p
-                    className="clamp-2 text-xs leading-[1.65] m-0"
-                    style={{ color: i === active ? "#888" : "#444" }}
-                  >
+                    className={`clamp-2 text-xs leading-[1.65] m-0 ${i===active?"text-black/80 dark:text-white/80":"text-black/60 dark:text-white/60"}`}                  >
                     &ldquo;{item.result}&rdquo;
                   </p>
 
@@ -765,35 +760,6 @@ Client Success Stories
               <TimelineBlock />
             </div>
           </div>
-               {/* CTA */}
-              <a
-                href="#contact"
-                className="ts-cta block text-center no-underline px-6 py-[15px] rounded-xl
-                           text-[20px] font-semibold tracking-[0.06em] font-[family-name:inherit]
-                           transition-all duration-[250ms]"
-                style={{
-                  border:     "2px solid rgba(212,168,83,0.38)",
-                  color:      "#D4A853",
-                  background: "rgba(212,168,83,0.04)",
-                }}
-              >
-                Book a Free Migration Audit &rarr;
-              </a>
-
-              {/* Trust */}
-              <div
-                className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl"
-                style={{
-                  background: "rgba(255,255,255,0.02)",
-                  border:     "1px solid rgba(255,255,255,0.05)",
-                }}
-              >
-                <span className="text-[13px]">&#128274;</span>
-                <span className="text-[11px] tracking-[0.04em] text-[#3a3a3a]">
-                  NDA-protected client engagements
-                </span>
-              </div>
-
         </div>
       </section>
 
