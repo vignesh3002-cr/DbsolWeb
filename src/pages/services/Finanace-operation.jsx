@@ -117,13 +117,13 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 md:text-left text-center text-4xl font-bold text-gray-800 dark:text-white">
 
 Microsoft Dynamics 365 Finance & Operations
 
 </h2>
 
-<p className="mb-4 text-gray-600 dark:text-gray-300">
+<p className="md:text-left text-center mb-4 text-gray-600 dark:text-gray-300">
 
 Our Finance & Operations solutions empower enterprises with
 intelligent financial management, real-time insights, and automated
@@ -131,7 +131,7 @@ business processes.
 
 </p>
 
-<p className="text-gray-600 dark:text-gray-300">
+<p className="md:text-left text-center text-gray-600 dark:text-gray-300">
 
 We help organizations implement, customize, and optimize
 Microsoft Dynamics 365 Finance & Operations to improve
@@ -321,7 +321,7 @@ className="p-6 bg-white/10 backdrop-blur-md rounded-xl"
 </section>*/}
 {/* CALL TO ACTION */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Transform Your Financial Operations

@@ -155,10 +155,10 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
+<h2 className="text-4xl font-bold text-center text-gray-600 mb-4 dark:text-gray-300">
 Key Industry Challenges
 </h2>
-<p className="text-center mb-20 max-w-2xl mx-auto">Challenges with Outdated Financial Systems, Lack of Integration Across Business Functions, High Maintenance & Upgrade Costs.</p>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto ">Challenges with Outdated Financial Systems, Lack of Integration Across Business Functions, High Maintenance & Upgrade Costs.</p>
 <div className="grid gap-8 md:grid-cols-2">
 
 {challenges.map((item,index)=>(
@@ -195,7 +195,7 @@ className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
 <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Our IT Industry Solutions
 </h2>
-<p className="text-center mb-20 max-w-2xl mx-auto">Unified ERP & CRM with Dynamics 365, Centralized IT Operations Management, Seamless Business Process Integration</p>
+<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">Unified ERP & CRM with Dynamics 365, Centralized IT Operations Management, Seamless Business Process Integration</p>
 
 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -211,7 +211,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 {item.icon}
 </div>
 
-<h3 className="mb-2 text-lg font-semibold">
+<h3 className="mb-2 text-lg font-semibold dark:text-gray-300">
 {item.title}
 </h3>
 
@@ -232,7 +232,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 {/* BENEFITS */}
 
-<section className="py-24 bg-white dark:bg-gray-800">
+<section className="py-24 bg-white dark:bg-gray-700">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
@@ -248,7 +248,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.2}}
-className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-400 to-gray-600":"bg-gradient-to-r from-green-400 to-pink-600"} dark:bg-gray-800 rounded-xl`}
+className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-500 to-yellow-800 dark:from-gray-800 dark:to-gray-800":"bg-gradient-to-r from-green-400 to-green-700 dark:from-gray-800 dark:to-gray-800"} dark:bg-gray-800 rounded-xl`}
 >
 
 <p className=" text-white text-lg font-serif">{item}</p>
@@ -265,7 +265,9 @@ className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-400 to-gray
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800 text-blue-600 dark:text-blue-600">
+
+
 
 <h2 className="mb-6 text-4xl font-bold">
 Accelerate Your IT Innovation
