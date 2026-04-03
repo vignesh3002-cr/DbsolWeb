@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
+import RoleBasedTraining from "../components/trainingController"
 
 export default function CaseStudies(){
 
@@ -188,7 +188,7 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 
 </section>
 
-
+<RoleBasedTraining/>
 {/* CTA */}
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-800">
