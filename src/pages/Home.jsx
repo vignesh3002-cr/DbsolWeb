@@ -18,7 +18,7 @@ return(
 <>
 
 <Navbar/>
-<Hero/>
+<Hero/>  
 <Services/>
 <Industries/>
 <ERPImplementationProcess/>

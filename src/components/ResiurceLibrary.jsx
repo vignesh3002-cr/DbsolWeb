@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 export default function ResourceLibrary() {
   return (
-    <section className="relative min-h-screen bg-black text-white overflow-hidden px-6 md:px-16 lg:px-24 py-4">
+    <section className="relative min-h-screen px-6 py-4 overflow-hidden text-white dark:bg-black md:px-16 lg:px-24">
 
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-yellow-400/20 blur-[180px] -translate-x-1/2"></div>
@@ -14,14 +14,14 @@ export default function ResourceLibrary() {
         transition={{ duration: 0.7 }}
         className="max-w-4xl mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-4xl font-bold leading-tight text-black dark:text-white md:text-5xl">
           Learn Before You Decide.
-          <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
             We Guide. You Succeed.
           </span>
         </h2>
 
-        <p className="mt-6 text-gray-400 text-lg max-w-2xl">
+        <p className="max-w-2xl mt-6 text-lg text-gray-800 dark:text-gray-400">
           Explore our curated resources designed to simplify your ERP and D365 journey — from planning to execution.
         </p>
       </motion.div>
@@ -51,19 +51,19 @@ export default function ResourceLibrary() {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.2 }}
-            className="group relative border-b border-white/10 pb-6"
+            className="relative pb-6 border-b group border-white/10"
           >
 
             {/* Title + Hover Effect */}
             <div 
-              className="flex justify-between items-center"
+              className="flex items-center justify-between"
             >
               <div>
-                <h3 className="text-2xl font-semibold group-hover:text-yellow-400 transition">
+                <h3 className="text-2xl font-semibold transition dark:text-white/80 text-black/80 group-hover:text-yellow-400">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-400 mt-2 max-w-xl">
+                <p className="max-w-xl mt-2 text-gray-600 dark:text-gray-400">
                   {item.desc}
                 </p>
               </div>
@@ -73,9 +73,7 @@ export default function ResourceLibrary() {
                       <a
               href={item.file}
               download
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-white transition-transform duration-5000
-                         group-hover:bg-yellow-400 group-hover:text-black font-medium 
-                         "
+              className="inline-flex items-center gap-2 px-4 py-2 font-medium text-white transition-transform bg-green-500 rounded-lg duration-5000 group-hover:bg-yellow-400 group-hover:text-black "
             >
               <Download size={18} />
               Download

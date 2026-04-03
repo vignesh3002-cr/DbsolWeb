@@ -38,14 +38,14 @@ desc:"Train employees and provide ongoing system support and maintenance."
 
 return(
 
-<section className="py-8 bg-gray-100 dark:bg-gray-900">
+<section className="py-12 bg-gray-100 dark:bg-gray-900">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
 <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
 ERP Implementation Process
 </h2>
-<p className="max-w-2xl mb-16 text-center mx-auto dark:text-gray-300">Driving seamless ERP implementation through strategic planning, smart design, smooth integration, and continuous support for optimized business performance.</p>
+<p className="max-w-2xl mx-auto mb-16 text-center dark:text-gray-300">Driving seamless ERP implementation through strategic planning, smart design, smooth integration, and continuous support for optimized business performance.</p>
 
 <div className="relative">
 
