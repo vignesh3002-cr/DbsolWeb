@@ -90,7 +90,7 @@ Client Success Stories
 </div>
 
 </section>
-<RoleplayScenario></RoleplayScenario>
+
 
 {/* CASE STUDIES GRID */}
 
@@ -145,7 +145,7 @@ Result: {item.result}
 </div>
 
 </section>
-
+<RoleplayScenario></RoleplayScenario>
 
 {/* METRICS SECTION */}
 
