@@ -57,7 +57,7 @@ If a system feels like a burden, people avoid it. If it feels like a helpful ass
     {
       type: "client",
       text: `Alright… that makes sense. But from my perspective, what do I actually gain?`,
-      image: "/images/clientlast.png" // 👈 different image for last client
+      image: "/images/clientlast.png"
     },
     {
       type: "expert",
@@ -73,15 +73,15 @@ We don’t just implement. We make sure it works.`,
   ];
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-800 py-20 px-4">
+    <section className="bg-gray-50 dark:bg-gray-900 py-16 md:py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Turning Skepticism into Adoption
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
             A real conversation focused on workflow, not just dashboards.
           </p>
         </div>
@@ -92,47 +92,53 @@ We don’t just implement. We make sure it works.`,
 
             <motion.div
               key={index}
-              className={`flex items-start gap-4 ${
+              className={`flex items-start gap-3 md:gap-4 ${
                 item.type === "client" ? "justify-end" : "justify-start"
               }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+                delay: index * 0.1
+              }}
             >
 
-              {/* Expert Image */}
+              {/* Expert Image (LEFT) */}
               {item.type === "expert" && (
                 <motion.img
                   src={item.image}
-                  className="w-24 h-auto flex-shrink-0"
-                  initial={{ opacity: 0, x: -30 }}
+                  className="w-12 md:w-20 lg:w-24 h-auto flex-shrink-0"
+                  initial={{ opacity: 0, x: item.type === "client" ? 40 : -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 />
               )}
 
               {/* Chat Bubble */}
               <motion.div
-                className={`max-w-xl p-6 rounded-xl shadow-sm ${
+                className={`max-w-[85%] md:max-w-xl p-4 md:p-6 rounded-xl shadow-sm ${
                   item.type === "client"
-                    ? "bg-green-50 dark:bg-gray-700 text-gray-700 dark:text-gray-100"
-                    : "bg-blue-50 dark:bg-gray-600 text-gray-800 dark:text-gray-200"
+                    ? "bg-red-100 dark:bg-red-800 text-gray-800 dark:text-gray-100 border dark:border-gray-400"
+                    : "bg-green-50 dark:bg-green-700 text-gray-800 dark:text-gray-100 border dark:border-gray-400"
                 }`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 + 0.1 }}
-                viewport={{ once: true }}
               >
-                <p className="whitespace-pre-line">{item.text}</p>
+                <p className="whitespace-pre-line text-sm md:text-base">
+                  {item.text}
+                </p>
               </motion.div>
 
-              {/* Client Image */}
+              {/* Client Image (RIGHT) */}
               {item.type === "client" && (
                 <motion.img
                   src={item.image}
-                  className="w-24 h-auto flex-shrink-0"
-                  initial={{ opacity: 0, x: 30 }}
+                  className="w-12 md:w-20 lg:w-24 h-auto flex-shrink-0"
+                  initial={{ opacity: 0, x: item.type === "client" ? 40 : -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 />
               )}
 
