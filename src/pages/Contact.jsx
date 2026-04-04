@@ -100,7 +100,7 @@ Contact Us
 <motion.div
 whileHover={{scale:1.05}}
 onClick={handleClick}
-className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl cursor-pointer"
+className="p-10 text-center bg-white shadow-lg cursor-pointer dark:bg-gray-800 rounded-2xl"
 >
 
 <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600"/>
@@ -152,7 +152,7 @@ Chennai, Tamil Nadu, India</p>
 
 {/* Contact Form */}
 
-<section className="py-24 bg-white dark:bg-gray-800">
+<section className="py-4 bg-white dark:bg-gray-800">
 
 <div className="max-w-5xl px-6 mx-auto">
 
