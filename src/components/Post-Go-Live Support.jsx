@@ -56,7 +56,7 @@ const HyperCareSection = () => {
                   ease: "easeInOut"
                 }}
                 viewport={{ once: false }}
-                className="group p-6 bg-blue-100 dark:bg-gray-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300"
+                className="group p-6 bg-blue-100 dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-[0_8px_30px_rgba(0,0,0,0.7)] border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300"
               >
 
                 {/* Icon */}
@@ -100,7 +100,7 @@ const HyperCareSection = () => {
                 ease: "easeInOut"
               }}
               viewport={{ once: false }}
-              className="p-4 bg-gray-300 dark:bg-gray-800 rounded-xl shadow border border-gray-200 dark:border-gray-700"
+              className="p-4 bg-gray-300 dark:bg-gray-800 rounded-xl shadow-md dark:shadow-[0_8px_30px_rgba(0,0,0,0.7)] border border-gray-200 dark:border-gray-400"
             >
               <p className="text-sm md:text-base font-medium text-gray-800 dark:text-gray-200">
                 {stat}

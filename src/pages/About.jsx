@@ -102,7 +102,7 @@ className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 ro
 >
 
 {/* Floating Icon */}
-<div className="absolute text-6xl text-blue-500 opacity-10 top-4 right-6">
+<div className="absolute text-6xl text-blue-500 opacity-100 dark:opacity-80 top-4 right-6">
 🚀
 </div>
 
@@ -138,7 +138,7 @@ className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 ro
 >
 
 {/* Floating Icon */}
-<div className="absolute text-6xl text-indigo-500 opacity-10 top-4 right-6">
+<div className="absolute text-6xl text-indigo-500 opacity-100 dark:opacity-80 top-4 right-6">
 🌍
 </div>
 

@@ -123,7 +123,7 @@ className="object-cover w-full h-56"
 
 <div className="p-6">
 
-<h3 className="mb-2 text-xl font-semibold">
+<h3 className="mb-2 text-xl font-semibold dark:text-gray-100">
 {item.title}
 </h3>
 

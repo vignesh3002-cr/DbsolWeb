@@ -1,57 +1,96 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Heading1 } from "lucide-react";
+
+// ✅ Typewriter Component
+const TypewriterText = ({ text, speed = 30, onComplete }) => {
+  const [displayedText, setDisplayedText] = React.useState("");
+
+  React.useEffect(() => {
+    let i = 0;
+    setDisplayedText("");
+
+    const interval = setInterval(() => {
+      setDisplayedText(text.slice(0, i + 1));
+      i++;
+
+      if (i === text.length) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          onComplete && onComplete();
+        }, 800); // pause after message
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed, onComplete]);
+
+  return <>{displayedText}</>;
+};
 
 const RoleplayScenario = () => {
+  const [activeIndex, setActiveIndex] = React.useState(-1);
+  const [hasStarted, setHasStarted] = React.useState(false);
 
   const conversations = [
     {
-      type: "client",
-      text: `Look, I’ve seen the demo. The dashboards are impressive, no doubt. But my General Managers are already overwhelmed. If I ask them to log into another system and spend time analyzing data every day, they’ll push back hard. How is this not just adding more noise to their workflow?`,
+        type: "expert",
+      text: `Greetings! How may I help you?`,
+      image: "/images/explainer.png"
+    },
+    {  
+    type: "client",
+      text: `We’ve invested a lot in this ERP system. The features look great, but honestly… our team is still using Excel. Adoption is low.`,
       image: "/images/client.png"
     },
     {
       type: "expert",
-      text: `I’m really glad you brought that up. Honestly, if this were just another dashboard, I’d tell you not to invest in it.
-
-What we’re doing is very different. We’re not adding work—we’re removing the parts of the job your GMs already dislike doing manually.`,
+      text: `That’s actually very common. The real challenge isn’t the system—it’s people...`,
       image: "/images/explainer.png"
     },
     {
       type: "client",
-      text: `That’s what everyone says. But in reality, my team spends weeks learning a system, and then they go right back to Excel because that’s what they trust. How do you prevent that “Shadow Excel” problem?`,
+      text: `What do you mean?`,
       image: "/images/client.png"
     },
     {
       type: "expert",
-      text: `We don’t fight that behavior—we use it.
-
-Instead of forcing a new way of working, we start with the exact manual checks your team already does every morning. We call it the “Shadow Process.” Then we automate just those steps first.`,
+      text: `Even the best ERP systems fail if employees don’t use them properly. This is what we call the Adoption Gap—the gap between implementing a system and actually using it effectively`,
       image: "/images/explainer.png"
     },
     {
       type: "client",
-      text: `Alright, but what about the learning curve? I can’t afford a drop in productivity during transition.`,
+      text: `So how do we fix that?`,
       image: "/images/client.png"
     },
     {
       type: "expert",
-      text: `Absolutely—and that’s where our “Low-Floor” approach comes in.
+      text: `We focus on people, not just technology:
 
-On Day 1, your GMs don’t even need to log into the system. They receive a simple “Morning Pulse” email highlighting the 2–3 things that actually need their attention.
+              We simplify workflows so employees don’t feel overwhelmed,
 
-No dashboards. No digging. Just clarity.`,
+              We provide role-based training (not generic sessions),
+
+              We identify ‘power users’ in your team to drive adoption internally,
+              
+              And most importantly, we align the system with how your team actually works.`,
       image: "/images/explainer.png"
     },
     {
       type: "client",
-      text: `So you’re saying adoption happens gradually, not all at once?`,
+      text: `And how does this help us at the leadership level?`,
       image: "/images/client.png"
     },
     {
       type: "expert",
-      text: `Exactly. We design for adoption, not enforcement.
+      text: `When adoption improves:
 
-If a system feels like a burden, people avoid it. If it feels like a helpful assistant, they rely on it.`,
+You get accurate, real-time data
+Decision-making becomes faster and more reliable
+ROI on your ERP investment actually shows up
+
+That’s what wins over the C-suite—not just implementation, but measurable business impact.`,
       image: "/images/explainer.png"
     },
     {
@@ -69,85 +108,98 @@ And after go-live, we stay with you through our Hyper-care phase—ensuring your
 
 We don’t just implement. We make sure it works.`,
       image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `Alright… Thanks for the Explaination`,
+      image: "/images/clientlast.png"
+    },
+    {
+      type: "expert",
+      text: `Welcome`,
+      image: "/images/explainer.png"
     }
   ];
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16 md:py-20 px-4">
+    <motion.section
+      className="bg-gray-50 dark:bg-gray-900 py-16 md:p y-20 px-4"
+      onViewportEnter={() => {
+        if (!hasStarted) {
+          setHasStarted(true);
+          setActiveIndex(0);
+        }
+      }}
+      viewport={{ amount: 0.3 }}
+    >
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-20 ">
             Turning Skepticism into Adoption
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-            A real conversation focused on workflow, not just dashboards.
-          </p>
+          <p className=""> 
+            A realworld Scenario of Client and Explainer</p>
         </div>
 
         {/* Conversation */}
-        <div className="space-y-10">
-          {conversations.map((item, index) => (
+        <div className="space-y-8">
 
-            <motion.div
-              key={index}
-              className={`flex items-start gap-3 md:gap-4 ${
-                item.type === "client" ? "justify-end" : "justify-start"
-              }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-                delay: index * 0.1
-              }}
-            >
+          {activeIndex >= 0 ? (
+            conversations
+              .slice(0, activeIndex + 1)
+              .map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={`flex items-start gap-3 ${
+                    item.type === "client" ? "justify-end" : "justify-start"
+                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
 
-              {/* Expert Image (LEFT) */}
-              {item.type === "expert" && (
-                <motion.img
-                  src={item.image}
-                  className="w-12 md:w-20 lg:w-24 h-auto flex-shrink-0"
-                  initial={{ opacity: 0, x: item.type === "client" ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                />
-              )}
+                  {/* Expert Image */}
+                  {item.type === "expert" && (
+                    <img src={item.image} className="w-12 md:w-20 lg:w-36" />
+                  )}
 
-              {/* Chat Bubble */}
-              <motion.div
-                className={`max-w-[85%] md:max-w-xl p-4 md:p-6 rounded-xl shadow-sm ${
-                  item.type === "client"
-                    ? "bg-red-100 dark:bg-red-800 text-gray-800 dark:text-gray-100 border dark:border-gray-400"
-                    : "bg-green-50 dark:bg-green-700 text-gray-800 dark:text-gray-100 border dark:border-gray-400"
-                }`}
-              >
-                <p className="whitespace-pre-line text-sm md:text-base">
-                  {item.text}
-                </p>
-              </motion.div>
+                  {/* Chat Bubble */}
+                  <motion.p
+                    className={`max-w-[90%] md:max-w-xl p-5 md:p-6 rounded-xl shadow whitespace-pre-line text-lg md:text-xl ${
+                      item.type === "client"
+                        ? "bg-orange-100 dark:bg-orange-300 text-gray-900 dark:text-gray-900"
+                        : "bg-green-50 dark:bg-green-200 text-gray-900 dark:text-gray-900"
+                    }`}
+                  >
+                    {index === activeIndex ? (
+                      <TypewriterText
+                        text={item.text}
+                        speed={30} // 🔥 change speed here
+                        onComplete={() => {
+                          if (activeIndex < conversations.length - 1) {
+                            setActiveIndex((prev) => prev + 1);
+                          }
+                        }}
+                      />
+                    ) : (
+                      item.text
+                    )}
+                  </motion.p>
 
-              {/* Client Image (RIGHT) */}
-              {item.type === "client" && (
-                <motion.img
-                  src={item.image}
-                  className="w-12 md:w-20 lg:w-24 h-auto flex-shrink-0"
-                  initial={{ opacity: 0, x: item.type === "client" ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                />
-              )}
+                  {/* Client Image */}
+                  {item.type === "client" && (
+                    <img src={item.image} className="w-12 md:w-20 lg:w-28 lg:w-36" />
+                  )}
 
-            </motion.div>
-          ))}
+                </motion.div>
+              ))
+          ) : null}
+
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 };
 
