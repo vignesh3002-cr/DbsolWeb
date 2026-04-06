@@ -3,8 +3,11 @@ import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
+
+
 import RoleBasedTraining from "../components/trainingController"
 import RoleplayScenario from "../components/roleplay"
+import HyperCareSection from "../components/Post-Go-Live Support"
 
 export default function CaseStudies(){
 
@@ -92,7 +95,7 @@ Client Success Stories
 </div>
 
 </section>
-<RoleplayScenario></RoleplayScenario>
+
 
 {/* CASE STUDIES GRID */}
 
@@ -147,7 +150,8 @@ Result: {item.result}
 </div>
 
 </section>
-
+<HyperCareSection></HyperCareSection>
+<RoleplayScenario></RoleplayScenario>
 
 {/* METRICS SECTION */}
 
