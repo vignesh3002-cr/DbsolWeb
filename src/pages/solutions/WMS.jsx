@@ -1,8 +1,10 @@
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import RoleBasedTraining from "../../components/trainingController"
 import Integration from "../../components/IntegrationSteps"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+
 
 import {
 FaWarehouse,
@@ -297,12 +299,15 @@ className="p-6 text-center bg-white shadow-lg rounded-xl dark:bg-gray-900"
 
 ))}
 
+
+
 </div>
 
 </div>
 
 </section>
 
+<RoleBasedTraining/>
 
 {/* BUSINESS IMPACT */}
 

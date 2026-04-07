@@ -73,7 +73,7 @@ const RoleplayScenario = () => {
               We provide role-based training (not generic sessions),
 
               We identify ‘power users’ in your team to drive adoption internally,
-              
+
               And most importantly, we align the system with how your team actually works.`,
       image: "/images/explainer.png"
     },
@@ -86,11 +86,11 @@ const RoleplayScenario = () => {
       type: "expert",
       text: `When adoption improves:
 
-You get accurate, real-time data
-Decision-making becomes faster and more reliable
-ROI on your ERP investment actually shows up
+              You get accurate, real-time data
+              Decision-making becomes faster and more reliable
+              ROI on your ERP investment actually shows up
 
-That’s what wins over the C-suite—not just implementation, but measurable business impact.`,
+              That’s what wins over the C-suite—not just implementation, but measurable business impact.`,
       image: "/images/explainer.png"
     },
     {
@@ -136,10 +136,10 @@ We don’t just implement. We make sure it works.`,
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-20 ">
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-10 ">
             Turning Skepticism into Adoption
           </h2>
-          <p className=""> 
+          <p className="text-black dark:text-gray-100 text-xl mb-20"> 
             A realworld Scenario of Client and Explainer</p>
         </div>
 
