@@ -25,7 +25,8 @@ import Careers from "./pages/Careers";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
-function App() {
+import CareerForm from "./components/Careers_Form.jsx";
+ function App() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
@@ -54,7 +55,9 @@ function App() {
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
-    </Routes>
+      <Route path="/CareerForm/" element={<CareerForm/>}></Route>
+         
+         </Routes>
     </BrowserRouter>
   );
 }

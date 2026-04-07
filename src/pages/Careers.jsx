@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
 import {
 FaUsers,
 FaLaptopCode,
@@ -192,7 +191,7 @@ className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl d
 </div>
 
 <Link
-to="/contact"
+to="/CareerForm"
 className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
 >
 
@@ -228,7 +227,7 @@ when a suitable role becomes available.
 </p>
 
 <Link
-to="/contact"
+to="/CareerForm"
 className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
 >
 
