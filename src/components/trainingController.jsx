@@ -68,7 +68,7 @@ const scrollRight = () => {
   scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
 };
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20 px-6">
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-800 to-slate-800  dark:bg-gradient-to-br dark:from-slate-900 dark:via-black-900 dark:to-slate-800 text-white dark:text-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -117,14 +117,15 @@ const scrollRight = () => {
   <div className="relative"> 
              <button
     onClick={scrollLeft}
-    className="bg-black text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] left-8 z-50 hover:bg-gray-800 transition "
+    className="bg-black/40 dark:bg-white/40 w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] left-4 z-50 hover:bg-gray-800 transition "
   >
-    &#8592;
-  </button>  <button
+    <svg className="w-5 h-5 rotate-180 fill-current text-white dark:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+  </button>  
+  <button
     onClick={scrollRight}
-    className="bg-black text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] right-8 z-50 hover:bg-gray-800 transition"
+    className="bg-black/40 dark:bg-white/40  dark:text-black w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] right-4 z-50 hover:bg-gray-800 transition"
   >
-    &#8594;
+   <svg className="w-5 h-5 fill-current text-white dark:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg> 
   </button>
         {/* Sliding Steps */}
         <div ref={scrollRef} className="overflow-x-auto scrollbar-hide">
@@ -155,10 +156,6 @@ const scrollRight = () => {
    </div>
       
       {/* Progress Bar */}
-        <div className="mt-10">
-          <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  </div>
-    </div>
       </div>
     </section>
   );
