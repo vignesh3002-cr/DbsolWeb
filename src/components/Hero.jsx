@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Home() {
+  const navigate = useNavigate();
   const slides = [
     {
       title: "Microsoft Dynamics 365 Finance & Operations Solutions",
@@ -28,17 +29,16 @@ export default function Hero() {
     }, 2500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      
       {/* Background */}
       <img
         src={slides[current].img}
+        alt="Hero Background"
         className="absolute object-cover w-full h-full transition-all duration-1000"
       />
-
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
@@ -66,11 +66,16 @@ export default function Hero() {
                 Explore Services
               </button>
             </HashLink>
-*/}
-            <a href="/contact"><button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
-              Contact Us
-            </button></a>
 
+*/}
+           
+            {/* Contact button */}
+            <button
+              onClick={() => navigate("/Contact")}
+              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black"
+            >
+              Contact Us
+            </button>
           </div>
         </motion.div>
       </div>
@@ -88,5 +93,5 @@ export default function Hero() {
         ))}
       </div>
     </section>
-  );
+  )
 }

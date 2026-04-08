@@ -26,7 +26,8 @@ import ContactExperts from "./pages/expert.jsx";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
-function App() {
+import CareerForm from "./components/Careers_Form.jsx";
+ function App() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
@@ -42,7 +43,7 @@ function App() {
       <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
       <Route path="/Retail&Wholesale" element={<RetailWholesale/>}></Route>
       <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain/>}></Route>
-      <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>
+      <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>  
       <Route path="/HealthCare" element={<Healthcare/>}></Route>
       <Route path="/Education" element={<Education/>}></Route>
       <Route path="/Hospitality" element={<Hospitality/>}></Route>
@@ -55,8 +56,14 @@ function App() {
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
+<<<<<<< HEAD
       <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
+=======
+      <Route path="/CareerForm/" element={<CareerForm/>}></Route>       
+      <Route path="/ContactPage" element={<ContactPage/>}></Route>
+>>>>>>> dcf844f4aceb92b7242b8829df527ee4c6d1df8a
       </Routes>
+
     </BrowserRouter>
   );
 }

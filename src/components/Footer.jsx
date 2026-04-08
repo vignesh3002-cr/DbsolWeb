@@ -1,31 +1,101 @@
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaArrowUp } from "react-icons/fa"
+import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
-
+import emailjs from "emailjs-com";
+import React, { useRef } from "react";
 export default function Footer(){
-
+const form = useRef();
 const scrollTop = ()=>{
 window.scrollTo({top:0,behavior:"smooth"})
 }
-
+const sendEmail = (e) =>{
+    e.preventDefault();
+ emailjs.sendForm(
+        "service_zakxdhu",
+        "template_f8if95g",
+        form.current,
+        "WqsGjD4ltQ3Kgu4PA"
+    )
+    .then(
+        (result)=>{
+            console.log(result.text);
+            alert("Message sent successfully!");
+        },
+    (error)=>{
+        console.log(error.text);
+        alert("Failed to send message.");
+    }
+    );
+ }
 return(
 
 <footer className="relative pt-20 text-gray-300 bg-black">
 
 {/* Main Footer */}
 
-<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
+<div className="grid w-ful gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
 {/* Company Info */}
-<div className="inset-0 min-w-56">
+<div className="inset-0 min-w-auto">
+<section className="bg-black">
 
-<video
-  src="/images/Solution_System.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="object-cover w-full h-full"
-></video>
+<div className="max-w-5xl px-6 mx-auto">
+
+<h2 className="mb-4 text-2xl font-bold text-center text-white">
+Contact Us
+</h2>
+
+
+<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+className=" border-b-[1px] bg-transparent focus:outline-none text-sm" 
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm "
+/>
+
+<input
+type="text"
+name="company"
+placeholder="Company Name"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
+/>
+
+<input
+type="text"
+name="phone"
+placeholder="Phone Number"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
+/>
+
+<textarea
+rows="3"
+name="message"
+placeholder="Describe your project or requirement..."
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
+></textarea>
+
+<button type="submit"
+className="py-2 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
+>
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
 
 </div>
 
@@ -87,25 +157,45 @@ Quick Links
 <ul className="space-y-3 text-sm">
 
 <li className="transition cursor-pointer hover:text-white">
-Home
+<NavLink to="/"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+
+}
+>Home</NavLink>
+
 </li>
 
 <li className="transition cursor-pointer hover:text-white">
-About Us
+<NavLink
+to="/aboutUs"
+className={({isActive}) =>
+isActive ? "txt-blue-600 border-b-2 border-t-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+ About Us 
+</NavLink>
 </li>
+
 
 <li className="transition cursor-pointer hover:text-white">
-Services
+<NavLink to="/contact"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+  Contact Us
+</NavLink>
 </li>
-
-<li className="transition cursor-pointer hover:text-white">
-Industries
+  <li className="transition cursor-pointer hover:text-white">
+<NavLink to="/Careers"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+  Careers
+</NavLink>
 </li>
-
-<li className="transition cursor-pointer hover:text-white">
-Contact
-</li>
-
 </ul>
 
 </div>
