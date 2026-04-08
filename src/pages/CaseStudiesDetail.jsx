@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import UATSection from "../components/UAT"
 
+
 export default function CaseStudyDetail(){
 
 const {id} = useParams()

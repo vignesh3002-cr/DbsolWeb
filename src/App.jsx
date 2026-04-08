@@ -41,7 +41,7 @@ function App() {
       <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
       <Route path="/Retail&Wholesale" element={<RetailWholesale/>}></Route>
       <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain/>}></Route>
-      <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>
+      <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>  
       <Route path="/HealthCare" element={<Healthcare/>}></Route>
       <Route path="/Education" element={<Education/>}></Route>
       <Route path="/Hospitality" element={<Hospitality/>}></Route>

@@ -11,7 +11,7 @@ FaChartLine,
 FaClock,
 FaLaptop
 } from "react-icons/fa"
-
+import HyperCareSection from "../../components/Post-Go-Live Support"
 export default function HumanResourceManagementSystem(){
 
 const features = [
@@ -337,7 +337,7 @@ className={`p-6 shadow-lg ${
 
 </section>
 
-
+<HyperCareSection/>
 {/* CTA */}
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-900">

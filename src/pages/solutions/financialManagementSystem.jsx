@@ -11,6 +11,7 @@ FaChartPie,
 FaDatabase,
 FaShieldAlt
 } from "react-icons/fa"
+import HyperCareSection from "../../components/Post-Go-Live Support"
 
 export default function FinancialManagementSystem(){
 
@@ -335,6 +336,7 @@ className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-oran
 
 </section>
 
+<HyperCareSection/>
 
 {/* CTA */}
 

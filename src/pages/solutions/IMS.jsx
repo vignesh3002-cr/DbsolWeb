@@ -12,6 +12,7 @@ FaClipboardList,
 FaSyncAlt,
 FaWarehouse
 } from "react-icons/fa"
+import HyperCareSection from "../../components/Post-Go-Live Support"
 
 export default function InventoryManagementSystem(){
 
@@ -350,6 +351,7 @@ className={`p-6 shadow-lg ${
 
 </section>
 
+<HyperCareSection/>
 
 {/* CTA */}
 

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
+export default function Home() {
+  const navigate = useNavigate();
 
-export default function Hero() {
   const slides = [
     {
       title: "Microsoft Dynamics 365 Finance & Operations Solutions",
@@ -29,17 +31,16 @@ export default function Hero() {
     }, 2500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      
       {/* Background */}
       <img
         src={slides[current].img}
+        alt="Hero Background"
         className="absolute object-cover w-full h-full transition-all duration-1000"
       />
-
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
@@ -60,18 +61,20 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-4">
-
-            {/* 🔥 THIS BUTTON WORKS */}
+            {/* Services button */}
             <HashLink smooth to="/services#services">
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Explore Services
               </button>
             </HashLink>
 
-            <a href="/contact"><button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
+            {/* Contact button */}
+            <button
+              onClick={() => navigate("/Contact")}
+              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black"
+            >
               Contact Us
-            </button></a>
-
+            </button>
           </div>
         </motion.div>
       </div>
@@ -91,3 +94,4 @@ export default function Hero() {
     </section>
   );
 }
+``
