@@ -22,7 +22,7 @@ import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
 import InventoryManagementSystem from "./pages/solutions/IMS";
 import Careers from "./pages/Careers";
-import ContactPage from "./pages/expert.jsx";
+import ContactExperts from "./pages/expert.jsx";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
@@ -55,7 +55,7 @@ function App() {
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
-      <Route path="/ContactPage" element={<ContactPage/>}></Route>
+      <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
       </Routes>
     </BrowserRouter>
   );

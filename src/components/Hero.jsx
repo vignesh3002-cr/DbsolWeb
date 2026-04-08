@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { HashLink } from "react-router-hash-link";
 
 export default function Hero() {
   const slides = [
@@ -61,13 +60,13 @@ export default function Hero() {
 
           <div className="flex gap-4">
 
-            {/* 🔥 THIS BUTTON WORKS */}
+            {/* 🔥 THIS BUTTON WORKS 
             <HashLink smooth to="/services#services">
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Explore Services
               </button>
             </HashLink>
-
+*/}
             <a href="/contact"><button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
               Contact Us
             </button></a>
