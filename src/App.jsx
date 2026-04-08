@@ -56,12 +56,9 @@ import CareerForm from "./components/Careers_Form.jsx";
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
-<<<<<<< HEAD
       <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
-=======
       <Route path="/CareerForm/" element={<CareerForm/>}></Route>       
       <Route path="/ContactPage" element={<ContactPage/>}></Route>
->>>>>>> dcf844f4aceb92b7242b8829df527ee4c6d1df8a
       </Routes>
 
     </BrowserRouter>
