@@ -62,7 +62,7 @@ export default function Home() {
 
           <div className="flex gap-4">
             {/* Services button */}
-            <HashLink smooth to="/services#services">
+            <HashLink smooth to="/#services">
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Explore Services
               </button>

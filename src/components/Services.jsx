@@ -38,7 +38,8 @@ export default function Services() {
       <div className="px-6 mx-auto max-w-7xl">
 
         {/* TITLE */}
-        <div className="mb-16 text-center">
+        <div id="services"
+         className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold dark:text-blue-600">
             Our Professional Services
           </h2>
