@@ -33,16 +33,16 @@ return(
 
 {/* Main Footer */}
 
-<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
+<div className="grid w-ful gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
 {/* Company Info */}
 <div className="inset-0 min-w-auto">
-<section className="py-24 bg-white dark:bg-gray-800">
+<section className="bg-black">
 
 <div className="max-w-5xl px-6 mx-auto">
 
-<h2 className="mb-12 text-4xl font-bold text-center text-gray-800 dark:text-white">
-Send Us a Message
+<h2 className="mb-4 text-2xl font-bold text-center text-white">
+Contact Us
 </h2>
 
 
@@ -51,39 +51,39 @@ Send Us a Message
 type="text"
 name="name"
 placeholder="Full Name"
-className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+className=" border-b-[1px] bg-transparent focus:outline-none text-sm" 
 />
 
 <input
 type="email"
 name="email"
 placeholder="Email Address"
-className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm "
 />
 
 <input
 type="text"
 name="company"
 placeholder="Company Name"
-className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
 />
 
 <input
 type="text"
 name="phone"
 placeholder="Phone Number"
-className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
 />
 
 <textarea
-rows="5"
+rows="3"
 name="message"
 placeholder="Describe your project or requirement..."
-className="p-4 border rounded-lg md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm"
 ></textarea>
 
-<button type="submit"Send Message
-className="py-4 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
+<button type="submit"
+className="py-2 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
 >
 
 Send Message
