@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 
-
 import RoleBasedTraining from "../components/trainingController"
 import RoleplayScenario from "../components/roleplay"
 import HyperCareSection from "../components/Post-Go-Live Support"
@@ -150,9 +149,9 @@ Result: {item.result}
 </div>
 
 </section>
-<HyperCareSection></HyperCareSection>
 <RoleplayScenario></RoleplayScenario>
-
+<HyperCareSection></HyperCareSection>
+<RoleBasedTraining></RoleBasedTraining>
 {/* METRICS SECTION */}
 
 <section className="py-24 bg-gray-100 dark:bg-gray-800">
@@ -194,7 +193,6 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 
 </section>
 
-<RoleBasedTraining/>
 {/* CTA */}
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-800">

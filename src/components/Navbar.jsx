@@ -2,13 +2,34 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Header() {
 
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
 const [solutionOpen,setSolutionOpen]=useState(false);
-const [darkMode,setDarkMode] = useState(false);
+const toggleServices = () => {
+  setServicesOpen(prev => !prev);
+  setIndustriesOpen(false);
+  setSolutionOpen(false);
+};
+
+const toggleIndustries = () => {
+  setIndustriesOpen(prev => !prev);
+  setServicesOpen(false);
+  setSolutionOpen(false);
+};
+
+const toggleSolutions = () => {
+  setSolutionOpen(prev => !prev);
+  setServicesOpen(false);
+  setIndustriesOpen(false);
+};
+
+const [darkMode,setDarkMode] = useState(
+  document.documentElement.classList.contains("dark")
+);
 const [menu,setMenu] = useState(false)
 
 const toggleDarkMode = () =>{
@@ -16,6 +37,24 @@ setDarkMode(!darkMode)
 document.documentElement.classList.toggle("dark")
 }
 
+const resetMenu = () => {
+  setMenu(false);
+  setServicesOpen(false);
+  setIndustriesOpen(false);
+  setSolutionOpen(false);
+};
+
+useEffect(() => {
+  if (menu) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [menu]);
 return(
 <div className="relative">
 <header className="fixed z-40 w-full transition bg-white shadow-md dark:bg-gray-900">
@@ -26,7 +65,9 @@ return(
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
   <button
 onClick={()=>setMenu(!menu)}
-className="text-2xl lg:hidden"
+className={`text-2xl lg:hidden ${
+  darkMode ? "text-white" : "dark-text-black"
+} `}
 >
 {menu? '✕' : '☰'}
 
@@ -100,7 +141,7 @@ Services
 initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
-transition={{duration:0.25}}
+transition={{duration:0.30}}
 className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
 
@@ -407,8 +448,9 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </header>
 {menu && (
 
-<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.2}} className="fixed left-0 z-40 w-9/12 px-6 py-6 pb-10 bg-white border-b border-r border-gray-400 top-12 lg:hidden">
-<ul className="flex flex-col gap-6 text-2xl font-semibold">
+<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed left-1 z-40 w-9/12 px-6 py-6 pb-10 
+bg-white dark:bg-gray-800 text-black dark:text-gray-200 border-b border-r border-gray-400 top-12 lg:hidden rounded-xl">
+<ul className="flex flex-col gap-5 text-xl font-semibold ">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/"
@@ -426,7 +468,7 @@ Home
 className="relative"
 >
 
-<div onClick={()=>setServicesOpen(!servicesOpen)}
+<div onClick={toggleServices}
 className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
 
 Services
@@ -452,7 +494,7 @@ to="/finance-operation"
 className={({isActive}) =>
 isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
 Finance & Operations</NavLink>
-</li>
+</li> 
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink to="/Dynamics365Business" className={({isActive}) =>
@@ -484,7 +526,7 @@ App Development</NavLink>
 className="relative"
 >
 
-<div onClick={()=>setSolutionOpen(!solutionOpen)} className="flex items-center gap-2 cursor-pointer">
+<div onClick={toggleSolutions}className="flex items-center gap-2 cursor-pointer">
 Solutions
 
 {solutionOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
@@ -548,7 +590,7 @@ Inventory Management System</NavLink>
 className="relative"
 >
 
-<div onClick={()=>setIndustriesOpen(!industriesOpen)} className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div onClick={toggleIndustries} className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
 
 Industries
 

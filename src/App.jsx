@@ -22,6 +22,7 @@ import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
 import InventoryManagementSystem from "./pages/solutions/IMS";
 import Careers from "./pages/Careers";
+import ContactPage from "./pages/expert.jsx";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
@@ -55,9 +56,14 @@ import CareerForm from "./components/Careers_Form.jsx";
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
+<<<<<<< HEAD
       <Route path="/CareerForm/" element={<CareerForm/>}></Route>
          
          </Routes>
+=======
+      <Route path="/ContactPage" element={<ContactPage/>}></Route>
+      </Routes>
+>>>>>>> edd7d9fe1293642ba5d8661f13379c433840820f
     </BrowserRouter>
   );
 }
