@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import "./App.jsx";
 import Contact from "./pages/Contact";
 import FinanceOperations from "./pages/services/Finanace-operation";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
@@ -22,11 +21,11 @@ import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
 import InventoryManagementSystem from "./pages/solutions/IMS";
 import Careers from "./pages/Careers";
-import ContactPage from "./pages/expert.jsx";
+import ContactExperts from "./pages/expert";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
-import CareerForm from "./components/Careers_Form.jsx";
+import CareerForm from "./components/Careers_Form";
  function App() {
   return (
     <BrowserRouter>
@@ -56,8 +55,8 @@ import CareerForm from "./components/Careers_Form.jsx";
       <Route path="/careers" element={<Careers/>}></Route>
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
+      <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
       <Route path="/CareerForm/" element={<CareerForm/>}></Route>       
-      <Route path="/ContactPage" element={<ContactPage/>}></Route>
       </Routes>
 
     </BrowserRouter>
