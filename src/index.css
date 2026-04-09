@@ -32,3 +32,6 @@ html {
 .dropdown li:hover::after {
   transform: scaleX(1);
 }
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -59,7 +60,7 @@ export default function Home() {
           <p className="mb-8 text-lg text-gray-200">
             {slides[current].desc}
           </p>
-
+          
           <div className="flex gap-4">
             {/* Services button */}
             <HashLink smooth to="/#services">

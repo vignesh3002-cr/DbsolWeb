@@ -6,35 +6,34 @@ import Consultation from "../components/Consultation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from "emailjs-com";
+import bg from "/images/schedule_consultant.png";
 
 export default function Contact() {
   const form = useRef();
-  const { hash } = useLocation(); // ✅ get hash from URL
+  const { hash } = useLocation();
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ Detect mobile
+  // Detect mobile
   useEffect(() => {
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
   }, []);
 
-  // ✅ 🔥 THIS IS THE IMPORTANT PART (Step 2 fix)
+  // Scroll to section
   useEffect(() => {
     if (hash) {
       setTimeout(() => {
         const el = document.querySelector(hash);
-        if (el) {
-          el.scrollIntoView(); // instant jump (no smooth)
-        }
-      }, 200); // delay ensures component is rendered
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 200);
     }
   }, [hash]);
 
   const handleClick = () => {
     if (isMobile) {
-      window.location.href = "tel:+91 9994883682";
+      window.location.href = "tel:+919994883682";
     } else {
       navigator.clipboard.writeText("+91 9994883682");
-      alert("Phone number copied! You can paste it to call.");
+      alert("Phone number copied!");
     }
   };
 
@@ -48,14 +47,8 @@ export default function Contact() {
         "WqsGjD4ltQ3Kgu4PA"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Failed to send message.");
-        }
+        () => alert("Message sent successfully!"),
+        () => alert("Failed to send message.")
       );
   };
 
@@ -65,7 +58,7 @@ export default function Contact() {
 
       <div className="bg-gray-50 dark:bg-gray-900">
 
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="relative flex items-center justify-center h-[350px]">
           <img
             src="/images/Contact_us.jfif"
@@ -83,7 +76,7 @@ export default function Contact() {
               <Link to="/" className="hover:text-blue-400">
                 Home
               </Link>
-              <span className="mx-4 text-xl">»</span>
+              <span className="mx-4">»</span>
               <span className="text-blue-400">Contact Us</span>
             </p>
           </div>
@@ -99,20 +92,17 @@ export default function Contact() {
               className="p-10 text-center bg-white shadow-lg cursor-pointer dark:bg-gray-800 rounded-2xl"
             >
               <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600" />
-              <h3 className="mb-2 text-lg font-semibold">Phone</h3>
+              <h3 className="mb-2 font-semibold">Phone</h3>
               <p className="text-gray-500">+91 9994883682</p>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="p-10 text-center bg-white shadow-lg cursor-pointer dark:bg-gray-800 rounded-2xl"
+              className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
             >
               <a href="mailto:jayakumar.k@dbsoltechnologies.com">
                 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
-                <h3 className="mb-2 text-lg font-semibold">Email</h3>
-                <p className="text-gray-500">
-                  jayakumar.k@dbsoltechnologies.com
-                </p>
+                <h3>Email</h3>
               </a>
             </motion.div>
 
@@ -121,16 +111,12 @@ export default function Contact() {
               className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
             >
               <a
-                href="https://maps.app.goo.gl/khLbGNhEMZSXr7VH6"
+                href="https://www.google.com/maps/place/Indran+Tower/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaMapMarkerAlt className="mx-auto mb-4 text-3xl text-blue-600" />
-                <h3 className="mb-2 text-lg font-semibold">Office</h3>
-                <p className="text-gray-500">
-                  VP Chindhan Ave
-                  Chennai, Tamil Nadu, India
-                </p>
+                <h3>Office</h3>
               </a>
             </motion.div>
 
@@ -138,66 +124,63 @@ export default function Contact() {
         </section>
 
         {/* Contact Form */}
-        <section className="py-4 bg-white dark:bg-gray-800">
+        <section className="py-10 bg-white dark:bg-gray-800">
           <div className="max-w-5xl px-6 mx-auto">
 
-            <h2 className="mb-12 text-4xl font-bold text-center text-gray-800 dark:text-white">
+            <h2 className="mb-10 text-3xl font-bold text-center dark:text-white">
               Send Us a Message
             </h2>
 
-            <form ref={form} onSubmit={sendEmail} className="grid gap-8 md:grid-cols-2">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="grid gap-6 md:grid-cols-2"
+            >
+              <input className="p-3 border rounded" placeholder="Full Name" />
+              <input className="p-3 border rounded" placeholder="Email" />
+              <input className="p-3 border rounded" placeholder="Company" />
+              <input className="p-3 border rounded" placeholder="Phone" />
 
-              <input type="text" name="name" placeholder="Full Name"
-                className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <textarea className="p-3 border rounded md:col-span-2" />
 
-              <input type="email" name="email" placeholder="Email Address"
-                className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-
-              <input type="text" name="company" placeholder="Company Name"
-                className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-
-              <input type="text" name="phone" placeholder="Phone Number"
-                className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-
-              <textarea rows="5" name="message"
-                placeholder="Describe your project or requirement..."
-                className="p-4 border rounded-lg md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </textarea>
-
-              <button
-                type="submit"
-                className="py-4 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
-              >
+              <button className="py-3 text-white bg-blue-600 rounded md:col-span-2">
                 Send Message
               </button>
-
             </form>
           </div>
         </section>
 
-        {/* Map */}
-        <section className="py-20">
-          <div className="max-w-6xl px-6 mx-auto">
-            <h2 className="mb-10 text-3xl font-bold text-center text-gray-800 dark:text-white">
-              Our Location
-            </h2>
+        {/* 🔥 MAP + CONSULTATION */}
+        <section
+          style={{ backgroundImage: `url(${bg})` }}   // ✅ FIXED
+          className="w-full bg-cover bg-center relative py-20 px-4"
+        >
+          {/* overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-            <div className="overflow-hidden shadow-lg rounded-2xl">
+          <div className="relative z-10 max-w-6xl mx-auto grid gap-10 md:grid-cols-2 items-start">
+
+            {/* LEFT → Map */}
+            <div>
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Our Location
+              </h2>
+
               <iframe
-                title="company location"
-                src="https://www.google.com/maps/embed?pb=..."
-                width="100%"
-                height="400"
-                className="border-0"
-              ></iframe>
+                title="map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d239551.76369653767!2d80.01036403796768!3d12.846903928877058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f638bae20f87%3A0x6e87491d6d266f6!2sVP%20Chindhan%20Ave%2C%20Senthil%20Nagar%2C%20Urapakkam%2C%20Tamil%20Nadu%20603210%2C%20India!5e0!3m2!1sen!2sus!4v1775712495981!5m2!1sen!2sus"
+                className="w-full h-[400px] rounded-2xl shadow-lg"
+              />
             </div>
+
+            {/* RIGHT → Consultation */}
+            <div id="form-selection"
+            className="flex justify-end">
+              <Consultation />
+            </div>
+
           </div>
         </section>
-
-        {/* ✅ TARGET COMPONENT */}
-        <div id="form-selection">
-          <Consultation />
-        </div>
 
       </div>
 
