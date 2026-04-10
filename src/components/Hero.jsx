@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
-import { useNavigate,useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation,Link } from "react-router-dom";
+
 
 
 export default function Home() {
@@ -69,7 +69,7 @@ export default function Home() {
             <HashLink smooth to="/services#services">
 
             {/* Services button */}
-            <HashLink smooth to="/#services">
+            <HashLink smooth to="/#clients-section">
 
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Explore Services
@@ -100,6 +100,7 @@ export default function Home() {
           ></button>
         ))}
       </div>
+      
     </section>
   )
 }

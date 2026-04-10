@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FaStar } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 export default function Testimonials(){
 
@@ -124,7 +125,27 @@ className="object-cover w-12 h-12 rounded-full"
 </div>
 
 </div>
+<br></br>
+              <Link
+                to="/globe"
+                className="group flex flex-col items-center justify-center gap-3 p-6 rounded-2xl 
+                          bg-none shadow-none hover: transition-all duration-300 
+                          hover:-translate-y-2"
+              >
+                <span
+                  className="text-[80px] transition-transform duration-500 
+                            group-hover:scale-125 group-hover:rotate-12"
+                >
+                  🌍
+                </span>
 
+                <p
+                  className="text-gray-700  font-semibold text-center 
+                            transition-colors duration-300 group-hover:text-blue-600 group-hover:text-lg"
+                >
+                  Our Clients Around the World
+                </p>
+              </Link>
 </section>
 
 )

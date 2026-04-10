@@ -83,7 +83,7 @@ export default function Consultation() {
         </h2>
 
         {/* Name */}
-        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3">
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
           <input
             ref={inputRef}
             type="text"
@@ -97,7 +97,7 @@ export default function Consultation() {
         </div>
 
         {/* Email */}
-        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3">
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
           <input
             type="email"
             name="email"
@@ -110,7 +110,7 @@ export default function Consultation() {
         </div>
 
         {/* Date */}
-        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 py-2">
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 py-2 text-white">
           <DatePicker
             selected={date}
             placeholderText="MM/DD/YYYY"
@@ -124,7 +124,7 @@ export default function Consultation() {
         </div>
 
         {/* Time */}
-        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3">
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
           <input
             type={showTime ? "time" : "text"}
             placeholder="00:00  Time"
@@ -138,7 +138,7 @@ export default function Consultation() {
         </div>
 
         {/* Message */}
-        <div className="relative bg-white/30 backdrop-blur-md rounded-lg px-3">
+        <div className="relative bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
   <span
     className={`absolute left-3 top-3 text-gray-400 transition-opacity duration-300 pointer-events-none ${
       formData.message.trim() !== "" ? "opacity-0" : "opacity-50"

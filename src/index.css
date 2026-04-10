@@ -35,3 +35,6 @@ html {
 .react-datepicker-popper {
   z-index: 9999 !important;
 }
+html {
+  scroll-behavior: smooth;
+}
