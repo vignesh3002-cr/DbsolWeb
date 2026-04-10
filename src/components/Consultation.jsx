@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import useScrollAndFocus from "../hooks/useScrollAndFocus";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 
+
 export default function Consultation() {
+  const inputRef = useRef();
+  useScrollAndFocus(inputRef, "#form-selection");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,6 +53,7 @@ export default function Consultation() {
         setFormData({ name: "", email: "", message: "" });
         setDate(null);
         setTime("");
+        setShowTime(false);
       })
       .catch(() => {
         Swal.fire({
@@ -59,74 +65,105 @@ export default function Consultation() {
   };
 
   return (
-    // ✅ MOVE ID HERE (VERY IMPORTANT)
-    <select>
     <div
       id="form-selection"
-      className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900"
+      className=""
     >
+      {/* Dark overlay */}
+      <div className="absolute inset-0"></div>
+      
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg w-96"
+        className="relative z-10 p-6 md:p-8 rounded-3xl shadow-xl w-full max-w-md space-y-4 backdrop-blur-xl bg-white/20 border border-white/30 mr-6"
       >
-        <h2 className="text-2xl font-bold mb-4 text-center text-black dark:text-white">
+        {/* Title */}
+        <h2 className="text-2xl font-bold text-center text-white flex items-center justify-center gap-2">
+          <img src="/images/calendar.png" className="h-8" alt="calendar" />
           Schedule Consultation
         </h2>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full mb-3 p-2 border rounded"
-          required
-        />
+        {/* Name */}
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
+          <input
+            ref={inputRef}
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 bg-transparent outline-none placeholder-white/90"
+            required
+          />
+        </div>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full mb-3 p-2 border rounded"
-          required
-        />
+        {/* Email */}
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 bg-transparent outline-none placeholder-white/90"
+            required
+          />
+        </div>
 
-        <DatePicker
-          selected={date}
-          onChange={(d) => setDate(d)}
-          placeholderText="Select Date"
-          className="w-full mb-3 p-2 border rounded"
-          required
-        />
+        {/* Date */}
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 py-2 text-white">
+          <DatePicker
+            selected={date}
+            placeholderText="MM/DD/YYYY"
+            onChange={(d) => setDate(d)}
+            minDate={new Date()}
+            className="w-full p-3 bg-transparent outline-none placeholder-white/90"
+            required
+            popperClassName="!z-[9999]"
+            portalId="root"
+          />
+        </div>
 
-        <input
-          type={showTime ? "time" : "text"}
-          placeholder="Select Time"
-          onFocus={() => setShowTime(true)}
-          onBlur={() => !time && setShowTime(false)}
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
-        />
+        {/* Time */}
+        <div className="bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
+          <input
+            type={showTime ? "time" : "text"}
+            placeholder="00:00  Time"
+            onFocus={() => setShowTime(true)}
+            onBlur={() => !time && setShowTime(false)}
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            className="w-full p-3 bg-transparent outline-none placeholder-white/90"
+            required
+          />
+        </div>
 
-        <textarea
-          name="message"
-          placeholder="Message"
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full mb-3 p-2 border rounded"
-        />
+        {/* Message */}
+        <div className="relative bg-white/30 backdrop-blur-md rounded-lg px-3 text-white">
+  <span
+    className={`absolute left-3 top-3 text-gray-400 transition-opacity duration-300 pointer-events-none ${
+      formData.message.trim() !== "" ? "opacity-0" : "opacity-50"
+    }`}
+  >
+    💬
+  </span>
+  
+          <textarea
+            name="message"      
+            value={formData.message}
+            placeholder="   Message"
+            onChange={handleChange}
+            className="w-full p-3 bg-transparent outline-none placeholder-white/90 overflow-visible"
+          />
+        </div>
 
+        {/* Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300"
         >
           Submit
         </button>
       </form>
     </div>
-    </select>
   );
 }

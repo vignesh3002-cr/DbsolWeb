@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import CountUp from "react-countup"
+import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
 
 export default function About(){
@@ -243,7 +244,7 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 </div>
 
 </section>
-
+<GlobePage></GlobePage>
 {/* FINAL CTA */}
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 via-blue-700 to-purple-700 dark:from-gray-800">
@@ -265,12 +266,10 @@ className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gr
 Contact Us
 </a>
 
-<a
-href="/services"
-className="px-8 py-4 font-semibold border border-white rounded-lg hover:bg-white hover:text-blue-600"
->
+<Link className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+ to="/#clients-section">
 Explore Services
-</a>
+</Link>
 
 </div>
 

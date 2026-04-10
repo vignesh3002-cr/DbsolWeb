@@ -26,6 +26,7 @@ import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
+import GlobePage from "./components/Globepage";
  function App() {
   return (
     <BrowserRouter>
@@ -40,6 +41,7 @@ import CareerForm from "./components/Careers_Form";
       <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>}></Route>
       <Route path="/IT.ITES" element={<ITITES/>}></Route>
       <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
+      <Route path="/Globe" element={<GlobePage/>} />
       <Route path="/Retail&Wholesale" element={<RetailWholesale/>}></Route>
       <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain/>}></Route>
       <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>  

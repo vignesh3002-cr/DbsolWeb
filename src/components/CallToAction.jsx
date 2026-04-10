@@ -1,65 +1,196 @@
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Consultation from "../components/Consultation";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import emailjs from "emailjs-com";
+import bg from "/images/schedule_consultant.png";
+import Swal from "sweetalert2";
 
-export default function CallToAction() {
-  const navigate = useNavigate();
+export default function Contact() {
+  const form = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // detect mobile
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+
+  // phone click handler
+  const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:+919994883682";
+    } else {
+      navigator.clipboard.writeText("+91 9994883682");
+
+      Swal.fire({
+        title: "Copied!",
+        text: "Phone number copied to clipboard",
+        icon: "success",
+        timer: 1500,
+        showConfirmButton: false,
+        toast: true,
+        position: "top-end",
+      });
+    }
+  };
+
+  // email send
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_zakxdhu",
+        "template_f8if95g",
+        form.current,
+        "WqsGjD4ltQ3Kgu4PA"
+      )
+      .then(
+        () => Swal.fire("Success", "Message sent successfully!", "success"),
+        () => Swal.fire("Error", "Failed to send message", "error")
+      );
+  };
 
   return (
-    <div>
-      <section className="relative py-8 overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700">
+    <>
+      <Navbar />
 
-        {/* Background */}
-        <div className="absolute inset-0 overflow-hidden dark:bg-gray-900">
-          <div className="absolute rounded-full w-72 h-72 bg-white/10 blur-3xl top-10 left-10 animate-pulse"></div>
-          <div className="absolute rounded-full w-96 h-96 bg-purple-400/20 blur-3xl bottom-10 right-10 animate-pulse"></div>
-        </div>
+      <div className="bg-gray-50 dark:bg-gray-900">
 
-        <div className="relative max-w-6xl px-6 mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="p-16 border shadow-2xl bg-white/10 backdrop-blur-xl border-white/20 rounded-3xl"
-          >
+        {/* HERO */}
+        <section className="relative flex items-center justify-center h-[350px]">
+          <img
+            src="/images/Contact_us.jfif"
+            alt="contact background"
+            className="absolute inset-0 object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 bg-black/60" />
 
-            <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
-              Ready to Transform Your Business?
+          <div className="relative z-10 text-center text-white">
+            <h1 className="text-4xl font-bold md:text-5xl">Contact Us</h1>
+
+            <p className="mt-2 text-sm text-gray-200">
+              <Link to="/" className="hover:text-blue-400">
+                Home
+              </Link>
+              <span className="mx-2">»</span>
+              <span className="text-blue-400">Contact</span>
+            </p>
+          </div>
+        </section>
+
+        {/* CONTACT CARDS */}
+        <section className="py-20">
+          <div className="grid max-w-6xl gap-10 px-6 mx-auto md:grid-cols-3 dark:text-white">
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              onClick={handleClick}
+              className="p-10 text-center bg-white shadow-lg cursor-pointer dark:bg-gray-800 rounded-2xl"
+            >
+              <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600" />
+              <h3 className="font-semibold">Phone</h3>
+              <p className="text-gray-500">+91 9994883682</p>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
+            >
+              <a href="mailto:jayakumar.k@dbsoltechnologies.com">
+                <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
+                <h3>Email</h3>
+              </a>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="p-10 text-center bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
+            >
+              <a
+                href="https://maps.app.goo.gl/iyoA9bjw5LJsXjNB8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMapMarkerAlt className="mx-auto mb-4 text-3xl text-blue-600" />
+                <h3>Office</h3>
+              </a>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* FORM */}
+        <section className="py-10 bg-white dark:bg-gray-800">
+          <div className="max-w-5xl px-6 mx-auto">
+
+            <h2 className="mb-10 text-3xl font-bold text-center text-white">
+              Send Us a Message
             </h2>
 
-            <p className="max-w-2xl mx-auto mb-12 text-lg text-blue-100">
-              Empower your enterprise with advanced solutions including 
-              Dynamics 365 Finance & Operations, modern web platforms,
-              and scalable mobile applications.
-            </p>
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="grid gap-6 md:grid-cols-2"
+            >
+              <input name="name" className="p-3 border rounded" placeholder="Full Name" />
+              <input name="email" className="p-3 border rounded" placeholder="Email" />
+              <input name="company" className="p-3 border rounded" placeholder="Company" />
+              <input name="phone" className="p-3 border rounded" placeholder="Phone" />
 
-            <div className="flex flex-col justify-center gap-6 md:flex-row">
+              <textarea
+                name="message"
+                className="p-3 border rounded md:col-span-2"
+                placeholder="Your Message"
+              />
 
-              {/* Contact */}
-              <motion.button
-                onClick={() => navigate("/contact")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-3 px-8 py-4 font-semibold text-blue-700 bg-white rounded-xl"
-              >
-                Contact Us <FaArrowRight />
-              </motion.button>
+              <button className="py-3 text-white bg-blue-600 rounded md:col-span-2">
+                Send Message
+              </button>
+            </form>
 
-              {/* Consultation */}
-              <motion.button
-                onClick={() => navigate("/contact#form-selection")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 font-semibold text-white border border-white rounded-xl hover:bg-white hover:text-blue-700"
-              >
-                Schedule Consultation
-              </motion.button>
+          </div>
+        </section>
 
+        {/* MAP + CONSULTATION */}
+        <section
+          style={{ backgroundImage: `url(${bg})` }}
+          className="relative w-full py-20 bg-center bg-cover"
+        >
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="relative z-10 grid max-w-6xl gap-10 mx-auto md:grid-cols-2 px-4">
+
+            {/* MAP */}
+            <div>
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Our Location
+              </h2>
+
+              <iframe
+                title="map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d649.0142978711507!2d80.07674968334102!3d12.86315302262354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f76bd9c2f359%3A0xce8dc31fdb6a9b84!2sIndran%20Tower!5e0!3m2!1sen!2sus!4v1775812645806!5m2!1sen!2sus"
+                className="w-full h-[400px] rounded-2xl shadow-lg"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
-          </motion.div>
-        </div>
-      </section>
-    </div>
+            {/* CONSULTATION */}
+            <div className="flex justify-end">
+              <Consultation />
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <Footer />
+    </>
   );
 }
