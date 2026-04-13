@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FaStar } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 export default function Testimonials(){
 

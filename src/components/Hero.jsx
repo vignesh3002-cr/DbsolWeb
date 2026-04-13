@@ -2,10 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
-
 export default function Home() {
   const navigate = useNavigate();
-
   const slides = [
     {
       title: "Microsoft Dynamics 365 Finance & Operations Solutions",
@@ -84,15 +82,22 @@ const scrollRight = () => {
           <p className="mb-8 text-lg text-gray-200 max-w-md">
             {slides[curnt].desc}
           </p>
-
+          
           <div className="flex gap-4">
-            {/* Services button */}
+
+
+            {/* 🔥 THIS BUTTON WORKS 
             <HashLink smooth to="/services#services">
+
+            {/* Services button */}
+            <HashLink smooth to="/#clients-section">
+
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Explore Services
               </button>
             </HashLink>
 
+       
             {/* Contact button */}
             <button
               onClick={() => navigate("/Contact")}
@@ -116,7 +121,7 @@ const scrollRight = () => {
           ></button>
         ))}
       </div>
+      
     </section>
-  );
+  )
 }
-``
