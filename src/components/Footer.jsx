@@ -36,73 +36,12 @@ return(
 <div className="grid w-ful gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
 {/* Company Info */}
-<div className="inset-0 min-w-auto">
-<section className="bg-black">
 
-<div className="max-w-5xl px-6 mx-auto">
-
-<h2 className="mb-4 text-2xl font-bold text-center text-white">
-Contact Us
-</h2>
-
-
-<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-className=" border-b-[1px] bg-transparent focus:outline-none text-sm" 
-/>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-className="border-b-[1px] bg-transparent focus:outline-none text-sm "
-/>
-
-<input
-type="text"
-name="company"
-placeholder="Company Name"
-className="border-b-[1px] bg-transparent focus:outline-none text-sm"
-/>
-
-<input
-type="text"
-name="phone"
-placeholder="Phone Number"
-className="border-b-[1px] bg-transparent focus:outline-none text-sm"
-/>
-
-<textarea
-rows="3"
-name="message"
-placeholder="Describe your project or requirement..."
-className="border-b-[1px] bg-transparent focus:outline-none text-sm"
-></textarea>
-
-<button type="submit"
-className="py-2 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
->
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-
-</div>
 
 <div>
 
-<h2 className="mb-4 text-2xl font-bold text-white">
-DBSol
+<h2 className="mb-4 font-bold text-2xl text-white">
+DbSol
 </h2>
 
 <div className="flex items-center gap-2 mb-4">
@@ -118,7 +57,7 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-gray-400">
+<p className="text-sm leading-relaxed text-gray-400 max-w-xs">
 
 We provide enterprise digital transformation solutions including
 Dynamics 365 Finance & Operations, responsive web development,
@@ -150,13 +89,13 @@ and cross-platform mobile applications.
 
 <div className="w-fit">
 
-<h3 className="mb-6 font-semibold text-white">
+<h3 className="mb-4 font-semibold text-white">
 Quick Links
 </h3>
 
 <ul className="space-y-3 text-sm">
 
-<li className="transition cursor-pointer hover:text-white">
+<li className="transition cursor-pointer  hover:text-white">
 <NavLink to="/"
 className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
@@ -170,10 +109,10 @@ className={({isActive}) =>
 <NavLink
 to="/aboutUs"
 className={({isActive}) =>
-isActive ? "txt-blue-600 border-b-2 border-t-blue-600 pb-1" : "hover:text-blue-600"
+isActive ? "txt-blue-600 border-b-2  border-t-blue-600 pb-1" : "hover:text-blue-600"
 }
 >
- About Us 
+ AboutUs 
 </NavLink>
 </li>
 
@@ -184,7 +123,7 @@ className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
 }
 >
-  Contact Us
+  ContactUs
 </NavLink>
 </li>
   <li className="transition cursor-pointer hover:text-white">
@@ -204,7 +143,7 @@ className={({isActive}) =>
 
 <div>
 
-<h3 className="mb-6 font-semibold text-white">
+<h3 className="mb-4 font-semibold text-white">
 Contact Us
 </h3>
 
@@ -236,7 +175,61 @@ className="border-0"
 </ul>
 
 </div>
+<div className="inset-0 min-w-auto">
+<section className="bg-black">
 
+<div className="max-w-5xl mx-auto">
+
+<h3 className="mb-4 font-semibold text-white">
+Get-in-touch
+</h3>
+
+
+<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+className=" border-b-[1px] bg-transparent focus:outline-none text-sm pb-2" 
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2 "
+/>
+
+<input
+type="text"
+name="company"
+placeholder="Company Name"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2"
+/>
+
+<textarea
+rows="3"
+name="message"
+placeholder="Describe your project or requirement..."
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2"
+></textarea>
+
+<button type="submit"
+className="py-2 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
+>
+
+Submit
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+</div>
 </div>
 
 {/* Bottom Bar */}

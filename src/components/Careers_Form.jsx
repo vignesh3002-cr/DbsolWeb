@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+
 import Hero from "./Navbar";
 import Footer from "./Footer";
 import Swal from "sweetalert2";
+
+import Hero from './Navbar';
+import Footer from "./Footer"
+import { motion } from "framer-motion";
 
 export default function CareerForm() {
   const [fileName, setFileName] = useState("");
@@ -84,10 +89,24 @@ export default function CareerForm() {
 
   return (
     <div>
+< HEAD></HEAD>
       <Hero />
 
       <div className="min-h-screen bg-gray-100 dark:bg-slate-800 flex items-center justify-center p-6">
         <div className="bg-white dark:bg-gray-700 shadow-lg rounded-2xl w-full max-w-3xl mt-16 p-8">
+        <Hero/>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center  p-6">
+      <motion.div 
+        initial={{opacity:0,y:-40}}
+        whileInView={{opacity:1,y:0}}
+         transition={{duration:0.6,delay:0.1}}
+      className="bg-white shadow-lg rounded-2xl w-full max-w-3xl mt-16 p-8">
+        <h2 className="text-3xl font-bold mb-6 text-center text-blue-400">
+          Employee Career Registration
+        </h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
+>>>>>>> 72f9d8f913ce7f9fe6d30862d9679c66ef8caa4a
 
           {/* TITLE */}
           <h2 className="text-3xl font-bold mb-6 text-center text-blue-400 dark:text-blue-500">
@@ -169,6 +188,7 @@ export default function CareerForm() {
             <div className="w-full">
               <label className="flex items-center justify-between w-full p-3 border border-gray-400 rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-100">
 
+
                 <span className="text-gray-600 dark:text-gray-800 truncate">
                   {fileName || "Choose Resume"}
                 </span>
@@ -221,6 +241,15 @@ export default function CareerForm() {
       </div>
 
       <Footer />
+=======
+        </form>
+      </motion.div>
+      
+      
+    </div>
+    
+    <Footer/>
+>>>>>>> 72f9d8f913ce7f9fe6d30862d9679c66ef8caa4a
     </div>
   );
 }
