@@ -38,7 +38,7 @@ About Our Company
 </motion.h1>
 
 <p className="mt-4 text-gray-200">
-<Link to="/">Home</Link> ➜ <span className="text-blue-400">About</span>
+<Link className="hover:text-blue-600" to="/">Home</Link> ➜ <span className="text-blue-600">About</span>
 </p>
 
 </div>
