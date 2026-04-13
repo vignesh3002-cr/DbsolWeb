@@ -209,9 +209,9 @@ Contact Us
 </h3>
 
 <ul className="space-y-3 text-sm text-gray-400">
-<li>
+<a href="mailto:jayakumar.k@dbsoltechnologies.com"><li>
 ✉ jayakumar.k@dbsoltechnologies.com
-</li>
+</li></a>
 <li>
 📞 +91 9994883682
 </li>

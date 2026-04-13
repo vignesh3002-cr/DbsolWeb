@@ -259,12 +259,11 @@ We help companies implement ERP systems, automate workflows, and scale faster wi
 
 <div className="flex justify-center gap-6">
 
-<a
-href="/contact"
-className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+<Link className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+to="/contact"
 >
 Contact Us
-</a>
+</Link>
 
 <Link className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
  to="/#clients-section">

@@ -104,7 +104,10 @@ Microsoft Partner
 
 {/* NAVIGATION */}
 <div className="flex gap-4">
-<ul className="hidden font-medium lg:gap-6 lg:text-base dark:text-white lg:flex">
+<ul className="hidden font-medium 
+lg:gap-3 lg:text-sm 
+xl:gap-6 xl:text-base 
+dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -382,6 +385,17 @@ Careers
 </NavLink>
 </li>
 */}
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/Careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Careers
+</NavLink>
+</li>
+{/* contact us */}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
   to="/contact"
@@ -701,6 +715,17 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 }
 >
 Case Studies
+</NavLink>
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/Careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Careers
 </NavLink>
 </li>
 
