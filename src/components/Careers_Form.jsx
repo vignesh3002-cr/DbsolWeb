@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Hero from './Navbar';
 import Footer from "./Footer"
+import { motion } from "framer-motion";
 export default function CareerForm() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -31,12 +32,16 @@ export default function CareerForm() {
     <div>
         <Hero/>
     <div className="min-h-screen bg-gray-100 flex items-center justify-center  p-6">
-      <div className="bg-white shadow-lg rounded-2xl w-full max-w-3xl mt-16 p-8">
+      <motion.div 
+        initial={{opacity:0,y:-40}}
+        whileInView={{opacity:1,y:0}}
+         transition={{duration:0.6,delay:0.1}}
+      className="bg-white shadow-lg rounded-2xl w-full max-w-3xl mt-16 p-8">
         <h2 className="text-3xl font-bold mb-6 text-center text-blue-400">
           Employee Career Registration
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
 
           {/* Full Name */}
           <input
@@ -128,8 +133,11 @@ export default function CareerForm() {
           </button>
 
         </form>
-      </div>
+      </motion.div>
+      
+      
     </div>
+    
     <Footer/>
     </div>
   );
