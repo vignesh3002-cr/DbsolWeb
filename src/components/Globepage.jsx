@@ -26,11 +26,24 @@ export default function GlobePage() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center 
-      bg-white/20 dark:bg-gray-900 
-      bg-[radial-gradient(rgba(255,255,255,0.25)_1px,transparent_1px)] 
-      bg-[size:20px_20px]"
-    >
+    <div
+  className="
+    w-full min-h-screen
+   flex-col items-center justify-center
+
+    px-4 py-6            /* ✅ Mobile padding */
+    sm:px-6
+    md:px-10
+
+    bg-white/20 dark:bg-gray-900
+
+    bg-[radial-gradient(rgba(255,255,255,0.25)_1px,transparent_0px)]
+    bg-[size:14px_14px]  /* ✅ Smaller grid on mobile */
+    sm:bg-[size:18px_18px]
+    md:bg-[size:20px_20px]
+  "
+>
+
       {/* 🌍 Globe Section */}
       <div className="w-full h-[60vh] md:h-[80vh] relative overflow-hidden">
 
