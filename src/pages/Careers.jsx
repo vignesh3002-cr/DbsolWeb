@@ -123,7 +123,7 @@ Join Our Team
 Why Work With Us
 </h2>
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 dark:text-white">
 
 {benefits.map((item,index)=>(
 
@@ -180,7 +180,7 @@ className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl d
 
 <div>
 
-<h3 className="text-lg font-semibold">
+<h3 className="text-lg font-semibold dark:text-white">
 {job.title}
 </h3>
 
@@ -212,7 +212,7 @@ Apply
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-900 dark:to-gray-900 ">
 
 <h2 className="mb-6 text-4xl font-bold">
 Don't See the Right Role?
