@@ -146,7 +146,7 @@ export default function Contact() {
                 placeholder="Message"
               />
 
-              <button className="bg-blue-600 text-white py-3 rounded md:col-span-2">
+              <button className="bg-blue-600 text-white py-3 px-6 rounded md:col-span-2 mx-auto w-48">
                 Send Message
               </button>
             </form>
