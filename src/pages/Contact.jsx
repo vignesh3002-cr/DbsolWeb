@@ -81,6 +81,7 @@ export default function Contact() {
         </section>
 
         {/* CONTACT CARDS */}
+        <section>
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 dark:text-white">
 
             <motion.div
