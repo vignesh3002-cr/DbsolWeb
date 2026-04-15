@@ -81,7 +81,6 @@ export default function Contact() {
         </section>
 
         {/* CONTACT CARDS */}
-        <section className="py-20">
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 dark:text-white">
 
             <motion.div
@@ -123,7 +122,7 @@ export default function Contact() {
         </section>
 
         {/* FORM */}
-        <section className="py-10 bg-white dark:bg-gray-800">
+        <section className="py-10 bg-white dark:bg-gray-600">
           <div className="max-w-5xl mx-auto px-6">
 
             <h2 className="text-3xl font-bold text-center mb-10 dark:text-white">
@@ -146,8 +145,8 @@ export default function Contact() {
                 placeholder="Message"
               />
 
-              <button className="bg-blue-600 text-white py-3 px-6 rounded md:col-span-2 mx-auto w-48">
-                Send Message
+              <button className="bg-blue-600 text-xl text-white py-3 px-32 place-self-center md:col-span-2 rounded-lg">
+                Submit
               </button>
             </form>
           </div>
