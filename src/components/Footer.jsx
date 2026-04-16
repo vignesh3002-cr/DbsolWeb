@@ -57,7 +57,7 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-gray-400 max-w-xs">
+<p className="text-sm leading-relaxed text-gray-400 max-w-xs hover:text-gray-300">
 
 We provide enterprise digital transformation solutions including
 Dynamics 365 Finance & Operations, responsive web development,
@@ -147,14 +147,15 @@ className={({isActive}) =>
 Contact Us
 </h3>
 
-<ul className="space-y-3 text-sm text-gray-400">
-<a href="mailto:jayakumar.k@dbsoltechnologies.com"><li>
+<ul className="space-y-3 text-sm text-gray-400 ">
+<a href="mailto:jayakumar.k@dbsoltechnologies.com">
+<li className="hover:text-gray-300">
 ✉ jayakumar.k@dbsoltechnologies.com
 </li></a>
-<li>
+<li className="hover:text-gray-300">
 📞 +91 9994883682
 </li>
-<li>
+<li className="hover:text-gray-300">
 📍 VP Chindhan Ave
 Chennai, Tamil Nadu, India
 </li>
