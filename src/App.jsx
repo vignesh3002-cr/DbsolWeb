@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/Business-Consulting";
+import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/Finanace-operation";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
 import WebDevelopment from "./pages/services/Webdevelopment";
@@ -44,6 +45,7 @@ import GlobePage from "./components/Globepage";
       <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>}></Route>
       <Route path="/IT.ITES" element={<ITITES/>}></Route>
       <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
+      <Route path="/news" element={<NewsPage />} />
       <Route path="/Globe" element={<GlobePage/>} />
       <Route path="/Retail&Wholesale" element={<RetailWholesale/>}></Route>
       <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain/>}></Route>

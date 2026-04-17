@@ -175,7 +175,9 @@ export default function DeliveringTailoredSolutions({
     <div className={showNavbar ? "min-h-screen bg-white dark:bg-gray-950" : "bg-white dark:bg-gray-950"}>
       {showNavbar && <Navbar />}
 
-      <section className="pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <section
+      id="clients-section"
+      className="pt-12 pb-16 lg:pt-20 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           {showBackLink && (
             <Link

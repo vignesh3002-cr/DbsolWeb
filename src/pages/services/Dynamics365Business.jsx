@@ -59,9 +59,8 @@ return(
 <section className="relative flex items-center justify-center h-[380px]">
 
 <img
-src="/images/Ms365_img1.jpg"
-alt="Dynamics 365"
-className="absolute inset-0 object-cover w-full h-full"
+  src="/images/Dynamics-365-logo.png"
+  className="hidden md:block absolute inset-0 object-cover w-full h-full"
 />
 
 <div className="absolute inset-0 bg-black/60"></div>
