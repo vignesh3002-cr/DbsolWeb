@@ -5,11 +5,10 @@ import { Link } from "react-router-dom"
 import CountUp from "react-countup"
 import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
-
 export default function About(){
   
 return(
-
+<>
 <div className="min-h-screen text-black transition-colors duration-500 bg-white dark:bg-gray-900 dark:text-white">
 
 <Navbar/>
@@ -44,7 +43,6 @@ About Our Company
 </div>
 
 </section>
-
 
 {/* COMPANY INTRO */}
 
@@ -277,6 +275,7 @@ Explore Services
 <Footer/>
 
 </div>
+</>
 
 )
 }
