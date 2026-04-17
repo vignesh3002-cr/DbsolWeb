@@ -3,10 +3,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/Business-Consulting";
-import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/Finanace-operation";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
-import WebDevelopment from "./pages/services/Webdevelopment";
+import WebDevelopment from "./pages/services/WebDevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ITITES from "./pages/industries/IT&ITES";
 import ServicePage from "./components/Delivering_Tailored_Solutions";
@@ -38,6 +37,7 @@ import GlobePage from "./components/Globepage";
       <Route path="/" element={<Home/>}></Route>
       <Route path="/aboutUs" element={<About/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
+      <Route path="/BusinessConsulting" element={<BPage/>}></Route>
       <Route path="/finance-operation" element={<FinanceOperations/>}></Route>
       <Route path="/Dynamics365Business" element={<Dynamics365Business/>}></Route>
       <Route path="/Webdevelopment" element={<WebDevelopment/>}></Route>
