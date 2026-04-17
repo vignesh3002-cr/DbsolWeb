@@ -42,14 +42,14 @@ review:"Professional team with deep technical expertise. They built our mobile a
 
 return(
 
-<section className="py-8 bg-gray-50 dark:bg-gray-900">
+<section className=" bg-gray-50 dark:bg-gray-900 ">
 
 <div className="px-6 mx-auto max-w-7xl">
 
 {/* Section Title */}
 
 <div className="mb-16 text-center">
-
+<br></br>
 <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
 What Our Clients Say
 </h2>
@@ -125,7 +125,29 @@ className="object-cover w-12 h-12 rounded-full"
 </div>
 
 </div>
+<br></br>
+<section className="py-24 mt-11 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
 
+<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
+Start Your Journey Today
+</h2>
+
+<p className="max-w-2xl mx-auto mb-10 text-blue-100">
+
+We empower enterprises with intelligent ERP, low‑code platforms, automation, and insights that reduce complexity and accelerate digital transformation.
+
+</p>
+
+<Link
+to="/contact"
+className="px-8 py-4 font-semibold text-blue-600 transition bg-white rounded-lg hover:bg-gray-100"
+>
+
+Get Started
+
+</Link>
+
+</section>
 </section>
 
 )

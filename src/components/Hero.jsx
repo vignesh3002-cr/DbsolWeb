@@ -34,7 +34,7 @@ const scrollRight = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 2500);
+    }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -42,18 +42,47 @@ const scrollRight = () => {
   return (
     <section className="relative w-full h-screen">
       {/* Background */}
-       <button
-    onClick={scrollLeft}
-    className="bg-black/40 dark:bg-white/40 w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] left-4 z-30 hover:bg-gray-800 transition "
+<button
+  onClick={scrollLeft}
+  aria-label="Previous slide"
+  className="
+    absolute left-0 top-0 z-30
+    h-full w-20 md:w-28
+    flex items-center justify-center
+    bg-gradient-to-r from-white/10 to-transparent
+    hover:from-black/70
+    transition-all duration-300
+  "
+>
+  <svg
+    className="w-6 h-6 md:w-8 md:h-8 rotate-180 text-white"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 512"
   >
-    <svg className="w-5 h-5 rotate-180 fill-current text-white dark:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
-  </button>  
-  <button
-    onClick={scrollRight}
-    className="bg-black/40 dark:bg-white/40  dark:text-black w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-2xl absolute top-[40%] right-4 z-30 hover:bg-gray-800 transition"
+    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+  </svg>
+</button>
+
+<button
+  onClick={scrollRight}
+  aria-label="Next slide"
+  className="
+    absolute right-0 top-0 z-30
+    h-full w-20 md:w-28
+    flex items-center justify-center
+    bg-gradient-to-l from-white/20 to-transparent
+    hover:from-black/70
+    transition-all duration-300
+  "
+>
+  <svg
+    className="w-6 h-6 md:w-8 md:h-8 text-white"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 512"
   >
-   <svg className="w-5 h-5 fill-current text-white dark:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg> 
-  </button>
+    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
+  </svg>
+</button>
       <img
         src={slides[curnt].img}
         alt="Hero Background"
@@ -72,7 +101,7 @@ const scrollRight = () => {
           key={curnt}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 2 ,ease:"easeInOut"}}
           className="max-w-2xl text-white"
         >
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
@@ -115,7 +144,7 @@ const scrollRight = () => {
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-3 h-2 rounded-full ${
               curnt === index ? "bg-white" : "bg-gray-400"
             }`}
           ></button>

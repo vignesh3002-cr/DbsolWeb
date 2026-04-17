@@ -39,7 +39,7 @@ export default function TrustedClients() {
   return (
     <section className="py-12 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-
+        <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8">Trusted by Industry Leaders</h2>
         <div className="relative overflow-hidden">
           <motion.div
             className="flex gap-16 items-center"
