@@ -82,7 +82,7 @@ export default function Contact() {
 
         {/* CONTACT CARDS */}
         <section>
-          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 dark:text-white">
+          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto py-10 px-6 dark:text-white">
 
             <motion.div
               whileHover={{ scale: 1.05 }}

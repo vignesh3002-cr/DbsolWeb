@@ -8,6 +8,7 @@ import Dynamics365Business from "./pages/services/Dynamics365Business";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ITITES from "./pages/industries/IT&ITES";
+import ServicePage from "./components/Delivering_Tailored_Solutions";
 import Manufacturing from "./pages/industries/Manufacturing";
 import RetailWholesale from "./pages/industries/Retail&WholeSale";
 import LogisticsSupplyChain from "./pages/industries/LogisticsSupplyChain";
@@ -40,6 +41,7 @@ import GlobePage from "./components/Globepage";
       <Route path="/finance-operation" element={<FinanceOperations/>}></Route>
       <Route path="/Dynamics365Business" element={<Dynamics365Business/>}></Route>
       <Route path="/Webdevelopment" element={<WebDevelopment/>}></Route>
+      <Route path="/services/:slug" element={<ServicePage />} />
       <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>}></Route>
       <Route path="/IT.ITES" element={<ITITES/>}></Route>
       <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
