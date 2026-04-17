@@ -147,13 +147,14 @@ exit={{opacity:0,y:-10}}
 transition={{duration:0.30}}
 className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
-  <li className="cursor-pointer">
-    <NavLink
-    to="/businessconsulting"
-    className={({isActive}) =>
-    isActive ?"text-blue-600 border-b-2 border-blue-600 pb-1" :""}>
-  Business Consulting</NavLink>
-  </li>
+ <li className="cursor-pointer">
+  <NavLink
+  to="/BusinessConsulting"
+  className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
+>
+ Business Consulting</NavLink>
+</li> 
 
 <li className="cursor-pointer">
  <NavLink  
@@ -280,14 +281,7 @@ exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
 className="absolute left-0 z-50 w-56 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
 >
-<li className="cursor-pointer">
-  <NavLink
-  to="/business-consulting"
-  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}
->
-Business-Consulting</NavLink>
-</li>
+
 <li className="cursor-pointer">
   <NavLink
   to="/FinanceBanking"
