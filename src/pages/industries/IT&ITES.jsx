@@ -265,7 +265,7 @@ className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-500 to-yell
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800 text-blue-600 dark:text-blue-600">
+<section className="py-24 text-center bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800 text-blue-600 dark:text-blue-600">
 
 
 
