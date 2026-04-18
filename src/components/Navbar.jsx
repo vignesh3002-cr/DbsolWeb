@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import Home from "./Hero";
 
 export default function Header() {
 
@@ -75,7 +76,9 @@ className={`text-2xl lg:hidden ${
 </button>
  <h1 className="text-2xl font-bold tracking-wide text-blue-600 ">
   <NavLink
-  to="/">
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}>
 Dbsol
 </NavLink>
 </h1> 
@@ -111,7 +114,9 @@ dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
-  to="/"
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >

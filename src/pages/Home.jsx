@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Industries from "../components/Industries";
+import NewsPage from "../components/NewsPage";
 import Footer from "../components/Footer";
 import WhyChooseUs from "../components/WhyChooseUs";
 import TrustedClients from "../components/TrustedClient";
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
       <Industries />
+      <NewsPage />
       <ERPImplementationProcess />
       <DataMigrationSection />
       <VideoTestimonials />

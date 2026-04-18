@@ -49,7 +49,7 @@ const scrollRight = () => {
     absolute left-0 top-0 z-30
     h-full w-20 md:w-28
     flex items-center justify-center
-    bg-gradient-to-r from-white/10 to-transparent
+    bg-gradient-to-r from-white/40 to-transparent
     hover:from-black/70
     transition-all duration-300
   "
@@ -70,7 +70,7 @@ const scrollRight = () => {
     absolute right-0 top-0 z-30
     h-full w-20 md:w-28
     flex items-center justify-center
-    bg-gradient-to-l from-white/20 to-transparent
+    bg-gradient-to-l from-white/40 to-transparent
     hover:from-black/70
     transition-all duration-300
   "

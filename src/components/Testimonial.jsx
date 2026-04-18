@@ -2,6 +2,9 @@ import { motion } from "framer-motion"
 import { FaStar } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
+
+
+
 export default function Testimonials(){
 
 const testimonials = [
@@ -126,6 +129,7 @@ className="object-cover w-12 h-12 rounded-full"
 
 </div>
 <br></br>
+
 <section className="py-24 mt-11 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
 
 <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
