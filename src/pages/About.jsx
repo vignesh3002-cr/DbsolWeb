@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import CountUp from "react-countup"
 import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
+import GrowthJourney from "../components/GrowthHistory"
 
 export default function About(){
   
