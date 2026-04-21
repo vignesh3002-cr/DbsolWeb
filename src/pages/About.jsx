@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import CountUp from "react-countup"
 import TrustedClients from "../components/TrustedClient"
+import GrowthJourney from "../components/GrowthHistory"
 
 export default function About(){
   
@@ -75,7 +76,7 @@ Our mission is to help businesses streamline operations, improve financial visib
 </div>
 
 </section>
-
+<GrowthJourney/>
 {/* MISSION & VISION - PREMIUM */}
 
 <section className="relative overflow-hidden py-28 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
@@ -89,7 +90,7 @@ Our mission is to help businesses streamline operations, improve financial visib
 <h2 className="mb-4 text-4xl font-bold text-center">
 Our Mission & Vision
 </h2>
-<p className="text-center mb-20 max-w-2xl mx-auto">We envision empowering businesses with scalable mobile and web platforms for sustainable success.</p>
+<p className="max-w-2xl mx-auto mb-20 text-center">We envision empowering businesses with scalable mobile and web platforms for sustainable success.</p>
 <div className="grid gap-16 md:grid-cols-2">
 
 {/* MISSION */}
@@ -179,7 +180,7 @@ We aim to bridge the gap between technology and business by delivering world-cla
 <h2 className="mb-4 text-4xl font-bold text-center">
 Why Choose Us
 </h2>
-<p className="text-center mb-20 max-w-2xl mx-auto">Build trust. Inspire loyalty. We deliver powerful Dynamics 365 solutions and high-impact web and mobile apps that drive results.</p>
+<p className="max-w-2xl mx-auto mb-20 text-center">Build trust. Inspire loyalty. We deliver powerful Dynamics 365 solutions and high-impact web and mobile apps that drive results.</p>
 
 <div className="grid gap-10 md:grid-cols-3">
 
@@ -215,7 +216,7 @@ className="p-8 text-center bg-gray-100 shadow-lg dark:bg-gray-800 rounded-xl"
 {/* STATS */}
 
 <section className="py-8 bg-gray-100 dark:bg-gray-800">
-<h2 className="mb-12 text-4xl font-bold text-gray-800 text-center dark:text-white">
+<h2 className="mb-12 text-4xl font-bold text-center text-gray-800 dark:text-white">
 Our Impact
 </h2>
 <div className="grid max-w-6xl gap-10 px-6 mx-auto text-center md:grid-cols-4">
