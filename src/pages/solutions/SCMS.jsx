@@ -12,6 +12,7 @@ FaChartLine,
 FaClipboardList,
 FaGlobe
 } from "react-icons/fa"
+import HyperCareSection from "../../components/Post-Go-Live Support"
 
 export default function SupplyChainManagementSystem(){
 
@@ -342,6 +343,7 @@ className={`p-6 shadow-lg ${
 
 </section>
 
+<HyperCareSection/>
 
 {/* CTA */}
 

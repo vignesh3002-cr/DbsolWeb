@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
 import {
 FaUsers,
 FaLaptopCode,
@@ -124,7 +123,7 @@ Join Our Team
 Why Work With Us
 </h2>
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 dark:text-white">
 
 {benefits.map((item,index)=>(
 
@@ -181,7 +180,7 @@ className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl d
 
 <div>
 
-<h3 className="text-lg font-semibold">
+<h3 className="text-lg font-semibold dark:text-white">
 {job.title}
 </h3>
 
@@ -192,7 +191,7 @@ className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl d
 </div>
 
 <Link
-to="/contact"
+to="/CareerForm"
 className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
 >
 
@@ -213,7 +212,7 @@ Apply
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-900 dark:to-gray-900 ">
 
 <h2 className="mb-6 text-4xl font-bold">
 Don't See the Right Role?
@@ -228,7 +227,7 @@ when a suitable role becomes available.
 </p>
 
 <Link
-to="/contact"
+to="/CareerForm"
 className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
 >
 

@@ -1,169 +1,205 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Heading1 } from "lucide-react";
+
+// ✅ Typewriter Component
+const TypewriterText = ({ text, speed = 30, onComplete }) => {
+  const [displayedText, setDisplayedText] = React.useState("");
+
+  React.useEffect(() => {
+    let i = 0;
+    setDisplayedText("");
+
+    const interval = setInterval(() => {
+      setDisplayedText(text.slice(0, i + 1));
+      i++;
+
+      if (i === text.length) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          onComplete && onComplete();
+        }, 800); // pause after message
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed, onComplete]);
+
+  return <>{displayedText}</>;
+};
 
 const RoleplayScenario = () => {
+  const [activeIndex, setActiveIndex] = React.useState(-1);
+  const [hasStarted, setHasStarted] = React.useState(false);
+
+  const conversations = [
+    {
+        type: "expert",
+      text: `Greetings! How may I help you?`,
+      image: "/images/explainer.png"
+    },
+    {  
+    type: "client",
+      text: `We’ve invested a lot in this ERP system. The features look great, but honestly… our team is still using Excel. Adoption is low.`,
+      image: "/images/client.png"
+    },
+    {
+      type: "expert",
+      text: `That’s actually very common. The real challenge isn’t the system—it’s people...`,
+      image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `What do you mean?`,
+      image: "/images/client.png"
+    },
+    {
+      type: "expert",
+      text: `Even the best ERP systems fail if employees don’t use them properly. This is what we call the Adoption Gap—the gap between implementing a system and actually using it effectively`,
+      image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `So how do we fix that?`,
+      image: "/images/client.png"
+    },
+    {
+      type: "expert",
+      text: `We focus on people, not just technology:
+
+              We simplify workflows so employees don’t feel overwhelmed,
+
+              We provide role-based training (not generic sessions),
+
+              We identify ‘power users’ in your team to drive adoption internally,
+
+              And most importantly, we align the system with how your team actually works.`,
+      image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `And how does this help us at the leadership level?`,
+      image: "/images/client.png"
+    },
+    {
+      type: "expert",
+      text: `When adoption improves:
+
+              You get accurate, real-time data
+              Decision-making becomes faster and more reliable
+              ROI on your ERP investment actually shows up
+
+              That’s what wins over the C-suite—not just implementation, but measurable business impact.`,
+      image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `Alright… that makes sense. But from my perspective, what do I actually gain?`,
+      image: "/images/clientlast.png"
+    },
+    {
+      type: "expert",
+      text: `You get clarity without chasing people.
+
+You’ll have a real-time executive view showing where performance is dipping, which locations need attention, and what actions are being taken—without sending a single follow-up email.
+
+And after go-live, we stay with you through our Hyper-care phase—ensuring your team is supported, the system is optimized, and everything runs smoothly.
+
+We don’t just implement. We make sure it works.`,
+      image: "/images/explainer.png"
+    },
+    {
+      type: "client",
+      text: `Alright… Thanks for the Explaination`,
+      image: "/images/clientlast.png"
+    },
+    {
+      type: "expert",
+      text: `Welcome`,
+      image: "/images/explainer.png"
+    }
+  ];
+
   return (
-    <section className="bg-gray-50 py-20 px-4">
+    <motion.section
+      className="bg-gray-50 dark:bg-gray-900 py-16 md:p y-20 px-4"
+      onViewportEnter={() => {
+        if (!hasStarted) {
+          setHasStarted(true);
+          setActiveIndex(0);
+        }
+      }}
+      viewport={{ amount: 0.3 }}
+    >
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-10 ">
             Turning Skepticism into Adoption
           </h2>
-          <p className="text-gray-600">
-            A real conversation focused on workflow, not just dashboards.
-          </p>
+          <p className="text-black dark:text-gray-100 text-xl mb-20"> 
+            A realworld Scenario of Client and Explainer</p>
         </div>
 
         {/* Conversation */}
-        <div className="space-y-10">
+        <div className="space-y-8">
 
-          {/* CLIENT QUESTION */}
-          <div className="flex items-start justify-end gap-4">
-            <div className="max-w-xl bg-white border shadow-sm rounded-xl p-6 text-gray-700">
-              <p>
-                Look, I’ve seen the demo. The dashboards are pretty, but my General
-                Managers are already underwater. If I give them another login
-                and ask them to spend an hour a day optimizing, they’ll revolt.
-                How is this not just more noise?
-              </p>
-            </div>
+          {activeIndex >= 0 ? (
+            conversations
+              .slice(0, activeIndex + 1)
+              .map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={`flex items-start gap-3 ${
+                    item.type === "client" ? "justify-end" : "justify-start"
+                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
 
-            {/* Client Image */}
-            <img
-              src="/images/client.png"
-              alt="Client asking question"
-              className="w-24 h-auto flex-shrink-0"
-            />
-          </div>
+                  {/* Expert Image */}
+                  {item.type === "expert" && (
+                    <img src={item.image} className="w-12 md:w-20 lg:w-36" />
+                  )}
 
-          {/* EXPLAINER ANSWER */}
-          <div className="flex items-start justify-start gap-4">
-            {/* Explainer Image */}
-            <img
-              src="/images/explainer.png"
-              alt="Expert explaining"
-              className="w-24 h-auto flex-shrink-0"
-            />
+                  {/* Chat Bubble */}
+                  <motion.p
+                    className={`max-w-[90%] md:max-w-xl p-5 md:p-6 rounded-xl shadow whitespace-pre-line text-lg md:text-xl ${
+                      item.type === "client"
+                        ? "bg-orange-100 dark:bg-orange-300 text-gray-900 dark:text-gray-900"
+                        : "bg-green-50 dark:bg-green-200 text-gray-900 dark:text-gray-900"
+                    }`}
+                  >
+                    {index === activeIndex ? (
+                      <TypewriterText
+                        text={item.text}
+                        speed={30} // 🔥 change speed here
+                        onComplete={() => {
+                          if (activeIndex < conversations.length - 1) {
+                            setActiveIndex((prev) => prev + 1);
+                          }
+                        }}
+                      />
+                    ) : (
+                      item.text
+                    )}
+                  </motion.p>
 
-            <div className="max-w-xl bg-blue-50 border border-blue-100 shadow-sm rounded-xl p-6 text-gray-800">
-              <p>
-                I’m glad you said that. If this were just another dashboard,
-                I’d tell you not to buy it.
-                <br /><br />
-                We’re not giving your GMs a new job. We’re automating the parts
-                of their job they already hate doing manually.
-              </p>
-            </div>
-          </div>
+                  {/* Client Image */}
+                  {item.type === "client" && (
+                    <img src={item.image} className="w-12 md:w-20 lg:w-28 lg:w-36" />
+                  )}
 
-          {/* CLIENT QUESTION */}
-          <div className="flex items-start justify-end gap-4">
-            <div className="max-w-xl bg-white border shadow-sm rounded-xl p-6 text-gray-700">
-              <p>
-                Everyone promises that. Then my team spends months training
-                and goes straight back to Excel because they trust it more.
-                How do you stop the Shadow Excel problem?
-              </p>
-            </div>
-
-            <img
-              src="/images/client.png"
-              alt="Client questioning"
-              className="w-24 h-auto flex-shrink-0"
-            />
-          </div>
-
-          {/* EXPLAINER ANSWER */}
-          <div className="flex items-start justify-start gap-4">
-            <img
-              src="/images/explainer.png"
-              alt="Expert explaining"
-              className="w-24 h-auto flex-shrink-0"
-            />
-
-            <div className="max-w-xl bg-blue-50 border border-blue-100 shadow-sm rounded-xl p-6 text-gray-800">
-              <p>
-                By embracing that Excel logic instead of fighting it.
-                <br /><br />
-                We start with the Shadow Process — the manual checks your team
-                does every morning — and automate just those first.
-              </p>
-            </div>
-          </div>
-
-          {/* CLIENT QUESTION */}
-          <div className="flex items-start justify-end gap-4">
-            <div className="max-w-xl bg-white border shadow-sm rounded-xl p-6 text-gray-700">
-              <p>
-                And the learning curve? I can’t afford a productivity dip.
-              </p>
-            </div>
-
-            <img
-              src="/images/client.png"
-              alt="Client concern"
-              className="w-24 h-auto flex-shrink-0"
-            />
-          </div>
-
-          {/* EXPLAINER ANSWER */}
-          <div className="flex items-start justify-start gap-4">
-            <img
-              src="/images/explainer.png"
-              alt="Expert explaining"
-              className="w-24 h-auto flex-shrink-0"
-            />
-
-            <div className="max-w-xl bg-blue-50 border border-blue-100 shadow-sm rounded-xl p-6 text-gray-800">
-              <p>
-                That’s where the Low‑Floor strategy comes in.
-                <br /><br />
-                On Day 1, your GMs don’t log in at all. They get a simple
-                Morning Pulse email telling them the three things that matter.
-                <br /><br />
-                We win when the system feels like a digital assistant —
-                not a digital warden.
-              </p>
-            </div>
-          </div>
-
-          {/* CLIENT QUESTION */}
-          <div className="flex items-start justify-end gap-4">
-            <div className="max-w-xl bg-white border shadow-sm rounded-xl p-6 text-gray-700">
-              <p>And what do I get out of it?</p>
-            </div>
-
-            <img
-              src="/images/client.png"
-              alt="Client final question"
-              className="w-24 h-auto flex-shrink-0"
-            />
-          </div>
-
-          {/* EXPLAINER ANSWER */}
-          <div className="flex items-start justify-start gap-4">
-            <img
-              src="/images/explainer.png"
-              alt="Expert explaining"
-              className="w-24 h-auto flex-shrink-0"
-            />
-
-            <div className="max-w-xl bg-blue-50 border border-blue-100 shadow-sm rounded-xl p-6 text-gray-800">
-              <p>
-                The Executive View.
-                <br /><br />
-                A real‑time heat map showing exactly where performance is dipping —
-                without chasing updates across departments.
-                <br /><br />
-                You’re buying back time and clarity.
-              </p>
-            </div>
-          </div>
+                </motion.div>
+              ))
+          ) : null}
 
         </div>
+
       </div>
-    </section>
+    </motion.section>
   );
 };
 

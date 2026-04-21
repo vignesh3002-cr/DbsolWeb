@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import UATSection from "../components/UAT"
 
+
 export default function CaseStudyDetail(){
 
 const {id} = useParams()
@@ -155,7 +156,7 @@ Results
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Start Your Own Success Story

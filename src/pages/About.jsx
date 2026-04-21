@@ -3,13 +3,13 @@ import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import CountUp from "react-countup"
+import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
-import GrowthJourney from "../components/GrowthHistory"
 
 export default function About(){
   
 return(
-
+<>
 <div className="min-h-screen text-black transition-colors duration-500 bg-white dark:bg-gray-900 dark:text-white">
 
 <Navbar/>
@@ -38,13 +38,12 @@ About Our Company
 </motion.h1>
 
 <p className="mt-4 text-gray-200">
-<Link to="/">Home</Link> ➜ <span className="text-blue-400">About</span>
+<Link className="hover:text-blue-600" to="/">Home</Link> ➜ <span className="text-blue-600">About</span>
 </p>
 
 </div>
 
 </section>
-
 
 {/* COMPANY INTRO */}
 
@@ -103,7 +102,7 @@ className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 ro
 >
 
 {/* Floating Icon */}
-<div className="absolute text-6xl text-blue-500 opacity-10 top-4 right-6">
+<div className="absolute text-6xl text-blue-500 opacity-100 dark:opacity-80 top-4 right-6">
 🚀
 </div>
 
@@ -139,7 +138,7 @@ className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 ro
 >
 
 {/* Floating Icon */}
-<div className="absolute text-6xl text-indigo-500 opacity-10 top-4 right-6">
+<div className="absolute text-6xl text-indigo-500 opacity-100 dark:opacity-80 top-4 right-6">
 🌍
 </div>
 
@@ -244,7 +243,7 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 </div>
 
 </section>
-
+<GlobePage></GlobePage>
 {/* FINAL CTA */}
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 via-blue-700 to-purple-700 dark:from-gray-800">
@@ -259,19 +258,16 @@ We help companies implement ERP systems, automate workflows, and scale faster wi
 
 <div className="flex justify-center gap-6">
 
-<a
-href="/contact"
-className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+<Link className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+to="/contact"
 >
 Contact Us
-</a>
+</Link>
 
-<a
-href="/services"
-className="px-8 py-4 font-semibold border border-white rounded-lg hover:bg-white hover:text-blue-600"
->
+<Link className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
+ to="/#clients-section">
 Explore Services
-</a>
+</Link>
 
 </div>
 
@@ -280,6 +276,7 @@ Explore Services
 <Footer/>
 
 </div>
+</>
 
 )
 }

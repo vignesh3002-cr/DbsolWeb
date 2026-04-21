@@ -1,38 +1,47 @@
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaArrowUp } from "react-icons/fa"
+import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
-
+import emailjs from "emailjs-com";
+import React, { useRef } from "react";
 export default function Footer(){
-
+const form = useRef();
 const scrollTop = ()=>{
 window.scrollTo({top:0,behavior:"smooth"})
 }
-
+const sendEmail = (e) =>{
+    e.preventDefault();
+ emailjs.sendForm(
+        "service_zakxdhu",
+        "template_f8if95g",
+        form.current,
+        "WqsGjD4ltQ3Kgu4PA"
+    )
+    .then(
+        (result)=>{
+            console.log(result.text);
+            alert("Message sent successfully!");
+        },
+    (error)=>{
+        console.log(error.text);
+        alert("Failed to send message.");
+    }
+    );
+ }
 return(
 
 <footer className="relative pt-20 text-gray-300 bg-black">
 
 {/* Main Footer */}
 
-<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
+<div className="grid w-ful gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
 {/* Company Info */}
-<div className="inset-0 min-w-56">
 
-<video
-  src="/images/Solution_System.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="object-cover w-full h-full"
-></video>
-
-</div>
 
 <div>
 
-<h2 className="mb-4 text-2xl font-bold text-white">
-DBSol
+<h2 className="mb-4 font-bold text-2xl text-white">
+DbSol
 </h2>
 
 <div className="flex items-center gap-2 mb-4">
@@ -48,7 +57,7 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-gray-400">
+<p className="text-sm leading-relaxed text-gray-400 max-w-xs hover:text-gray-300">
 
 We provide enterprise digital transformation solutions including
 Dynamics 365 Finance & Operations, responsive web development,
@@ -80,32 +89,52 @@ and cross-platform mobile applications.
 
 <div className="w-fit">
 
-<h3 className="mb-6 font-semibold text-white">
+<h3 className="mb-4 font-semibold text-white">
 Quick Links
 </h3>
 
 <ul className="space-y-3 text-sm">
 
-<li className="transition cursor-pointer hover:text-white">
-Home
+<li className="transition cursor-pointer  hover:text-white">
+<NavLink to="/"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+
+}
+>Home</NavLink>
+
 </li>
 
 <li className="transition cursor-pointer hover:text-white">
-About Us
+<NavLink
+to="/aboutUs"
+className={({isActive}) =>
+isActive ? "txt-blue-600 border-b-2  border-t-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+ AboutUs 
+</NavLink>
 </li>
+
 
 <li className="transition cursor-pointer hover:text-white">
-Services
+<NavLink to="/contact"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+  ContactUs
+</NavLink>
 </li>
-
-<li className="transition cursor-pointer hover:text-white">
-Industries
+  <li className="transition cursor-pointer hover:text-white">
+<NavLink to="/Careers"
+className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+  Careers
+</NavLink>
 </li>
-
-<li className="transition cursor-pointer hover:text-white">
-Contact
-</li>
-
 </ul>
 
 </div>
@@ -114,18 +143,19 @@ Contact
 
 <div>
 
-<h3 className="mb-6 font-semibold text-white">
+<h3 className="mb-4 font-semibold text-white">
 Contact Us
 </h3>
 
-<ul className="space-y-3 text-sm text-gray-400">
-<li>
+<ul className="space-y-3 text-sm text-gray-400 ">
+<a href="mailto:jayakumar.k@dbsoltechnologies.com">
+<li className="hover:text-gray-300">
 ✉ jayakumar.k@dbsoltechnologies.com
-</li>
-<li>
+</li></a>
+<li className="hover:text-gray-300">
 📞 +91 9994883682
 </li>
-<li>
+<li className="hover:text-gray-300">
 📍 VP Chindhan Ave
 Chennai, Tamil Nadu, India
 </li>
@@ -146,7 +176,61 @@ className="border-0"
 </ul>
 
 </div>
+<div className="inset-0 min-w-auto">
+<section className="bg-black">
 
+<div className="max-w-5xl mx-auto">
+
+<h3 className="mb-4 font-semibold text-white">
+Get-in-touch
+</h3>
+
+
+<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+className=" border-b-[1px] bg-transparent focus:outline-none text-sm pb-2" 
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2 "
+/>
+
+<input
+type="text"
+name="company"
+placeholder="Company Name"
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2"
+/>
+
+<textarea
+rows="3"
+name="message"
+placeholder="Describe your project or requirement..."
+className="border-b-[1px] bg-transparent focus:outline-none text-sm pb-2"
+></textarea>
+
+<button type="submit"
+className="py-2 font-semibold text-white transition bg-blue-600 rounded-lg md:col-span-2 hover:bg-blue-700"
+>
+
+Submit
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+</div>
 </div>
 
 {/* Bottom Bar */}

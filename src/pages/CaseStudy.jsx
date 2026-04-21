@@ -2,7 +2,11 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+
+
+import RoleBasedTraining from "../components/trainingController"
 import RoleplayScenario from "../components/roleplay"
+import HyperCareSection from "../components/Post-Go-Live Support"
 
 export default function CaseStudies(){
 
@@ -90,14 +94,14 @@ Client Success Stories
 </div>
 
 </section>
-<RoleplayScenario></RoleplayScenario>
+
 
 {/* CASE STUDIES GRID */}
 
 <section className="py-24">
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
+<h2 cnlassName="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
 Real Business Impact
 </h2>
 <p className="text-gray-600 dark:text-gray-300 text-center mb-10 max-w-2xl mx-auto">Streamlines manufacturing and financial processes through automation, reducing manual work and increasing overall productivity.</p>
@@ -118,7 +122,7 @@ className="object-cover w-full h-56"
 
 <div className="p-6">
 
-<h3 className="mb-2 text-xl font-semibold">
+<h3 className="mb-2 text-xl font-semibold dark:text-gray-100">
 {item.title}
 </h3>
 
@@ -145,8 +149,9 @@ Result: {item.result}
 </div>
 
 </section>
-
-
+<RoleplayScenario></RoleplayScenario>
+<HyperCareSection></HyperCareSection>
+<RoleBasedTraining></RoleBasedTraining>
 {/* METRICS SECTION */}
 
 <section className="py-24 bg-gray-100 dark:bg-gray-800">
@@ -187,7 +192,6 @@ className="p-6 bg-white shadow-lg dark:bg-gray-900 rounded-xl"
 </div>
 
 </section>
-
 
 {/* CTA */}
 
