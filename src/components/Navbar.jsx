@@ -109,10 +109,7 @@ Microsoft Partner
 
 {/* NAVIGATION */}
 <div className="flex gap-4">
-<ul className="hidden font-medium 
-lg:gap-3 lg:text-sm 
-xl:gap-6 xl:text-base 
-dark:text-white lg:flex">
+<ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -145,7 +142,7 @@ Home
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute left-0 w-64 p-6 space-y-3 rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 font-serif dropdown"
+            className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 dropdown"
           >
             <li >
               <NavLink
@@ -200,14 +197,14 @@ Home
         </li>
 
             <li>
-              <NavLink to="/web-development" className={({ isActive }) => 
+              <NavLink to="/WebDevelopment" className={({ isActive }) => 
                 isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
               }>
                 Web Development
               </NavLink>
             </li>
             <li>
-              <NavLink to="/mobile-app-development" className={({ isActive }) => 
+              <NavLink to="/MobileAppDevelopment" className={({ isActive }) => 
                 isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
               }>
                 App Development
@@ -498,8 +495,7 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </header>
 {menu && (
 
-<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed left-1 z-40 w-9/12 px-6 py-6 pb-10 
-bg-white dark:bg-gray-800 text-black dark:text-gray-200 border-b border-r border-gray-400 top-12 lg:hidden rounded-xl">
+<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 w-9/12 px-6 py-6 pb-10 text-black bg-white border-b border-r border-gray-400 left-1 dark:bg-gray-800 dark:text-gray-200 top-12 lg:hidden rounded-xl">
 <ul className="flex flex-col gap-5 text-xl font-semibold ">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -575,7 +571,7 @@ Home
                 animate={{opacity:1, height:"auto"}}
                 exit={{opacity:0, height:0}}
                 transition={{duration:0.2}}
-                className="ml-4 mt-2 space-y-2 overflow-hidden"
+                className="mt-2 ml-4 space-y-2 overflow-hidden"
               >
                 <li className="cursor-pointer hover:text-blue-600">
                   <NavLink
