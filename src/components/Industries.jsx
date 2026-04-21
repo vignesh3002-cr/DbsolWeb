@@ -56,7 +56,7 @@ with powerful digital transformation strategies.
 
 {/* Industry Grid */}
 
-<div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
+<div className="grid grid-cols-2 gap-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
 
 {industries.map((item,index)=>(
 <Link to={item.path} key={index}>

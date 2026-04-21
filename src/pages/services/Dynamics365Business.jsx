@@ -74,7 +74,7 @@ transition={{duration:0.7}}
 className="text-5xl font-bold"
 >
 
-Dynamics 365 Business & Fundamentals
+Dynamics 365 Business solutions
 
 </motion.h1>
 
