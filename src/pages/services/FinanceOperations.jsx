@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import Integration from "../../components/IntegrationSteps"
 export default function FinanceOperations() {
-const features = [
+const features = [  
 {
 icon:<FaChartLine/>,
 title:"Financial Intelligence",

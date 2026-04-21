@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import PowerAutomate from "./pages/services/Powerplatform/power-automate";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
@@ -38,8 +39,9 @@ import GlobePage from "./components/Globepage";
       <Route path="/" element={<Home/>}></Route>
       <Route path="/aboutUs" element={<About/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
+      <Route path="/power-automate" element={<PowerAutomate/>}></Route>
       <Route path="/BusinessConsulting" element={<BPage/>}></Route>
-      <Route path="/FinanceOperations" element={<FinanceOperations/>}></Route>
+      <Route path="/finance-operation" element={<FinanceOperations/>}></Route>
       <Route path="/Dynamics365Business" element={<Dynamics365Business/>}></Route>
       <Route path="/WebDevelopment" element={<WebDevelopment/>}></Route>
       <Route path="/services/:slug" element={<ServicePage />} />
