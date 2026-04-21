@@ -38,7 +38,7 @@ desc:"Train employees and provide ongoing system support and maintenance."
 
 return(
 
-<section className="py-12 bg-gray-100 dark:bg-gray-900">
+<section className="py-8 bg-gray-100 dark:bg-gray-900">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
@@ -60,7 +60,7 @@ key={index}
 initial={{opacity:0,y:40}}
 whileInView={{opacity:1,y:0}}
 transition={{duration:0.6,delay:index*0.2}}
-className={`flex items-center mb-12 ${
+className={`flex items-center mb-0 ${
 index%2===0 ? "justify-start":"justify-end"
 }`}
 >

@@ -61,7 +61,7 @@ export default function Home() {
       {/* SERVICES SECTION */}
       <section
         id="clients-section"   // 🎯 TARGET ID (IMPORTANT)
-        className="py-12 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950"
+        className="py-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950"
       >
         <div className="px-6 mx-auto max-w-7xl">
 

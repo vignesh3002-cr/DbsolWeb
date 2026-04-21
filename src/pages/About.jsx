@@ -76,6 +76,7 @@ Our mission is to help businesses streamline operations, improve financial visib
 </div>
 
 </section>
+ {/*Company History*/}
 
 {/* MISSION & VISION - PREMIUM */}
 

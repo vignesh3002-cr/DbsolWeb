@@ -27,11 +27,13 @@ import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
+import PowerApps from"./pages/PowerApps";
  function App() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
     <Routes>
+      <Route path="/PowerApps" element ={<PowerApps/>}></Route>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/aboutUs" element={<About/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
@@ -58,7 +60,8 @@ import GlobePage from "./components/Globepage";
       <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
       <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
       <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
-      <Route path="/CareerForm/" element={<CareerForm/>}></Route>       
+      <Route path="/CareerForm/" element={<CareerForm/>}></Route> 
+            
       </Routes>
 
     </BrowserRouter>
