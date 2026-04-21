@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import React from "react";
+import { TrendingUp, Settings, BarChart3 } from "lucide-react";
+
+import {
+  FaCogs,
+  FaChartLine,
+  FaTruck,
+  FaUsers,
+  FaDatabase,
+  FaLightbulb,
+} from "react-icons/fa";
 
 export default function BPage() {
   return (
@@ -37,8 +47,8 @@ export default function BPage() {
       </section>
 
       {/* OVERVIEW */}
-      <section className="bg-gray-50 py-16">
-  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-gray-50  mb-2 py-16">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12  items-center">
     
     {/* LEFT CONTENT */}
     <div>
@@ -48,7 +58,7 @@ export default function BPage() {
 
       <p className="text-gray-600 mb-4 leading-relaxed">
         Our business consulting services help organizations adapt, scale,
-        and compete in fast-changing markets. We partner with leadership teams
+        and complete in fast-changing markets. We partner with leadership teams
         to identify challenges, unlock opportunities, and deliver measurable impact.
       </p>
 
@@ -74,26 +84,43 @@ export default function BPage() {
 
   </div>
 </section>
-      {/* VALUE PROPOSITION */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
-          <div className="p-6 rounded-xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-2">Strategic Growth</h3>
-            <p className="text-gray-600">Focused strategies aligned with your business vision.</p>
-          </div>
-          <div className="p-6 rounded-xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-2">Operational Excellence</h3>
-            <p className="text-gray-600">Optimized processes to boost productivity and efficiency.</p>
-          </div>
-          <div className="p-6 rounded-xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-2">Data‑Driven Decisions</h3>
-            <p className="text-gray-600">Actionable insights for confident, informed leadership.</p>
-          </div>
-        </div>
-      </section>
+     <div className="max-w-7xl bg-gray-100 mx-auto px-6 py-4 grid md:grid-cols-3 gap-6 text-center">
+
+  {/* Strategic Growth */}
+  <div className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden">
+    <TrendingUp className="absolute right-4 bottom-4 justify-center bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
+    <h3 className="text-xl font-semibold">Strategic Growth</h3>
+    <p className="text-gray-600">
+      Focused strategies aligned with your business vision.
+    </p>
+  </div>
+
+  {/* Operational Excellence */}
+  <div className="relative p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden">
+    <Settings className="absolute right-4 bottom-4 bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
+    <h3 className="text-xl font-semibold dark:text-white mb-2">
+      Operational Excellence
+    </h3>
+    <p className="text-gray-600 dark:text-white">
+      Optimized processes to boost productivity and efficiency.
+    </p>
+  </div>
+
+  {/* Data-Driven Decisions */}
+  <div className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden">
+    <BarChart3 className="absolute right-4 bottom-4 bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
+    <h3 className="text-xl font-semibold mb-2">
+      Data-Driven Decisions
+    </h3>
+    <p className="text-gray-600">
+      Actionable insights for confident, informed leadership.
+    </p>
+  </div>
+
+</div>
 
       {/* CONSULTING AREAS */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 text-center py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">
             Our Consulting Areas
@@ -104,53 +131,63 @@ export default function BPage() {
               {
                 title: "Business Process Transformation",
                 desc: "Optimize and streamline workflows to improve productivity and reduce operational costs.",
+                icon: <FaCogs />
               },
               {
                 title: "Financial Management",
                 desc: "Improve forecasting, budgeting, and financial visibility with integrated solutions.",
+                icon: <FaChartLine />,
               },
               {
                 title: "Supply Chain Optimization",
                 desc: "Increase agility, visibility, and inventory efficiency across the supply chain.",
+                icon: <FaTruck />,
               },
               {
                 title: "Customer Relationship Management",
                 desc: "Enhance sales and service performance through customer‑centric processes.",
+                icon: <FaUsers />,
               },
               {
                 title: "Data & Insights",
                 desc: "Leverage analytics dashboards to guide smart, timely business decisions.",
+                icon: <FaDatabase />,
               },
               {
                 title: "Automation & Innovation",
                 desc: "Automate repetitive tasks and introduce innovation to accelerate growth.",
+                icon: <FaLightbulb />,
               },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
-              >
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
+         ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <div className="text-3xl text-blue-600 mb-4">
+            {item.icon}
           </div>
+          <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+          <p className="text-gray-600">{item.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>     
+
 
       {/* APPROACH & BENEFITS */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl dark:text-white font-bold mb-4">
               Our Consulting Approach
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-white mb-6">
               We follow a structured yet flexible methodology tailored to your
               business goals.
             </p>
 
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-3 dark:text-white text-gray-700">
               <li>✔ Business assessment & goal alignment</li>
               <li>✔ Process analysis & solution planning</li>
               <li>✔ Implementation & change management</li>
