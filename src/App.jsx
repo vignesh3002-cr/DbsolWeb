@@ -8,7 +8,7 @@ import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
-import WebDevelopment from "./pages/services/WebDevelopment";
+import WebDevelopment from "./pages/services/Webdevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ITITES from "./pages/industries/IT&ITES";
 import ServicePage from "./components/Delivering_Tailored_Solutions";
