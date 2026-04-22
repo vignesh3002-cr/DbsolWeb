@@ -194,6 +194,17 @@ Home
                     Power Automate
                   </NavLink>
                 </li>
+
+                <li className="mt-4">
+                  <NavLink
+                    to="/powerBi"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    PowerBi
+                  </NavLink>
+                </li>
               </motion.ul>
             )}
           </AnimatePresence>
