@@ -132,7 +132,7 @@ Home
         onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
       >              
       <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600">
-        Services
+        Our Services
         {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
       </div>
 
@@ -189,6 +189,17 @@ Home
                     : "hover:text-black dark:hover:text-white"
                 }>
                     Power Automate
+                  </NavLink>
+                </li>
+
+                <li className="mt-4">
+                  <NavLink
+                    to="/powerBi"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    PowerBi
                   </NavLink>
                 </li>
               </motion.ul>
