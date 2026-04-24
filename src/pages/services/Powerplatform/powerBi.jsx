@@ -126,14 +126,42 @@ const Powerbi = () => {
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
        <section
-        ref={sectionRef}
-        id="selectRef"
-        className="py-16 lg:py-14 bg-background dark:bg-gray-800 dark:text-gray-300"
+        className="py-16 lg:py-0 bg-background dark:bg-gray-800 dark:text-gray-300"
       >
         <div className=" mx-auto px-4 lg:px-8">
           
           {activePanel === "powerBi" && (
             <>
+        <section>
+        <div className="grid items-center max-w-6xl gap-36 px-6 mx-auto md:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="mb-6 text-center text-4xl font-bold text-gray-800 md:text-left dark:text-white">
+              Power BI
+            </h2>
+
+            <p className="mb-4 text-center text-gray-600 md:text-left dark:text-gray-300">
+              Transform your data into actionable insights with Power BI. Our intuitive tools make it easy to visualize, analyze, and share data across your organization.
+            </p>
+
+            <p className="text-center text-gray-600 md:text-left dark:text-gray-300">
+              With intelligent automation and seamless integrations, you can gain real-time insights, enhance productivity, and focus on growth and innovation.
+            </p>
+          </motion.div>
+
+          <motion.img
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            src="images/Power Automate/powerbi.png"
+            className=" w-full h-96 py-8 object-cover" 
+          />
+        </div>
+      </section>
+          
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-heading font-semibold text-sm tracking-wide uppercase">
               Power Bi

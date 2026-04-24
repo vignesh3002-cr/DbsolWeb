@@ -132,7 +132,7 @@ Home
         onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
       >              
       <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600">
-        Services
+        Our Services
         {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
       </div>
 

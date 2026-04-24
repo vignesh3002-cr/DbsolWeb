@@ -231,14 +231,14 @@ const PowerAutomateFeatures = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold md:text-5xl"
           >
-            Power Automate Solutions
+            Power Platform Solutions
           </motion.h1>
           <p className="mt-4 text-gray-200">
             <Link to="/" className="hover:text-blue-400">
               Home
             </Link>
-            <span className="mx-2">/</span>
-            <span className="text-blue-400">Power Automate</span>
+            <span className="mx-2">➜</span>
+            <span className="text-blue-400">Power Platform</span>
           </p>
         </div>
       </section>
@@ -314,7 +314,7 @@ const PowerAutomateFeatures = () => {
 
           {activePanel === "power-automate" && (
             <>
-                  <section className="py-20">
+        <section className="py-2">
         <div className="grid items-center max-w-6xl gap-36 px-6 mx-auto md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
