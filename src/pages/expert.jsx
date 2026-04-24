@@ -49,6 +49,7 @@ export default function ContactExperts() {
 
           <div className="mb-4 absolute inset-0 flex flex-col items-center justify-center">
             <motion.h1
+            id=""
             initial={{opacity:0,y:30}}
             animate={{opacity:1,y:0}}
             transition={{duration:0.6}}
@@ -65,10 +66,7 @@ export default function ContactExperts() {
                <span className="text-blue-400">Contact Our Experts</span>      
             </p2>
            
-           
-          
-          
-          </div>
+           </div>
         </div>
 
         {/* 🔵 EXPERT CARDS */}

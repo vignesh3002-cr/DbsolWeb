@@ -37,7 +37,7 @@ export default function Consultation() {
 
     emailjs
       .send(
-        "service_vnls5bv",
+        "service_k7lyq2g",
         "template_wvng59j",
         templateParams,
         "5ctbJ-D6EXYlXfvpX"

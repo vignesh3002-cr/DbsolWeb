@@ -315,7 +315,7 @@ key={index}
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
 transition={{delay:index*0.3}}
-className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-orange-300  dark:text-white dark:bg-gray-600":"bg-green-200  dark:text-white dark:bg-gray-600"}  rounded-xl`}
+className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-orange-300 dark:from-gray-600 dark:to-gray-600  dark:text-white dark:bg-gray-600":"bg-green-200  dark:text-white dark:bg-gray-600"}  rounded-xl`}
 >
 
 <p className="font-semibold">
@@ -336,7 +336,7 @@ className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-purple-400 to-oran
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-700">
+<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold">
 Transform Your Financial Operations

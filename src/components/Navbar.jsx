@@ -3,9 +3,12 @@ import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import Home from "./Hero";
 
 export default function Header() {
 
+const [powerPlatformOpen, setPowerPlatformOpen] = useState(false);
+const hoverLinkClass = "hover:text-blue-600";
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
 const [solutionOpen,setSolutionOpen]=useState(false);
@@ -75,7 +78,9 @@ className={`text-2xl lg:hidden ${
 </button>
  <h1 className="text-2xl font-bold tracking-wide text-blue-600 ">
   <NavLink
-  to="/">
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}>
 Dbsol
 </NavLink>
 </h1> 
@@ -104,11 +109,13 @@ Microsoft Partner
 
 {/* NAVIGATION */}
 <div className="flex gap-4">
-<ul className="hidden font-medium lg:gap-6 lg:text-base dark:text-white lg:flex">
+<ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
-  to="/"
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
@@ -119,65 +126,94 @@ Home
 
 {/* SERVICES MENU */}
 
-<li
-className="relative"
-onMouseEnter={()=>setServicesOpen(true)}
-onMouseLeave={()=>setServicesOpen(false)}
->
+{/* Services Dropdown */}
+      <li className="relative"
+        onMouseEnter={() => setServicesOpen(true)}
+        onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
+      >              
+      <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600">
+        Services
+        {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
+      </div>
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+      <AnimatePresence>
+        {servicesOpen && (
+          <motion.ul
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 dropdown"
+          >
+            <li >
+              <NavLink
+                to="/finance-operation"
+                className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                Finance & Operations
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/BusinessConsulting" className={({ isActive }) => 
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+      
+                Business Consulting
+              </NavLink>
+            </li>
 
-Services
+            {/* Power Platform Nested */}
+        <li className="relative">
+          <div
+            className="flex justify-between cursor-pointer hover:text-black dark:hover:text-white"
+            onClick={() => setPowerPlatformOpen(prev => !prev)}
+          >
+            Power Platform
+            {powerPlatformOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+          </div>
 
-{servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+          <AnimatePresence>
+            {powerPlatformOpen && (
+              <motion.ul
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+              >
+                <li className="mt-4">
+                  <NavLink
+                    to="/power-automate"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    Power Automate
+                  </NavLink>
+                </li>
+              </motion.ul>
+            )}
+          </AnimatePresence>
+        </li>
 
-</div>
-
-<AnimatePresence>
-
-{servicesOpen && (
-
-<motion.ul
-initial={{opacity:0,y:-10}}
-animate={{opacity:1,y:0}}
-exit={{opacity:0,y:-10}}
-transition={{duration:0.30}}
-className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
->
-
-<li className="cursor-pointer">
- <NavLink  
- to="/finance-operation"
-  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
-Finance & Operations</NavLink>
-</li>
-
-<li className="cursor-pointer">
-  <NavLink to="/Dynamics365Business"  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
-Dynamics 365 Business & Fundamentals</NavLink>
-</li>
-
-<li className="cursor-pointer">
-  <NavLink to="/Webdevelopment"  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
-Web Development</NavLink>
-</li>
-
-<li className="cursor-pointer">
-  <NavLink to="/MobileAppDevelopment" className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : ""}>
-App Development</NavLink>
-</li>
-
-</motion.ul>
-
-)}
-
-</AnimatePresence>
-
-</li>
+            <li>
+              <NavLink to="/WebDevelopment" className={({ isActive }) => 
+                isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
+              }>
+                Web Development
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/MobileAppDevelopment" className={({ isActive }) => 
+                isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
+              }>
+                App Development
+              </NavLink>
+            </li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </li>
 {/*Solution */}
 <li
 className="relative"
@@ -384,6 +420,17 @@ Careers
 */}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
+to="/Careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Careers
+</NavLink>
+</li>
+{/* contact us */}
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
   to="/contact"
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
@@ -448,8 +495,7 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </header>
 {menu && (
 
-<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed left-1 z-40 w-9/12 px-6 py-6 pb-10 
-bg-white dark:bg-gray-800 text-black dark:text-gray-200 border-b border-r border-gray-400 top-12 lg:hidden rounded-xl">
+<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 w-9/12 px-6 py-6 pb-10 text-black bg-white border-b border-r border-gray-400 left-1 dark:bg-gray-800 dark:text-gray-200 top-12 lg:hidden rounded-xl">
 <ul className="flex flex-col gap-5 text-xl font-semibold ">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -464,61 +510,112 @@ Home
 
 {/* SERVICES MENU */}
 
-<li
-className="relative"
->
+<li className="relative">
 
-<div onClick={toggleServices}
-className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+  <div 
+    onClick={toggleServices}
+    className="flex items-center gap-2 cursor-pointer hover:text-blue-600"
+  >
+    Services
+    {servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+  </div>
 
-Services
+  <AnimatePresence>
+    {servicesOpen && (
 
-{servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+      <motion.ul
+        initial={{opacity:0,y:-10}}
+        animate={{opacity:1,y:0}}
+        exit={{opacity:0,y:-10}}
+        transition={{duration:0.25}}
+        className="mt-3 ml-4 space-y-3"
+      >
 
-</div>
+        {/* Finance */}
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/finance-operation"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            Finance & Operations
+          </NavLink>
+        </li>
 
-<AnimatePresence>
+        {/* Business */}
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/Dynamics365Business"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            Dynamics 365 Business
+          </NavLink>
+        </li>
 
-{servicesOpen && (
+        {/* 🔽 Power Platform (Nested) */}
+        <li>
 
-<motion.ul
-initial={{opacity:0,y:-10}}
-animate={{opacity:1,y:0}}
-exit={{opacity:0,y:-10}}
-transition={{duration:0.25}}
-className="mt-3 ml-4 space-y-3">
+          <div
+            onClick={() => setPowerPlatformOpen(prev => !prev)}
+            className="flex items-center justify-between cursor-pointer hover:text-blue-600"
+          >
+            Power Platform
+            {powerPlatformOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
+          </div>
 
-<li className="cursor-pointer hover:text-blue-600">
-<NavLink
-to="/finance-operation"
-className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
-Finance & Operations</NavLink>
-</li> 
+          <AnimatePresence>
+            {powerPlatformOpen && (
+              <motion.ul
+                initial={{opacity:0, height:0}}
+                animate={{opacity:1, height:"auto"}}
+                exit={{opacity:0, height:0}}
+                transition={{duration:0.2}}
+                className="mt-2 ml-4 space-y-2 overflow-hidden"
+              >
+                <li className="cursor-pointer hover:text-blue-600">
+                  <NavLink
+                    to="/power-automate"
+                    className={({isActive}) =>
+                      isActive
+                        ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+                        : "hover:text-blue-600"}
+                  >
+                    Power Automate
+                  </NavLink>
+                </li>
+              </motion.ul>
+            )}
+          </AnimatePresence>
 
-<li className="cursor-pointer hover:text-blue-600">
-<NavLink to="/Dynamics365Business" className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
-Dynamics 365 Business & Fundamentals</NavLink>
-</li>
+        </li>
 
-<li className="cursor-pointer hover:text-blue-600">
-<NavLink to="/Webdevelopment" className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
-Web Development</NavLink>
-</li>
+        {/* Web */}
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/Webdevelopment"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            Web Development
+          </NavLink>
+        </li>
 
-<li className="cursor-pointer hover:text-blue-600">
-<NavLink to="/MobileAppDevelopment" className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>
-App Development</NavLink>
-</li>
+        {/* App */}
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/MobileAppDevelopment"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            App Development
+          </NavLink>
+        </li>
 
-</motion.ul>
+      </motion.ul>
 
-)}
-
-</AnimatePresence>
+    )}
+  </AnimatePresence>
 
 </li>
 {/*Solution */}
@@ -701,6 +798,17 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 }
 >
 Case Studies
+</NavLink>
+</li>
+
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/Careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
+}
+>
+Careers
 </NavLink>
 </li>
 

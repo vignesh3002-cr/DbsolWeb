@@ -81,8 +81,8 @@ export default function Contact() {
         </section>
 
         {/* CONTACT CARDS */}
-        <section className="py-20">
-          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 dark:text-white">
+        <section>
+          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto py-10 px-6 dark:text-white">
 
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -102,6 +102,7 @@ export default function Contact() {
               <a href="mailto:jayakumar.k@dbsoltechnologies.com">
                 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
                 <h3>Email</h3>
+                <p className="text-gray-500">jayakumar.k@dbsoltechnologies.com</p>
               </a>
             </motion.div>
 
@@ -123,7 +124,7 @@ export default function Contact() {
         </section>
 
         {/* FORM */}
-        <section className="py-10 bg-white dark:bg-gray-800">
+        <section className="py-10 bg-white dark:bg-gray-600">
           <div className="max-w-5xl mx-auto px-6">
 
             <h2 className="text-3xl font-bold text-center mb-10 dark:text-white">
@@ -146,8 +147,8 @@ export default function Contact() {
                 placeholder="Message"
               />
 
-              <button className="bg-blue-600 text-white py-3 rounded md:col-span-2">
-                Send Message
+              <button className="bg-blue-600 text-xl text-white py-3 px-32 place-self-center md:col-span-2 rounded-lg">
+                Submit
               </button>
             </form>
           </div>
@@ -171,7 +172,7 @@ export default function Contact() {
 
       <iframe
           title="map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d649.0142978711507!2d80.07674968334102!3d12.86315302262354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f76bd9c2f359%3A0xce8dc31fdb6a9b84!2sIndran%20Tower!5e0!3m2!1sen!2sus!4v1775812645806!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497627.8411701208!2d80.06340834936829!3d12.989911365722172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f76bd9c2f359%3A0xce8dc31fdb6a9b84!2sIndran%20Tower!5e0!3m2!1sen!2sus!4v1776076059117!5m2!1sen!2sus"
           className="w-full h-[400px] rounded-2xl shadow-lg"
           loading="lazy"
           allowFullScreen
