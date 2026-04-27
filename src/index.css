@@ -38,3 +38,15 @@ html {
 html {
   scroll-behavior: smooth;
 }
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1.6);
+  }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+}
