@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PowerAutomate from "./pages/services/Powerplatform/power-automate";
+import Powerbi from "./pages/services/Powerplatform/powerBi";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
-import WebDevelopment from "./pages/services/WebDevelopment";
+import WebDevelopment from "./pages/services/Webdevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ITITES from "./pages/industries/IT&ITES";
 import ServicePage from "./components/Delivering_Tailored_Solutions";
@@ -40,6 +41,7 @@ import GlobePage from "./components/Globepage";
       <Route path="/aboutUs" element={<About/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
       <Route path="/power-automate" element={<PowerAutomate/>}></Route>
+      <Route path="/powerBi" element={<Powerbi/>}></Route>
       <Route path="/BusinessConsulting" element={<BPage/>}></Route>
       <Route path="/finance-operation" element={<FinanceOperations/>}></Route>
       <Route path="/Dynamics365Business" element={<Dynamics365Business/>}></Route>
