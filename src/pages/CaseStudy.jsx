@@ -2,8 +2,6 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-
-
 import RoleBasedTraining from "../components/trainingController"
 import RoleplayScenario from "../components/roleplay"
 import HyperCareSection from "../components/Post-Go-Live Support"
