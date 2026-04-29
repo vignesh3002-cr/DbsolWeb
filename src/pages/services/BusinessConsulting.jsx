@@ -14,6 +14,59 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 
+import { useState } from "react";
+
+function WaveformHoverCard({ title, desc, Icon, video }) {
+  const [active, setActive] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const isActive = active || hovered;
+
+  return (
+    <div
+      onClick={() => setActive(!active)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer"
+    >
+      {/* 🎥 VIDEO */}
+      <video
+        src={video}
+        muted
+        loop
+        autoPlay
+        className={`
+          absolute inset-0 w-full h-full object-cover
+          transition-all duration-500
+          ${isActive ? "opacity-100 scale-110" : "opacity-0 scale-100"}
+        `}
+      />
+
+      {/* 🌑 OVERLAY */}
+      <div
+        className={`
+          absolute inset-0 bg-black/40 transition duration-300
+          ${isActive ? "opacity-100" : "opacity-0"}
+        `}
+      ></div>
+
+      {/* 📝 TEXT */}
+      <div className="relative z-10">
+        <h3 className={`text-xl font-semibold ${isActive ? "text-white" : ""}`}>
+          {title}
+        </h3>
+        <p className={`${isActive ? "text-gray-200" : "text-gray-600"}`}>
+          {desc}
+        </p>
+      </div>
+
+      {/* 📊 ICON */}
+      <div className="absolute right-4 bottom-4 w-16 h-16 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
+        <Icon className="w-8 h-8 text-white" />
+      </div>
+    </div>
+  );
+}
 export default function BPage() {
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -47,22 +100,22 @@ export default function BPage() {
       </section>
 
       {/* OVERVIEW */}
-      <section className="bg-gray-50  mb-2 py-16">
+      <section className="bg-gray-50 dark:bg-gray-800 mb-2 py-16">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12  items-center">
     
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">
+      <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
         Business Consulting Overview
       </h2>
 
-      <p className="text-gray-600 mb-4 leading-relaxed">
+      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
         Our business consulting services help organizations adapt, scale,
         and complete in fast-changing markets. We partner with leadership teams
         to identify challenges, unlock opportunities, and deliver measurable impact.
       </p>
 
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
         From process optimization to enterprise technology alignment,
         we create sustainable solutions that support long-term success.
       </p>
@@ -84,45 +137,36 @@ export default function BPage() {
 
   </div>
 </section>
-     <div className="max-w-7xl bg-gray-100 mx-auto px-6 py-4 grid md:grid-cols-3 gap-6 text-center">
+   {/* WAVEFORM CARDS */}
 
-  {/* Strategic Growth */}
-  <div className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden">
-    <TrendingUp className="absolute right-4 bottom-4 justify-center bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
-    <h3 className="text-xl font-semibold">Strategic Growth</h3>
-    <p className="text-gray-600">
-      Focused strategies aligned with your business vision.
-    </p>
-  </div>
+  <div className="max-w-7xl bg-white-100 dark:bg-gray-800 mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
+   <WaveformHoverCard
+    title="Strategic Growth"
+    desc="Focused strategies aligned with your business vision."
+    Icon={TrendingUp}
+    video="/images/growth.mp4" 
+    />
 
-  {/* Operational Excellence */}
-  <div className="relative p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden">
-    <Settings className="absolute right-4 bottom-4 bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
-    <h3 className="text-xl font-semibold dark:text-white mb-2">
-      Operational Excellence
-    </h3>
-    <p className="text-gray-600 dark:text-white">
-      Optimized processes to boost productivity and efficiency.
-    </p>
-  </div>
+  <WaveformHoverCard
+    title="Operational Excellence"
+    desc="Optimized processes to boost productivity and efficiency."
+    Icon={Settings}
+    video="/images/Operations.mp4"
+  />
 
-  {/* Data-Driven Decisions */}
-  <div className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden">
-    <BarChart3 className="absolute right-4 bottom-4 bg-blue-500 w-16 h-16 text-gray-200 opacity-30" />
-    <h3 className="text-xl font-semibold mb-2">
-      Data-Driven Decisions
-    </h3>
-    <p className="text-gray-600">
-      Actionable insights for confident, informed leadership.
-    </p>
-  </div>
+  <WaveformHoverCard
+    title="Data-Driven Decisions"
+    desc="Actionable insights for confident, informed leadership."
+    Icon={BarChart3}
+    video="/images/analytics.mp4"
+  />
 
 </div>
-
-      {/* CONSULTING AREAS */}
-      <section className="bg-gray-100 text-center py-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
+     
+     {/* CONSULTING AREAS */}
+      <section className="bg-gray-100 dark:bg-gray-800 text-center py-10">
+        <div className="max-w-7xl dark:bg-gray-800 mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">
             Our Consulting Areas
           </h2>
 
@@ -174,8 +218,7 @@ export default function BPage() {
   </div>
 </section>     
 
-
-      {/* APPROACH & BENEFITS */}
+ {/* APPROACH & BENEFITS */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -208,29 +251,47 @@ export default function BPage() {
       </section>
 
       {/* BUSINESS IMPACT */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <h3 className="text-3xl font-bold text-indigo-700">25%</h3>
-            <p className="text-gray-600">Operational Cost Reduction</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-indigo-700">40%</h3>
-            <p className="text-gray-600">Process Efficiency Gain</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-indigo-700">30%</h3>
-            <p className="text-gray-600">Faster Decision Making</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-indigo-700">95%</h3>
-            <p className="text-gray-600">Client Satisfaction</p>
-          </div>
-        </div>
-      </section>
+    
+<section className="bg-gray-50 dark:bg-gray-900 py-16">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
+    
+    {/* Card 1 */}
+    <div className="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+      <h3 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">25%</h3>
+      <p className="text-gray-600 dark:text-gray-300 mt-2">
+        Operational Cost Reduction
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+      <h3 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">40%</h3>
+      <p className="text-gray-600 dark:text-gray-300 mt-2">
+        Process Efficiency Gain
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+      <h3 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">30%</h3>
+      <p className="text-gray-600 dark:text-gray-300 mt-2">
+        Faster Decision Making
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+      <h3 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">95%</h3>
+      <p className="text-gray-600 dark:text-gray-300 mt-2">
+        Client Satisfaction
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* CTA */}
-      <section className="bg-indigo-700 text-white py-16 px-6 text-center">
+      <section className="bg-indigo-700 dark:bg-gray-800 text-white py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Transform Your Business?
         </h2>

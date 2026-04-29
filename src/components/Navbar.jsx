@@ -144,6 +144,16 @@ Home
             exit={{ opacity: 0, y: -10 }}
             className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 dropdown"
           >
+                        <li >
+              <NavLink
+                to="/Dynamics365Business"
+                className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                Dynamics 365 Business
+              </NavLink>
+            </li>
             <li >
               <NavLink
                 to="/finance-operation"
