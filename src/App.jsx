@@ -32,7 +32,7 @@ import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
-import PowerApps from"./pages/PowerApps";
+import PowerApps from"./pages/services/Powerplatform/PowerApps";
  function App() {
   return (
     <BrowserRouter>
