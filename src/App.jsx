@@ -34,6 +34,7 @@ import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
+import whyChooseUs from "./components/WhyChooseUs";
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CareerForm/" element={<CareerForm />} />
+        <Route path="/WhyChooseUs" element={<whyChooseUs />} />
       </Routes>
     </BrowserRouter>
   );
