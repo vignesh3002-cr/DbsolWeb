@@ -10,6 +10,8 @@ import FinanceOperations from "./pages/services/FinanceOperations";
 import ModulesHub from "./pages/ModulesHub";
 import ModuleDetail from "./pages/ModuleDetail";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
+import BusinessCentral from "./pages/services/BusinessCentral";
+import CustomerEngagement from "./pages/services/CustomerEngagement";
 import WebDevelopment from "./pages/services/Webdevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ITITES from "./pages/industries/IT&ITES";
@@ -46,6 +48,8 @@ function App() {
         <Route path="/power-automate" element={<PowerAutomate />} />
         <Route path="/powerBi" element={<Powerbi />} />
         <Route path="/modules" element={<ModulesHub />} />
+        <Route path="/BusinessCentralWebDevelopment" element={<BusinessCentral />} />
+        <Route path="/CustomerEngagement" element={<CustomerEngagement />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessConsulting" element={<BPage />} />
         <Route path="/finance-operation" element={<FinanceOperations />} />
