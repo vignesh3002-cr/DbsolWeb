@@ -156,7 +156,7 @@ const Powerbi = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="images/Power Automate/powerbi.png"
+            src="images/PowerAutomate/powerbi.png"
             className=" w-full h-96 py-8 object-cover" 
           />
         </div>

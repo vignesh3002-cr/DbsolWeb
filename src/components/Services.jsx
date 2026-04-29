@@ -27,6 +27,7 @@ export default function Home() {
       scrollToElement();
     }
   }, [location]);
+  void motion;
 
   const services = [
     {
@@ -42,10 +43,22 @@ export default function Home() {
       path: "/Dynamics365Business",
     },
     {
+      title: "Business Central Web",
+      desc: "Connect your website to Business Central workflows...",
+      icon: <FaLaptopCode size={40} />,
+      path: "/BusinessCentralWebDevelopment",
+    },
+    {
+      title: "Customer Engagement",
+      desc: "Connect sales, service, and marketing journeys...",
+      icon: <FaCloud size={40} />,
+      path: "/CustomerEngagement",
+    },
+    {
       title: "Responsive Website",
       desc: "We design modern websites...",
       icon: <FaLaptopCode size={40} />,
-      path: "/Webdevelopment",
+      path: "/WebDevelopment",
     },
     {
       title: "Mobile App Development",
@@ -61,7 +74,7 @@ export default function Home() {
       {/* SERVICES SECTION */}
       <section
         id="clients-section"   // 🎯 TARGET ID (IMPORTANT)
-        className="py-12 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950"
+        className="py-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950"
       >
         <div className="px-6 mx-auto max-w-7xl">
 

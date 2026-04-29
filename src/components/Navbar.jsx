@@ -8,7 +8,6 @@ import Home from "./Hero";
 export default function Header() {
 
 const [powerPlatformOpen, setPowerPlatformOpen] = useState(false);
-const hoverLinkClass = "hover:text-blue-600";
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
 const [solutionOpen,setSolutionOpen]=useState(false);
@@ -40,13 +39,6 @@ setDarkMode(!darkMode)
 document.documentElement.classList.toggle("dark")
 }
 
-const resetMenu = () => {
-  setMenu(false);
-  setServicesOpen(false);
-  setIndustriesOpen(false);
-  setSolutionOpen(false);
-};
-
 useEffect(() => {
   if (menu) {
     document.body.style.overflow = "hidden";
@@ -58,6 +50,7 @@ useEffect(() => {
     document.body.style.overflow = "auto";
   };
 }, [menu]);
+void motion;
 return(
 <div className="relative">
 <header className="fixed z-40 w-full transition bg-white shadow-md dark:bg-gray-900">
@@ -144,7 +137,7 @@ Home
             exit={{ opacity: 0, y: -10 }}
             className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 dropdown"
           >
-                        <li >
+            <li >
               <NavLink
                 to="/Dynamics365Business"
                 className={({ isActive }) =>
@@ -152,6 +145,26 @@ Home
                     : "hover:text-black dark:hover:text-white"
                 }>
                 Dynamics 365 Business
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/BusinessCentralWebDevelopment"
+                className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                Business Central Web
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/CustomerEngagement"
+                className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                Customer Engagement
               </NavLink>
             </li>
             <li >
@@ -201,7 +214,16 @@ Home
                     Power Automate
                   </NavLink>
                 </li>
-
+          <li className="mt-4">
+                  <NavLink
+                    to="/PowerApps"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    PowerApps
+                  </NavLink>
+                </li>
                 <li className="mt-4">
                   <NavLink
                     to="/powerBi"
@@ -574,6 +596,26 @@ Home
           </NavLink>
         </li>
 
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/BusinessCentralWebDevelopment"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            Business Central Web
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink
+            to="/CustomerEngagement"
+            className={({isActive}) =>
+              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+          >
+            Customer Engagement
+          </NavLink>
+        </li>
+
         {/* 🔽 Power Platform (Nested) */}
         <li>
 
@@ -614,7 +656,7 @@ Home
         {/* Web */}
         <li className="cursor-pointer hover:text-blue-600">
           <NavLink
-            to="/Webdevelopment"
+            to="/WebDevelopment"
             className={({isActive}) =>
               isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
           >

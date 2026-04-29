@@ -1,14 +1,4 @@
-/**
- * DataMigrationSection.jsx
- * Tailwind CSS v3.4.17  |  React 18+
- *
- * Google Fonts (add to global CSS):
- *   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
- *
- * Add to tailwind.config.js → theme.extend:
- *   See config snippet at bottom of this file.
- */
-
+import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -24,8 +14,8 @@ const DMF_PHASES = [
     desc: "Legacy data extracted from AX 2012 / on-premise systems. Every table mapped, every relationship catalogued. Nothing moves without a verified source blueprint.",
     tools: ["SQL Profiler", "DIXF Entities", "Excel Staging"],
     stat: { value: "100%", label: "Source Coverage" },
-    color: "#D4A853",
-    rgb: "212,168,83",
+    color: "#5B9BD5" ,
+    rgb: "91,155,213",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <path d="M4 7c0-1.1 3.58-2 8-2s8 .9 8 2-3.58 2-8 2-8-.9-8-2z"/>
@@ -42,8 +32,8 @@ const DMF_PHASES = [
     desc: "Business rules applied to deduplicate, standardise, and transform data into D365 entity formats. Anomalies logged and resolved before a single record moves to target.",
     tools: ["DMF Framework", "Power Query", "Custom Scripts"],
     stat: { value: "Zero", label: "Data Loss Policy" },
-    color: "#5B9BD5",
-    rgb: "91,155,213",
+    color: "#D4A853",
+    rgb: "212,168,83",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -142,15 +132,15 @@ const TOOLS = [
 ];
 
 const INTEGRITY_STATS = [
-  { value: "100%", suffix: "", label: "Record Reconciliation", icon: "◆", color: "#D4A853" },
-  { value: "20",   suffix: "yrs", label: "Historical Data Migrated", icon: "◈", color: "#5B9BD5" },
-  { value: "0",    suffix: "",  label: "Production Incidents", icon: "◉", color: "#6BBF7A" },
-  { value: "3x",   suffix: "",  label: "Validation Passes", icon: "◆", color: "#C084FC" },
+  { value: "100%", suffix: "", label: "Record Reconciliation", icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E88E5"><path d="M200-200v-560 454-85 191Zm0 80q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v320h-80v-320H200v560h280v80H200Zm494 40L552-222l57-56 85 85 170-170 56 57L694-80ZM348.5-451.5Q360-463 360-480t-11.5-28.5Q337-520 320-520t-28.5 11.5Q280-497 280-480t11.5 28.5Q303-440 320-440t28.5-11.5Zm0-160Q360-623 360-640t-11.5-28.5Q337-680 320-680t-28.5 11.5Q280-657 280-640t11.5 28.5Q303-600 320-600t28.5-11.5ZM440-440h240v-80H440v80Zm0-160h240v-80H440v80Z"/></svg>, color: "" },
+  { value: "20",   suffix: "yrs", label: "Historical Data Migrated", icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E88E5"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>, color: "#5B9BD5" },
+  { value: "0",    suffix: "",  label: "Production Incidents", icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E88E5"><path d="M330-120 120-330v-300l210-210h300l210 210v300L630-120H330Zm36-190 114-114 114 114 56-56-114-114 114-114-56-56-114 114-114-114-56 56 114 114-114 114 56 56Zm-2 110h232l164-164v-232L596-760H364L200-596v232l164 164Zm116-280Z"/></svg>, color: "#6BBF7A" },
+  { value: "3x",   suffix: "",  label: "Validation Passes", icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E88E5"><path d="M240-40v-329L110-580l185-300h370l185 300-130 211v329l-240-80-240 80Zm80-111 160-53 160 53v-129H320v129Zm20-649L204-580l136 220h280l136-220-136-220H340Zm98 383L296-558l57-57 85 85 169-170 57 56-226 227ZM320-280h320-320Z"/></svg>, color: "#C084FC" },
 ];
 
 const PIPELINE_NODES = [
-  { label: "Source System",  sub: "AX 2012 / Legacy",  color: "#D4A853", x: 0 },
-  { label: "DMF Extract",    sub: "Staging Tables",     color: "#5B9BD5", x: 1 },
+  { label: "Source System",  sub: "AX 2012 / Legacy",  color: "#5B9BD5", x: 0 },
+  { label: "DMF Extract",    sub: "Staging Tables",     color: "#D4A853", x: 1 },
   { label: "Cleanse & Map",  sub: "Business Rules",     color: "#6BBF7A", x: 2 },
   { label: "D365 Target",    sub: "Live Environment",   color: "#C084FC", x: 3 },
 ];
@@ -248,7 +238,10 @@ function AnimStat({ stat, visible, delay = 0 }) {
   }, [visible, delay]);
   const display = useCountUp(stat.value + stat.suffix, shown);
   return (
-    <div
+    <motion.div
+    initial={{opacity:0,y:40}}
+        whileInView={{opacity:1,y:0}}
+         transition={{duration:0.3,delay:0.2}}
       className="flex flex-col items-center gap-2 px-4 py-6 text-center transition-all duration-300 cursor-default rounded-2xl group"
       style={{
         background: "rgba(255,255,255,0.025)",
@@ -270,7 +263,7 @@ function AnimStat({ stat, visible, delay = 0 }) {
       <span className="text-[10px] text-[#484848] tracking-[0.1em] uppercase leading-snug max-w-[80px] dark:text-white/85">
         {stat.label}
       </span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -555,56 +548,69 @@ export default function DataMigrationSection() {
           }}
         />
 
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 xl:px-11">
+        <div className="relative max-w-[1200px] py-8 mx-auto px-5 md:px-8 xl:px-11">
 
           {/* ══════════════════════════════════════════
               HEADER
           ══════════════════════════════════════════ */}
-          <div className="mb-16" style={reveal("0.04s")}>
+          <div className="mb-16 " style={reveal("0.04s")}>
             {/* Badge */}
-         <h2 className="mb-2 text-[clamp(32px,6vw,56px)] font-bold text-center text-gray-950 dark:text-white">
+         <h2 className="mb-4 p-[10x] text-4xl text-center font-bold text-gray-800 dark:text-white mt-3">
 Data Migration Transperancy
 </h2> 
-      <p className=" dark:text-white/90 text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto">
+      <p className="max-w-[740px] text-sm mx-auto mb-16 text-center text-[#000000] dark:text-gray-300">
                   We don't move a single record without a paper trail. Our DMF-driven process, tracked inside Microsoft LCS and Azure DevOps, gives you full transparency from first extract to go-live cutover.
                 </p>
             <div className="flex flex-col justify-between gap-32 lg:flex-row lg:items-end">
-              <div>
+              <motion.div
+                initial={{opacity:0,x:-40}}
+               whileInView={{opacity:1,x:0}}
+               transition={{duration:0.6,delay:0.2}}>
                 <h2
-                  className=" font-serif text-blue-400 font-extrabold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[640px]"
-                  style={{ fontSize: "clamp(30px,6vw,56px)" }}
+                  className="  text-blue-400 font-bold leading-[1.05] tracking-[-0.03em] mb-5 max-w-[440px]"
+                  style={{ fontSize: "clamp(30px,6vw,46px)" }}
                 >
                   Your data arrives<br />
                   <span
-                    className="text-transparent bg-clip-text"
-                    style={{
-                      backgroundImage: "linear-gradient(90deg,#C8962A,#F5D07A,#6BBF7A)",
-                      backgroundSize: "200% auto",
-                    }}
+                    className="text-blue-400 underline decoration-4  decoration-green-400"
                   >
                     complete. Verified. Safe.
-                  </span>
-                </h2>
-          
-              </div>
+                  </span> 
+                  
+                </h2> 
+              </motion.div>
 
               {/* Live indicator */}
+              <motion.div
+                initial={{opacity:0,y:0}}
+               whileInView={{opacity:1,y:30}}
+               transition={{duration:0.4,delay:0.6}}>
               <div
                 className="flex items-center self-start gap-3 px-5 py-3 bg-green-50 shrink-0 rounded-2xl lg:self-auto"
                 style={{border: "1px solid rgba(107,191,122,0.2)" }}
               >
+                
                 <div className="relative flex items-center justify-center w-4 h-4">
+                  
                   <div
                     className="absolute w-4 h-4 rounded-full opacity-60"
                     style={{ background: "#6BBF7A", animation: "dmRipple 2.2s ease-out infinite" }}
                   />
                   <div className="w-2 h-2 rounded-full" style={{ background: "#6BBF7A" }} />
+                 
                 </div>
+                
+
                 <div>
+                  
+
                   <p className="text-[11px] font-semibold text-red-600 leading-none">Live Tracking Active</p>
                   <p className="text-[9px] text-[#4a4a4a] mt-0.5">Azure DevOps · LCS</p>
+                 
                 </div>
+                
               </div>
+              </motion.div>
             </div>
           </div>
 
