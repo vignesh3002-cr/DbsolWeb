@@ -267,7 +267,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            src="/images/Power Automate/Power_Automate.webp"
+            src="/images/PowerAutomate/Power_Automate.webp"
             className="rounded-xl shadow-xl"
           />
         </div>
@@ -338,7 +338,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="/images/Power Automate/powerautomate.png"
+            src="/images/PowerAutomate/powerautomate.png"
             className=" w-full h-96 object-cover" 
           />
         </div>

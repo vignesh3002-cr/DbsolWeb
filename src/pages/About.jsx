@@ -76,7 +76,7 @@ Our mission is to help businesses streamline operations, improve financial visib
 </div>
 
 </section>
-<GrowthJourney/>
+
 {/* MISSION & VISION - PREMIUM */}
 
 <section className="relative overflow-hidden py-28 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">

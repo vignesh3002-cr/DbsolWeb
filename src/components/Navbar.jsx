@@ -214,7 +214,16 @@ Home
                     Power Automate
                   </NavLink>
                 </li>
-
+          <li className="mt-4">
+                  <NavLink
+                    to="/PowerApps"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    PowerApps
+                  </NavLink>
+                </li>
                 <li className="mt-4">
                   <NavLink
                     to="/powerBi"
