@@ -1,10 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+<<<<<<< HEAD
 import PowerAutomate from "./pages/services/Powerplatform/power-automate";
 
 import PowerApps from "./pages/services/Powerplatform/PowerApps";
+=======
+>>>>>>> 36e7d86a3dc05e213fa98497db3e3f6b50a4d2f0
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PowerAutomate from "./pages/services/power-automate";
+import Powerbi from "./components/powerbi";
+import PowerApps from "./components/PowerApps";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
@@ -37,7 +43,7 @@ import ModuleDetail from "./pages/ModuleDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
-import whyChooseUs from "./components/WhyChooseUs";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 function App() {
   return (
@@ -52,7 +58,7 @@ function App() {
         <Route path="/PowerApps" element={<PowerApps />} />
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
-        <Route path="/BusinessCentralWebDevelopment" element={<BusinessCentral />} />
+        <Route path="/BusinessCentral" element={<BusinessCentral />} />
         <Route path="/CustomerEngagement" element={<CustomerEngagement />} />
         <Route path="/BusinessConsulting" element={<BPage />} />
         <Route path="/finance-operation" element={<FinanceOperations />} />
@@ -72,10 +78,7 @@ function App() {
         <Route path="/Hospitality" element={<Hospitality />} />
         <Route path="/ProfessionalServices" element={<ProfessionalServices />} />
         <Route path="/FinancialManagementSystem" element={<FinancialManagementSystem />} />
-        <Route
-          path="/HumanResourceManagementSystem"
-          element={<HumanResourceManagementSystem />}
-        />
+        <Route path="/HumanResourceManagementSystem" element={<HumanResourceManagementSystem />} />
         <Route path="/SCMS" element={<SupplyChainManagementSystem />} />
         <Route path="/WMS" element={<WarehouseManagementSystem />} />
         <Route path="/IMS" element={<InventoryManagementSystem />} />
@@ -83,8 +86,8 @@ function App() {
         <Route path="/CaseStudies" element={<CaseStudies />} />
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
-        <Route path="/CareerForm/" element={<CareerForm />} />
-        <Route path="/WhyChooseUs" element={<whyChooseUs />} />
+        <Route path="/CareerForm" element={<CareerForm />} />
+        <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
       </Routes>
     </BrowserRouter>
   );

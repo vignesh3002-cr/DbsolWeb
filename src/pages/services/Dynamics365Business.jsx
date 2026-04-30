@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
+  FaArrowRight,
   FaChartPie,
   FaCloud,
   FaMobileAlt,
@@ -47,6 +48,27 @@ const features = [
 ];
 
 const deliveryModules = ["Finance", "Sales", "Supply Chain", "Customer Service"];
+
+const subDivisions = [
+  {
+    title: "Business Central",
+    desc: "A complete ERP solution for small and medium businesses, covering finance, sales, purchasing, inventory, and operations.",
+    href: "/BusinessCentral",
+    icon: <FaChartPie />,
+  },
+  {
+    title: "Finance & Operations",
+    desc: "Enterprise-grade applications for advanced finance, supply chain, manufacturing, logistics, and operational control.",
+    href: "/finance-operation",
+    icon: <FaProjectDiagram />,
+  },
+  {
+    title: "Customer Engagement",
+    desc: "CRM capabilities for sales, customer service, marketing, field service, and stronger customer relationships.",
+    href: "/CustomerEngagement",
+    icon: <FaUsers />,
+  },
+];
 
 export default function Dynamics365Business() {
   return (
@@ -148,6 +170,47 @@ export default function Dynamics365Business() {
               className="h-full w-full object-cover"
             />
           </motion.div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 dark:bg-gray-950 lg:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+              Dynamics 365 Business
+            </span>
+            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">
+              Three Core Sub-Divisions
+            </h2>
+            <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Choose the Dynamics 365 solution area that fits your business model,
+              operating scale, and customer engagement needs.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {subDivisions.map((item) => (
+              <Link
+                key={item.title}
+                to={item.href}
+                className="group rounded-2xl border border-gray-200 bg-gray-50 p-8 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-500/40"
+              >
+                <div className="mb-5 inline-flex rounded-2xl bg-blue-100 p-4 text-2xl text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-900/40 dark:text-blue-300">
+                  {item.icon}
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">
+                  {item.title}
+                </h3>
+                <p className="mb-6 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                  {item.desc}
+                </p>
+                <span className="inline-flex items-center gap-2 font-semibold text-blue-700 transition group-hover:gap-3 dark:text-blue-300">
+                  Explore
+                  <FaArrowRight />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
