@@ -6,6 +6,7 @@
   HeadphonesIcon,
   BarChart3,
   Globe,
+  Megaphone,
 } from "lucide-react";
 
 export const d365Modules = [
@@ -229,6 +230,124 @@ export const d365Modules = [
     ],
     docHref: "https://learn.microsoft.com/en-us/dynamics365/supply-chain/",
   },
+
+  {
+    slug: "marketing",
+    icon: Megaphone, // import from lucide-react or your icon set
+    title: "Marketing",
+    tagline: "Create personalized, data-driven customer journeys",
+
+    description:
+      "Campaign management, customer journeys, email marketing, lead nurturing, event management, and marketing analytics.",
+    color: "bg-pink-100 text-pink-600",
+    accent: "330 100% 50%",
+
+    clientValue: [
+      "Design automated, multi-step customer journeys",
+      "Segment audiences using real-time behavioral data",
+      "Run personalized email and SMS campaigns",
+      "Track engagement with built-in analytics dashboards",
+      "Align marketing and sales with shared lead data",
+    ],
+
+    usage: [
+      "Launch targeted campaigns based on customer behavior",
+      "Nurture leads through automated journey workflows",
+      "Increase conversions with personalized messaging",
+      "Measure campaign ROI with real-time insights",
+    ],
+
+    sections: [
+      {
+        slug: "customer-journeys",
+        title: "Customer Journeys",
+        summary:
+          "Automate end-to-end customer engagement with visual journey orchestration.",
+        features: [
+          "Drag-and-drop journey designer",
+          "Trigger-based automation",
+          "Multi-channel engagement (email, SMS, push)",
+          "Real-time journey tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/",
+      },
+      {
+        slug: "email-marketing",
+        title: "Email Marketing",
+        summary:
+          "Create, personalize, and optimize email campaigns at scale.",
+        features: [
+          "Prebuilt email templates",
+          "Dynamic content personalization",
+          "A/B testing and optimization",
+          "Email performance tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/email-overview",
+      },
+      {
+        slug: "segmentation",
+        title: "Segmentation",
+        summary:
+          "Build precise audience segments using demographics and behavior.",
+        features: [
+          "Real-time segmentation",
+          "Behavioral and demographic filters",
+          "Dynamic segment updates",
+          "Customer profile unification",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/segments",
+      },
+      {
+        slug: "lead-management",
+        title: "Lead Management",
+        summary:
+          "Capture, score, and nurture leads to improve conversion rates.",
+        features: [
+          "Lead scoring models",
+          "Automated lead nurturing",
+          "Sales handoff integration",
+          "Lead lifecycle tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/sales/lead-management",
+      },
+      {
+        slug: "event-management",
+        title: "Event Management",
+        summary:
+          "Plan and execute webinars, events, and registrations seamlessly.",
+        features: [
+          "Event scheduling and registration portals",
+          "Attendee tracking",
+          "Webinar integrations (Teams, etc.)",
+          "Post-event engagement tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/events-overview",
+      },
+      {
+        slug: "analytics",
+        title: "Marketing Analytics",
+        summary:
+          "Measure campaign performance and optimize engagement strategies.",
+        features: [
+          "Real-time dashboards",
+          "Campaign performance insights",
+          "Customer engagement scoring",
+          "ROI tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/customer-insights/",
+      },
+    ],
+
+    docHref:
+      "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/",
+  },
+
   {
     slug: "sales",
     icon: Users,

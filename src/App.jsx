@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import PowerAutomate from "./pages/services/Powerplatform/power-automate";
 import Powerbi from "./pages/services/Powerplatform/powerBi";
@@ -51,7 +51,7 @@ function App() {
         <Route path="/PowerApps" element={<PowerApps />} />
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
-        <Route path="/BusinessCentralWebDevelopment" element={<BusinessCentral />} />
+        <Route path="/BusinessCentral" element={<BusinessCentral />} />
         <Route path="/CustomerEngagement" element={<CustomerEngagement />} />
         <Route path="/BusinessConsulting" element={<BPage />} />
         <Route path="/finance-operation" element={<FinanceOperations />} />
