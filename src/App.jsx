@@ -1,8 +1,8 @@
 ﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import PowerAutomate from "./pages/services/Powerplatform/power-automate";
-import Powerbi from "./pages/services/Powerplatform/powerBi";
+import PowerAutomate from "./pages/services/power-automate";
 import About from "./pages/About";
+import Powerbi from "./components/powerbi";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
@@ -32,13 +32,12 @@ import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
-import PowerApps from"./pages/services/Powerplatform/PowerApps";
  function App() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
     <Routes>
-      <Route path="/PowerApps" element ={<PowerApps/>}></Route>
+
       <Route path="/" element={<Home/>}></Route>
       <Route path="/aboutUs" element={<About/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
