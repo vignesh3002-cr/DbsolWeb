@@ -2,120 +2,148 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
-import Testimonials from "../../components/Testimonial"
-
-import { FaIndustry, FaCogs, FaBoxes, FaChartLine, FaRobot, FaTruck } from "react-icons/fa"
+import Testimonials from "../../components/Testimonial" 
+import {
+  FaIndustry,
+  FaCogs,
+  FaBoxes,
+  FaChartLine,
+  FaRobot,
+  FaTruck
+} from "react-icons/fa"
+import { HashLink } from "react-router-hash-link"
 
 export default function Manufacturing() {
 
-  const challenges = [
-    "Managing complex supply chains across global operations",
-    "Maintaining real-time visibility into production and inventory",
-    "Reducing operational costs while improving productivity",
-    "Integrating legacy systems with modern digital platforms",
-  ]
-
-  const cases = [
+  const solutions = [
     {
-      id: "manufacturing",
-      title: "Manufacturing ERP Implementation",
-      industry: "Manufacturing",
-      desc: "Implemented Dynamics 365 Finance & Operations to unify plant-floor data with back-office finance, eliminating silos.",
-      result: "40% improvement in operational efficiency",
-      image: "/images/Manufacturing.jpeg",
-      tag: "bg-blue-200 text-blue-900",
+      icon: FaIndustry,
+      title: "Smart Factory Enablement",
+      desc: "Connect machines, systems, and people with intelligent manufacturing platforms.",
+    },
+    {
+      icon: FaCogs,
+      title: "Production Optimization",
+      desc: "Improve throughput and reduce downtime using advanced planning & scheduling.",
+    },
+    {
+      icon: FaBoxes,
+      title: "Inventory Intelligence",
+      desc: "Real-time inventory visibility across warehouses and plants.",
+    },
+    {
+      icon: FaTruck ,
+      title: "Supply Chain Visibility",
+      desc: "End-to-end transparency from suppliers to customers.",
+    },
+    {
+      icon: FaChartLine,
+      title: "Predictive Analytics",
+      desc: "Forecast demand and prevent disruptions with AI-driven insights.",
+    },
+    {
+      icon: FaRobot,
+      title: "Automation & Robotics",
+      desc: "Integrate robotics and automation for faster, safer operations.",
     },
   ]
-
-  const testimonial = Testimonials[0]
-
-  const solutions = [
-    { icon: <FaIndustry />, title: "Smart Factory Solutions", desc: "Implement digital manufacturing platforms that enhance operational efficiency and automation." },
-    { icon: <FaCogs />, title: "Production Optimization", desc: "Streamline production workflows using intelligent planning and automation technologies." },
-    { icon: <FaBoxes />, title: "Inventory Management", desc: "Improve inventory accuracy and reduce operational waste through real-time tracking." },
-    { icon: <FaChartLine />, title: "Predictive Analytics", desc: "Use advanced analytics to forecast demand and optimize production strategies." },
-    { icon: <FaRobot />, title: "Automation Integration", desc: "Integrate robotics and automation technologies into manufacturing operations." },
-    { icon: <FaTruck />, title: "Supply Chain Optimization", desc: "Enhance supply chain visibility and efficiency with integrated digital solutions." },
-  ]
+  
+const cases = [
+  {
+    id: "manufacturing",
+    title: "Manufacturing ERP Implementation",
+    industry: "Manufacturing",
+    desc: "Implemented Dynamics 365 to unify plant-floor and finance systems.",
+    result: "40% improvement in operational efficiency",
+    image: "/images/Manufacturing.jpeg",
+    tag: "bg-blue-200 text-blue-900",
+  },
+]
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
       <Navbar />
 
       {/* HERO */}
-      <section className="relative flex items-center justify-center h-[380px]">
-        <img
-          src="/images/MIS_1.jpeg"
-          alt="manufacturing industry"
-          className="absolute inset-0 object-cover w-full h-full"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 text-center text-white">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/MIS_1.jpeg"
+            className="w-full h-full object-cover"
+            alt="Manufacturing"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 py-40 text-white">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-5xl font-bold"
+            className="text-5xl lg:text-6xl font-bold max-w-3xl"
           >
-            Manufacturing Industry Solutions
+            Manufacturing Solutions for the Digital Age
           </motion.h1>
-          <p className="mt-3 text-gray-200">
-            <Link to="/" className="hover:text-blue-400">Home</Link>
-            <span className="mx-2">➜</span>
-            <span className="text-blue-400">Manufacturing</span>
+
+          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+            Transform your manufacturing operations with intelligent platforms,
+            real-time insights, and connected supply chains.
           </p>
+
+          <div className="mt-10 flex gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Talk to Experts
+            </Link>
+            <HashLink
+              to="#case-studies"
+              className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition"
+            >
+              View Case Studies
+            </HashLink>
+          </div>
         </div>
       </section>
 
-
-
-      {/* OVERVIEW */}
-      <section className="py-20">
-        <div className="grid items-center max-w-6xl gap-12 px-6 mx-auto md:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
-              Empowering Digital Manufacturing
-            </h2>
-            <p className="mb-4 text-gray-600 dark:text-gray-300">
-              The manufacturing sector is evolving rapidly with the adoption of digital technologies such as IoT, automation, and advanced analytics.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300">
-              Our solutions help manufacturers optimize production, streamline supply chains, and gain real-time insights into their operations for better decision-making.
-            </p>
-          </motion.div>
-          <motion.img
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            src="/images/MIS_2.jpeg"
-            className="shadow-xl rounded-xl"
-          />
-        </div>
-      </section>
-
-      {/* INDUSTRY CHALLENGES */}
+      {/* VALUE STRIP */}
       <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl px-6 mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-            Manufacturing Challenges
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
+          {[
+            ["40%+", "Efficiency Improvement"],
+            ["30%+", "Inventory Reduction"],
+            ["99%", "Operational Visibility"],
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-4xl font-bold text-blue-600">{item[0]}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{item[1]}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CHALLENGES */}
+      <section className="py-24  ">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+            Manufacturing Challenges We Solve
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">
-            Inefficient Production Scheduling, Lack of Real-Time Shop Floor Visibility, Difficulty Managing Demand Fluctuations.
-          </p>
-          <div className="grid gap-8 md:grid-cols-2">
-            {challenges.map((item, index) => (
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              "Lack of real-time shop-floor visibility",
+              "Disconnected ERP and production systems",
+              "Inefficient production planning",
+              "Rising operational and logistics costs",
+            ].map((c, i) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
+                key={i}
+                whileHover={{ y: -4 }}
+                className="p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg"
               >
-                <p className="text-gray-600 dark:text-gray-300">{item}</p>
+                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                  {c}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -123,60 +151,38 @@ export default function Manufacturing() {
       </section>
 
       {/* SOLUTIONS */}
-      <section className="py-24">
-        <div className="max-w-6xl px-6 mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-            Our Manufacturing Solutions
+      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-white text-center mb-20">
+            Our Manufacturing Capabilities
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">
-            Advanced Production Scheduling with Dynamics 365, Real-Time Shop Floor Monitoring, Demand-Driven Production Planning.
-          </p>
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((item, index) => (
+
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((item, i) => (
               <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
+                whileHover={{ scale: 1.04 }}
+                key={i}
+                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
               >
-                <div className="mb-4 text-3xl text-blue-600">{item.icon}</div>
-                <h3 className="mb-2 text-lg font-semibold dark:text-gray-300">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+                <div className="text-3xl text-blue-400 mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="py-24 bg-white dark:bg-gray-700">
-        <div className="max-w-6xl px-6 mx-auto text-center">
-          <h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">Key Benefits</h2>
-          <div className="grid gap-10 md:grid-cols-4">
-            {[
-              "Improved Production Efficiency",
-              "Optimized Supply Chain",
-              "Real-Time Operational Insights",
-              "Reduced Operational Costs",
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className={`p-6 shadow-lg rounded-xl ${
-                  index % 2 === 0
-                    ? "bg-gradient-to-r from-yellow-500 to-gray-800 dark:from-gray-800 dark:to-gray-800"
-                    : "bg-gradient-to-r from-green-400 to-green-700 dark:from-gray-800 dark:to-gray-800"
-                }`}
-              >
-                <p className="text-white text-lg font-serif">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* CASE STUDY CARD */}
-      <section className="py-16 max-w-5xl mx-auto px-6">
+      <section
+      id="case-studies"
+      className="py-16 max-w-5xl mx-auto px-6">
         <p className="text-xs tracking-[2px] uppercase text-gray-400 dark:text-gray-500 font-medium mb-2">Case Study</p>
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">Featured Project</h2>
         <div className="grid gap-5 md:grid-cols-1">
@@ -221,19 +227,22 @@ export default function Manufacturing() {
           <Testimonials limit={2} />
         </div>
       </section>
+
+
       {/* CTA */}
-      <section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800">
-        <h2 className="mb-6 text-4xl font-bold">
-          Transform Your Manufacturing Operations
+      <section className="py-32 text-center bg-blue-600">
+        <h2 className="text-4xl font-bold text-white">
+          Ready to Transform Manufacturing?
         </h2>
-        <p className="max-w-2xl mx-auto mb-10 text-blue-100">
-          Leverage digital transformation solutions to improve efficiency, reduce costs, and drive innovation in manufacturing.
+        <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
+          Let’s modernize your factories, optimize operations, and drive measurable business outcomes.
         </p>
+
         <Link
           to="/contact"
-          className="px-8 py-4 font-semibold text-blue-600 transition bg-white rounded-lg hover:bg-gray-100"
+          className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition"
         >
-          Talk to Our Experts
+          Start Your Transformation
         </Link>
       </section>
 

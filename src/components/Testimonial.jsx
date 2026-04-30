@@ -34,9 +34,13 @@ export default function Testimonials({ limit, minimal }) {
       review: "Professional team with deep technical expertise. They built our mobile app and enterprise backend perfectly."
     }
   ]
+const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5)
+}
 
   // ✅ Apply limit
-  const items = limit ? testimonials.slice(0, limit) : testimonials
+const shuffled = shuffleArray(testimonials)
+const items = limit ? shuffled.slice(0, limit) : shuffled
 
   return (
     <section className={`${minimal ? "" : "bg-gray-50 dark:bg-gray-900"}`}>

@@ -439,6 +439,10 @@ About Us
 </NavLink>
 </li>
 
+{/*
+
+Case Study Nav Desktop
+
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/CaseStudies"
@@ -449,6 +453,8 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Case Studies
 </NavLink>
 </li>
+
+*/}
 {/*
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -461,6 +467,11 @@ Careers
 </NavLink>
 </li>
 */}
+
+{/* 
+
+// Careers Navbar Desktop  
+
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/Careers"
@@ -471,6 +482,7 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Careers
 </NavLink>
 </li>
+*/}
 {/* contact us */}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -852,6 +864,9 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 >
 About Us</NavLink>
 </li>
+{/*
+
+Case Study Navbar Mobile
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -863,6 +878,11 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Case Studies
 </NavLink>
 </li>
+*/}
+
+{/*
+
+Careers Navbar Mobile
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -874,7 +894,7 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Careers
 </NavLink>
 </li>
-
+*/}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
  to="/Contact"  
