@@ -1,9 +1,14 @@
 ﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+<<<<<<< HEAD
+import PowerAutomate from "./pages/services/power-automate";
+=======
 import PowerAutomate from "./pages/services/Powerplatform/power-automate";
 import Powerbi from "./pages/services/Powerplatform/powerBi";
 import PowerApps from "./pages/services/Powerplatform/PowerApps";
+>>>>>>> 1b7d7682b469775ae72651365d6059ad1cd69146
 import About from "./pages/About";
+import Powerbi from "./components/powerbi";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
@@ -37,6 +42,48 @@ import ModuleDetail from "./pages/ModuleDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
+<<<<<<< HEAD
+ function App() {
+  return (
+    <BrowserRouter>
+    <ScrollToTop/>
+    <Routes>
+
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/aboutUs" element={<About/>}></Route>
+      <Route path="/contact" element={<Contact/>}></Route>
+      <Route path="/power-automate" element={<PowerAutomate/>}></Route>
+      <Route path="/powerBi" element={<Powerbi/>}></Route>
+      <Route path="/BusinessConsulting" element={<BPage/>}></Route>
+      <Route path="/finance-operation" element={<FinanceOperations/>}></Route>
+      <Route path="/Dynamics365Business" element={<Dynamics365Business/>}></Route>
+      <Route path="/WebDevelopment" element={<WebDevelopment/>}></Route>
+      <Route path="/services/:slug" element={<ServicePage />} />
+      <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>}></Route>
+      <Route path="/IT.ITES" element={<ITITES/>}></Route>
+      <Route path="/Manufacturing" element={<Manufacturing/>}></Route>
+      <Route path="/news" element={<NewsPage />} />
+      <Route path="/Globe" element={<GlobePage/>} />
+      <Route path="/Retail&Wholesale" element={<RetailWholesale/>}></Route>
+      <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain/>}></Route>
+      <Route path="/FinanceBanking" element={<FinanceBanking/>}></Route>  
+      <Route path="/HealthCare" element={<Healthcare/>}></Route>
+      <Route path="/Education" element={<Education/>}></Route>
+      <Route path="/Hospitality" element={<Hospitality/>}></Route>
+      <Route path="/ProfessionalServices" element={<ProfessionalServices/>}></Route>
+      <Route path="/FinancialManagementSystem" element={<FinancialManagementSystem/>}></Route>
+      <Route path="/HumanResourceManagementSystem" element={<HumanResourceManagementSystem/>}></Route>
+      <Route path="/SCMS" element={<SupplyChainManagementSystem/>}></Route>
+      <Route path="/WMS" element={<WarehouseManagementSystem/>}></Route>
+      <Route path="/IMS" element={<InventoryManagementSystem/>}></Route>
+      <Route path="/careers" element={<Careers/>}></Route>
+      <Route path="/CaseStudies" element={<CaseStudies/>}></Route>
+      <Route path="/case-studies/:id" element={<CaseStudyDetail/>}></Route>
+      <Route path="/ContactExperts" element={<ContactExperts/>}></Route>
+      <Route path="/CareerForm/" element={<CareerForm/>}></Route> 
+            
+=======
+import whyChooseUs from "./components/WhyChooseUs";
 
 function App() {
   return (
@@ -83,6 +130,8 @@ function App() {
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CareerForm/" element={<CareerForm />} />
+        <Route path="/WhyChooseUs" element={<whyChooseUs />} />
+>>>>>>> 1b7d7682b469775ae72651365d6059ad1cd69146
       </Routes>
     </BrowserRouter>
   );

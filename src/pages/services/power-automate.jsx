@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Sparkles, Bot, Cloud, ShieldCheck, LayoutGrid } from "lucide-react";
-import Navbar from "./../../../components/Navbar";
-import Footer from "./../../../components/Footer";
-import Powerbi from "./powerBi";
-import Testimonials from "./../../../components/Testimonial";
+import Navbar from "../../components/Navbar";
+import Powerbi from "../../components/powerbi";
+import Footer from "../../components/Footer";
+
+import PowerApps from "../../components/PowerApps";
 
 const categories = [
   {
@@ -38,7 +39,7 @@ const categories = [
         title: "Extend",
         description:
           "Accelerate digital transformation with automation-infused apps, websites, and agents in Microsoft Power Platform.",
-        image: "/images/Power Automate/Extend.png",
+        image: "/images/PowerAutomate/Extend.png",
       },
     ],
   },
@@ -301,14 +302,14 @@ const PowerAutomateFeatures = () => {
               Power BI
             </button>
             <button
-              onClick={() => handlePanelChange("testimonials")}
+              onClick={() => handlePanelChange("PowerApps")}
               className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                activePanel === "testimonials"
+                activePanel === "PowerApps"
                   ? "border-blue-300 bg-blue-600 text-white shadow-md"
                   : "border-border bg-background text-foreground hover:border-blue-400 hover:text-blue-600 dark:border-gray-700"
               }`}
             >
-              Testimonials
+              PowerApps
             </button>
           </div>
 
@@ -453,7 +454,7 @@ const PowerAutomateFeatures = () => {
             </div>
           )}
 
-          {activePanel === "testimonials" && <Testimonials />}
+          {activePanel === "PowerApps" && <PowerApps />}
         </div>
       </section>
 

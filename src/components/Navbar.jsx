@@ -188,7 +188,7 @@ Home
             </li>
 
             {/* Power Platform Nested */}
-        <li className="relative">
+       { /* <li className="relative">
           <div
             className="flex justify-between cursor-pointer hover:text-black dark:hover:text-white"
             onClick={() => setPowerPlatformOpen(prev => !prev)}
@@ -197,7 +197,7 @@ Home
             {powerPlatformOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
           </div>
 
-          <AnimatePresence>
+         <AnimatePresence>
             {powerPlatformOpen && (
               <motion.ul
                 initial={{ opacity: 0, height: 0 }}
@@ -214,31 +214,22 @@ Home
                     Power Automate
                   </NavLink>
                 </li>
-          <li className="mt-4">
-                  <NavLink
-                    to="/PowerApps"
-                    className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
-                    PowerApps
-                  </NavLink>
-                </li>
-                <li className="mt-4">
-                  <NavLink
-                    to="/powerBi"
-                    className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
-                    PowerBi
-                  </NavLink>
-                </li>
+          
+               
               </motion.ul>
             )}
           </AnimatePresence>
-        </li>
-
+        </li>*/}
+       <li className="mt-4">
+                  <NavLink
+                    to="/power-automate"
+                    className={({ isActive }) =>
+                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
+                    : "hover:text-black dark:hover:text-white"
+                }>
+                    Power Automate
+                  </NavLink>
+                </li>
             <li>
               <NavLink to="/WebDevelopment" className={({ isActive }) => 
                 isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
@@ -439,6 +430,10 @@ About Us
 </NavLink>
 </li>
 
+{/*
+
+Case Study Nav Desktop
+
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/CaseStudies"
@@ -449,6 +444,8 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Case Studies
 </NavLink>
 </li>
+
+*/}
 {/*
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -461,6 +458,11 @@ Careers
 </NavLink>
 </li>
 */}
+
+{/* 
+
+// Careers Navbar Desktop  
+
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/Careers"
@@ -471,6 +473,7 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Careers
 </NavLink>
 </li>
+*/}
 {/* contact us */}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -536,6 +539,9 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 </div>
 </div>
 </header>
+{
+  /* Mobile View */
+}
 {menu && (
 
 <motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 w-9/12 px-6 py-6 pb-10 text-black bg-white border-b border-r border-gray-400 left-1 dark:bg-gray-800 dark:text-gray-200 top-12 lg:hidden rounded-xl">
@@ -617,7 +623,7 @@ Home
         </li>
 
         {/* 🔽 Power Platform (Nested) */}
-        <li>
+       {/* <li>
 
           <div
             onClick={() => setPowerPlatformOpen(prev => !prev)}
@@ -636,7 +642,14 @@ Home
                 transition={{duration:0.2}}
                 className="mt-2 ml-4 space-y-2 overflow-hidden"
               >
-                <li className="cursor-pointer hover:text-blue-600">
+                
+              </motion.ul>
+            )}
+          </AnimatePresence>
+
+        </li>*/}
+        {/*Power Automate */}
+        <li className="cursor-pointer hover:text-blue-600">
                   <NavLink
                     to="/power-automate"
                     className={({isActive}) =>
@@ -647,11 +660,8 @@ Home
                     Power Automate
                   </NavLink>
                 </li>
-              </motion.ul>
-            )}
-          </AnimatePresence>
-
-        </li>
+                
+              
 
         {/* Web */}
         <li className="cursor-pointer hover:text-blue-600">
@@ -665,7 +675,7 @@ Home
         </li>
 
         {/* App */}
-        <li className="cursor-pointer hover:text-blue-600">
+        <li classNamCe="cursor-pointer hover:text-blue-600">
           <NavLink
             to="/MobileAppDevelopment"
             className={({isActive}) =>
@@ -852,6 +862,9 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 >
 About Us</NavLink>
 </li>
+{/*
+
+Case Study Navbar Mobile
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -863,6 +876,11 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Case Studies
 </NavLink>
 </li>
+*/}
+
+{/*
+
+Careers Navbar Mobile
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
@@ -874,7 +892,7 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 Careers
 </NavLink>
 </li>
-
+*/}
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
  to="/Contact"  
