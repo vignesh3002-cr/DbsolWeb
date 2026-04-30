@@ -1,307 +1,257 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Testimonials from "../../components/Testimonial"
 
 import {
-FaShoppingCart,
-FaStore,
-FaTruck,
-FaChartLine,
-FaUsers,
-FaBoxOpen
+  FaShoppingCart,
+  FaStore,
+  FaTruck,
+  FaChartLine,
+  FaUsers,
+  FaBoxOpen
 } from "react-icons/fa"
 
-export default function RetailWholesale(){
+export default function RetailWholesale() {
 
-const challenges = [
-"Managing inventory across multiple retail stores and warehouses",
-"Maintaining real-time visibility of product availability",
-"Delivering personalized customer shopping experiences",
-"Handling complex supply chains and logistics networks"
-]
+  const solutions = [
+    {
+      icon: FaStore,
+      title: "Omnichannel Retail Platforms",
+      desc: "Integrate online, in-store, and mobile commerce into one seamless retail experience.",
+    },
+    {
+      icon: FaShoppingCart,
+      title: "Smart Inventory Management",
+      desc: "Maintain real-time inventory visibility across stores and warehouses.",
+    },
+    {
+      icon: FaTruck,
+      title: "Supply Chain Optimization",
+      desc: "Reduce delivery delays and improve logistics efficiency end-to-end.",
+    },
+    {
+      icon: FaChartLine,
+      title: "Retail Analytics",
+      desc: "Analyze customer behavior, demand patterns, and sales performance.",
+    },
+    {
+      icon: FaUsers,
+      title: "Customer Experience Management",
+      desc: "Deliver personalized shopping experiences using CRM and AI insights.",
+    },
+    {
+      icon: FaBoxOpen,
+      title: "Warehouse Automation",
+      desc: "Optimize warehouse operations with smart automation and tracking.",
+    },
+  ]
 
-const solutions = [
+  const cases = [
+    {
+      id: "retail",
+      title: "Retail Inventory Optimization",
+      industry: "Retail & Wholesale",
+      desc: "Unified multi-store inventory using Dynamics 365 with real-time stock visibility.",
+      result: "35% reduction in inventory holding costs",
+      image: "/images/R&W_2.jpeg",
+      tag: "bg-purple-200 text-purple-900",
+    },
+  ]
 
-{
-icon:<FaStore/>,
-title:"Omnichannel Retail Platforms",
-desc:"Integrate online stores, physical retail outlets, and mobile commerce into a unified experience."
-},
+  return (
+    <div className="bg-gray-50 dark:bg-gray-900">
+      <Navbar />
 
-{
-icon:<FaShoppingCart/>,
-title:"Smart Inventory Management",
-desc:"Maintain real-time visibility of inventory across warehouses and retail stores."
-},
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/R&W_1.jpeg"
+            alt="Retail industry"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
 
-{
-icon:<FaTruck/>,
-title:"Supply Chain Optimization",
-desc:"Improve logistics efficiency and reduce delivery delays with integrated supply chain platforms."
-},
+        <div className="relative max-w-6xl mx-auto px-6 py-40 text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl lg:text-6xl font-bold max-w-3xl"
+          >
+            Retail & Wholesale Solutions
+          </motion.h1>
 
-{
-icon:<FaChartLine/>,
-title:"Retail Analytics",
-desc:"Use advanced analytics to understand customer behavior and sales performance."
-},
+          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+            Modernize retail operations with unified commerce, intelligent inventory,
+            and customer-centric digital platforms.
+          </p>
 
-{
-icon:<FaUsers/>,
-title:"Customer Experience",
-desc:"Deliver personalized shopping experiences through CRM and AI-powered insights."
-},
+          <div className="mt-10 flex gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Talk to Experts
+            </Link>
 
-{
-icon:<FaBoxOpen/>,
-title:"Warehouse Automation",
-desc:"Optimize warehouse operations using automation and smart inventory tracking."
+            <HashLink
+              to="#case-studies"
+              className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition"
+            >
+              View Case Studies
+            </HashLink>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUE STRIP */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
+          {[
+            ["35%+", "Inventory Cost Reduction"],
+            ["45%+", "Faster Order Fulfillment"],
+            ["99%", "Stock Accuracy"],
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-4xl font-bold text-blue-600">{item[0]}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{item[1]}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CHALLENGES */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+            Retail Challenges We Solve
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              "Managing inventory across multiple stores and warehouses",
+              "Lack of real-time product availability visibility",
+              "Inconsistent customer experiences across channels",
+              "Complex logistics and supply chain operations",
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -4 }}
+                className="p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg"
+              >
+                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                  {c}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTIONS */}
+      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-white text-center mb-20">
+            Our Retail & Wholesale Capabilities
+          </h2>
+
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((item, i) => (
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                key={i}
+                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
+              >
+                <div className="text-3xl text-blue-400 mb-4">
+                  <item.icon />
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section
+        id="case-studies"
+        className="py-16 max-w-5xl mx-auto px-6"
+      >
+        <p className="text-xs tracking-[2px] uppercase text-gray-400 font-medium mb-2">
+          Case Study
+        </p>
+
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+          Featured Project
+        </h2>
+
+        <div className="grid gap-5">
+          {cases.map((item, index) => (
+            <Link to={`/case-studies/${item.id}`} key={item.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md"
+              >
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <span className={`absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full ${item.tag}`}>
+                    {item.industry}
+                  </span>
+                </div>
+
+                <div className="p-5">
+                  <h3 className="font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-500 mb-4">{item.desc}</p>
+                  <div className="text-xs bg-emerald-50 text-emerald-700 px-3 py-2 rounded-lg">
+                    {item.result}
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+
+          <Testimonials limit={2} />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 text-center bg-blue-600">
+        <h2 className="text-4xl font-bold text-white">
+          Transform Your Retail Operations
+        </h2>
+        <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
+          Enable unified commerce, optimize inventory, and deliver exceptional
+          customer experiences.
+        </p>
+
+        <Link
+          to="/contact"
+          className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition"
+        >
+          Talk to Our Experts
+        </Link>
+      </section>
+
+      <Footer />
+    </div>
+  )
 }
-
-]
-
-return(
-
-<div className="bg-gray-50 dark:bg-gray-900">
-
-<Navbar/>
-
-{/* HERO SECTION */}
-
-<section className="relative flex items-center justify-center h-[380px]">
-
-<img
-src="/images/R&W_1.jpeg"
-alt="retail industry"
-className="absolute inset-0 object-cover w-full h-full"
-/>
-
-<div className="absolute inset-0 bg-black/60"></div>
-
-<div className="relative z-10 text-center text-white">
-
-<motion.h1
-initial={{opacity:0,y:40}}
-animate={{opacity:1,y:0}}
-transition={{duration:0.7}}
-className="text-5xl font-bold"
->
-
-Retail & Wholesale Solutions
-
-</motion.h1>
-
-<p className="mt-3 text-gray-200">
-
-<Link to="/" className="hover:text-blue-400">Home</Link>
-
-<span className="mx-2">➜</span>
-
-<span className="text-blue-400">Retail & Wholesale</span>
-
-</p>
-
-</div>
-
-</section>
-
-
-{/* INDUSTRY OVERVIEW */}
-
-<section className="py-20">
-
-<div className="grid items-center max-w-6xl gap-12 px-6 mx-auto md:grid-cols-2">
-
-<motion.div
-initial={{opacity:0,x:-40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.6}}
->
-
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
-
-Transforming Retail & Wholesale Businesses
-
-</h2>
-
-<p className="mb-4 text-gray-600 dark:text-gray-300">
-
-Retail and wholesale businesses are evolving rapidly with digital
-commerce, customer expectations, and global supply chain demands.
-
-</p>
-
-<p className="text-gray-600 dark:text-gray-300">
-
-We help retail organizations implement intelligent digital
-solutions that improve operational efficiency, optimize
-inventory management, and enhance customer experiences.
-
-</p>
-
-</motion.div>
-
-<motion.img
-initial={{opacity:0,x:40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.6}}
-src="/images/R&W_2.jpeg"
-className="shadow-xl rounded-xl"
-/>
-
-</div>
-
-</section>
-
-
-{/* CHALLENGES */}
-
-<section className="py-20 bg-white dark:bg-gray-800">
-
-<div className="max-w-6xl px-6 mx-auto">
-
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-Retail Industry Challenges
-</h2>
-<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">Inconsistent Customer Experience Across Channels, Lack of Unified Commerce Platforms, Difficulty Managing Online & Offline Integration.</p>
-
-<div className="grid gap-8 md:grid-cols-2">
-
-{challenges.map((item,index)=>(
-<motion.div
-key={index}
-initial={{opacity:0,y:40}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
->
-
-<p className="text-gray-600 dark:text-gray-300">
-{item}
-</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* SOLUTIONS */}
-
-<section className="py-24">
-
-<div className="max-w-6xl px-6 mx-auto">
-
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-Our Retail & Wholesale Solutions
-</h2>
-<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">Omnichannel Retail with Dynamics 365, Seamless Online & In-Store Integration, Consistent Customer Experience Across Channels.</p>
-
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-
-{solutions.map((item,index)=>(
-<motion.div
-key={index}
-whileHover={{scale:1.05}}
-className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
->
-
-<div className="mb-4 text-3xl text-blue-600">
-{item.icon}
-</div>
-
-<h3 className="mb-2 text-lg font-semibold dark:text-gray-300">
-{item.title}
-</h3>
-
-<p className="text-sm text-gray-500">
-{item.desc}
-</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* BENEFITS */}
-
-<section className="py-24 bg-white dark:bg-gray-700">
-
-<div className="max-w-6xl px-6 mx-auto text-center">
-
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
-Business Benefits
-</h2>
-
-<div className="grid gap-10 md:grid-cols-4">
-
-{[
-"Improved Inventory Visibility",
-"Enhanced Customer Experience",
-"Optimized Supply Chain",
-"Increased Retail Profitability"
-].map((item,index)=>(
-<motion.div
-key={index}
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-500 to-yellow-800 dark:from-gray-800 dark:to-gray-800":"bg-gradient-to-r from-green-400 to-green-700 dark:from-gray-800 dark:to-gray-800"} dark:bg-gray-800 rounded-xl`}
->
-
-<p className=" text-white text-lg font-serif">{item}</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* CTA */}
-
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800 text-blue-600 dark:text-blue-600">
-
-<h2 className="mb-6 text-4xl font-bold">
-Empower Your Retail Business with Digital Innovation
-</h2>
-
-<p className="max-w-2xl mx-auto mb-10 text-blue-100">
-
-Leverage modern digital platforms and intelligent analytics
-to transform retail operations and deliver exceptional
-customer experiences.
-
-</p>
-
-<Link
-to="/contact"
-className="px-8 py-4 font-semibold text-blue-600 transition bg-white rounded-lg hover:bg-gray-100"
->
-
-Talk to Our Experts
-
-</Link>
-
-</section>
-
-<Footer/>
-
-</div>
-
-)
-
-}
+``

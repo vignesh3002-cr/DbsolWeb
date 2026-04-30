@@ -2,306 +2,258 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Testimonials from "../../components/Testimonial"
+import { HashLink } from "react-router-hash-link"
 
 import {
-FaTruck,
-FaWarehouse,
-FaShippingFast,
-FaRoute,
-FaBoxes,
-FaChartLine
+  FaTruck,
+  FaWarehouse,
+  FaShippingFast,
+  FaRoute,
+  FaBoxes,
+  FaChartLine,
 } from "react-icons/fa"
 
-export default function LogisticsSupplyChain(){
-
-const challenges = [
-"Managing complex global supply chains and transportation networks",
-"Lack of real-time visibility into shipments and inventory",
-"High operational costs due to inefficient logistics planning",
-"Difficulty coordinating between warehouses, distributors, and retailers"
-]
-
-const solutions = [
-
-{
-icon:<FaTruck/>,
-title:"Transportation Management",
-desc:"Optimize delivery routes and reduce fuel costs using intelligent logistics platforms."
-},
-
-{
-icon:<FaWarehouse/>,
-title:"Warehouse Management",
-desc:"Improve warehouse productivity through automation and real-time inventory tracking."
-},
-
-{
-icon:<FaShippingFast/>,
-title:"Last-Mile Delivery",
-desc:"Enhance delivery speed and customer satisfaction with smart last-mile logistics solutions."
-},
-
-{
-icon:<FaRoute/>,
-title:"Route Optimization",
-desc:"Use AI-powered analytics to determine the most efficient delivery routes."
-},
-
-{
-icon:<FaBoxes/>,
-title:"Inventory Tracking",
-desc:"Maintain complete visibility of inventory across warehouses and distribution centers."
-},
-
-{
-icon:<FaChartLine/>,
-title:"Supply Chain Analytics",
-desc:"Leverage predictive analytics to improve demand forecasting and supply chain efficiency."
-}
-
-]
-
-return(
-
-<div className="bg-gray-50 dark:bg-gray-900">
-
-<Navbar/>
-
-{/* HERO SECTION */}
-
-<section className="relative flex items-center justify-center h-[380px]">
-
-<img
-src="/images/L&SC_1.jpeg"
-alt="logistics industry"
-className="absolute inset-0 object-cover w-full h-full"
-/>
-
-<div className="absolute inset-0 bg-black/60"></div>
-
-<div className="relative z-10 text-center text-white">
-
-<motion.h1
-initial={{opacity:0,y:40}}
-animate={{opacity:1,y:0}}
-transition={{duration:0.7}}
-className="text-5xl font-bold"
->
-
-Logistics & Supply Chain Solutions
-
-</motion.h1>
-
-<p className="mt-3 text-gray-200">
-
-<Link to="/" className="hover:text-blue-400">Home</Link>
-
-<span className="mx-2">➜</span>
-
-<span className="text-blue-400">Logistics & Supply Chain</span>
-
-</p>
-
-</div>
-
-</section>
-
-
-{/* INDUSTRY OVERVIEW */}
-
-<section className="py-20">
-
-<div className="grid items-center max-w-6xl gap-12 px-6 mx-auto md:grid-cols-2">
-
-<motion.div
-initial={{opacity:0,x:-40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.6}}
->
-
-<h2 className="mb-6 text-4xl font-bold text-gray-800 dark:text-white">
-
-Driving Digital Transformation in Logistics
-
-</h2>
-
-<p className="mb-4 text-gray-600 dark:text-gray-300">
-
-Modern logistics organizations must handle complex supply chains,
-high delivery expectations, and rapidly changing market demands.
-
-</p>
-
-<p className="text-gray-600 dark:text-gray-300">
-
-Our digital solutions help logistics companies improve operational
-efficiency, enhance shipment visibility, and optimize transportation
-networks for faster and more reliable deliveries.
-
-</p>
-
-</motion.div>
-
-<motion.img
-initial={{opacity:0,x:40}}
-whileInView={{opacity:1,x:0}}
-transition={{duration:0.6}}
-src="/images/L&SC_2.jpeg"
-className="shadow-xl rounded-xl"
-/>
-
-</div>
-
-</section>
-
-
-{/* CHALLENGES */}
-
-<section className="py-20 bg-white dark:bg-gray-800">
-
-<div className="max-w-6xl px-6 mx-auto">
-
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-Logistics Industry Challenges
-</h2>
-<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">Limited End-to-End Shipment Tracking, lack of Real-Time Logistics Insights, poor Coordination Across Stakeholders.</p>
-
-<div className="grid gap-8 md:grid-cols-2">
-
-{challenges.map((item,index)=>(
-<motion.div
-key={index}
-initial={{opacity:0,y:40}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className="p-8 shadow-lg rounded-xl bg-gray-50 dark:bg-gray-900"
->
-
-<p className="text-gray-600 dark:text-gray-300">
-{item}
-</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* SOLUTIONS */}
-
-<section className="py-24">
-
-<div className="max-w-6xl px-6 mx-auto">
-
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-4 dark:text-white">
-Our Logistics Solutions
-</h2>
-<p className="text-gray-600 dark:text-gray-300 text-center mb-20 max-w-2xl mx-auto">Optimize route planning and delivery schedules using Dynamics 365 to reduce costs, improve delivery speed, and enhance overall transportation efficiency.</p>
-
-
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-
-{solutions.map((item,index)=>(
-<motion.div
-key={index}
-whileHover={{scale:1.05}}
-className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
->
-
-<div className="mb-4 text-3xl text-blue-600">
-{item.icon}
-</div>
-
-<h3 className="mb-2 text-lg font-semibold dark:text-gray-300">
-{item.title}
-</h3>
-
-<p className="text-sm text-gray-500">
-{item.desc}
-</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* BENEFITS */}
-
-<section className="py-24 bg-white dark:bg-gray-700">
-
-<div className="max-w-6xl px-6 mx-auto text-center">
-
-<h2 className="mb-12 text-4xl font-bold text-gray-800 dark:text-white">
-Key Benefits
-</h2>
-
-<div className="grid gap-10 md:grid-cols-4">
-
-{[
-"Real-Time Shipment Tracking",
-"Optimized Transportation Costs",
-"Faster Delivery Operations",
-"Improved Supply Chain Visibility"
-].map((item,index)=>(
-<motion.div
-key={index}
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className={`p-6 shadow-lg ${index%2==0?"bg-gradient-to-r from-yellow-500 to-yellow-800 dark:from-gray-800 dark:to-gray-800":"bg-gradient-to-r from-green-400 to-green-700 dark:from-gray-800 dark:to-gray-800"} dark:bg-gray-800 rounded-xl`}
->
-
-<p className=" text-white text-lg font-serif">{item}</p>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* CTA */}
-
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-800 text-blue-600 dark:text-blue-600">
-
-<h2 className="mb-6 text-4xl font-bold">
-Transform Your Logistics Operations
-</h2>
-
-<p className="max-w-2xl mx-auto mb-10 text-blue-100">
-
-Leverage intelligent logistics platforms and advanced analytics
-to optimize supply chains and deliver exceptional customer experiences.
-
-</p>
-
-<Link
-to="/contact"
-className="px-8 py-4 font-semibold text-blue-600 transition bg-white rounded-lg hover:bg-gray-100"
->
-
-Talk to Our Experts
-
-</Link>
-
-</section>
-
-<Footer/>
-
-</div>
-
-)
-
+export default function LogisticsSupplyChain() {
+
+  const solutions = [
+    {
+      icon: FaTruck,
+      title: "Transportation Management",
+      desc: "Optimize fleet utilization and reduce transportation costs with intelligent TMS solutions.",
+    },
+    {
+      icon: FaWarehouse,
+      title: "Warehouse Optimization",
+      desc: "Improve picking, packing, and storage efficiency with real-time warehouse visibility.",
+    },
+    {
+      icon: FaShippingFast,
+      title: "Last-Mile Delivery",
+      desc: "Accelerate deliveries and delight customers with smart last-mile logistics platforms.",
+    },
+    {
+      icon: FaRoute,
+      title: "Route Optimization",
+      desc: "AI-powered route planning to reduce fuel costs and delivery times.",
+    },
+    {
+      icon: FaBoxes,
+      title: "Inventory Intelligence",
+      desc: "End-to-end inventory visibility across warehouses and distribution centers.",
+    },
+    {
+      icon: FaChartLine,
+      title: "Supply Chain Analytics",
+      desc: "Predict demand fluctuations and minimize disruptions using advanced analytics.",
+    },
+  ]
+
+  const cases = [
+    {
+      id: "logistics",
+      title: "Integrated Logistics Platform Deployment",
+      industry: "Logistics & Supply Chain",
+      desc: "Unified transportation, warehouse, and inventory systems using Dynamics 365.",
+      result: "35% reduction in logistics costs",
+      image: "/images/L&SC_2.jpeg",
+      tag: "bg-indigo-200 text-indigo-900",
+    },
+  ]
+
+  return (
+    <div className="bg-gray-50 dark:bg-gray-900">
+      <Navbar />
+
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/L&SC_1.jpeg"
+            className="w-full h-full object-cover"
+            alt="Logistics"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 py-40 text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl lg:text-6xl font-bold max-w-3xl"
+          >
+            Logistics & Supply Chain Solutions
+          </motion.h1>
+
+          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+            Gain real-time visibility, optimize transportation, and build
+            resilient supply chains with intelligent digital platforms.
+          </p>
+
+          <div className="mt-10 flex gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Talk to Experts
+            </Link>
+            <HashLink
+              to="#case-studies"
+              className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition"
+            >
+              View Case Studies
+            </HashLink>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUE STRIP */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
+          {[
+            ["35%+", "Logistics Cost Reduction"],
+            ["45%+", "Faster Deliveries"],
+            ["99%", "Shipment Visibility"],
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-4xl font-bold text-blue-600">{item[0]}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{item[1]}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CHALLENGES */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+            Logistics Challenges We Solve
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              "Limited end-to-end shipment visibility",
+              "High transportation and fuel costs",
+              "Inefficient warehouse and inventory management",
+              "Poor coordination across logistics partners",
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -4 }}
+                className="p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg"
+              >
+                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                  {c}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTIONS */}
+      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-white text-center mb-20">
+            Our Logistics Capabilities
+          </h2>
+
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <motion.div
+                  whileHover={{ scale: 1.04 }}
+                  key={i}
+                  className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
+                >
+                  <div className="text-3xl text-blue-400 mb-4">
+                    <Icon />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section
+        id="case-studies"
+        className="py-16 max-w-5xl mx-auto px-6"
+      >
+        <p className="text-xs tracking-[2px] uppercase text-gray-400 font-medium mb-2">
+          Case Study
+        </p>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+          Featured Project
+        </h2>
+
+        <div className="grid gap-6">
+          {cases.map((item, index) => (
+            <Link to={`/case-studies/${item.id}`} key={item.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 border rounded-2xl overflow-hidden shadow-sm hover:shadow-md"
+              >
+                <div className="relative h-44">
+                  <img src={item.image} className="w-full h-full object-cover" />
+                  <span
+                    className={`absolute bottom-3 left-4 text-xs font-medium px-3 py-1 rounded-full ${item.tag}`}
+                  >
+                    {item.industry}
+                  </span>
+                </div>
+
+                <div className="p-5">
+                  <h3 className="font-semibold mb-2 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {item.desc}
+                  </p>
+
+                  <div className="flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs px-3 py-2 rounded-lg">
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+                    {item.result}
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+
+          <Testimonials limit={2} />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 text-center bg-blue-600">
+        <h2 className="text-4xl font-bold text-white">
+          Ready to Optimize Your Supply Chain?
+        </h2>
+        <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
+          Build agile, cost-efficient, and resilient logistics operations with
+          data-driven insights.
+        </p>
+
+        <Link
+          to="/contact"
+          className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition"
+        >
+          Start Your Transformation
+        </Link>
+      </section>
+
+      <Footer />
+    </div>
+  )
 }

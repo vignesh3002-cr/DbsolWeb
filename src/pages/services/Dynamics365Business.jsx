@@ -195,40 +195,6 @@ export default function Dynamics365Business() {
 
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto mb-14 max-w-3xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
-              Delivery Scope
-            </span>
-            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">
-              Business Modules We Implement
-            </h2>
-            <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
-              Empowering your business with integrated modules for finance, sales, supply
-              chain, and customer service to ensure smooth operations and enhanced
-              productivity.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {deliveryModules.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.15 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800"
-              >
-                <div className="mb-4 text-3xl font-bold text-blue-600 dark:text-blue-400">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {item}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
