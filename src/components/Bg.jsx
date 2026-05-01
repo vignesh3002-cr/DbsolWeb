@@ -12,7 +12,7 @@ export default function AdvancedBackground() {
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [mouseX, mouseY]);
 
   // Parallax depth layers
   const xSlow = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
@@ -20,6 +20,8 @@ export default function AdvancedBackground() {
 
   const xFast = useTransform(mouseX, [0, window.innerWidth], [-60, 60]);
   const yFast = useTransform(mouseY, [0, window.innerHeight], [-60, 60]);
+  const followX = useTransform(mouseX, (v) => v - 150);
+  const followY = useTransform(mouseY, (v) => v - 150);
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-black -z-10">
@@ -49,8 +51,8 @@ export default function AdvancedBackground() {
       {/* 🎯 Mouse Follow Light */}
       <motion.div
         style={{
-          x: useTransform(mouseX, (v) => v - 150),
-          y: useTransform(mouseY, (v) => v - 150),
+          x: followX,
+          y: followY,
         }}
         className="absolute w-[300px] h-[300px] bg-white/10 rounded-full blur-[120px] pointer-events-none"
       />
@@ -59,7 +61,6 @@ export default function AdvancedBackground() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
       {/* ✨ Noise Texture (optional) */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[url('/noise.png')]" />
 
     </div>
   );

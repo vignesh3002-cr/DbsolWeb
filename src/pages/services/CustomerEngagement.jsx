@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { d365Modules } from "../../data/d365Modules";
+import Modules from "../../components/modules";
 import {
-  FaArrowRight,
   FaBullhorn,
   FaChartLine,
   FaComments,
   FaHandsHelping,
   FaMobileAlt,
   FaUsers,
-  FaTools,
-  } from "react-icons/fa";
+} from "react-icons/fa";
 
 const pillars = [
   {
@@ -45,57 +45,9 @@ const pillars = [
   },
 ];
 
-const customerEngagementModules = [
-  {
-    title: "Sales",
-    tagline: "Close more deals with intelligent selling",
-    desc: "Lead and opportunity management, quotes, orders, customer relationships, and sales analytics.",
-    icon: <FaUsers />,
-    iconClass: "bg-violet-100 text-violet-600 dark:bg-violet-900/40 dark:text-violet-300",
-    href: "/module/sales",
-    tags: [
-      "Leads",
-      "Opportunities",
-      "Quotes",
-      "Sales Orders",
-      "Customer Accounts",
-      "Sales Analytics",
-    ],
-  },
-  {
-    title: "Customer Service",
-    tagline: "Deliver effortless customer experiences",
-    desc: "Case management, service level agreements, knowledge base, and omnichannel engagement.",
-    icon: <FaHandsHelping />,
-    iconClass: "bg-pink-100 text-pink-600 dark:bg-pink-900/40 dark:text-pink-300",
-    href: "/module/customer-service",
-    tags: [
-      "Case Management",
-      "SLA Management",
-      "Knowledge Base",
-      "Queues",
-      "Entitlements",
-      "Omnichannel",
-    ],
-  },
-  {
-    title: "Field Service",
-    tagline: "Deliver on-site service with smart scheduling",
-    desc: "Work order management, scheduling, dispatching, asset tracking, and mobile workforce enablement.",
-    icon: <FaTools />, // you can swap icon if needed
-    iconClass: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300",
-    href: "/module/field-service",
-    tags: [
-      "Work Orders",
-      "Scheduling",
-      "Dispatch",
-      "Assets",
-      "Mobile Workforce",
-      "Service History",
-    ],
-  },
-];
-
+const deliveryModules = d365Modules.filter((m) =>
+  ["sales", "marketing", "customer-service", "field-service"].includes(m.slug)
+);
 const engagementFramework = [
   {
     title: "Communication",
@@ -191,66 +143,6 @@ export default function CustomerEngagement() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto mb-10 max-w-4xl text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-              Customer Engagement Modules
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              Dynamics 365 Customer Engagement connects sales and service teams
-              with the customer data, workflows, and insights they need every day.
-            </p>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {customerEngagementModules.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-900"
-              >
-                <div className="mb-6 flex items-start gap-5">
-                  <div className={`rounded-2xl p-4 text-2xl ${item.iconClass}`}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-gray-500 dark:text-gray-300">
-                      {item.tagline}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mb-6 leading-7 text-gray-600 dark:text-gray-300">
-                  {item.desc}
-                </p>
-
-                <div className="mb-8 flex flex-wrap gap-3">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-600 dark:border-gray-700 dark:text-gray-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <Link
-                  to={item.href}
-                  className="inline-flex items-center gap-3 font-semibold text-blue-700 transition hover:gap-4 dark:text-blue-300"
-                >
-                  Open module page
-                  <FaArrowRight />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 dark:bg-gray-800">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-10 max-w-4xl text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
               Customer Engagement Framework
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
@@ -315,6 +207,12 @@ export default function CustomerEngagement() {
         </div>
       </section>
 
+      <section className="bg-gray-50 py-16 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <Modules modules={deliveryModules} showAllLink={false} />
+        </div>
+      </section>
+      
        <section className="bg-blue-700 px-6 py-16 text-center text-white dark:bg-gray-800">
         <h2 className="mb-4 text-3xl font-bold">
           Ready to build your Customer Engagement website experience?

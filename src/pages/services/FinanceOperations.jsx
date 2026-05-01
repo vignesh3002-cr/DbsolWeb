@@ -4,6 +4,8 @@ import { FaChartLine, FaCogs, FaDatabase, FaShieldAlt } from "react-icons/fa"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import Integration from "../../components/IntegrationSteps"
+import { d365Modules } from "../../data/d365Modules";
+import Modules from "../../components/Modules";
 export default function FinanceOperations() {
 const features = [  
 {
@@ -27,7 +29,10 @@ title:"Compliance & Security",
 desc:"Ensure regulatory compliance and financial transparency with built-in security frameworks."
 }
 ]
-
+const deliveryModules = d365Modules.filter((m) =>
+  ["finance", "supply-chain-management", "commerce", "human-resources"]
+    .includes(m.slug)
+);
 const steps = [
 {
   title: "Legacy Systems",
@@ -199,46 +204,14 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 </section>
 
-
-
-<section className="py-24 pt-14">
-
-<div className="max-w-6xl px-6 mx-auto">
-
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
-Our Implementation Process
-</h2>
-
-<p className="max-w-3xl mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
-  Implementation Process ensures a smooth and effective journey from idea to execution—starting with expert consulting, followed by strategic planning, seamless implementation, and continuous optimization for better performance and growth.
-</p>
-<div className="grid gap-10 md:grid-cols-4">
-
-{["Consulting","Planning","Implementation","Optimization"].map((step,index)=>(
-<motion.div
-key={index}
-initial={{opacity:0,y:40}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.2}}
-className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
->
-
-<div className="mb-3 text-3xl font-bold text-blue-600">
-{index+1}
-</div>
-
-<h3 className="text-lg font-semibold dark:text-gray-400">
-{step}
-</h3>
-
-</motion.div>
-))}
-
-</div>
-
-</div>
-
+<section className="bg-gray-50 py-16 dark:bg-gray-900">
+  <div className="mx-auto max-w-7xl px-6 text-center">
+    
+   
+ <Modules modules={deliveryModules} showAllLink={false} />
+  </div>
 </section>
+
 
 
 {/* REAL PROJECT FLOW 

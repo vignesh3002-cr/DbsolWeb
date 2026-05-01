@@ -7,6 +7,7 @@
   BarChart3,
   Globe,
   Megaphone,
+  Wrench,
 } from "lucide-react";
 
 export const d365Modules = [
@@ -1002,7 +1003,118 @@ export const d365Modules = [
     ],
     docHref: "https://learn.microsoft.com/en-us/dynamics365/commerce/",
   },
+  {
+    slug: "field-service",
+    icon: Wrench,
+    title: "Field Service",
+    tagline: "Deliver proactive, connected service in the field",
+    description:
+      "Work order management, scheduling, asset tracking, inventory, and mobile tools to empower field technicians and improve service delivery.",
+    color: "bg-orange-500/10 text-orange-500",
+    accent: "25 95% 53%",
+    clientValue: [
+      "Optimize technician scheduling with AI-powered dispatching",
+      "Improve first-time fix rates with complete service history and asset data",
+      "Enable mobile workforce with offline-capable apps",
+      "Reduce downtime with predictive maintenance and IoT integration",
+      "Streamline inventory and parts management across locations",
+    ],
+    usage: [
+      "Automatically schedule and dispatch technicians based on skills and availability",
+      "Track customer assets and service history in real time",
+      "Manage service contracts, warranties, and SLAs efficiently",
+      "Provide technicians with mobile access to work orders and knowledge base",
+    ],
+    sections: [
+      {
+        slug: "work-order-management",
+        title: "Work Order Management",
+        summary:
+          "Create, assign, and track service work orders from initiation to completion.",
+        features: [
+          "Work order lifecycle management",
+          "Service tasks, products, and services tracking",
+          "Incident types and service templates",
+          "Work order cost and time tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/work-orders",
+      },
+      {
+        slug: "resource-scheduling",
+        title: "Resource Scheduling",
+        summary:
+          "Efficiently schedule technicians using intelligent routing and optimization.",
+        features: [
+          "Schedule board with drag-and-drop planning",
+          "Resource scheduling optimization (RSO)",
+          "Skill-based and territory-based assignment",
+          "Real-time route optimization",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/schedule-board",
+      },
+      {
+        slug: "asset-management",
+        title: "Asset Management",
+        summary:
+          "Track and manage customer equipment and service history.",
+        features: [
+          "Customer asset records and hierarchy",
+          "Service history tracking",
+          "Preventive maintenance schedules",
+          "IoT integration for connected assets",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/customer-assets",
+      },
+      {
+        slug: "inventory-management",
+        title: "Inventory & Warehousing",
+        summary:
+          "Manage spare parts, warehouses, and stock levels across locations.",
+        features: [
+          "Warehouse and inventory tracking",
+          "Stock transfers and adjustments",
+          "Product reservations for work orders",
+          "Mobile inventory management",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/inventory-overview",
+      },
+      {
+        slug: "mobile-app",
+        title: "Field Service Mobile App",
+        summary:
+          "Empower technicians with a mobile-first, offline-capable application.",
+        features: [
+          "Offline access to work orders and customer data",
+          "Capture photos, signatures, and notes",
+          "Step-by-step guides and checklists",
+          "Barcode scanning and GPS tracking",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/mobile",
+      },
+      {
+        slug: "service-agreements",
+        title: "Service Agreements & SLAs",
+        summary:
+          "Manage contracts, entitlements, and service level agreements.",
+        features: [
+          "Recurring service agreements",
+          "Entitlement tracking",
+          "SLA definitions and KPIs",
+          "Automated work order generation",
+        ],
+        docHref:
+          "https://learn.microsoft.com/en-us/dynamics365/field-service/service-agreements",
+      },
+    ],
+    docHref: "https://learn.microsoft.com/en-us/dynamics365/field-service/",
+  },
 ];
+
 
 export const getD365Module = (slug) =>
   d365Modules.find((module) => module.slug === slug);

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Integration from "../../components/IntegrationSteps"
+import { d365Modules } from "../../data/d365Modules";
+import Modules from "../../components/modules";
 import {
   FaArrowRight,
   FaIndustry,
@@ -37,7 +40,10 @@ const connectedModules = [
     tags: ["Project Planning", "Resources", "Job Costing", "Billing"],
   },
 ];
-
+const deliveryModules = d365Modules.filter((m) =>
+  ["sales", "manufacturing", "project-operations"]
+    .includes(m.slug)
+);
 const businessCentralFramework = [
   "Connect finance, sales, purchasing, inventory, and service data in one ERP system.",
   "Reduce manual work with approval flows, alerts, and repeatable operating processes.",
@@ -118,65 +124,13 @@ export default function BusinessCentral() {
           </ul>
         </div>
       </section>
-
-      <section className="bg-white py-16 dark:bg-gray-800">
-        <div className="mb-6 mx-auto max-w-7xl px-6">
-          <h2 className="mb-4 text-center text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
-            Connected Business Central Modules
-          </h2>
-          <p className="mx-auto mb-12 max-w-3xl text-center text-gray-600 dark:text-gray-300">
-            Extend Business Central with connected module experiences for sales,
-            manufacturing, and project operations teams.
-          </p>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {connectedModules.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-900"
-              >
-                <div className="mb-6 flex items-start gap-5">
-                  <div className={`rounded-2xl p-4 text-2xl ${item.iconClass}`}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-gray-500 dark:text-gray-300">
-                      {item.tagline}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mb-6 leading-7 text-gray-600 dark:text-gray-300">
-                  {item.desc}
-                </p>
-
-                <div className="mb-8 flex flex-wrap gap-3">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-600 dark:border-gray-700 dark:text-gray-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <Link
-                  to={item.href}
-                  className="inline-flex items-center gap-3 font-semibold text-blue-700 transition hover:gap-4 dark:text-blue-300"
-                >
-                  Open module page
-                  <FaArrowRight />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+       
+             <section className="bg-gray-50 py-16 dark:bg-gray-900">
+               <div className="mx-auto max-w-7xl px-6 text-center">
+                 <Modules modules={deliveryModules} showAllLink={false} />
+               </div>
+             </section>
+      
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800 md:p-10">

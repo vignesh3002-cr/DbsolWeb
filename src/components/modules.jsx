@@ -17,8 +17,8 @@ const quickLinks = [
   },
 ];
 
-export default function Modules() {
-  const featuredModules = d365Modules.slice(0, 6);
+export default function Modules({ modules, showAllLink = true }) {
+  const featuredModules = modules ?? d365Modules.slice(0, 6);
 
   return (
     <section className="bg-white py-20 font-['Plus_Jakarta_Sans'] text-slate-900 dark:bg-slate-950 dark:text-white">
@@ -69,7 +69,7 @@ export default function Modules() {
         </div>
 
         {/* Modules Grid */}
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-3">
 
           {featuredModules.map((mod) => (
             <article
@@ -138,16 +138,17 @@ export default function Modules() {
             </article>
           ))}
 
-          {/* ✅ SHOW MORE CARD */}
-          <Link
-            to="/modules"
-            className="flex h-1/6 w-full mt-10 items-center justify-center  rounded-3xl border-2 ring-offset-border-soft border-cyan-100 bg-cyan-50 p-6 text-center transition hover:bg-cyan-100 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:hover:bg-cyan-400/20"
-          >
-              <div className="mt-2 flex items-center justify-center gap-2 text-sm text-cyan-600">
-                Show All Modules
-                <ArrowRight className="w-4 h-4" />
-              </div>
-          </Link>
+          {showAllLink && (
+            <Link
+              to="/modules"
+              className="flex h-1/6 w-full mt-10 items-center justify-center rounded-3xl border-2 ring-offset-border-soft border-cyan-100 bg-cyan-50 p-6 text-center transition hover:bg-cyan-100 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:hover:bg-cyan-400/20"
+            >
+                <div className="mt-2 flex items-center justify-center gap-2 text-sm text-cyan-600">
+                  Show All Modules
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+            </Link>
+          )}
 
         </div>
       </div>
