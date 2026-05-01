@@ -1,5 +1,11 @@
 ﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+<<<<<<< HEAD
+import PowerAutomate from "./pages/services/Powerplatform/power-automate";
+
+import PowerApps from "./pages/services/Powerplatform/PowerApps";
+=======
+>>>>>>> 36e7d86a3dc05e213fa98497db3e3f6b50a4d2f0
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PowerAutomate from "./pages/services/power-automate";
@@ -48,7 +54,7 @@ function App() {
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/power-automate" element={<PowerAutomate />} />
-        <Route path="/powerBi" element={<Powerbi />} />
+        
         <Route path="/PowerApps" element={<PowerApps />} />
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
