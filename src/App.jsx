@@ -1,16 +1,11 @@
 ﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-<<<<<<< HEAD
-import PowerAutomate from "./pages/services/Powerplatform/power-automate";
-
-import PowerApps from "./pages/services/Powerplatform/PowerApps";
-=======
->>>>>>> 36e7d86a3dc05e213fa98497db3e3f6b50a4d2f0
+import PowerAutomate from "./pages/services/power-automate";
+//import PowerApps from "./pages/services/PowerPlatform/PowerApps";
+import PowerApps from "./components/PowerApps";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import PowerAutomate from "./pages/services/power-automate";
-import Powerbi from "./components/powerbi";
-import PowerApps from "./components/PowerApps";
+import PowerBi from "./components/Powerbi";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
@@ -44,7 +39,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
 import WhyChooseUs from "./components/WhyChooseUs";
-
+import Login from "./pages/emp/Login";
+import Dashboard from "./pages/emp/Dashboard";
+import ApplyLeave from "./pages/emp/ApplyLeave";
 function App() {
   return (
     <BrowserRouter>
@@ -54,8 +51,8 @@ function App() {
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/power-automate" element={<PowerAutomate />} />
-        
-        <Route path="/PowerApps" element={<PowerApps />} />
+        <Route path="/powerapps" element={<PowerApps />} />
+        <Route path="/power-bi" element={<PowerBi />} />    
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
@@ -88,6 +85,10 @@ function App() {
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CareerForm" element={<CareerForm />} />
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
+        <Route path="/emp-portal" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />   
+        <Route path="/apply-leave" element={<ApplyLeave />} />
+        
       </Routes>
     </BrowserRouter>
   );

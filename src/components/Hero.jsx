@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
+
 export default function Home() {
   const navigate = useNavigate();
   const slides = [
@@ -125,6 +126,7 @@ const scrollRight = () => {
                 Explore Services
               </button>
             </HashLink>
+
 
        
             {/* Contact button */}

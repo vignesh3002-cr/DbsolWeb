@@ -12,12 +12,24 @@ import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solut
 import VideoTestimonials from "./VideoTestimonials";
 import DataMigrationSection from "./DataMigrationSection";
 import ResourceLibrary from "../components/ResiurceLibrary";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
+      
+      <div className="pt-20">
+        <div className="mx-auto flex max-w-6xl justify-end px-6 py-3">
+          <Link
+            to="/emp-portal"
+            className="rounded-md bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+          >
+            EMP Portal Login
+          </Link>
+        </div>
+      </div>
+     <Hero />
       <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
       <Industries />
       <NewsPage />
@@ -25,7 +37,7 @@ export default function Home() {
       <DataMigrationSection />
       <VideoTestimonials />
       <ResourceLibrary />
-      <whyChooseUs />
+      <WhyChooseUs />
       <TrustedClients />
       <Testimonials />
       <CallToAction />

@@ -482,7 +482,14 @@ Careers
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >Contact Us</NavLink>
 </li>
-
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/emp-portal"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
+Login</NavLink>
+</li>
 </ul>
 
 
@@ -901,6 +908,8 @@ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-60
 >
 Contact Us</NavLink>
 </li>
+
+
 
 </ul>
 </motion.div>
