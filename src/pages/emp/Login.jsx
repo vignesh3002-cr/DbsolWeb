@@ -23,7 +23,7 @@ export default function Login() {
     <main className="flex min-h-screen items-center justify-center bg-slate-100 px-4 py-12">
       <section className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg">
         <Link to="/" className="mb-6 inline-block text-sm font-medium text-blue-600">
-          Back 
+          Back to website
         </Link>
 
         <div className="mb-8">
