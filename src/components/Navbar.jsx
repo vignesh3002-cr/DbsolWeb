@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import Home from "./Hero";
 
 export default function Header() {
+const navigate = useNavigate();
 
 const [powerPlatformOpen, setPowerPlatformOpen] = useState(false);
 const [servicesOpen,setServicesOpen] = useState(false);
@@ -101,7 +102,14 @@ Microsoft Partner
 </div>
 
 {/* NAVIGATION */}
+
 <div className="flex gap-4">
+<button
+  onClick={() => navigate("/emp-portal")}
+  className="px-3 py-1 text-white bg-blue-600 rounded"
+>
+  Login
+</button>
 <ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">
 
 <li className="cursor-pointer hover:text-blue-600">
