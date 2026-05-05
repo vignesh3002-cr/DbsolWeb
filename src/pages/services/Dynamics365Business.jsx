@@ -82,8 +82,8 @@ export default function Dynamics365Business() {
             alt="Dynamics 365 Business solutions"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/75 to-blue-900/55" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(96,165,250,0.28),_transparent_28%)]" />
+         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/75 to-blue-900/55" />
+          <div className="absolu te inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(96,165,250,0.28),_transparent_28%)]" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-24">

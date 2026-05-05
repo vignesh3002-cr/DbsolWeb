@@ -18,18 +18,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      
-      <div className="pt-20">
-        <div className="mx-auto flex max-w-6xl justify-end px-6 py-3">
-          <Link
-            to="/emp-portal"
-            className="rounded-md bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
-          >
-            EMP Portal Login
-          </Link>
-        </div>
-      </div>
-     <Hero />
+      <Hero />
       <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
       <Industries />
       <NewsPage />
