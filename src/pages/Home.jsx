@@ -12,7 +12,6 @@ import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solut
 import VideoTestimonials from "./VideoTestimonials";
 import DataMigrationSection from "./DataMigrationSection";
 import ResourceLibrary from "../components/ResiurceLibrary";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
