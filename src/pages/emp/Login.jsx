@@ -21,19 +21,25 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    if (employeeId.trim() === "EMP001" && password === "1234") {
+    const enteredId = employeeId.trim().toUpperCase();
+    const credentials = {
+      EMP001: "EMP001",
+      AD001: "EMP001",
+    };
+
+    if (credentials[enteredId] === password) {
       if (rememberMe) {
-        localStorage.setItem("rememberedEmployeeId", employeeId.trim());
+        localStorage.setItem("rememberedEmployeeId", enteredId);
       } else {
         localStorage.removeItem("rememberedEmployeeId");
       }
 
       setError("");
-      navigate("/dashboard");
+      navigate(enteredId.startsWith("AD") ? "/admin-dashboard" : "/dashboard");
       return;
     }
 
-    setError("Invalid employee id or password");
+    setError("Invalid employee/Admin id or password");
   };
 
   return (
@@ -87,7 +93,7 @@ export default function Login() {
               Welcome back
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-500">
-              Sign in with your employee credentials to continue.
+              Sign in with your employee or admin credentials to continue.
             </p>
           </div>
 
@@ -97,7 +103,7 @@ export default function Login() {
                 htmlFor="employeeId"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Employee ID
+                Employee ID / Admin ID
               </label>
               <div className="relative">
                 <UserRound className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -106,7 +112,7 @@ export default function Login() {
                   type="text"
                   value={employeeId}
                   onChange={(event) => setEmployeeId(event.target.value)}
-                  placeholder="EMP001"
+                  placeholder="EMP001 or AD001"
                   autoComplete="username"
                   required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-12 pr-4 text-sm font-medium outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
@@ -171,7 +177,7 @@ export default function Login() {
           </form>
 
           <p className="mt-8 rounded-xl bg-slate-50 px-4 py-3 text-center text-xs font-semibold text-slate-500">
-            Demo credentials: EMP001 / 1234
+            Demo credentials: Employee EMP001 / EMP001 or Admin AD001 / EMP001
           </p>
         </div>
       </section>

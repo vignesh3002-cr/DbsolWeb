@@ -42,6 +42,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Login from "./pages/emp/Login";
 import Dashboard from "./pages/emp/Dashboard";
 import ApplyLeave from "./pages/emp/ApplyLeave";
+import AdminDashboard from "./pages/emp/AdminDashboard";
 function App() {
   return (
     <BrowserRouter>
@@ -87,6 +88,7 @@ function App() {
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
         <Route path="/emp-portal" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />   
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />
         
       </Routes>
