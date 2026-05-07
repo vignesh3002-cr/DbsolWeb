@@ -2,10 +2,8 @@
 import Home from "./pages/Home";
 import PowerAutomate from "./pages/services/power-automate";
 //import PowerApps from "./pages/services/PowerPlatform/PowerApps";
-import PowerApps from "./components/PowerApps";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import PowerBi from "./components/Powerbi";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
@@ -51,9 +49,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/power-automate" element={<PowerAutomate />} />
-        <Route path="/powerapps" element={<PowerApps />} />
-        <Route path="/power-bi" element={<PowerBi />} />    
+        <Route path="/power-automate" element={<PowerAutomate />} />   
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
