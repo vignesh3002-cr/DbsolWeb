@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import Integration from "../../components/IntegrationSteps"
 import { d365Modules } from "../../data/d365Modules";
-import Modules from "../../components/Modules";
+import Modules from "../../components/modules";
 export default function FinanceOperations() {
 const features = [  
 {

@@ -1,7 +1,7 @@
 ﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import PowerAutomate from "./pages/services/power-automate";
-//import PowerApps from "./pages/services/PowerPlatform/PowerApps";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
@@ -37,10 +37,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
 import WhyChooseUs from "./components/WhyChooseUs";
-import Login from "./pages/emp/Login";
-import Dashboard from "./pages/emp/Dashboard";
-import ApplyLeave from "./pages/emp/ApplyLeave";
 import AdminDashboard from "./pages/emp/AdminDashboard";
+import ApplyLeave from "./pages/emp/ApplyLeave";
+import Dashboard from "./pages/emp/Dashboard";
+import Login from "./pages/emp/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -49,7 +49,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/power-automate" element={<PowerAutomate />} />   
+        <Route path="/power-automate" element={<PowerAutomate />} />        
         <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
@@ -83,13 +83,15 @@ function App() {
         <Route path="/CareerForm" element={<CareerForm />} />
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
         <Route path="/emp-portal" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />   
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+       <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />
-        
+        <Route path="/dashboard" element={<Dashboard />} />
+          
+           
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
