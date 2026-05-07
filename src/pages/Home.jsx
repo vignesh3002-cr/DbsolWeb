@@ -25,7 +25,7 @@ export default function Home() {
       <DataMigrationSection />
       <VideoTestimonials />
       <ResourceLibrary />
-      <whyChooseUs />
+      <WhyChooseUs />
       <TrustedClients />
       <Testimonials />
       <CallToAction />

@@ -43,10 +43,10 @@ export default function Home() {
       path: "/Dynamics365Business",
     },
     {
-      title: "Business Central Web",
+      title: "Business Central",
       desc: "Connect your website to Business Central workflows...",
       icon: <FaLaptopCode size={40} />,
-      path: "/BusinessCentralWebDevelopment",
+      path: "/BusinessCentral",
     },
     {
       title: "Customer Engagement",

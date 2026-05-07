@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { d365Modules } from "../../data/d365Modules";
+import Modules from "../../components/modules";
 import {
   FaBullhorn,
   FaChartLine,
@@ -43,6 +45,9 @@ const pillars = [
   },
 ];
 
+const deliveryModules = d365Modules.filter((m) =>
+  ["sales", "marketing", "customer-service", "field-service"].includes(m.slug)
+);
 const engagementFramework = [
   {
     title: "Communication",
@@ -202,6 +207,12 @@ export default function CustomerEngagement() {
         </div>
       </section>
 
+      <section className="bg-gray-50 py-16 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <Modules modules={deliveryModules} showAllLink={false} />
+        </div>
+      </section>
+      
        <section className="bg-blue-700 px-6 py-16 text-center text-white dark:bg-gray-800">
         <h2 className="mb-4 text-3xl font-bold">
           Ready to build your Customer Engagement website experience?
