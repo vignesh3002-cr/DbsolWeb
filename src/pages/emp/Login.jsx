@@ -49,7 +49,7 @@ export default function Login() {
           <img
             src="/images/Home1.jpg"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-45"
+            className="absolute inset-0 h-full w-full object-cover opacity-75"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/82 to-blue-950/70" />
           <div className="relative z-10 flex h-full flex-col justify-between">
