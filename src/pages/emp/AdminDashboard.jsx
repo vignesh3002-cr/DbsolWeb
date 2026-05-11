@@ -14,29 +14,29 @@ import {
 const employees = [
   {
     id: "EMP001",
-    name: "Kumar",
-    role: "Project Manager",
+    name: "Arun Kumar",
+    role: " Manager",
     department: "Delivery",
     status: "Active",
   },
   {
     id: "EMP002",
-    name: "Arun Kumar",
+    name: "Priya Sharma",
     role: "Developer",
     department: "Engineering",
     status: "Active",
   },
   {
     id: "EMP003",
-    name: "Priya S",
-    role: "HR Executive",
+    name: "Rahul Verma",
+    role: "Tester",
     department: "Human Resources",
     status: "On Leave",
   },
   {
     id: "EMP004",
-    name: "Rahul M",
-    role: "Functional Consultant",
+    name: "Sneha Iyer",
+    role: "HR",
     department: "Consulting",
     status: "Active",
   },
@@ -46,7 +46,7 @@ const initialLeaveRequests = [
   {
     id: 1,
     employeeId: "EMP002",
-    name: "Arun Kumar",
+    name: "Priya Sharma",
     type: "Casual Leave",
     dates: "May 9 - May 10",
     days: 2,
@@ -55,7 +55,7 @@ const initialLeaveRequests = [
   {
     id: 2,
     employeeId: "EMP003",
-    name: "Priya S",
+    name: "Rahul Verma",
     type: "Sick Leave",
     dates: "May 6",
     days: 1,
@@ -64,7 +64,7 @@ const initialLeaveRequests = [
   {
     id: 3,
     employeeId: "EMP004",
-    name: "Rahul M",
+    name: "Sneha Iyer",
     type: "Work From Home",
     dates: "May 12",
     days: 1,

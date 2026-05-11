@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, LockKeyhole, UserRound } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [employeeId, setEmployeeId] = useState("");
@@ -18,28 +19,59 @@ export default function Login() {
     }
   }, []);
 
-  const handleLogin = (event) => {
+  const handleEmployeeIdChange = (event) => {
+    setEmployeeId(event.target.value);
+    setError("");
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+    setError("");
+  };
+
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    const enteredId = employeeId.trim().toUpperCase();
-    const credentials = {
-      EMP001: "EMP001",
-      AD001: "EMP001",
-    };
+    const enteredId = (employeeId || "").trim().toUpperCase();
 
-    if (credentials[enteredId] === password) {
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", {
+        empId: enteredId,
+        password: password,
+      });
+
+    // ✅ READ ROLE FROM BACKEND RESPONSE
+      const role = response?.data?.user?.role;
+
+      if (!role) {
+        throw new Error("Role missing from server response");
+      }
+     
+    // ✅ Store role and ID
+      localStorage.setItem("empId", enteredId);
+      localStorage.setItem("role", role);
+    
       if (rememberMe) {
         localStorage.setItem("rememberedEmployeeId", enteredId);
       } else {
         localStorage.removeItem("rememberedEmployeeId");
       }
 
+
       setError("");
-      navigate(enteredId.startsWith("AD") ? "/admin-dashboard" : "/dashboard");
-      return;
+
+    // ✅ ROUTE USING ROLE (FIX)
+      if (role === "ADMIN") {
+        navigate("/admin-dashboard");
+      } else {
+        navigate("/dashboard");
+      }
+
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Invalid employee/Admin id or password");
     }
 
-    setError("Invalid employee/Admin id or password");
   };
 
   return (
@@ -111,7 +143,7 @@ export default function Login() {
                   id="employeeId"
                   type="text"
                   value={employeeId}
-                  onChange={(event) => setEmployeeId(event.target.value)}
+                  onChange={handleEmployeeIdChange}
                   placeholder="EMP001 or AD001"
                   autoComplete="username"
                   required
@@ -133,7 +165,7 @@ export default function Login() {
                   id="password"
                   type="password"
                   value={password}
-                  onChange={(event) => setPassword(event.target.value)}
+                  onChange={handlePasswordChange}
                   placeholder="Enter password"
                   autoComplete="current-password"
                   required
@@ -177,7 +209,7 @@ export default function Login() {
           </form>
 
           <p className="mt-8 rounded-xl bg-slate-50 px-4 py-3 text-center text-xs font-semibold text-slate-500">
-            Demo credentials: Employee EMP001 / EMP001 or Admin AD001 / EMP001
+            Demo credentials: Employee EMP001 / Arun@123or Admin AD001 / EMPOO1
           </p>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   ArrowLeft,
   CalendarCheck,
@@ -12,12 +13,29 @@ import {
 
 export default function ApplyLeave() {
   const [submitted, setSubmitted] = useState(false);
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+  const [reason, setReason] = useState("");
+  
+  const empId = localStorage.getItem("empId"); // ✅ from login
+
+  const applyLeave = () => {
+    axios.post("http://localhost:5000/api/apply-leave", {
+      empId,
+      fromDate,
+      toDate,
+      reason
+    })
+    .then(res => alert(res.data.message))
+    .catch(() => alert("Leave apply failed"));
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitted(true);
   };
-
+  
   return (
     <main className="min-h-screen bg-[#f4f7fb] font-jakarta text-slate-900">
       <header className="border-b border-slate-200/80 bg-white">

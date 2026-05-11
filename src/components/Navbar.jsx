@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import Home from "./Hero";
 
 export default function Header() {
+const navigate = useNavigate();
 
 const [powerPlatformOpen, setPowerPlatformOpen] = useState(false);
 const [servicesOpen,setServicesOpen] = useState(false);
@@ -33,6 +34,19 @@ const [darkMode,setDarkMode] = useState(
   document.documentElement.classList.contains("dark")
 );
 const [menu,setMenu] = useState(false)
+
+const goHome = (event) => {
+  event.preventDefault();
+  setMenu(false);
+  setServicesOpen(false);
+  setIndustriesOpen(false);
+  setSolutionOpen(false);
+  setPowerPlatformOpen(false);
+  navigate("/");
+  window.requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  });
+};
 
 const toggleDarkMode = () =>{
 setDarkMode(!darkMode)
@@ -71,9 +85,7 @@ className={`text-2xl lg:hidden ${
 </button>
  <h1 className="text-2xl font-bold tracking-wide text-blue-600 ">
   <NavLink
-  to="/" onClick={() => {
-  window.location.href = "/";
-}}>
+  to="/" onClick={goHome}>
 Dbsol
 </NavLink>
 </h1> 
@@ -106,9 +118,7 @@ Microsoft Partner
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
-  to="/" onClick={() => {
-  window.location.href = "/";
-}}
+  to="/" onClick={goHome}
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
@@ -556,6 +566,7 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/"
+onClick={goHome}
 className={({isActive}) =>
 isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
@@ -907,6 +918,16 @@ className={({isActive})=>
 isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
 Contact Us</NavLink>
+</li>
+
+
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/emp-portal"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
+Login</NavLink>
 </li>
 
 

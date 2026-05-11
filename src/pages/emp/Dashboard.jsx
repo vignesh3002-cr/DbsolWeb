@@ -7,16 +7,38 @@ import {
   UsersRound,
 } from "lucide-react";
 
-const employees = [
-  { id: "EMP001", name: "Kumar", role: "Project Manager", status: "Active" },
-  { id: "EMP002", name: "Arun Kumar", role: "Developer", status: "Active" },
-  { id: "EMP003", name: "Priya S", role: "HR Executive", status: "On Leave" },
-];
 
 const stats = [
   { label: "Employee ID", value: "EMP001", icon: UserRound },
-  { label: "Role", value: "Project Manager", icon: UserRound },
+  { label: "Role", value: " Manager", icon: UserRound },
   { label: "Status", value: "Active", icon: CalendarDays },
+];
+
+const employees = [
+  {
+    id: "EMP001",
+    name: "Arun Kumar",
+    role: " Manager",
+    status: "Active",
+  },
+  {
+    id: "EMP002",
+    name: "Priya Sharma",
+    role: "Developer",
+    status: "Active",
+  },
+  {
+    id: "EMP003",
+    name: "Rahul Verma",
+    role: "Tester",
+    status: "On Leave",
+  },
+  {
+    id: "EMP004",
+    name: "Sneha Iyer",
+    role: "HR",
+    status: "Active",
+  },
 ];
 
 export default function Dashboard() {
