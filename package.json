@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+  "start": "node server.js"
+  },
     "dev": "vite --configLoader native",
     "build": "vite build --configLoader native",
     "lint": "eslint .",
@@ -21,7 +23,6 @@
     "framer-motion": "^12.35.2",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.7.0",
-    "msnodesqlv8": "^5.2.0",
     "mssql": "^12.5.2",
     "mysql2": "^3.22.3",
     "react": "^19.2.0",
