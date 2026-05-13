@@ -138,6 +138,32 @@ const INTEGRITY_STATS = [
   { value: "3x",   suffix: "",  label: "Validation Passes", icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E88E5"><path d="M240-40v-329L110-580l185-300h370l185 300-130 211v329l-240-80-240 80Zm80-111 160-53 160 53v-129H320v129Zm20-649L204-580l136 220h280l136-220-136-220H340Zm98 383L296-558l57-57 85 85 169-170 57 56-226 227ZM320-280h320-320Z"/></svg>, color: "#C084FC" },
 ];
 
+const SECURITY_PRIVACY_ITEMS = [
+  {
+    title: "Our Vision",
+    color: "#5B9BD5",
+    rgb: "91,155,213",
+    body:
+      "As a responsible corporate enterprise, DbSol takes the handling of personal data very seriously and ensures that processing always follows globally accepted privacy principles. We promote a culture that values privacy through awareness, technology-driven innovation, and strict controls.",
+    points: ["Global privacy principles", "Awareness-led culture", "Strict operational controls"],
+  },
+  {
+    title: "Our Mission",
+    color: "#6BBF7A",
+    rgb: "107,191,122",
+    body:
+      "DbSol aims to achieve its vision by providing maximum transparency, security, and adherence to data privacy principles. We also strive to incorporate privacy-by-design concepts, methodologies, and technology-driven privacy controls.",
+    points: ["Maximum transparency", "Privacy-by-design", "Technology-driven controls"],
+  },
+];
+
+const SECURITY_CONTROLS = [
+  "Role-based access",
+  "Encrypted transfer",
+  "Audit trails",
+  "Data minimization",
+];
+
 const PIPELINE_NODES = [
   { label: "Source System",  sub: "AX 2012 / Legacy",  color: "#5B9BD5", x: 0 },
   { label: "DMF Extract",    sub: "Staging Tables",     color: "#D4A853", x: 1 },
@@ -555,8 +581,8 @@ export default function DataMigrationSection() {
           ══════════════════════════════════════════ */}
           <div className="mb-16 " style={reveal("0.04s")}>
             {/* Badge */}
-         <h2 className="mb-4 p-[10x] text-4xl text-center font-bold text-gray-800 dark:text-white mt-3">
-Data Migration Transperancy
+         <h2 className="mb-4 text-4xl text-center font-bold text-gray-800 dark:text-white mt-3">
+Data Migration Transparency
 </h2> 
       <p className="max-w-[740px] text-sm mx-auto mb-16 text-center text-[#000000] dark:text-gray-300">
                   We don't move a single record without a paper trail. Our DMF-driven process, tracked inside Microsoft LCS and Azure DevOps, gives you full transparency from first extract to go-live cutover.
@@ -619,7 +645,7 @@ Data Migration Transperancy
           ══════════════════════════════════════════ */}
           <div
             ref={statsRef}
-            className="grid grid-cols-2 gap-3 mb-16 md:grid-cols-4"
+            className="grid grid-cols-2 gap-3 mb-10 md:grid-cols-4"
             style={reveal("0.12s")}
           >
             {INTEGRITY_STATS.map((stat, i) => (
@@ -630,6 +656,91 @@ Data Migration Transperancy
           {/* ══════════════════════════════════════════
               DATA PIPELINE VISUALISER
           ══════════════════════════════════════════ */}
+          <div className="mb-16" style={reveal("0.16s")}>
+            <div className="mb-8 text-center">
+              <p className="text-[10px] tracking-[0.16em] uppercase font-semibold text-blue-500 mb-2">
+                Data Security & Privacy
+              </p>
+              <h3 className="text-3xl font-bold text-gray-800 dm-font-syne dark:text-white">
+                Built for compliance and user trust
+              </h3>
+              <p className="max-w-[760px] mx-auto mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                Every data migration is governed by privacy-first handling, transparent controls, and secure processing practices from discovery through go-live.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+              {SECURITY_PRIVACY_ITEMS.map((item) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45 }}
+                  viewport={{ once: true }}
+                  className="rounded-[22px] p-6 md:p-7"
+                  style={{
+                    background: `linear-gradient(135deg, rgba(${item.rgb},0.08), rgba(255,255,255,0.02))`,
+                    border: `1px solid rgba(${item.rgb},0.22)`,
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
+                      style={{
+                        background: `rgba(${item.rgb},0.14)`,
+                        border: `1px solid rgba(${item.rgb},0.28)`,
+                        color: item.color,
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-5 h-5">
+                        <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+                        <path d="M9 12l2 2 4-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="mb-3 text-xl font-bold text-gray-800 dm-font-syne dark:text-white">
+                        {item.title}
+                      </h4>
+                      <p className="text-[13.5px] leading-7 text-gray-600 dark:text-gray-300">
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    {item.points.map((point) => (
+                      <span
+                        key={point}
+                        className="text-[11px] px-3 py-1.5 rounded-lg font-medium"
+                        style={{
+                          background: `rgba(${item.rgb},0.08)`,
+                          border: `1px solid rgba(${item.rgb},0.2)`,
+                          color: item.color,
+                        }}
+                      >
+                        {point}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div
+              className="flex flex-wrap items-center justify-center gap-2 p-4 mt-5 rounded-2xl"
+              style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}
+            >
+              {SECURITY_CONTROLS.map((control) => (
+                <span
+                  key={control}
+                  className="text-[11px] px-3 py-1.5 rounded-lg font-semibold text-gray-700 bg-white/60 dark:bg-white/10 dark:text-white/80"
+                >
+                  {control}
+                </span>
+              ))}
+            </div>
+          </div>
+
           <div
             ref={pipeRef}
             className="rounded-[22px] p-6 md:p-10 mb-6"

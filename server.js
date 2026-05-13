@@ -1,57 +1,54 @@
-// ✅ IMPORTS (MUST BE FIRST)
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import { sql, poolPromise } from "./db.js";
 
-// ✅ CREATE APP (THIS WAS MISSING)
+dotenv.config();
+
 const app = express();
 
-// ✅ MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ LOGIN API
 app.post("/api/login", async (req, res) => {
   const { empId, password } = req.body;
 
+  if (!empId || !password) {
+    return res.status(400).json({ success: false, message: "Employee/Admin ID and password are required" });
+  }
+
   try {
     const pool = await poolPromise;
+    const isEmployee = empId.startsWith("EMP");
+    const query = isEmployee
+      ? `
+        SELECT 'EMPLOYEE' AS role, *
+        FROM EMPLOYEE1
+        WHERE EmpId = @empId AND Password = @password
+      `
+      : `
+        SELECT 'ADMIN' AS role, *
+        FROM ADMIN1
+        WHERE AdminId = @empId AND Password = @password
+      `;
 
-    let query;
-
-   if (empId.startsWith("EMP")) {
-  query = `
-    SELECT 'EMPLOYEE' AS role, *
-    FROM EMPLOYEE1
-    WHERE EmpId = @empId AND Password = @password
-  `;
-} else {
-  query = `
-    SELECT 'ADMIN' AS role, *
-    FROM ADMIN1
-    WHERE AdminId = @empId AND Password = @password
-  `;
-}
-
-const result = await pool.request()
-  .input("empId", sql.VarChar, empId)
-  .input("password", sql.VarChar, password)
-  .query(query);
+    const result = await pool.request()
+      .input("empId", sql.VarChar, empId)
+      .input("password", sql.VarChar, password)
+      .query(query);
 
     if (result.recordset.length > 0) {
-      res.json({ success: true, user: result.recordset[0] });
-    } else {
-      res.status(401).json({ success: false, message: "Invalid ID or Password" });
+      return res.json({ success: true, user: result.recordset[0] });
     }
 
+    return res.status(401).json({ success: false, message: "Invalid ID or Password" });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
+    console.error("Login API failed:", err);
+    return res.status(500).json({ success: false, error: err.message });
   }
 });
 
-// ✅ APPLY LEAVE API
 app.post("/api/apply-leave", async (req, res) => {
   const { empId, fromDate, toDate, reason } = req.body;
 
@@ -68,23 +65,22 @@ app.post("/api/apply-leave", async (req, res) => {
         VALUES (@empId, @fromDate, @toDate, @reason)
       `);
 
-    res.json({ message: "✅ Leave applied successfully" });
+    return res.json({ message: "Leave applied successfully" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Apply leave API failed:", err);
+    return res.status(500).json({ error: err.message });
   }
 });
 
-// ✅ HEALTH CHECK
 app.get("/api/health", (req, res) => {
   res.json({
     status: "OK",
     message: "Backend is running",
-    timestamp: new Date()
+    timestamp: new Date(),
   });
 });
 
-// ✅ START SERVER (ALWAYS LAST)
-const PORT = 5000;
+const PORT = Number(process.env.SERVER_PORT || 5000);
 app.listen(PORT, () => {
-  console.log(`✅ Backend running on port ${PORT}`);
+  console.log(`Backend running on port ${PORT}`);
 });
