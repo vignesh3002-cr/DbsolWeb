@@ -5,9 +5,7 @@ const leaders = [
     initials: "RN",
     name: "Remapriya Nanjappan",
     role: "Strategic Consultant",
-    department: "Executive",
-    hiringRole: "Hiring: COO",
-    avatarBg: "bg-blue-100",
+    department: "Executive",     avatarBg: "bg-blue-100",
     avatarText: "text-blue-800",
     ringColor: "ring-blue-200",
     image: "/images/rema-nanjappan.jpg",
@@ -29,7 +27,6 @@ const leaders = [
     name: "Maruthanayagam Jeyachandran",
     role: "Senior Functional Consultant",
     department: "Technology",
-    hiringRole: "Hiring: Staff Eng × 3",
     avatarBg: "bg-purple-100",
     avatarText: "text-purple-800",
     ringColor: "ring-purple-200",
@@ -52,7 +49,6 @@ const leaders = [
     name: "Arun Kumar Babu",
     role: "D365 functional consultant",
     department: "Product",
-    hiringRole: "Hiring: Sr. PM × 2",
     avatarBg: "bg-orange-100",
     avatarText: "text-orange-800",
     ringColor: "ring-orange-200",
@@ -128,12 +124,6 @@ function LeaderCard({ leader, index }) {
         <p className="text-xs text-gray-400 mb-4 font-medium uppercase tracking-widest">
           {leader.role}
         </p>
-
-        {/* Hiring pill */}
-        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-          {leader.hiringRole}
-        </span>
       </div>
 
       {/* Description lines */}
