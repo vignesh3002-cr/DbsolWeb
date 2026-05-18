@@ -83,7 +83,7 @@ function App() {
         <Route path="/CareerForm" element={<CareerForm />} />
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
         <Route path="/emp-portal" element={<Login />} />
-       <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />
         <Route path="/dashboard" element={<Dashboard />} />
           

@@ -6,6 +6,7 @@ import CountUp from "react-countup"
 import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
 import GrowthJourney from "../components/GrowthHistory"
+import LeadershipSection from "../components/Leadership"
 
 export default function About(){
   
@@ -170,7 +171,7 @@ We aim to bridge the gap between technology and business by delivering world-cla
 
 </section>
 
-
+<LeadershipSection/>
 {/* WHY CHOOSE US */}
 
 <section className="py-24">
