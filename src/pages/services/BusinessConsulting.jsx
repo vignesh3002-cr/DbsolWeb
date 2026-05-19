@@ -61,7 +61,7 @@ function WaveformHoverCard({ title, desc, Icon, video }) {
       </div>
 
       {/* 📊 ICON */}
-      <div className="absolute right-4 bottom-4 w-16 h-16 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
+      <div className="absolute right-4 bottom-4 w-9 h-9 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
         <Icon className="w-8 h-8 text-white" />
       </div>
     </div>
@@ -110,18 +110,18 @@ export default function BPage() {
       </h2>
 
       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-        Our business consulting services help organizations adapt, scale,
-        and complete in fast-changing markets. We partner with leadership teams
-        to identify challenges, unlock opportunities, and deliver measurable impact.
+        Business consulting involves providing expert advice to organizations to help them improve performance,
+        solve problems, and achieve their goals. Consultants work closely with management teams to analyze current 
+        operations, identify challenges, and develop strategic solutions.
       </p>
 
       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-        From process optimization to enterprise technology alignment,
-        we create sustainable solutions that support long-term success.
+       The main objective of business consulting is to help companies adapt to changing market conditions, 
+       increase efficiency, and drive growth. This can include improving business processes, enhancing customer 
+       experience, reducing costs, and implementing new technologies.
       </p>
     </div>
 
-    {/* RIGHT IMAGE */}
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}

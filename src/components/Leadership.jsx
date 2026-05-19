@@ -5,20 +5,20 @@ const leaders = [
     initials: "RN",
     name: "Remapriya Nanjappan",
     role: "Strategic Consultant",
-    department: "Executive",     avatarBg: "bg-blue-100",
+    department: "Executive", avatarBg: "bg-blue-100",
     avatarText: "text-blue-800",
     ringColor: "ring-blue-200",
     image: "/images/rema-nanjappan.jpg",
     lines: [
       {
         icon: "🏆",
-        text: "Expert in designing and deploying global HR and Payroll solutions with 16+ years of experience.",
+        text: "ERP Implementation & Digital Transformation Expert in designing and deploying global HR and Payroll solutions with 16+ years of experience. I bridge the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
       },
       {
         icon: "📈",
-        text: "Led NovaTech from seed stage to Series B, growing ARR to $28M in four years.",
+        text: " Former Digital Transformation Manager at Wipro with 16+ years of global experience, exclusively specialized in orchestrating cross-platform ecosystems—including PeopleSoft, Salesforce, and Power Platform—to unify global business units. Expert in leveraging GenAI (Copilot Studio) and high-integrity functional design to automate complex workflows for multi-national entities. Expert in synchronizing complex global business units into unified digital ecosystems. ",
       },
-      
+
     ],
     linkedin: "#",
   },
@@ -40,7 +40,7 @@ const leaders = [
         icon: "🔀",
         text: "Former principal engineer at Infosys and Thoughtworks with expertise in distributed systems.",
       },
-     
+
     ],
     linkedin: "#",
   },
@@ -53,7 +53,7 @@ const leaders = [
     avatarText: "text-orange-800",
     ringColor: "ring-orange-200",
     image: "/images/arunkumar.jpg",
-    
+
     lines: [
       {
         icon: "🔭",
@@ -63,7 +63,7 @@ const leaders = [
         icon: "💡",
         text: "Launched 3 flagship features that each added over $5M in annual recurring revenue.",
       },
-     
+
     ],
     linkedin: "#",
   },

@@ -187,6 +187,7 @@ export default function Dynamics365Business() {
               operating scale, and customer engagement needs.
             </p>
           </div>
+          
 
           <div className="grid gap-6 md:grid-cols-3">
             {subDivisions.map((item) => (
