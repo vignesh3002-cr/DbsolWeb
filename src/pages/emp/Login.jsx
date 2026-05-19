@@ -35,7 +35,7 @@ export default function Login() {
     const enteredId = (employeeId || "").trim().toUpperCase();
 
     try {
-      const response = await axios.post("https://your-render-url.onrender.com", {
+      const response = await axios.post("http://localhost:5000/login", {
         empId: enteredId,
         password: password,
       });

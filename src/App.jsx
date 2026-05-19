@@ -1,7 +1,7 @@
 ﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Home from "./pages/Home";
-import PowerAutomate from "./pages/services/power-automate";
+import PowerPlatformSolutions from "./pages/services/Power Platform Solutions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BPage from "./pages/services/BusinessConsulting";
@@ -49,8 +49,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/power-automate" element={<PowerAutomate />} />        
-        <Route path="/modules" element={<ModulesHub />} />
+        <Route path="/power-platform-solutions" element={<PowerPlatformSolutions />} />
+        <Route path="/power-automate" element={<Navigate to="/power-platform-solutions" replace />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
         <Route path="/CustomerEngagement" element={<CustomerEngagement />} />

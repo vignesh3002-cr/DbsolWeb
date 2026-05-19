@@ -157,36 +157,8 @@ Home
                 Dynamics 365 Business
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/BusinessCentral"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
-                Business Central
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/CustomerEngagement"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
-                Customer Engagement
-              </NavLink>
-            </li>
-            <li >
-              <NavLink
-                to="/finance-operation"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
-                Finance & Operations
-              </NavLink>
-            </li>
+           
+            
             <li>
               <NavLink to="/BusinessConsulting" className={({ isActive }) => 
                   isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
@@ -216,12 +188,12 @@ Home
               >
                 <li className="mt-4">
                   <NavLink
-                    to="/power-automate"
+                    to="/power-platform-solutions"
                     className={({ isActive }) =>
                   isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
                     : "hover:text-black dark:hover:text-white"
                 }>
-                    Power Automate
+                    Power Platform Solutions
                   </NavLink>
                 </li>
           
@@ -232,12 +204,12 @@ Home
         </li>*/}
        <li className="mt-4">
                   <NavLink
-                    to="/power-automate"
+                    to="/power-platform-solutions"
                     className={({ isActive }) =>
                   isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
                     : "hover:text-black dark:hover:text-white"
                 }>
-                    Power Automate
+                    Power Platform Solutions
                   </NavLink>
                 </li>
             <li>
@@ -597,18 +569,7 @@ Home
         transition={{duration:0.25}}
         className="mt-3 ml-4 space-y-3"
       >
-
-        {/* Finance */}
-        <li className="cursor-pointer hover:text-blue-600">
-          <NavLink
-            to="/finance-operation"
-            className={({isActive}) =>
-              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
-          >
-            Finance & Operations
-          </NavLink>
-        </li>
-
+       
         {/* Business */}
         <li className="cursor-pointer hover:text-blue-600">
           <NavLink
@@ -620,25 +581,7 @@ Home
           </NavLink>
         </li>
 
-        <li className="cursor-pointer hover:text-blue-600">
-          <NavLink
-            to="/BusinessCentral"
-            className={({isActive}) =>
-              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
-          >
-            Business Central
-          </NavLink>
-        </li>
-
-        <li className="cursor-pointer hover:text-blue-600">
-          <NavLink
-            to="/CustomerEngagement"
-            className={({isActive}) =>
-              isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
-          >
-            Customer Engagement
-          </NavLink>
-        </li>
+       
 
         {/* 🔽 Power Platform (Nested) */}
        {/* <li>
@@ -666,16 +609,16 @@ Home
           </AnimatePresence>
 
         </li>*/}
-        {/*Power Automate */}
+        {/* Power Platform Solutions */}
         <li className="cursor-pointer hover:text-blue-600">
                   <NavLink
-                    to="/power-automate"
+                    to="/power-platform-solutions"
                     className={({isActive}) =>
                       isActive
                         ? "text-blue-600 border-b-2 border-blue-600 pb-1"
                         : "hover:text-blue-600"}
                   >
-                    Power Automate
+                    Power Platform Solutions
                   </NavLink>
                 </li>
                 
