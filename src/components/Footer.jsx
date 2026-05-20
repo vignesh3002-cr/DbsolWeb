@@ -57,11 +57,9 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-gray-400 max-w-xs hover:text-gray-300">
+<p className="text-sm leading-relaxed text-justify text-gray-400 max-w-xs hover:text-gray-300">
 
-We provide enterprise digital transformation solutions including
-Dynamics 365 Finance & Operations, responsive web development,
-and cross-platform mobile applications.
+We specialize in enterprise digital transformation services, including Dynamics 365 Finance & Operations, strategic Business Consulting, Customer Engagement solutions, and advanced web and cross-platform mobile application development.
 
 </p>
 

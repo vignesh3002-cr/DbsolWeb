@@ -12,7 +12,7 @@ export default function WhyChooseUs(){
 
 const {ref, inView} = useInView({
 triggerOnce:true,
-threshold:0.3
+threshold:0.3,
 })
 
 const stats = [
@@ -97,22 +97,26 @@ className="relative p-10 text-center border shadow-xl bg-white/5 backdrop-blur-m
 
 {/* Animated Number */}
 
+
+
+
 <h3 className="mb-2 text-4xl font-bold">
-
-{inView && (
-
-<CountUp
-start={0}
-end={item.number}
-duration={3}
-separator=","
-/>
-
-)}
-
-+
-
+  {/*{inView ? (
+    <CountUp
+      key={item.number}   // ✅ IMPORTANT FIX
+      start={0}
+      end={Number(item.number || 0)}
+      duration={2}
+      separator=","
+    />
+  ) : (
+    0
+  )}
+  +*/}
+  {item.number}+
 </h3>
+
+
 
 {/* Label */}
 

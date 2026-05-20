@@ -5,14 +5,15 @@ const leaders = [
     initials: "RN",
     name: "Remapriya Nanjappan",
     role: "Strategic Consultant",
-    department: "Executive", avatarBg: "bg-blue-100",
+    department: "Executive", 
+    avatarBg: "bg-blue-100",
     avatarText: "text-blue-800",
     ringColor: "ring-blue-200",
     image: "/images/rema-nanjappan.jpg",
     lines: [
       {
         icon: "🏆",
-        text: "ERP Implementation & Digital Transformation Expert in designing and deploying global HR and Payroll solutions with 16+ years of experience. I bridge the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
+        text: "ERP Implementation & Digital Transformation Expert specializing in the design and deployment of global HR and Payroll solutions. Skilled in bridging the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
       },
       {
         icon: "📈",
@@ -34,7 +35,7 @@ const leaders = [
     lines: [
       {
         icon: "⚙️",
-        text: "Expert in ERP implementation, warehouse management, production planning, inventory control, and business process improvement with 12+ years of experience.",
+        text: "Results-oriented professional with over 12 years of experience in ERP implementation, warehouse management, production planning, inventory control, and business process improvement. Skilled in process excellence, structured problem-solving, and practical execution, with proven expertise in collaborating with business and technical teams to deliver functional solutions, support system rollouts, manage UAT and post-go-live stabilization, and enhance operational efficiency across supply chain environments.",
       },
       {
         icon: "🔀",
@@ -57,7 +58,7 @@ const leaders = [
     lines: [
       {
         icon: "🔭",
-        text: "Expert in Finance and Supply Chain Management modules with 9+ years of experience, specializing in process optimization and ERP solution delivery.",
+        text: "Results-driven D365 Finance & Operations Functional Consultant with strong expertise in Finance and Supply Chain Management modules, focused on process optimization and ERP solution delivery. Proven ability in requirement analysis, system configuration, user support, and delivering scalable business solutions aligned with organizational objectives. Passionate about leveraging technology to improve operational efficiency and support digital transformation initiatives.",
       },
       {
         icon: "💡",
@@ -131,7 +132,7 @@ function LeaderCard({ leader, index }) {
         {leader.lines.map((line, i) => (
           <div key={i} className="flex items-start gap-3">
             <span className="text-base mt-0.5 flex-shrink-0">{line.icon}</span>
-            <p className="text-xs text-gray-500 leading-relaxed">{line.text}</p>
+            <p className="text-xs text-gray-500 leading-relaxed text-justify">{line.text}</p>
           </div>
         ))}
       </div>
@@ -141,15 +142,7 @@ function LeaderCard({ leader, index }) {
         <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full font-medium">
           {leader.department}
         </span>
-        <a
-          href={leader.linkedin}
-          className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors"
-        >
-          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-          </svg>
-          LinkedIn
-        </a>
+        
       </div>
     </div>
   );

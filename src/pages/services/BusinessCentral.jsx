@@ -45,14 +45,31 @@ const deliveryModules = d365Modules.filter((m) =>
     .includes(m.slug)
 );
 const businessCentralFramework = [
-  "Connect finance, sales, purchasing, inventory, and service data in one ERP system.",
-  "Reduce manual work with approval flows, alerts, and repeatable operating processes.",
-  "Give teams real-time visibility into cash flow, orders, stock, projects, and service requests.",
-  "Improve customer response time with connected quotes, invoices, cases, and account history.",
-  "Use Power BI, Microsoft 365, and Power Platform integrations to extend daily workflows.",
-  "Support growth with scalable cloud access, controlled permissions, and cleaner reporting.",
+  {
+    title: "Unified Operations",
+    desc: "Connect finance, sales, procurement, inventory, and service management within a single ERP ecosystem.",
+  },
+  {
+    title: "Process Automation",
+    desc: "Reduce manual effort using workflows, approval processes, alerts, and standardized business operations.",
+  },
+  {
+    title: "Real-Time Insights",
+    desc: "Gain visibility into cash flow, inventory, projects, customer activities, and operational performance.",
+  },
+  {
+    title: "Microsoft Ecosystem",
+    desc: "Integrate seamlessly with Microsoft 365, Power BI, and Power Platform for enhanced productivity.",
+  },
+  {
+    title: "Customer Engagement",
+    desc: "Improve customer experiences through connected sales, invoicing, and service management processes.",
+  },
+  {
+    title: "Scalable Infrastructure",
+    desc: "Support business growth with secure cloud architecture, multi-company support, and role-based access.",
+  },
 ];
-
 export default function BusinessCentral() {
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -86,11 +103,10 @@ export default function BusinessCentral() {
           <div>
            
             <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-            Build Powerful Web Experiences with Business Central
+            Microsoft Dynamics 365 Business Central – Smarter Business Management
             </h2>
             <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-300">
-               Microsoft Dynamics 365 Business Central is a cloud-based ERP solution that connects finance, sales, service, and operations. Extend its capabilities with modern web applications like customer portals, product catalogs, service requests, and
-               real-time dashboards—all aligned with your business data.
+              Manage finance, operations, sales, customer service, and supply chain activities through a unified cloud-based platform. Microsoft Dynamics 365 Business Central helps businesses streamline processes, improve productivity, and gain real-time insights for better decision-making. With integrated financial management, inventory control, project management, and multi-company support, Business Central empowers organizations to scale efficiently and adapt to changing business needs.
             </p>
                 
             </div>
@@ -109,7 +125,7 @@ export default function BusinessCentral() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto mb-8 max-w-4xl text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-              Business Central Framework
+             Business Central Solution Framework
             </h2>
             
           </div>
