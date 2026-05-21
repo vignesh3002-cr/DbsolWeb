@@ -51,7 +51,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/power-platform-solutions" element={<PowerPlatformSolutions />} />
         <Route path="/power-automate" element={<Navigate to="/power-platform-solutions" replace />} />
+        <Route path="/modules" element={<ModulesHub />} />
         <Route path="/module/:slug" element={<ModuleDetail />} />
+        <Route path="/modules/:slug" element={<ModuleDetail />} />
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
         <Route path="/CustomerEngagement" element={<CustomerEngagement />} />
         <Route path="/BusinessConsulting" element={<BPage />} />

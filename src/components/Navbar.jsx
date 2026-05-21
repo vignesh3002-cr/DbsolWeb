@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import Home from "./Hero";
+import logo from "../assets/LOGO dbsol.png";
 
 export default function Header() {
 const navigate = useNavigate();
@@ -69,7 +70,7 @@ return(
 <div className="relative">
 <header className="fixed z-40 w-full transition bg-white shadow-md dark:bg-gray-900">
 
-<div className="flex items-center justify-between max-w-full px-4 py-2.5 mx-auto">
+<div className="flex items-center justify-between max-w-full px-4 mx-auto">
 
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
@@ -83,12 +84,25 @@ className={`text-2xl lg:hidden ${
 
 
 </button>
- <h1 className="text-2xl font-bold tracking-wide text-blue-600 ">
-  <NavLink
-  to="/" onClick={goHome}>
-Dbsol
-</NavLink>
-</h1> 
+{/* LOGO */}
+<div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
+  
+  {/* Menu Button */}
+  
+
+  {/* Logo Image */}
+  <NavLink 
+    to="/" onClick={() => {
+  window.location.href = "/";
+}}>
+    <img
+      src={logo}
+      alt="Dbsol Technologies"
+      className="h-10 md:h-12 lg:h-14 object-contain"
+    />
+  </NavLink>
+
+</div> 
 
 {/* Divider */}
 
@@ -118,7 +132,9 @@ Microsoft Partner
 
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
-  to="/" onClick={goHome}
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}
   className={({isActive}) =>
   isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
@@ -145,7 +161,7 @@ Home
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white/60 backdrop-blur-md dark:bg-gray-800 dropdown"
+            className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white backdrop-opacity-5 dark:bg-gray-800 dropdown"
           >
             <li >
               <NavLink
@@ -253,7 +269,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
+className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white backdrop-opacity-5 text-[18px] dark:bg-gray-800 dropdown"
 >
 
 <li className="cursor-pointer ">
@@ -320,7 +336,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 z-50 w-56 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white/60 backdrop-blur-md text-[18px] dark:bg-gray-800 dropdown"
+className="absolute left-0 z-50 w-56 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white backdrop-none text-[18px] dark:bg-gray-800 dropdown"
 >
 
 <li className="cursor-pointer">
@@ -537,10 +553,11 @@ d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9
 <ul className="flex flex-col gap-5 text-xl font-semibold ">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink
-to="/"
-onClick={goHome}
-className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  to="/" onClick={() => {
+  window.location.href = "/";
+}}
+  className={({isActive}) =>
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
 Home
 </NavLink>

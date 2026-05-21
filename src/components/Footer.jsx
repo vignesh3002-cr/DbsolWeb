@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
 import emailjs from "emailjs-com";
 import React, { useRef } from "react";
+import logo from "../assets/LOGO dbsol.png";
+
 export default function Footer(){
 const form = useRef();
 const scrollTop = ()=>{
@@ -40,10 +42,12 @@ return(
 
 <div>
 
-<h2 className="mb-4 font-bold text-2xl text-white">
-DbSol
-</h2>
-
+{/* Logo Image */}
+  <img
+    src={logo}
+    alt="Dbsol Technologies"
+    className="mb-4 h-14 object-contain"
+  />
 <div className="flex items-center gap-2 mb-4">
 
 <img

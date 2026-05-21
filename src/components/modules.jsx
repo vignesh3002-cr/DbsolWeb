@@ -125,14 +125,15 @@ export default function Modules({ modules, showAllLink = true }) {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                {/* External docs button */}
-                <button
-                  onClick={() => window.open(mod.docHref, "_blank")}
-                  className="text-xs text-gray-500 hover:text-cyan-600 flex items-center gap-1"
+                <a
+                  href={mod.docHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-gray-500 hover:text-cyan-600"
                 >
                   Docs
                   <ExternalLink className="w-3 h-3" />
-                </button>
+                </a>
 
               </div>
             </article>

@@ -62,7 +62,7 @@ function WaveformHoverCard({ title, desc, Icon, video }) {
 
       {/* 📊 ICON */}
       <div className="absolute right-4 bottom-4 w-9 h-9 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
-        <Icon className="w-8 h-8 text-white" />
+        <Icon className="w-6 h-6 text-white" />
       </div>
     </div>
   );
@@ -110,16 +110,11 @@ export default function BPage() {
       </h2>
 
       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-        Business consulting involves providing expert advice to organizations to help them improve performance,
-        solve problems, and achieve their goals. Consultants work closely with management teams to analyze current 
-        operations, identify challenges, and develop strategic solutions.
+        Our business consulting services help organizations adapt, scale, compete in fast-changing markets. We partner with leadership teams to identify challenges, unlock opportunities, and deliver measurable impact. 
       </p>
 
       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-       The main objective of business consulting is to help companies adapt to changing market conditions, 
-       increase efficiency, and drive growth. This can include improving business processes, enhancing customer 
-       experience, reducing costs, and implementing new technologies.
-      </p>
+       From process optimization to enterprise technology alignment, we create sustainable solutions that support long-term success.</p>
     </div>
 
     <motion.div

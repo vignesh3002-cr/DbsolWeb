@@ -132,9 +132,14 @@ export default function BusinessCentral() {
 
         <ul className="mx-auto grid max-w-5xl gap-x-10 gap-y-5 text-gray-700 dark:text-gray-300 md:grid-cols-2">
             {businessCentralFramework.map((point) => (
-              <li key={point} className="flex gap-4 text-base leading-7">
+              <li key={point.title} className="flex gap-4 text-base leading-7">
                 <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600" />
-                <span>{point}</span>
+                <span>
+                  <strong className="block text-gray-900 dark:text-white">
+                    {point.title}
+                  </strong>
+                  <span>{point.desc}</span>
+                </span>
               </li>
             ))}
           </ul>
