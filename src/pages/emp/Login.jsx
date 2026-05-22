@@ -35,7 +35,7 @@ export default function Login() {
     const enteredId = (employeeId || "").trim().toUpperCase();
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("http://localhost:5000/api/login", {
         empId: enteredId,
         password: password,
       });
@@ -209,7 +209,7 @@ export default function Login() {
           </form>
 
           <p className="mt-8 rounded-xl bg-slate-50 px-4 py-3 text-center text-xs font-semibold text-slate-500">
-            Demo credentials: Employee EMP001 / Arun@123or Admin AD001 / EMPOO1
+            Demo credentials: Employee EMP001 / Arun@123 or Admin AD001 / EMPOO1
           </p>
         </div>
       </section>

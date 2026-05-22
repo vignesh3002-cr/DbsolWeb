@@ -5,7 +5,8 @@ const leaders = [
     initials: "RN",
     name: "Remapriya Nanjappan",
     role: "Strategic Consultant",
-    department: "Executive", 
+    department: "Executive",
+    deptColor: "bg-blue-100 text-blue-800 border-blue-200",
     avatarBg: "bg-blue-100",
     avatarText: "text-blue-800",
     ringColor: "ring-blue-200",
@@ -26,8 +27,9 @@ const leaders = [
   {
     initials: "MJ",
     name: "Maruthanayagam Jeyachandran",
-    role: "Senior Functional Consultant",
+    role: "Business Analyst",
     department: "Technology",
+    deptColor: "bg-orange-100 text-orange-800 border-orange-200",
     avatarBg: "bg-purple-100",
     avatarText: "text-purple-800",
     ringColor: "ring-purple-200",
@@ -35,11 +37,11 @@ const leaders = [
     lines: [
       {
         icon: "⚙️",
-        text: "Results-oriented professional with over 12 years of experience in ERP implementation, warehouse management, production planning, inventory control, and business process improvement. Skilled in process excellence, structured problem-solving, and practical execution, with proven expertise in collaborating with business and technical teams to deliver functional solutions, support system rollouts, manage UAT and post-go-live stabilization, and enhance operational efficiency across supply chain environments.",
+        text: "ERP Implementation & Supply Chain Transformation Expert delivering Microsoft Dynamics 365 solutions for warehouse, inventory, and production, focused on streamlining operations and scalable process improvement.",
       },
       {
         icon: "🔀",
-        text: "Former principal engineer at Infosys and Thoughtworks with expertise in distributed systems.",
+        text: "Formerly developed across supply chain operations, SAP, and Microsoft Dynamics 365 environments, with 12+ years of experience in ERP implementation, rollout, support, and process optimization across manufacturing and warehouse functions. Skilled in functional design, warehouse management, business process mapping, UAT, training, and post-go-live support, delivering efficient, business-aligned solutions.",
       },
 
     ],
@@ -50,6 +52,7 @@ const leaders = [
     name: "Arun Kumar Babu",
     role: "D365 functional consultant",
     department: "Product",
+    deptColor: "bg-purple-100 text-purple-800 border-purple-200",
     avatarBg: "bg-orange-100",
     avatarText: "text-orange-800",
     ringColor: "ring-orange-200",
@@ -85,7 +88,7 @@ function LeaderCard({ leader, index }) {
   return (
     <div
       className={`
-        bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col
+        bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 overflow-hidden flex flex-col
         transition-all duration-300 ease-out
         ${hovered ? "shadow-xl -translate-y-1.5 border-gray-200" : "shadow-sm"}
       `}
@@ -119,10 +122,10 @@ function LeaderCard({ leader, index }) {
         </div>
 
         {/* Name & Role */}
-        <h3 className="text-base font-semibold text-gray-900 mb-1 tracking-tight">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1 tracking-tight">
           {leader.name}
         </h3>
-        <p className="text-xs text-gray-400 mb-4 font-medium uppercase tracking-widest">
+        <p className="text-xs text-gray-400 dark:text-gray-300 mb-4 font-medium uppercase tracking-widest">
           {leader.role}
         </p>
       </div>
@@ -132,16 +135,18 @@ function LeaderCard({ leader, index }) {
         {leader.lines.map((line, i) => (
           <div key={i} className="flex items-start gap-3">
             <span className="text-base mt-0.5 flex-shrink-0">{line.icon}</span>
-            <p className="text-xs text-gray-500 leading-relaxed text-justify">{line.text}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-300 leading-relaxed text-justify">{line.text}</p>
           </div>
         ))}
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
-        <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full font-medium">
-          {leader.department}
-        </span>
+      <div className="px-6 py-4 border-t border-gray-300 flex items-center justify-between">
+<span
+  className={`text-xs px-3 py-1 rounded-full font-medium border ${leader.deptColor}`}
+>
+  {leader.department}
+</span>
         
       </div>
     </div>
@@ -150,7 +155,7 @@ function LeaderCard({ leader, index }) {
 
 export default function LeadershipSection() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 px-6 font-sans">
+    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-blue-900 dark:via-gray-800  dark:to-black-900 py-20 px-6 font-sans">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -163,12 +168,12 @@ export default function LeadershipSection() {
           </span>
 
           <h2
-            className="text-4xl font-normal text-gray-900 leading-tight mb-3 tracking-tight"
+            className="text-4xl font-normal text-gray-900 dark:text-white leading-tight mb-3 tracking-tight"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
             The people behind our mission
           </h2>
-          <p className="text-sm text-gray-400 max-w-md leading-relaxed">
+          <p className="text-sm text-gray-400 dark:text-gray-300 max-w-md leading-relaxed">
             Experienced leaders driving growth — and actively growing their teams.
           </p>
         </div>
@@ -180,25 +185,6 @@ export default function LeadershipSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-gray-100 pt-10">
-          <div>
-            <p className="text-sm font-semibold text-gray-800">
-              We're expanding our leadership team
-            </p>
-            <p className="text-xs text-gray-400 mt-0.5">
-              6 senior roles open across product, engineering, and finance.
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition-colors">
-              View open roles →
-            </button>
-            <button className="border border-gray-200 hover:border-gray-300 text-gray-600 text-xs font-semibold px-5 py-2.5 rounded-lg transition-colors">
-              Our culture
-            </button>
-          </div>
-        </div>
 
       </div>
     </section>

@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
 import emailjs from "emailjs-com";
 import React, { useRef } from "react";
-import logo from "../assets/LOGO dbsol.png";
+import logoLight from "../assets/LOGO dbsol.png";
+import logoDark from "../assets/Dbsol logo.dark.png";
 
 export default function Footer(){
 const form = useRef();
@@ -41,13 +42,19 @@ return(
 
 
 <div>
+{/* Light mode logo */}
+<img
+  src={logoLight}
+  alt="Dbsol Technologies"
+  className="mb-4 h-14 object-contain block dark:hidden"
+/>
 
-{/* Logo Image */}
-  <img
-    src={logo}
-    alt="Dbsol Technologies"
-    className="mb-4 h-14 object-contain"
-  />
+{/* Dark mode logo */}
+<img
+  src={logoDark}
+  alt="Dbsol Technologies"
+  className="mb-4 h-14 object-contain hidden dark:block"
+/>
 <div className="flex items-center gap-2 mb-4">
 
 <img

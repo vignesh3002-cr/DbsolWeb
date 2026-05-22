@@ -27,7 +27,7 @@ function WaveformHoverCard({ title, desc, Icon, video }) {
       onClick={() => setActive(!active)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative p-6 bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer"
+      className="relative p-6 bg-white dark:bg-slate-600 rounded-xl shadow-sm overflow-hidden cursor-pointer"
     >
       {/* 🎥 VIDEO */}
       <video
@@ -45,23 +45,23 @@ function WaveformHoverCard({ title, desc, Icon, video }) {
       {/* 🌑 OVERLAY */}
       <div
         className={`
-          absolute inset-0 bg-black/40 transition duration-300
-          ${isActive ? "opacity-100" : "opacity-0"}
+          absolute inset-0 bg-black/40  transition duration-300
+          ${isActive ? "opacity-100" : "opacity-0"} 
         `}
       ></div>
 
       {/* 📝 TEXT */}
       <div className="relative z-10">
-        <h3 className={`text-xl font-semibold ${isActive ? "text-white" : ""}`}>
+        <h3 className={`text-xl font-semibold ${isActive ? "text-black opacity-0 " : "dark:text-gray-100"}`}>
           {title}
         </h3>
-        <p className={`${isActive ? "text-gray-200" : "text-gray-600"}`}>
+        <p className={`${isActive ? "text-black opacity-0" : "dark:text-gray-100"}`}>
           {desc}
         </p>
       </div>
 
       {/* 📊 ICON */}
-      <div className="absolute right-4 bottom-4 w-9 h-9 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
+      <div className="absolute right-4 bottom-4 w-6 h-6 bg-blue-500 rounded-md flex items-center justify-center opacity-30 z-10">
         <Icon className="w-6 h-6 text-white" />
       </div>
     </div>
@@ -200,13 +200,13 @@ export default function BPage() {
          ].map((item, index) => (
         <div
           key={index}
-          className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
+          className="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow hover:shadow-lg transition"
         >
           <div className="text-3xl text-blue-600 mb-4">
             {item.icon}
           </div>
           <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-          <p className="text-gray-600">{item.desc}</p>
+          <p className="text-gray-600 dark:text-white">{item.desc}</p>
         </div>
       ))}
     </div>
@@ -233,9 +233,9 @@ export default function BPage() {
             </ul>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-xl font-semibold mb-4">Key Benefits</h3>
-            <ul className="space-y-3 text-gray-600">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow">
+            <h3 className="text-xl dark:text-white font-semibold mb-4">Key Benefits</h3>
+            <ul className="space-y-3 text-gray-600 dark:text-white">
               <li>✔ Increased operational efficiency</li>
               <li>✔ Scalable and adaptable processes</li>
               <li>✔ Improved profitability</li>

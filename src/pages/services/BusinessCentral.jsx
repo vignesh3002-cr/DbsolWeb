@@ -197,25 +197,23 @@ export default function BusinessCentral() {
         <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2">
           <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-white">
-              Built for real teams
+               Built for Modern Businesses
             </h2>
             <p className="leading-relaxed text-gray-600 dark:text-gray-300">
-              The page can be used as a landing page for Business Central website work,
-              a product page for ERP-connected web applications, or a service page that
-              explains how your digital front end fits into the Dynamics 365 ecosystem.
+              Our solutions are designed for real-world business needs, helping organizations streamline operations, improve efficiency, and enhance customer experiences. With Microsoft Dynamics 365 Business Central, we deliver scalable, user-friendly systems that support daily business processes and long-term growth.
             </p>
           </div>
 
           <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-white">
-              Common page modules
+             Key Capabilities
             </h2>
             <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-              <li>Hero section with CTA</li>
-              <li>Business Central integration overview</li>
-              <li>Feature grid and workflow steps</li>
-              <li>Outcomes and benefits section</li>
-              <li>Contact call to action</li>
+              <li>End-to-end Business Central implementation</li>
+              <li>Seamless system integration</li>
+              <li>Custom workflow and process automation</li>
+              <li>Real-time reporting and insights</li>
+              <li>Ongoing support and optimization</li>
             </ul>
           </div>
         </div>
