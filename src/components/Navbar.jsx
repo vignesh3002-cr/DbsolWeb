@@ -68,7 +68,7 @@ useEffect(() => {
 void motion;
 return(
 <div className="relative">
-<header className="fixed z-40 w-full transition bg-white shadow-md dark:bg-gray-900">
+<header className="fixed z-40 w-full transition bg-white dark:bg-gray-900">
 
 <div className="flex items-center justify-between max-w-full px-4 mx-auto">
 
@@ -163,7 +163,8 @@ Home
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute left-0 w-64 p-6 space-y-3 font-serif rounded-lg shadow-md bg-white backdrop-opacity-5 dark:bg-gray-800 dropdown"
+        className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
+      bg-white/10 backdrop-blur-md text-white dropdown"
           >
             <li >
               <NavLink
@@ -271,7 +272,8 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white backdrop-opacity-5 text-[18px] dark:bg-gray-800 dropdown"
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
+      bg-white/10 backdrop-blur-md text-white dropdown"
 >
 
 <li className="cursor-pointer ">
@@ -297,6 +299,7 @@ Supply Chain Management System</NavLink>
 Warehouse Management System</NavLink>
 </li>
 <li className="cursor-pointer ">
+
 <NavLink to="/IMS" className={({isActive}) =>
   isActive ? " border-b-2 border-blue-600 pb-1" : ""}
  >Inventory Management System</NavLink>
@@ -338,7 +341,8 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 z-50 w-56 p-6 space-y-3 font-['Montserrat'] rounded-lg shadow-md from-neutral-800 bg-white backdrop-none text-[18px] dark:bg-gray-800 dropdown"
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
+      bg-white/10 backdrop-blur-md text-white dropdown "
 >
 
 <li className="cursor-pointer">

@@ -23,7 +23,7 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 md:px-16">
+    <section className="bg-gradient-to-b from-gray-50 to-white dark:bg-gradient-to-b dark:from-gray-800  dark:to-gray-900 dark:text-white py-20 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
@@ -33,10 +33,10 @@ export default function NewsSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-800">
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
             Latest News & Updates
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-100 mt-4 max-w-2xl mx-auto">
             Stay updated with our latest achievements, client success stories,
             and innovations in Dynamics 365 solutions.
           </p>
@@ -51,7 +51,7 @@ export default function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -68,11 +68,11 @@ export default function NewsSection() {
                   {item.date}
                 </span>
 
-                <h3 className="text-lg font-semibold text-gray-800 mt-2">
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mt-2">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-100 mt-3">
                   {item.desc}
                 </p>
               </div>
