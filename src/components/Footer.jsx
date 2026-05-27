@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
 import emailjs from "emailjs-com";
 import React, { useRef } from "react";
-import logoLight from "../assets/LOGO dbsol.png";
 import logoDark from "../assets/Dbsol logo.dark.png";
 
 export default function Footer(){
@@ -34,27 +33,19 @@ return(
 
 <footer className="relative pt-20 text-gray-300 bg-black">
 
-{/* Main Footer */}
 
-<div className="grid w-ful gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
+<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
 
-{/* Company Info */}
+  {/* Company Info */}
+  <div>
 
+    {/* ✅ Logo (visible in BOTH light & dark mode) */}
+    <img
+      src={logoDark}
+      alt="Dbsol Technologies"
+      className="mb-4 h-14 object-contain"
+    />
 
-<div>
-{/* Light mode logo */}
-<img
-  src={logoLight}
-  alt="Dbsol Technologies"
-  className="mb-4 h-14 object-contain block dark:hidden"
-/>
-
-{/* Dark mode logo */}
-<img
-  src={logoDark}
-  alt="Dbsol Technologies"
-  className="mb-4 h-14 object-contain hidden dark:block"
-/>
 <div className="flex items-center gap-2 mb-4">
 
 <img

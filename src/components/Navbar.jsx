@@ -4,8 +4,8 @@ import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import Home from "./Hero";
-import logo from "../assets/LOGO dbsol.png";
-
+import lightLogo from "../assets/LOGO dbsol.png";
+import darkLogo from "../assets/Dbsol logo.dark.png";
 export default function Header() {
 const navigate = useNavigate();
 
@@ -91,16 +91,18 @@ className={`text-2xl lg:hidden ${
   
 
   {/* Logo Image */}
-  <NavLink 
-    to="/" onClick={() => {
-  window.location.href = "/";
-}}>
-    <img
-      src={logo}
-      alt="Dbsol Technologies"
-      className="h-10 md:h-12 lg:h-14 object-contain"
-    />
-  </NavLink>
+ <NavLink
+  to="/"
+  onClick={() => {
+    window.location.href = "/";
+  }}
+>
+  <img
+    src={darkMode ? darkLogo : lightLogo}
+    alt="Dbsol Technologies"
+    className="h-10 md:h-12 lg:h-14 object-contain transition-all duration-300"
+  />
+</NavLink>
 
 </div> 
 
@@ -493,49 +495,23 @@ Login</NavLink>
 
 <button
 onClick={toggleDarkMode}
-className={`relative border-2 border-indigo-50 flex items-center w-14 h-7 rounded-full px-1 py-3.5 transition-all duration-500 ${
-darkMode ? "bg-black" : "bg-yellow-400"
+className={`relative border-2 border-indigo-50 flex items-center w-16 h-8 rounded-full p-1 transition-all duration-500 ${
+darkMode ? "bg-black" : "bg-yellow-300"
 }`}
 >
 
 <motion.div
 layout
-transition={{type:"spring", stiffness:700, damping:30}}
-className={`right-0 flex items-center justify-center w-5 h-5 bg-white rounded-full shadow-md ${
-  darkMode? "absolute right-1":""
-}`
-}>
+transition={{ type:"spring", stiffness:700, damping:30 }}
+className={`flex items-center justify-center w-5 h-5 bg-white rounded-full shadow-md ${
+darkMode ? "absolute right-1" : ""
+}`}
+>
 
 {darkMode ? (
-
-<svg
-xmlns="http://www.w3.org/2000/svg"
-fill="white"
-viewBox="0 0 24 24"
-stroke="white"
-className="w-4 h-4"
->
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-d="M21 12.79A9 9 0 0111.21 3
-7 7 0 1018 21
-9 9 0 0021 12.79z"
-/>
-</svg>
-
+  <FaMoon className="w-3 h-3 text-gray-800" />
 ) : (
-
-<svg
-xmlns="http://www.w3.org/2000/svg"
-fill="orange"
-viewBox="0 0 24 24"
-stroke="orange"
-className="w-4 h-4"
->
-<circle cx="12" cy="12" r="5"/>
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46 5.05 5.05m12.9 0-1.41 1.41M6.46 17.54l-1.41 1.41"/>
-</svg>
-
+  <FaSun className="w-3 h-3 text-yellow-500" />
 )}
 
 </motion.div>
