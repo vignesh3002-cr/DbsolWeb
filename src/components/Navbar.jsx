@@ -164,25 +164,22 @@ Home
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
         className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/10 backdrop-blur-md text-white dropdown"
+      bg-white/80 dark:bg-black/45 text-black dark:text-white dropdown"
           >
             <li >
               <NavLink
                 to="/Dynamics365Business"
                 className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
+                  isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : " hover:text-black dark:hover:text-white"}>
+                
                 Dynamics 365 Business
-              </NavLink>
+              </NavLink> 
             </li>
            
             
             <li>
               <NavLink to="/BusinessConsulting" className={({ isActive }) => 
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
+                  isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : " hover:text-black dark:hover:text-white"}>
       
                 Business Consulting
               </NavLink>
@@ -225,9 +222,7 @@ Home
                   <NavLink
                     to="/power-platform-solutions"
                     className={({ isActive }) =>
-                  isActive ? "border-b-2 border-blue-600 pb-1 text-black dark:text-white"
-                    : "hover:text-black dark:hover:text-white"
-                }>
+                  isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : " hover:text-black dark:hover:text-white"}>
                     Power Platform Solutions
                   </NavLink>
                 </li>
@@ -240,8 +235,7 @@ Home
             </li>
             <li>
               <NavLink to="/MobileAppDevelopment" className={({ isActive }) => 
-                isActive ? "text-blue-600 dark:text-white border-b-2 border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"
-              }>
+                isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : " hover:text-black dark:hover:text-white"}>
                 App Development
               </NavLink>
             </li>
@@ -250,7 +244,8 @@ Home
       </AnimatePresence>
     </li>
 {/*Solution */}
-<li
+
+{/*<li
 className="relative"
 onMouseEnter={()=>setSolutionOpen(true)}
 onMouseLeave={()=>setSolutionOpen(false)}
@@ -273,7 +268,7 @@ animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
 className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/10 backdrop-blur-md text-white dropdown"
+      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown"
 >
 
 <li className="cursor-pointer ">
@@ -313,6 +308,7 @@ Warehouse Management System</NavLink>
 
 </AnimatePresence>
 </li>
+*/}
 
 
 
@@ -342,7 +338,7 @@ animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
 className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/10 backdrop-blur-md text-white dropdown "
+      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown "
 >
 
 <li className="cursor-pointer">
@@ -500,7 +496,7 @@ Login</NavLink>
 <button
 onClick={toggleDarkMode}
 className={`relative border-2 border-indigo-50 flex items-center w-16 h-8 rounded-full p-1 transition-all duration-500 ${
-darkMode ? "bg-black" : "bg-yellow-300"
+darkMode ? "bg-black" : "bg-blue-300"
 }`}
 >
 
@@ -649,7 +645,7 @@ Home
   </AnimatePresence>
 
 </li>
-{/*Solution */}
+{/*Solution 
 <li
 className="relative"
 >
@@ -709,7 +705,7 @@ Inventory Management System</NavLink>
 
 </AnimatePresence>
 </li>
-
+*/}
 
 
 {/* INDUSTRIES MENU */}
