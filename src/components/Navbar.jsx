@@ -1,18 +1,16 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import Home from "./Hero";
 import lightLogo from "../assets/LOGO dbsol.png";
 import darkLogo from "../assets/Dbsol logo.dark.png";
 export default function Header() {
-const navigate = useNavigate();
 
-const [powerPlatformOpen, setPowerPlatformOpen] = useState(false);
+const [, setPowerPlatformOpen] = useState(false);
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
-const [solutionOpen,setSolutionOpen]=useState(false);
+const [,setSolutionOpen]=useState(false);
 const toggleServices = () => {
   setServicesOpen(prev => !prev);
   setIndustriesOpen(false);
@@ -25,29 +23,10 @@ const toggleIndustries = () => {
   setSolutionOpen(false);
 };
 
-const toggleSolutions = () => {
-  setSolutionOpen(prev => !prev);
-  setServicesOpen(false);
-  setIndustriesOpen(false);
-};
-
 const [darkMode,setDarkMode] = useState(
   document.documentElement.classList.contains("dark")
 );
 const [menu,setMenu] = useState(false)
-
-const goHome = (event) => {
-  event.preventDefault();
-  setMenu(false);
-  setServicesOpen(false);
-  setIndustriesOpen(false);
-  setSolutionOpen(false);
-  setPowerPlatformOpen(false);
-  navigate("/");
-  window.requestAnimationFrame(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  });
-};
 
 const toggleDarkMode = () =>{
 setDarkMode(!darkMode)
@@ -97,7 +76,7 @@ className={`text-2xl lg:hidden ${
     window.location.href = "/";
   }}
 >
-<img
+ <img
   src={darkMode ? darkLogo : lightLogo}
   alt="Dbsol Technologies"
   className={`object-contain transition-all duration-300 ${
@@ -110,6 +89,7 @@ className={`text-2xl lg:hidden ${
 
 </div> 
 </div>
+
 {/* NAVIGATION */}
 <div className="flex gap-4">
 <ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">
@@ -145,8 +125,7 @@ Home
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-        className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/80 dark:bg-black/45 text-black dark:text-white dropdown"
+        className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/80 dark:bg-black/45 dark:text-white dropdown"
           >
             <li >
               <NavLink
@@ -249,8 +228,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown"
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/90 dark:bg-black/45 dark:text-white dropdown"
 >
 
 <li className="cursor-pointer ">
@@ -319,8 +297,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown "
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/90 dark:bg-black/45 dark:text-white dropdown "
 >
 
 <li className="cursor-pointer">
@@ -611,7 +588,7 @@ Home
         </li>
 
         {/* App */}
-        <li classNamCe="cursor-pointer hover:text-blue-600">
+        <li className="cursor-pointer hover:text-blue-600">
           <NavLink
             to="/MobileAppDevelopment"
             className={({isActive}) =>

@@ -110,7 +110,7 @@ export default function BPage() {
       </h2>
 
       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-        Our business consulting services help organizations adapt, scale, compete in fast-changing markets. We partner with leadership teams to identify challenges, unlock opportunities, and deliver measurable impact. 
+        Our business consulting services help organizations adapt, scale, compete in fast-changing markets. We partner with leadership teams to identify challenges, unlock opportunities, and deliver measurable impact. 
       </p>
 
       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
