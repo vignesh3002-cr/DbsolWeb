@@ -71,6 +71,7 @@ return(
 <header className="fixed z-40 w-full transition bg-white dark:bg-gray-900">
 
 <div className="flex items-center justify-between max-w-full px-4 mx-auto">
+   
 
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
@@ -100,7 +101,7 @@ className={`text-2xl lg:hidden ${
   <img
     src={darkMode ? darkLogo : lightLogo}
     alt="Dbsol Technologies"
-    className="h-10 md:h-12 lg:h-14 object-contain transition-all duration-300"
+    className="object-contain h-10 transition-all duration-300 md:h-12 lg:h-14"
   />
 </NavLink>
 
@@ -125,6 +126,18 @@ Microsoft Partner
 </p>
 
 </div>
+<svg
+    className="h-[52px] w-[200px]"
+    viewBox="0 0 200 100"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0,100 C40,100 60,70 100,50 C140,30 160,0 200,0"
+      fill="none"
+      stroke="#2563eb"
+      strokeWidth="2"
+    />
+  </svg>
 
 </div>
 
@@ -163,8 +176,7 @@ Home
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-        className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/80 dark:bg-black/45 text-black dark:text-white dropdown"
+        className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/80 dark:bg-black/45 dark:text-white dropdown"
           >
             <li >
               <NavLink
@@ -267,8 +279,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown"
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/90 dark:bg-black/45 dark:text-white dropdown"
 >
 
 <li className="cursor-pointer ">
@@ -337,8 +348,7 @@ initial={{opacity:0,y:-10}}
 animate={{opacity:1,y:0}}
 exit={{opacity:0,y:-10}}
 transition={{duration:0.25}}
-className="absolute left-0 w-64 p-6 space-y-3 font-semibold rounded-lg
-      bg-white/90 dark:bg-black/45 text-black dark:text-white dropdown "
+className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/90 dark:bg-black/45 dark:text-white dropdown "
 >
 
 <li className="cursor-pointer">
