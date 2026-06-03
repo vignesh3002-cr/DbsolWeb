@@ -97,37 +97,19 @@ className={`text-2xl lg:hidden ${
     window.location.href = "/";
   }}
 >
-  <img
-    src={darkMode ? darkLogo : lightLogo}
-    alt="Dbsol Technologies"
-    className="h-10 md:h-12 lg:h-14 object-contain transition-all duration-300"
-  />
+<img
+  src={darkMode ? darkLogo : lightLogo}
+  alt="Dbsol Technologies"
+  className={`object-contain transition-all duration-300 ${
+    darkMode
+      ? "h-20 md:h-16 lg:h-24"
+      : "h-14 md:h-10 lg:h-20"
+  }`}
+/>
 </NavLink>
 
 </div> 
-
-{/* Divider */}
-
-<div className="w-px h-6 bg-gray-300"></div>
-
-{/* Microsoft Partner Badge */}
-
-<div className="flex items-center gap-2 transition-all duration-300 group-hover:scale-105">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-alt="Microsoft Logo"
-className="w-5 h-5"
-/>
-
-<p className="text-sm font-medium text-gray-600 lg:text-base dark:text-gray-300">
-Microsoft Partner
-</p>
-
 </div>
-
-</div>
-
 {/* NAVIGATION */}
 <div className="flex gap-4">
 <ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">

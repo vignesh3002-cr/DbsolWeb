@@ -45,7 +45,7 @@ icon:<FaAward size={30}/>
 
 return(
 
-<section ref={ref} className="py-8 text-white bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+<section ref={ref} className="py-8 text-black dark:text-white dark:bg-gray-900 ">
 
 <div className="px-6 mx-auto max-w-7xl">
 
@@ -59,7 +59,7 @@ Why Choose DBSol
 
 </h2>
 
-<p className="max-w-2xl mx-auto text-gray-300">
+<p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
 
 Delivering powerful digital transformation solutions that help
 businesses scale, innovate and achieve long-term success.
@@ -89,7 +89,7 @@ className="relative p-10 text-center border shadow-xl bg-white/5 backdrop-blur-m
 
 {/* Icon */}
 
-<div className="flex justify-center mb-6 text-blue-400">
+<div className="flex justify-center mb-6 text-blue-600">
 
 {item.icon}
 
@@ -120,7 +120,7 @@ className="relative p-10 text-center border shadow-xl bg-white/5 backdrop-blur-m
 
 {/* Label */}
 
-<p className="text-gray-300">
+<p className="text-gray-600 dark:text-gray-200">
 
 {item.label}
 
