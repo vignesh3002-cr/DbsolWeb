@@ -23,15 +23,27 @@ const toggleIndustries = () => {
   setSolutionOpen(false);
 };
 
-const [darkMode,setDarkMode] = useState(
-  document.documentElement.classList.contains("dark")
-);
+const [darkMode,setDarkMode] = useState(() => {
+  if (typeof window === "undefined") return true;
+  const storedTheme = window.localStorage.getItem("theme");
+  if (storedTheme === "light") return false;
+  if (storedTheme === "dark") return true;
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true;
+});
 const [menu,setMenu] = useState(false)
 
-const toggleDarkMode = () =>{
-setDarkMode(!darkMode)
-document.documentElement.classList.toggle("dark")
-}
+const toggleDarkMode = () => {
+  setDarkMode(prev => {
+    const nextTheme = !prev;
+    window.localStorage.setItem("theme", nextTheme ? "dark" : "light");
+    return nextTheme;
+  });
+};
+
+useEffect(() => {
+  document.documentElement.classList.toggle("dark", darkMode);
+  window.localStorage.setItem("theme", darkMode ? "dark" : "light");
+}, [darkMode]);
 
 useEffect(() => {
   if (menu) {
@@ -44,6 +56,7 @@ useEffect(() => {
     document.body.style.overflow = "auto";
   };
 }, [menu]);
+
 void motion;
 return(
 <div className="relative">
@@ -54,14 +67,10 @@ return(
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
   <button
-onClick={()=>setMenu(!menu)}
-className={`text-2xl lg:hidden ${
-  darkMode ? "text-white" : "dark-text-black"
-} `}
+  onClick={() => setMenu(!menu)}
+  className="text-2xl lg:hidden text-black dark:text-white"
 >
-{menu? '✕' : '☰'}
-
-
+  {menu ? "✕" : "☰"}
 </button>
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
@@ -81,7 +90,7 @@ className={`text-2xl lg:hidden ${
   alt="Dbsol Technologies"
   className={`object-contain transition-all duration-300 ${
     darkMode
-      ? "h-20 md:h-16 lg:h-24"
+      ? "h-14 md:h-10 lg:h-24"
       : "h-14 md:h-10 lg:h-20"
   }`}
 />
@@ -452,30 +461,6 @@ Login</NavLink>
 </ul>
 
 
-<button
-onClick={toggleDarkMode}
-className={`relative border-2 border-indigo-50 flex items-center w-16 h-8 rounded-full p-1 transition-all duration-500 ${
-darkMode ? "bg-black" : "bg-blue-300"
-}`}
->
-
-<motion.div
-layout
-transition={{ type:"spring", stiffness:700, damping:30 }}
-className={`flex items-center justify-center w-5 h-5 bg-white rounded-full shadow-md ${
-darkMode ? "absolute right-1" : ""
-}`}
->
-
-{darkMode ? (
-  <FaMoon className="w-3 h-3 text-gray-800" />
-) : (
-  <FaSun className="w-3 h-3 text-yellow-500" />
-)}
-
-</motion.div>
-
-</button>
 </div>
 </div>
 </header>
@@ -831,6 +816,31 @@ Login</NavLink>
 </motion.div>
 
 )}
+<button
+  onClick={toggleDarkMode}
+  aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+  className="fixed bottom-6 left-4 z-10 flex h-10 w-24 items-center justify-between gap-1 rounded-xl border border-slate-300 bg-slate-100 px-2 text-slate-900 shadow-md transition-all duration-500 hover:border-blue-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+>
+  <span
+    className={`flex h-8 w-8 items-center justify-center rounded-lg transition-all duration-500 ${
+      darkMode
+        ? "bg-blue-600 text-white"
+        : "bg-slate-200 text-slate-800"
+    }`}
+  >
+    {darkMode ? (
+      <FaMoon className="h-4 w-4" />
+    ) : (
+      <FaSun className="h-4 w-4" />
+    )}
+  </span>
+
+  <span className="text-xs font-semibold uppercase tracking-wide">
+    {darkMode ? "Dark" : "Light"}
+  </span>
+</button>
+
+
 </div>
 
 )

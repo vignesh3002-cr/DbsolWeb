@@ -43,14 +43,14 @@ return(
     <img
       src={logoDark}
       alt="Dbsol Technologies"
-      className="mb-6 h-20 object-contain"
+      className="mb-4 h-20 object-contain"
     />
 
-<div className="flex items-center gap-2 mb-4">
+<div className="flex items-center gap-2 mb-2">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-className="w-6"
+className="w-5"
 />
 
 <span className="text-sm text-gray-400">
@@ -59,7 +59,7 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-relaxed text-gray-400 max-w-xs hover:text-gray-300">
+<p className="text-sm leading-relaxed text-justify text-gray-400 max-w-xs hover:text-gray-300">
 
 We specialize in enterprise digital transformation services, including Dynamics 365 Finance & Operations, strategic Business Consulting, Customer Engagement solutions, and advanced web and cross-platform mobile application development.
 
