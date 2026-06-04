@@ -23,27 +23,15 @@ const toggleIndustries = () => {
   setSolutionOpen(false);
 };
 
-const [darkMode,setDarkMode] = useState(() => {
-  if (typeof window === "undefined") return true;
-  const storedTheme = window.localStorage.getItem("theme");
-  if (storedTheme === "light") return false;
-  if (storedTheme === "dark") return true;
-  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true;
-});
+const [darkMode,setDarkMode] = useState(
+  document.documentElement.classList.contains("dark")
+);
 const [menu,setMenu] = useState(false)
 
-const toggleDarkMode = () => {
-  setDarkMode(prev => {
-    const nextTheme = !prev;
-    window.localStorage.setItem("theme", nextTheme ? "dark" : "light");
-    return nextTheme;
-  });
-};
-
-useEffect(() => {
-  document.documentElement.classList.toggle("dark", darkMode);
-  window.localStorage.setItem("theme", darkMode ? "dark" : "light");
-}, [darkMode]);
+const toggleDarkMode = () =>{
+setDarkMode(!darkMode)
+document.documentElement.classList.toggle("dark")
+}
 
 useEffect(() => {
   if (menu) {
@@ -56,29 +44,28 @@ useEffect(() => {
     document.body.style.overflow = "auto";
   };
 }, [menu]);
-
 void motion;
 return(
 <div className="relative">
 <header className="fixed z-40 w-full transition bg-white dark:bg-gray-900">
 
-<div className="flex items-center justify-between max-w-full px-4 mx-auto">
+ <div className="flex items-center justify-between max-w-full px-4 mx-auto">
 
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
   <button
-  onClick={() => setMenu(!menu)}
-  className="text-2xl lg:hidden text-black dark:text-white"
+onClick={()=>setMenu(!menu)}
+className={`text-2xl lg:hidden ${
+  darkMode ? "text-white" : "dark-text-black"
+} `}
 >
-  {menu ? "✕" : "☰"}
+{menu? '✕' : '☰'}
 </button>
+
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
   
-  {/* Menu Button */}
-  
-
-  {/* Logo Image */}
+{/* Logo Image */}
  <NavLink
   to="/"
   onClick={() => {
@@ -460,9 +447,14 @@ Login</NavLink>
 </li>
 </ul>
 
+</div>
+</div>
 
-</div>
-</div>
+
+
+
+
+
 </header>
 {
   /* Mobile View */
@@ -818,29 +810,15 @@ Login</NavLink>
 )}
 <button
   onClick={toggleDarkMode}
-  aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-  className="fixed bottom-6 left-4 z-10 flex h-10 w-24 items-center justify-between gap-1 rounded-xl border border-slate-300 bg-slate-100 px-2 text-slate-900 shadow-md transition-all duration-500 hover:border-blue-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+  className="fixed bottom-6 left-4 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 shadow-md"
 >
-  <span
-    className={`flex h-8 w-8 items-center justify-center rounded-lg transition-all duration-500 ${
-      darkMode
-        ? "bg-blue-600 text-white"
-        : "bg-slate-200 text-slate-800"
-    }`}
-  >
-    {darkMode ? (
-      <FaMoon className="h-4 w-4" />
-    ) : (
-      <FaSun className="h-4 w-4" />
-    )}
-  </span>
+  {darkMode ? (
+    <FaSun className="h-5 w-5 text-white" />
+  ) : (
+    <FaMoon className="h-5 w-5 text-white" />
+  )}
 
-  <span className="text-xs font-semibold uppercase tracking-wide">
-    {darkMode ? "Dark" : "Light"}
-  </span>
 </button>
-
-
 </div>
 
 )
