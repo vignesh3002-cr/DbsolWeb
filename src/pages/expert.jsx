@@ -12,7 +12,7 @@ export default function ContactExperts() {
       image:"/images/COE-1.jpg",
       name: "Arun Kumar",
       role: "Finance Consultant",
-      email: "arun@example.com",
+      email: "arun@example.com",  
     },
     {
       title: "Business Solutions",

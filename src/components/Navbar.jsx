@@ -47,13 +47,32 @@ useEffect(() => {
 void motion;
 return(
 <div className="relative">
-<header className="fixed z-40 w-full transition bg-white dark:bg-gray-900">
+<header className="fixed z-40 w-full h-[80px] flex items-center bg-blue-600">
 
- <div className="flex items-center justify-between max-w-full px-4 mx-auto">
 
-{/* LOGO */}
-<div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
-  <button
+  {/* LEFT SIDE (Logo + White curve) */}
+  <div className="flex items-center w-[35%] relative">
+
+
+
+{/* Curved Shape */}
+    <div className="absolute left-0 top-0 h-full w-[420px] -z-10">
+
+  <svg
+    viewBox="0 0 500 80"
+    preserveAspectRatio="none"
+    className="w-full h-full"
+  >
+    <path
+      d="M0,80 H320 
+         C380,80 420,60 450,20 
+         C470,0 490,0 500,0 
+         H0 Z"
+      fill="#e5e7eb"
+    />
+  </svg>
+</div>
+   <button
 onClick={()=>setMenu(!menu)}
 className={`text-2xl lg:hidden ${
   darkMode ? "text-white" : "dark-text-black"
@@ -63,7 +82,7 @@ className={`text-2xl lg:hidden ${
 </button>
 
 {/* LOGO */}
-<div className="flex items-center gap-4 cursor-pointer md:gap-1 group">
+<div className="flex items-center gap-8 cursor-pointer md:gap-1 group -mr-16 pl-10">
   
 {/* Logo Image */}
  <NavLink
@@ -77,8 +96,8 @@ className={`text-2xl lg:hidden ${
   alt="Dbsol Technologies"
   className={`object-contain transition-all duration-300 ${
     darkMode
-      ? "h-14 md:h-10 lg:h-24"
-      : "h-14 md:h-10 lg:h-20"
+      ? "h-16 md:h-14 lg:h-20"
+      : "h-16 md:h-14 lg:h-20"
   }`}
 />
 </NavLink>
@@ -87,16 +106,17 @@ className={`text-2xl lg:hidden ${
 </div>
 
 {/* NAVIGATION */}
-<div className="flex gap-4">
-<ul className="hidden font-medium lg:gap-3 lg:text-sm xl:gap-6 xl:text-base dark:text-white lg:flex">
+<div className="flex-1 flex justify-end pr-12 lg:pr-20">
 
-<li className="cursor-pointer hover:text-blue-600">
+  {/* LEFT MENU */}
+  <ul className="hidden lg:flex items-center gap-4 text-sm lg:text-base font-medium text-gray-200 ">
+<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap">
 <NavLink
   to="/" onClick={() => {
   window.location.href = "/";
 }}
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
 >
 Home
 </NavLink>
@@ -106,11 +126,12 @@ Home
 {/* SERVICES MENU */}
 
 {/* Services Dropdown */}
-      <li className="relative"
+     <li className="relative whitespace-nowrap"
+
         onMouseEnter={() => setServicesOpen(true)}
         onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
       >              
-      <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600">
+      <div className="flex items-center gap-1 cursor-pointer hover:text-black dark:hover:text-white">
         Our Services
         {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
       </div>
@@ -208,7 +229,7 @@ onMouseEnter={()=>setSolutionOpen(true)}
 onMouseLeave={()=>setSolutionOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600 dark:hover:text-white">
 Solutions
 
 {solutionOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
@@ -276,7 +297,7 @@ onMouseEnter={()=>setIndustriesOpen(true)}
 onMouseLeave={()=>setIndustriesOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div className="flex items-center gap-2 cursor-pointer hover:text-black dark:hover:text-white">
 
 Industries
 
@@ -373,13 +394,12 @@ Hospitality</NavLink>
 
 </li>
 
+<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap">
 
-<li className="cursor-pointer hover:text-blue-600">
 <NavLink
 to="/aboutUs"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"
-}
+isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
 >
 About Us
 </NavLink>
@@ -430,28 +450,26 @@ Careers
 </li>
 */}
 {/* contact us */}
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap">
 <NavLink
   to="/contact"
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
 >Contact Us</NavLink>
 </li>
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap ml-4">
+
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
 >
 Login</NavLink>
 </li>
 </ul>
 
+
 </div>
-</div>
-
-
-
 
 
 
@@ -810,14 +828,13 @@ Login</NavLink>
 )}
 <button
   onClick={toggleDarkMode}
-  className="fixed bottom-6 left-4 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 shadow-md"
+  className="fixed bottom-24 md:bottom-28 left-4 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 dark:bg-black shadow-md"
 >
   {darkMode ? (
-    <FaSun className="h-5 w-5 text-white" />
-  ) : (
     <FaMoon className="h-5 w-5 text-white" />
+  ) : (
+    <FaSun className="h-5 w-5 text-white" />
   )}
-
 </button>
 </div>
 
