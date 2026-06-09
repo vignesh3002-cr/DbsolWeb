@@ -52,26 +52,28 @@ return(
 
   {/* LEFT SIDE (Logo + White curve) */}
   <div className="flex items-center w-[35%] relative">
-
-
-
-{/* Curved Shape */}
-    <div className="absolute left-0 top-0 h-full w-[420px] -z-10">
-
-  <svg
-    viewBox="0 0 500 80"
-    preserveAspectRatio="none"
-    className="w-full h-full"
-  >
-    <path
-      d="M0,80 H320 
-         C380,80 420,60 450,20 
-         C470,0 490,0 500,0 
-         H0 Z"
-      fill="#e5e7eb"
-    />
-  </svg>
+{/*S Curve Shape*/}
+<div className="absolute left-0 top-0 h-full w-full overflow-visible -z-10">
+  <div className="w-[650px] sm:w-[520px] md:w-[420px] h-full ">
+    <svg
+      viewBox="0 0 500 120"
+      preserveAspectRatio="none"
+      className="w-full h-full"
+    >
+      <path
+        d="
+          M0,120
+          H260
+          C340,120 380,80 420,40
+          C450,10 470,0 500,0
+          H0 Z
+        "
+        fill="#e5e7eb"
+      />
+    </svg>
+  </div>
 </div>
+
    <button
 onClick={()=>setMenu(!menu)}
 className={`text-2xl lg:hidden ${
@@ -828,12 +830,12 @@ Login</NavLink>
 )}
 <button
   onClick={toggleDarkMode}
-  className="fixed bottom-10 left-4 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 dark:bg-black shadow-md"
+  className="fixed bottom-10 left-4 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-white dark:bg-black shadow-md"
 >
   {darkMode ? (
     <FaMoon className="h-5 w-5 text-white" />
   ) : (
-    <FaSun className="h-5 w-5 text-white" />
+    <FaSun className="h-5 w-5 text-yellow-500" />
   )}
 </button>
 </div>
