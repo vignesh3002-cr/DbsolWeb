@@ -47,7 +47,7 @@ useEffect(() => {
 void motion;
 return(
 <div className="relative">
-<header className="fixed z-40 w-full h-[80px] flex items-center bg-blue-600">
+<header className="fixed z-40 w-full h-[80px] flex items-center bg-white dark:bg-gray-900">
 
 
   {/* LEFT SIDE (Logo + White curve) */}
@@ -68,7 +68,7 @@ return(
           C450,10 470,0 500,0
           H0 Z
         "
-        fill="#e5e7eb"
+        fill="#ffffff"
       />
     </svg>
   </div>
@@ -84,41 +84,35 @@ className={`text-2xl lg:hidden ${
 </button>
 
 {/* LOGO */}
-<div className="flex items-center gap-8 cursor-pointer md:gap-1 group -mr-16 pl-10">
+<div className="flex items-center gap-4 cursor-pointer pl-2 md:pl-4">
   
-{/* Logo Image */}
- <NavLink
-  to="/"
-  onClick={() => {
-    window.location.href = "/";
-  }}
->
- <img
-  src={darkMode ? darkLogo : lightLogo}
-  alt="Dbsol Technologies"
-  className={`object-contain transition-all duration-300 ${
-    darkMode
-      ? "h-16 md:h-14 lg:h-20"
-      : "h-16 md:h-14 lg:h-20"
-  }`}
-/>
-</NavLink>
+  <NavLink
+    to="/"
+    onClick={() => {
+      window.location.href = "/";
+    }}
+  >
+    <img
+      src={darkMode ? darkLogo : lightLogo}
+      alt="Dbsol Technologies"
+      className="object-contain h-16 md:h-14 lg:h-20 transition-all duration-300"
+    />
+  </NavLink>
 
-</div> 
 </div>
-
+</div>
 {/* NAVIGATION */}
 <div className="flex-1 flex justify-end pr-12 lg:pr-20">
 
   {/* LEFT MENU */}
   <ul className="hidden lg:flex items-center gap-4 text-sm lg:text-base font-medium text-gray-200 ">
-<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap">
+<li className="cursor-pointer text-blue-600 whitespace-nowrap">
 <NavLink
   to="/" onClick={() => {
   window.location.href = "/";
 }}
   className={({isActive}) =>
-  isActive ? "text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
 >
 Home
 </NavLink>
@@ -133,7 +127,7 @@ Home
         onMouseEnter={() => setServicesOpen(true)}
         onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
       >              
-      <div className="flex items-center gap-1 cursor-pointer hover:text-black dark:hover:text-white">
+      <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 text-black dark:text-white">
         Our Services
         {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
       </div>
@@ -299,7 +293,7 @@ onMouseEnter={()=>setIndustriesOpen(true)}
 onMouseLeave={()=>setIndustriesOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-black dark:hover:text-white">
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600 text-black dark:text-white">
 
 Industries
 
@@ -401,7 +395,7 @@ Hospitality</NavLink>
 <NavLink
 to="/aboutUs"
 className={({isActive}) =>
-isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black hover:text-blue-600 dark:text-white"}
 >
 About Us
 </NavLink>
@@ -456,7 +450,7 @@ Careers
 <NavLink
   to="/contact"
   className={({isActive}) =>
-  isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
 >Contact Us</NavLink>
 </li>
 <li className="cursor-pointer hover:text-blue-600 whitespace-nowrap ml-4">
@@ -464,7 +458,7 @@ Careers
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>
-isActive ? "text-white dark:text-white border-b-2 border-white pb-1" : "hover:text-black dark:hover:text-white"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
 >
 Login</NavLink>
 </li>
@@ -813,11 +807,11 @@ Contact Us</NavLink>
 </li>
 
 
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer hover:text-white whitespace-nowrap ml-4">
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "  hover:text-blue-600  dark:text-white"}
 >
 Login</NavLink>
 </li>
