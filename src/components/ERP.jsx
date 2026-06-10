@@ -38,7 +38,7 @@ desc:"Train employees and provide ongoing system support and maintenance."
 
 return(
 
-<section className="py-8 bg-gray-100 dark:bg-gray-900">
+<section className="py-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 

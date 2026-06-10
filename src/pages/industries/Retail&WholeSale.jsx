@@ -153,9 +153,9 @@ export default function RetailWholesale() {
       </section>
 
       {/* SOLUTIONS */}
-      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+      <section className="py-28 bg-white dark:bg-gray-800 ">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
             Our Retail & Wholesale Capabilities
           </h2>
 
@@ -164,7 +164,7 @@ export default function RetailWholesale() {
               <motion.div
                 whileHover={{ scale: 1.04 }}
                 key={i}
-                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
+                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-black dark:text-white text-center shadow-lg "
               >
                 <div className="text-3xl text-blue-400 mb-4">
                   <item.icon />
@@ -174,7 +174,7 @@ export default function RetailWholesale() {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>

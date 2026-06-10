@@ -4,7 +4,6 @@ import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import lightLogo from "../assets/LOGO dbsol.png";
-import darkLogo from "../assets/Dbsol logo.dark.png";
 export default function Header() {
 
 const [, setPowerPlatformOpen] = useState(false);
@@ -93,7 +92,7 @@ className={`text-2xl lg:hidden ${
     }}
   >
     <img
-      src={darkMode ? darkLogo : lightLogo}
+      src={darkMode ? lightLogo : lightLogo}
       alt="Dbsol Technologies"
       className="object-contain h-16 md:h-14 lg:h-20 transition-all duration-300"
     />
@@ -108,11 +107,9 @@ className={`text-2xl lg:hidden ${
   <ul className="hidden lg:flex items-center gap-4 text-sm lg:text-base font-medium text-gray-200 ">
 <li className="cursor-pointer text-blue-600 whitespace-nowrap">
 <NavLink
-  to="/" onClick={() => {
-  window.location.href = "/";
-}}
-  className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
+to="/"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black hover:text-blue-600 dark:text-white dark:hover:text-blue-600"}
 >
 Home
 </NavLink>
@@ -127,7 +124,7 @@ Home
         onMouseEnter={() => setServicesOpen(true)}
         onMouseLeave={() => { setServicesOpen(false); setPowerPlatformOpen(false); }}
       >              
-      <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 text-black dark:text-white">
+      <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 text-black dark:text-white dark:hover:text-blue-600">
         Our Services
         {servicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
       </div>
@@ -293,7 +290,7 @@ onMouseEnter={()=>setIndustriesOpen(true)}
 onMouseLeave={()=>setIndustriesOpen(false)}
 >
 
-<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600 text-black dark:text-white">
+<div className="flex items-center gap-2 cursor-pointer hover:text-blue-600 text-black dark:text-white dark:hover:text-blue-600 ">
 
 Industries
 
@@ -395,7 +392,7 @@ Hospitality</NavLink>
 <NavLink
 to="/aboutUs"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black hover:text-blue-600 dark:text-white"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black hover:text-blue-600 dark:text-white dark:hover:text-blue-600"}
 >
 About Us
 </NavLink>
@@ -450,7 +447,7 @@ Careers
 <NavLink
   to="/contact"
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600 dark:hover:"}
 >Contact Us</NavLink>
 </li>
 <li className="cursor-pointer hover:text-blue-600 whitespace-nowrap ml-4">
@@ -458,7 +455,7 @@ Careers
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-600"}
 >
 Login</NavLink>
 </li>
@@ -483,7 +480,7 @@ Login</NavLink>
   window.location.href = "/";
 }}
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600 "}
 >
 Home
 </NavLink>
@@ -498,7 +495,7 @@ Home
     onClick={toggleServices}
     className="flex items-center gap-2 cursor-pointer hover:text-blue-600"
   >
-    Services
+     Services
     {servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
   </div>
 

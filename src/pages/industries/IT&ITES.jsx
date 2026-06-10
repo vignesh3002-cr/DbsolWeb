@@ -152,9 +152,9 @@ export default function ITITES() {
       </section>
 
       {/* SOLUTIONS */}
-      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+      <section className="py-28 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 darktext-white text-center mb-20">
             Our IT & ITES Capabilities
           </h2>
 
@@ -170,10 +170,10 @@ export default function ITITES() {
                   <div className="text-3xl text-blue-400 mb-4">
                     <Icon />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">
+                  <h3 className="text-xl text-black dark:text-white font-semibold mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>

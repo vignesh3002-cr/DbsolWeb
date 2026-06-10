@@ -151,9 +151,9 @@ const cases = [
       </section>
 
       {/* SOLUTIONS */}
-      <section className="py-28 bg-gradient-to-br from-gray-900 to-gray-800">
+      <section className="py-28 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
             Our Manufacturing Capabilities
           </h2>
 
@@ -162,7 +162,7 @@ const cases = [
               <motion.div
                 whileHover={{ scale: 1.04 }}
                 key={i}
-                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
+                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-black dark:text-white text-center shadow-lg"
               >
                 <div className="text-3xl text-blue-400 mb-4">
                   {item.icon}
@@ -170,7 +170,7 @@ const cases = [
                 <h3 className="text-xl font-semibold mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -183,7 +183,7 @@ const cases = [
       <section
       id="case-studies"
       className="py-16 max-w-5xl mx-auto px-6">
-        <p className="text-xs tracking-[2px] uppercase text-gray-400 dark:text-gray-500 font-medium mb-2">Case Study</p>
+        <p className="text-xs tracking-[2px] uppercase text-gray-900 dark:text-gray-500 font-medium mb-2">Case Study</p>
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">Featured Project</h2>
         <div className="grid gap-5 md:grid-cols-1">
           {cases.map((item, index) => (
@@ -210,7 +210,7 @@ const cases = [
                   <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100 mb-2 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                     {item.desc}
                   </p>
                   <div className="flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-medium px-3 py-2 rounded-lg">

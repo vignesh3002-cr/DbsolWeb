@@ -261,7 +261,7 @@ function VideoModal({ videoId, onClose }) {
 ───────────────────────────────────────────────────────────────────────────── */
 function TimelineBlock() {
   return (
-    <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-5">
+    <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 rounded-2xl p-5">
       <p className="text-[14px] text-[#444] tracking-[0.12em] uppercase font-semibold mb-[18px] dark:text-white/90">
         Our Migration Process
       </p>
@@ -375,11 +375,14 @@ export default function TestimonialsSection() {
         .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
       `}</style>
 
-      <section
-        ref={sectionRef}
-        className="relative overflow-hidden bg-[#e5e5e5] dark:bg-slate-900 font-jakarta text-white
-                   py-[8px] md:py-[8px]"
-      >
+     <section
+  ref={sectionRef}
+  className="relative overflow-hidden 
+             bg-gradient-to-br from-gray-100 via-white to-gray-200 
+             dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-950 dark:to-black 
+             text-gray-900 dark:text-white 
+             py-[8px] md:py-[8px]"
+>
                       <h2 className="mb-2 text-[clamp(38px,6vw,60px)] font-bold text-center text-gray-950 dark:text-white">
 Client Success Stories
 </h2>
@@ -426,15 +429,12 @@ Client Success Stories
             {/* Badge */}
 
             {/* Headline */}
-            <h2 className="font-serif font-extrabold leading-[1.06] tracking-[-0.03em] text-inherit mb-[18px]
-                           text-[clamp(48px,8vw,60px)] md:text-[clamp(58px,5vw,80px)]">
+            <h2 className="font-semibold  leading-[1.06] tracking-[-0.03em] text-black mb-[18px]
+                           text-[clamp(28px,5vw,40px)] md:text-[clamp(32px,4vw,48px)] dark:text-white">
               Real migrations.<br />
               <span
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: "linear-gradient(90deg,#C8962A,#F5D07A,#C8962A)",
-                  backgroundSize: "200% auto",
-                }}
+                className="text-black dark:text-white"
+                
               >
                 Real results.
               </span>
