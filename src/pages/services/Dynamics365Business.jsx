@@ -262,7 +262,7 @@ export default function Dynamics365Business() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-center text-white dark:from-gray-900 dark:to-blue-950 lg:py-20">
+      <section className=" bg-indigo-700  py-16 text-center text-white dark:bg-gray-900  lg:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="mb-6 text-3xl font-bold lg:text-4xl">
             Transform Your Business with Dynamics 365

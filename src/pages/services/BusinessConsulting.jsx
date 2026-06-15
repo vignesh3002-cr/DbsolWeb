@@ -103,6 +103,7 @@ export default function BPage() {
       <section className="bg-gray-50 dark:bg-gray-800 mb-2 py-16">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12  items-center">
     
+
     {/* LEFT CONTENT */}
     <div>
       <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
@@ -132,6 +133,7 @@ export default function BPage() {
 
   </div>
 </section>
+
    {/* WAVEFORM CARDS */}
 
   <div className="max-w-7xl bg-white-100 dark:bg-gray-800 mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
@@ -158,9 +160,65 @@ export default function BPage() {
 
 </div>
      
+     <section className="bg-white dark:bg-gray-900 py-16">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <h2 className="text-3xl font-bold mb-12 text-center text-gray-800 dark:text-white">
+      Why Choose Our Consulting?
+    </h2>
+
+    {/* Content */}
+    <div className="grid md:grid-cols-2 gap-12 items-start">
+
+      {/* LEFT SIDE */}
+      <div className="space-y-8">
+        <div className="flex items-start gap-4">
+          <div className="text-blue-600 text-2xl">✔</div>
+          <div>
+            <h3 className="text-xl text-gray-800 dark:text-white font-semibold">Industry Expertise</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Years of cross-industry consulting experience in finance, supply chain, and operations.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-4">
+          <div className="text-blue-600 text-2xl">✔</div>
+          <div>
+            <h3 className="text-xl text-gray-800 dark:text-white font-semibold">Results-Driven</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              We focus on measurable KPIs, delivering real business outcomes—not just strategies.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-4">
+          <div className="text-blue-600 text-2xl">✔</div>
+          <div>
+            <h3 className="text-xl text-gray-800 dark:text-white font-semibold">End-to-End Support</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              From strategy to implementation, we stay with you every step of the journey.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE IMAGE (optional but premium) */}
+      <div>
+        <img
+          src="/images/consulting-team.jpg"
+          alt="Consulting"
+          className="rounded-2xl shadow-lg w-full h-[300px] object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
      {/* CONSULTING AREAS */}
       <section className="bg-gray-100 dark:bg-gray-800 text-center py-10">
-        <div className="max-w-7xl dark:bg-gray-800 mx-auto px-6">
+        <div className="max-w-7xl dark:text-white dark:bg-gray-800 mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">
             Our Consulting Areas
           </h2>
@@ -211,7 +269,10 @@ export default function BPage() {
       ))}
     </div>
   </div>
-</section>     
+</section>    
+
+
+
 
  {/* APPROACH & BENEFITS */}
       <section className="py-16">
@@ -245,11 +306,30 @@ export default function BPage() {
         </div>
       </section>
 
+      <section className="bg-gray-100 dark:bg-gray-900 py-16 text-center">
+  <div className="max-w-4xl mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">
+      What Our Clients Say
+    </h2>
+
+    <p className="text-lg text-gray-600 dark:text-gray-300 italic">
+      "Their consulting approach transformed our operations. We improved efficiency by 40% within months."
+    </p>
+
+    <p className="mt-4 font-semibold text-gray-800 dark:text-white">
+      — CFO, Logistics Company
+    </p>
+  </div>
+</section>
+
       {/* BUSINESS IMPACT */}
     
 <section className="bg-gray-50 dark:bg-gray-900 py-16">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-    
+    <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 md:col-span-4">
+      Our Business Impact
+    </h1>
+
     {/* Card 1 */}
     <div className="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
       <h3 className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">25%</h3>
@@ -282,6 +362,44 @@ export default function BPage() {
       </p>
     </div>
 
+  </div>
+</section>
+
+<section className="bg-white dark:bg-gray-800 py-16 text-center">
+  <h2 className="text-3xl font-bold mb-10 text-gray-800 dark:text-white">
+    Technologies We Work With
+  </h2>
+
+  <div className="flex flex-wrap justify-center gap-6 text-lg font-semibold text-gray-600 dark:text-gray-300">
+    <span>D365 F&O</span>
+    <span>Azure</span>
+    <span>Power BI</span>
+    <span>React</span>
+    <span>Node.js</span>
+    <span>Mobile Apps</span>
+  </div>
+</section>
+<section className="bg-gray-50 dark:bg-gray-900 py-16">
+  <div className="max-w-4xl mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="space-y-6">
+      <div>
+        <h3 className="font-semibold text-lg">How long does consulting take?</h3>
+        <p className="text-gray-600 dark:text-gray-300">
+          Depends on project scope — typically 3 to 6 months for full transformation.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-lg">Do you provide implementation?</h3>
+        <p className="text-gray-600 dark:text-gray-300">
+          Yes, we offer end-to-end services from consulting to execution.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 

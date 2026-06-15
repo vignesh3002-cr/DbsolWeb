@@ -73,13 +73,13 @@ return(
   </div>
 </div>
 
-   <button
-onClick={()=>setMenu(!menu)}
-className={`text-2xl lg:hidden ${
-  darkMode ? "text-white" : "dark-text-black"
-} `}
+{/* LOGO */}
+<div className="flex items-center gap-4 cursor-pointer pl-2 md:pl-4">
+  <button
+  onClick={() => setMenu(!menu)}
+  className="text-2xl lg:hidden text-black dark:text-white ml-2"
 >
-{menu? '✕' : '☰'}
+  {menu ? "✕" : "☰"}
 </button>
 
 {/* LOGO */}
@@ -98,6 +98,7 @@ className={`text-2xl lg:hidden ${
     />
   </NavLink>
 
+</div>
 </div>
 </div>
 {/* NAVIGATION */}
@@ -804,7 +805,7 @@ Contact Us</NavLink>
 </li>
 
 
-<li className="cursor-pointer hover:text-white whitespace-nowrap ml-4">
+<li className="cursor-pointer hover:text-white whitespace-nowrap ml-2">
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>

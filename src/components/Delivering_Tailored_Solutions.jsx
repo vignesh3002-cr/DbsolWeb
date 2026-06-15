@@ -201,7 +201,7 @@ export default function DeliveringTailoredSolutions({
           </div>
 
           {!isLockedToSingleService && (
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 min-h-[56px]">
               {serviceEntries.map(([serviceKey, serviceItem]) => {
                 const isActive = serviceKey === resolvedSlug;
 
@@ -226,13 +226,13 @@ export default function DeliveringTailoredSolutions({
                         }
                       }, 100);
                     }}
-                    className={`h-full min-w-0 rounded-2xl border p-5 text-left transition-all ${
+                    className={`flex flex-col h-full min-w-0 rounded-2xl border p-5 text-left transition-all ${
                       isActive
                         ? "border-blue-600 bg-blue-600 text-white shadow-lg dark:border-blue-500 dark:bg-blue-600"
                         : "border-gray-200 bg-white text-gray-900 hover:border-blue-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-blue-500/30"
                     }`}
                   >
-                    <h3 className="mb-2 text-lg font-semibold">
+                    <h3 className="mb-2 text-lg font-semibold ">
                       {serviceItem.title}
                     </h3>
                     <p

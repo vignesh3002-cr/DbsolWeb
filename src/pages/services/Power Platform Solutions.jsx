@@ -458,7 +458,7 @@ const PowerAutomateFeatures = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 py-24 text-center text-white dark:from-gray-800">
+      <section className="bg-indigo-700 py-24 text-center text-white dark:bg-gray-800">
         <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
           Start Your Automation Journey
         </h2>

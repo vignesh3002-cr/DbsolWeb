@@ -33,8 +33,7 @@ return(
 
 <footer className="relative pt-20 text-gray-300 bg-black">
 
-
-<div className="grid w-full gap-12 px-6 pb-16 mx-auto md:grid-flow-col">
+<div className="grid max-w-7xl mx-auto gap-12 px-6 pb-16 md:grid-cols-2 lg:grid-cols-4 items-start">
 
   {/* Company Info */}
   <div>
@@ -43,7 +42,7 @@ return(
     <img
       src={logoDark}
       alt="Dbsol Technologies"
-      className="mb-4 h-20 object-contain"
+      className="-mt-8 -ml-4 mb-4 h-28 object-contain"
     />
 
 <div className="flex items-center gap-2 mb-2">
