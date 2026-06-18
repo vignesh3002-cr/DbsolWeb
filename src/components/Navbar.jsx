@@ -50,7 +50,7 @@ return(
 
 
   {/* LEFT SIDE (Logo + White curve) */}
-  <div className="flex items-center w-[35%] relative">
+ <div className="flex items-center relative flex-shrink-0">
 {/*S Curve Shape*/}
 <div className="absolute left-0 top-0 h-full w-full overflow-visible -z-10">
   <div className="w-[650px] sm:w-[520px] md:w-[420px] h-full ">
@@ -102,10 +102,10 @@ return(
 </div>
 </div>
 {/* NAVIGATION */}
-<div className="flex-1 flex justify-end pr-12 lg:pr-20">
+<div className="flex-1 flex justify-end pr-4 lg:pr-8">
 
   {/* LEFT MENU */}
-  <ul className="hidden lg:flex items-center gap-4 text-sm lg:text-base font-medium text-gray-200 ">
+  <ul className="hidden lg:flex items-center gap-8 text-sm lg:text-base font-medium text-gray-200 ">
 <li className="cursor-pointer text-blue-600 whitespace-nowrap">
 <NavLink
 to="/"
