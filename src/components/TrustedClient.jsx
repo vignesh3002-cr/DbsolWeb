@@ -17,11 +17,7 @@ const clients = [
     light: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
     dark: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
   },
-  {
-    name: "netflix",
-    light: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-    dark: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-  },
+ 
   {
     name: "ibm",
     light: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
