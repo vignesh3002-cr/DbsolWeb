@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   CalendarCheck,
   CalendarDays,
@@ -9,68 +10,8 @@ import {
   LogOut,
   UserRound,
   UsersRound,
+  UserPlus,
 } from "lucide-react";
-
-const employees = [
-  {
-    id: "EMP001",
-    name: "Arun Kumar",
-    role: " Manager",
-    department: "Delivery",
-    status: "Active",
-  },
-  {
-    id: "EMP002",
-    name: "Priya Sharma",
-    role: "Developer",
-    department: "Engineering",
-    status: "Active",
-  },
-  {
-    id: "EMP003",
-    name: "Rahul Verma",
-    role: "Tester",
-    department: "Human Resources",
-    status: "On Leave",
-  },
-  {
-    id: "EMP004",
-    name: "Sneha Iyer",
-    role: "HR",
-    department: "Consulting",
-    status: "Active",
-  },
-];
-
-const initialLeaveRequests = [
-  {
-    id: 1,
-    employeeId: "EMP002",
-    name: "Priya Sharma",
-    type: "Casual Leave",
-    dates: "May 9 - May 10",
-    days: 2,
-    status: "Pending",
-  },
-  {
-    id: 2,
-    employeeId: "EMP003",
-    name: "Rahul Verma",
-    type: "Sick Leave",
-    dates: "May 6",
-    days: 1,
-    status: "Approved",
-  },
-  {
-    id: 3,
-    employeeId: "EMP004",
-    name: "Sneha Iyer",
-    type: "Work From Home",
-    dates: "May 12",
-    days: 1,
-    status: "Pending",
-  },
-];
 
 const statusStyles = {
   Active: "bg-green-50 text-green-700",
@@ -80,35 +21,170 @@ const statusStyles = {
   Rejected: "bg-red-50 text-red-700",
 };
 
-export default function AdminDashboard() {
-  const [leaveRequests, setLeaveRequests] = useState(initialLeaveRequests);
+const formatLeaveDate = (dateValue) => {
+  if (!dateValue) return "";
 
-  const stats = useMemo(() => {
+  const text = String(dateValue);
+  const isoDate = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+  if (isoDate) {
+    return `${isoDate[3]}-${isoDate[2]}-${isoDate[1]}`;
+  }
+
+  return text.split("T")[0];
+};
+
+const formatLeaveRange = (fromDate, toDate) =>
+  `${formatLeaveDate(fromDate)} to ${formatLeaveDate(toDate)}`;
+
+const formatLeaveType = (request) => {
+  if (request.RequestType === "Work From Home") {
+    return "WFH";
+  }
+
+  if (request.RequestType === "Leave") {
+    return request.LeaveType || "Leave";
+  }
+
+  // Support older records without RequestType
+  const reason = String(request.Reason || "").toLowerCase();
+
+  if (
+    reason.includes("work from home") ||
+    reason.includes("wfh")
+  ) {
+    return "WFH";
+  }
+
+  return request.LeaveType || "Leave";
+};
+const VISIBLE_EMPLOYEE_COUNT = 3;
+
+const getEmployeeId = (employee) =>
+  employee.EmpId ?? employee.EmpID ?? employee.empId;
+
+const normalizeApiEmployee = (employee) => ({
+  EmpId: getEmployeeId(employee),
+  Name: employee.Name,
+  Email: employee.Email,
+  Role: employee.Role,
+  Status: employee.Status || "Active",
+  IsAdmin: employee.IsAdmin || 0,
+});
+
+const normalizeSavedEmployee = (employee) => ({
+  EmpId: employee.empId,
+  Name: `${employee.firstName || ""} ${employee.lastName || ""}`.trim(),
+  Email: employee.email,
+  Role: employee.designation || employee.department || "Employee",
+  Status: employee.status || "Active",
+  IsAdmin: 0,
+});
+
+const getSavedEmployees = () => {
+  try {
+    return JSON.parse(localStorage.getItem("employees")) || [];
+  } catch {
+    return [];
+  }
+};
+
+const mergeEmployees = (apiEmployees, savedEmployees) => {
+  const employeeMap = new Map();
+
+  apiEmployees.map(normalizeApiEmployee).forEach((employee) => {
+    employeeMap.set(String(employee.EmpId), employee);
+  });
+
+  savedEmployees.map(normalizeSavedEmployee).forEach((employee) => {
+    employeeMap.set(String(employee.EmpId), employee);
+  });
+
+  return Array.from(employeeMap.values());
+};
+
+export default function AdminDashboard() {
+
+    const [employees, setEmployees] = useState([]);
+    const [leaveRequests, setLeaveRequests] = useState([]);
+    const [activeView, setActiveView] = useState("dashboard");
+    const [showAll, setShowAll] = useState(false);
+
+    const fetchLeaveRequests = () => {
+      axios.get("http://localhost:5000/api/leave-requests")
+    .then((res) => {
+    console.log("First Record:", res.data[0]);
+    console.log("All Records:", res.data); // ✅ DEBUG
+      setLeaveRequests(res.data);
+    })
+    .catch((err) => console.log(err));
+    };
+    useEffect(() => {
+    const savedEmployees = getSavedEmployees();
+
+    axios
+    .get("http://localhost:5000/api/employees")
+    .then((res) => {
+      console.log("EMPLOYEES DATA:", res.data);
+      setEmployees(mergeEmployees(res.data, savedEmployees));
+    })
+    .catch((err) => {
+      console.log(err);
+      setEmployees(mergeEmployees([], savedEmployees));
+    });
+  }, []);
+  
+useEffect(() => {
+  fetchLeaveRequests();
+}, []);
+
+ const stats = useMemo(() => {
     const pendingLeaves = leaveRequests.filter(
-      (request) => request.status === "Pending"
+      (request) => request.Status === "Pending"
     ).length;
     const approvedLeaves = leaveRequests.filter(
-      (request) => request.status === "Approved"
+      (request) => request.Status === "Approved"
     ).length;
     const activeEmployees = employees.filter(
-      (employee) => employee.status === "Active"
+      (employee) => employee.Status === "Active"
     ).length;
-
+   
+  
     return [
       { label: "Total Employees", value: employees.length, icon: UsersRound },
       { label: "Active Employees", value: activeEmployees, icon: UserRound },
       { label: "Pending Leaves", value: pendingLeaves, icon: CalendarDays },
       { label: "Approved Leaves", value: approvedLeaves, icon: CalendarCheck },
     ];
-  }, [leaveRequests]);
+  }, [employees,leaveRequests]);
 
-  const updateLeaveStatus = (requestId, status) => {
-    setLeaveRequests((requests) =>
-      requests.map((request) =>
-        request.id === requestId ? { ...request, status } : request
-      )
+ const updateLeaveStatus = (requestLeaveID, status) => {
+  setLeaveRequests((requests) =>
+    requests.map((request) =>
+      request.LeaveID === requestLeaveID   // ✅ Use LeaveID consistently
+        ? { ...request, Status: status }
+        : request
+    )
+  );
+};
+
+const displayedEmployees = showAll
+  ? employees
+  : employees.slice(0, VISIBLE_EMPLOYEE_COUNT);
+
+ const saveLeaveStatus = async (requestLeaveID, status) => {
+  try {
+    await axios.patch(
+      `http://localhost:5000/api/leave-requests/${requestLeaveID}/status`,
+      { status }
     );
-  };
+
+    updateLeaveStatus(requestLeaveID, status);
+  } catch (err) {
+    console.log(err);
+    alert("Unable to update leave status");
+  }
+};
 
   return (
     <main className="min-h-screen bg-[#f4f7fb] font-jakarta text-slate-900">
@@ -193,14 +269,14 @@ export default function AdminDashboard() {
                   Approvals
                 </p>
                 <h2 className="mt-1 font-syne text-2xl font-bold text-slate-950">
-                  Leave Requests
+                  Leave Request
                 </h2>
               </div>
               <span className="w-fit rounded-full bg-slate-50 px-3 py-1 text-xs font-bold text-slate-500">
-                {leaveRequests.length} requests
+                {leaveRequests.length} request
               </span>
             </div>
-
+             
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[720px] border-separate border-spacing-y-3 text-left">
                 <thead>
@@ -215,7 +291,7 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody>
                   {leaveRequests.map((request) => (
-                    <tr key={request.id} className="bg-slate-50">
+                    <tr key={request.LeaveID} className="bg-slate-50">
                       <td className="rounded-l-2xl px-4 py-4">
                         <div className="flex items-center gap-3">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700 shadow-sm">
@@ -223,30 +299,30 @@ export default function AdminDashboard() {
                           </div>
                           <div className="min-w-0">
                             <p className="truncate text-sm font-bold text-slate-950">
-                              {request.name}
+                              {request.Name}
                             </p>
                             <p className="mt-1 text-xs font-semibold text-slate-500">
-                              {request.employeeId}
+                              {request.EmpId}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td className="px-4 py-4 text-sm font-semibold text-slate-600">
-                        {request.type}
+                        {formatLeaveType(request)}
                       </td>
-                      <td className="px-4 py-4 text-sm font-semibold text-slate-600">
-                        {request.dates}
+                      <td className="whitespace-nowrap px-4 py-4 text-sm font-semibold text-slate-600">
+                       {formatLeaveRange(request.FromDate, request.ToDate)}
                       </td>
                       <td className="px-4 py-4 text-center text-sm font-semibold text-slate-600">
-                        {request.days}
+                        {request.Days}
                       </td>
                       <td className="px-4 py-4">
                         <span
                           className={`inline-flex min-w-20 justify-center rounded-full px-3 py-1 text-xs font-bold ${
-                            statusStyles[request.status]
+                            statusStyles[request.Status]
                           }`}
                         >
-                          {request.status}
+                          {request.Status}
                         </span>
                       </td>
                       <td className="rounded-r-2xl px-4 py-4">
@@ -254,7 +330,7 @@ export default function AdminDashboard() {
                           <button
                             type="button"
                             onClick={() =>
-                              updateLeaveStatus(request.id, "Approved")
+                              saveLeaveStatus(request.LeaveID, "Approved")
                             }
                             className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-green-50 text-green-700 transition hover:bg-green-100"
                             aria-label="Approve request"
@@ -264,7 +340,7 @@ export default function AdminDashboard() {
                           <button
                             type="button"
                             onClick={() =>
-                              updateLeaveStatus(request.id, "Rejected")
+                              saveLeaveStatus(request.LeaveID, "Rejected")
                             }
                             className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-red-50 text-red-700 transition hover:bg-red-100"
                             aria-label="Reject request"
@@ -287,22 +363,65 @@ export default function AdminDashboard() {
               Menu
             </p>
             <nav className="mt-3 space-y-2">
-              <button className="flex w-full items-center gap-3 rounded-2xl bg-blue-700 px-4 py-3 text-left text-sm font-bold text-white">
-                <LayoutDashboard className="h-5 w-5" />
+            
+          <button
+           onClick={() => {
+              setActiveView("dashboard");
+             setShowAll(false);
+             }}
+             className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold ${
+                activeView === "dashboard"
+              ? "bg-blue-700 text-white"
+              : "text-slate-600 hover:bg-slate-50"
+               }`}
+              >
+              <LayoutDashboard className="h-5 w-5" />
                 Dashboard
-              </button>
-              <button className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-bold text-slate-600 transition hover:bg-slate-50 hover:text-blue-700">
-                <ClipboardList className="h-5 w-5" />
-                Leave Requests
-              </button>
-              <button className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-bold text-slate-600 transition hover:bg-slate-50 hover:text-blue-700">
-                <UsersRound className="h-5 w-5" />
-                Employees
-              </button>
-            </nav>
-          </div>
+          </button>
 
-          <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+
+           <button
+           onClick={() => setActiveView("leave")}
+              className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold ${
+            activeView === "leave"
+             ? "bg-blue-700 text-white"
+               : "text-slate-600 hover:bg-slate-50"
+             }`}
+           >
+             <ClipboardList className="h-5 w-5" />
+            LeaveRequest
+            </button>
+
+
+
+            <button
+              onClick={() => {
+              setActiveView("employees");
+                 setShowAll(true);
+                     }}
+                  className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold ${
+                  activeView === "employees"
+                 ? "bg-blue-700 text-white"
+                 : "text-slate-600 hover:bg-slate-50"
+                    }`}
+                 >
+              <UsersRound className="h-5 w-5" />
+              Employees
+            </button>
+
+
+            <Link
+             to="/employee-master"
+              className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-bold text-slate-600"
+           >
+            <UserPlus className="h-5 w-5" />
+             Employee Master
+             </Link>
+      
+          </nav>
+          </div>
+           
+             <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-bold uppercase text-blue-700">
@@ -318,9 +437,13 @@ export default function AdminDashboard() {
             </div>
 
             <div className="mt-5 space-y-3">
-              {employees.map((employee) => (
-                <article
-                  key={employee.id}
+             
+             {employees.length === 0 ? (
+             <p className="text-sm text-gray-500">No employees found</p>
+             ) : (
+            displayedEmployees.map((employee) => (
+               <article
+                  key={employee.EmpId}
                   className="rounded-2xl border border-slate-100 bg-slate-50 p-4"
                 >
                   <div className="flex items-start gap-3">
@@ -329,30 +452,65 @@ export default function AdminDashboard() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-2">
-                        <div className="min-w-0">
-                          <h3 className="truncate text-sm font-bold text-slate-950">
-                            {employee.name}
-                          </h3>
-                          <p className="mt-1 text-xs font-semibold text-slate-500">
-                            {employee.id} | {employee.role}
+                      <div className="min-w-0">
+                       <h3 className="truncate text-sm font-bold text-slate-950">
+                        {employee.Name}
+                         </h3>
+
+                        {employee.IsAdmin === 1 && (
+                         <span className="inline-block mt-1 rounded-full bg-red-100 px-2 py-1 text-xs font-bold text-red-700">
+                          Admin
+                         </span>
+                          )}
+
+                        <p className="mt-1 text-xs font-semibold text-slate-500">
+                         EmpID: {employee.EmpId} | {employee.Role}
+                        </p>
+
+                          <p className="text-xs text-slate-500">
+                            {employee.Email}
                           </p>
-                        </div>
+                      </div>
                         <span
                           className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${
-                            statusStyles[employee.status]
+                            statusStyles[employee.Status]
                           }`}
                         >
-                          {employee.status}
+                          {employee.Status}
                         </span>
                       </div>
-                      <p className="mt-3 text-xs font-semibold text-slate-400">
-                        {employee.department}
-                      </p>
+                     
                     </div>
                   </div>
                 </article>
-              ))}
+              ))
+            )}
             </div>
+            
+             {employees.length > VISIBLE_EMPLOYEE_COUNT && !showAll && (
+              <button
+               onClick={() => {
+               setShowAll(true);
+               setActiveView("employees");
+                }}
+               className="mt-4 w-full rounded-xl bg-blue-600 py-2 text-white font-semibold"
+              >
+             See More
+             </button>
+                )}
+
+             {employees.length > VISIBLE_EMPLOYEE_COUNT && showAll && (
+            <button
+               onClick={() => {
+               setShowAll(false);
+               setActiveView("dashboard");
+                  }}
+              className="mt-4 w-full rounded-xl bg-gray-600 py-2 text-white font-semibold"
+             >
+               Show Less
+            </button>
+            )}
+
           </section>
         </aside>
       </section>

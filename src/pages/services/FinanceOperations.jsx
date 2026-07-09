@@ -191,7 +191,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500">
+<p className="text-sm text-gray-500 dark:text-gray-300">
 {item.desc}
 </p>
 
@@ -294,7 +294,7 @@ className="p-6 bg-white/10 backdrop-blur-md rounded-xl"
 </section>*/}
 {/* CALL TO ACTION */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800 dark:to-gray-900">
+<section className="py-24 text-center text-white bg-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
 <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Transform Your Financial Operations

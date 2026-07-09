@@ -125,7 +125,7 @@ export default function BPage() {
       className="w-full"
     >
       <img
-        src="/images/BC-IMG1.jpg"
+        src="/images/BC-IMG1.avif"
         alt="Consulting"
         className="w-full h-[350px] object-cover rounded-2xl shadow-lg"
       />
@@ -306,7 +306,7 @@ export default function BPage() {
         </div>
       </section>
 
-      <section className="bg-gray-100 dark:bg-gray-900 py-16 text-center">
+      <section className="bg-white dark:bg-gray-900 py-16 text-center">
   <div className="max-w-4xl mx-auto px-6">
     <h2 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">
       What Our Clients Say
@@ -365,45 +365,7 @@ export default function BPage() {
   </div>
 </section>
 
-<section className="bg-white dark:bg-gray-800 py-16 text-center">
-  <h2 className="text-3xl font-bold mb-10 text-gray-800 dark:text-white">
-    Technologies We Work With
-  </h2>
-
-  <div className="flex flex-wrap justify-center gap-6 text-lg font-semibold text-gray-600 dark:text-gray-300">
-    <span>D365 F&O</span>
-    <span>Azure</span>
-    <span>Power BI</span>
-    <span>React</span>
-    <span>Node.js</span>
-    <span>Mobile Apps</span>
-  </div>
-</section>
-<section className="bg-gray-50 dark:bg-gray-900 py-16">
-  <div className="max-w-4xl mx-auto px-6">
-    <h2 className="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white">
-      Frequently Asked Questions
-    </h2>
-
-    <div className="space-y-6">
-      <div>
-        <h3 className="font-semibold text-lg">How long does consulting take?</h3>
-        <p className="text-gray-600 dark:text-gray-300">
-          Depends on project scope — typically 3 to 6 months for full transformation.
-        </p>
-      </div>
-
-      <div>
-        <h3 className="font-semibold text-lg">Do you provide implementation?</h3>
-        <p className="text-gray-600 dark:text-gray-300">
-          Yes, we offer end-to-end services from consulting to execution.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* CTA */}
+     {/* CTA */}
       <section className="bg-indigo-700 dark:bg-gray-800 text-white py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Transform Your Business?

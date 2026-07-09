@@ -213,7 +213,7 @@ export default function CustomerEngagement() {
         </div>
       </section>
       
-       <section className="bg-blue-700 px-6 py-16 text-center text-white dark:bg-gray-800">
+       <section className="bg-indigo-700 px-6 py-16 text-center text-white dark:bg-gray-800">
         <h2 className="mb-4 text-3xl font-bold">
           Ready to build your Customer Engagement website experience?
         </h2>

@@ -32,24 +32,24 @@ export default function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const enteredId = (employeeId || "").trim().toUpperCase();
+    const enteredId = employeeId.trim();
 
     try {
       const response = await axios.post("http://localhost:5000/api/login", {
-        empId: enteredId,
+        empId:  Number(enteredId),
         password: password,
       });
 
     // ✅ READ ROLE FROM BACKEND RESPONSE
-      const role = response?.data?.user?.role;
+      const isAdmin = response?.data?.user?.isAdmin;
 
-      if (!role) {
-        throw new Error("Role missing from server response");
+      if (isAdmin === undefined) {
+      throw new Error("isAdmin missing from server response");
       }
      
     // ✅ Store role and ID
       localStorage.setItem("empId", enteredId);
-      localStorage.setItem("role", role);
+      localStorage.setItem("isAdmin", isAdmin);
     
       if (rememberMe) {
         localStorage.setItem("rememberedEmployeeId", enteredId);
@@ -61,15 +61,14 @@ export default function Login() {
       setError("");
 
     // ✅ ROUTE USING ROLE (FIX)
-      if (role === "ADMIN") {
-        navigate("/admin-dashboard");
+     if (Number(isAdmin) === 1) {
+      navigate("/admin-dashboard");
       } else {
-        navigate("/dashboard");
-      }
-
+      navigate("/dashboard");
+     }
     } catch (err) {
       console.error("Login error:", err);
-      setError("Invalid employee/Admin id or password");
+      setError("Invalid employee or password");
     }
 
   };
@@ -77,13 +76,13 @@ export default function Login() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f4f7fb] px-4 py-10 font-jakarta text-slate-900">
       <section className="grid w-full max-w-5xl overflow-hidden rounded-[28px] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.14)] lg:grid-cols-[0.92fr_1fr]">
-        <div className="relative hidden min-h-[620px] bg-slate-950 p-10 text-white lg:block">
+        <div className="relative hidden min-h-[620px] bg-slate-750 p-10 text-white lg:block">
           <img
             src="/images/Home1.jpg"
             alt=""
             className="absolute inset-0 h-full w-full object-cover opacity-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/82 to-blue-950/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/82 to-blue-850/70" />
           <div className="relative z-10 flex h-full flex-col justify-between">
             <Link
               to="/"
@@ -135,7 +134,7 @@ export default function Login() {
                 htmlFor="employeeId"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Employee ID / Admin ID
+                Employee ID 
               </label>
               <div className="relative">
                 <UserRound className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -144,7 +143,7 @@ export default function Login() {
                   type="text"
                   value={employeeId}
                   onChange={handleEmployeeIdChange}
-                  placeholder="EMP001 or AD001"
+                  placeholder="Enter employee ID"
                   autoComplete="username"
                   required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-12 pr-4 text-sm font-medium outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
@@ -209,7 +208,9 @@ export default function Login() {
           </form>
 
           <p className="mt-8 rounded-xl bg-slate-50 px-4 py-3 text-center text-xs font-semibold text-slate-500">
-            Demo credentials: Employee EMP001 / Arun@123 or Admin AD001 / EMPOO1
+           Demo credentials:
+            Admin User → ID: 1 Password: admin123
+            John Smith → ID: 2 Password: john@123
           </p>
         </div>
       </section>

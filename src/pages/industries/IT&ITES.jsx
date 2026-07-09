@@ -56,7 +56,7 @@ export default function ITITES() {
       industry: "IT & ITES",
       desc: "Implemented Microsoft Dynamics 365 to unify finance, operations, CRM, and service workflows.",
       result: "50% faster service delivery and reduced operational costs",
-      image: "/images/IT_2.jfif",
+      image: "/images/IT_2.jpg",
       tag: "bg-cyan-200 text-cyan-900",
     },
   ]
@@ -69,7 +69,7 @@ export default function ITITES() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/IT_1.jfif"
+            src="/images/IT_1.jpg"
             alt="IT & ITES Industry"
             className="w-full h-full object-cover"
           />
@@ -154,7 +154,7 @@ export default function ITITES() {
       {/* SOLUTIONS */}
       <section className="py-28 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 darktext-white text-center mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
             Our IT & ITES Capabilities
           </h2>
 
@@ -173,7 +173,7 @@ export default function ITITES() {
                   <h3 className="text-xl text-black dark:text-white font-semibold mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -237,7 +237,7 @@ export default function ITITES() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Ready to Scale Your IT Operations?
         </h2>

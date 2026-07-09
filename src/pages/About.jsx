@@ -21,7 +21,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="/images/About_1.jfif"
+src="/images/About_1.jpg"
 className="absolute inset-0 object-cover w-full h-full"
 />
 
@@ -54,7 +54,7 @@ About Our Company
 <div className="grid items-center max-w-6xl gap-12 px-6 mx-auto md:grid-cols-2">
 
 <img
-src="/images/About_2.jfif"
+src="/images/About_2.jpg"
 className="shadow-lg rounded-xl"
 />
 

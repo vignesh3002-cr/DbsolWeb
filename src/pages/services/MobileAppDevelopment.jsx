@@ -178,7 +178,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500">
+<p className="text-sm dark:text-gray-300 text-gray-500">
 {item.desc}
 </p>
 
@@ -239,7 +239,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 {/* CTA */}
 
-<section className="py-24 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
+<section className="py-24 text-center text-white bg-indigo-700 dark:bg-gray-800">
 
 <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
 Launch Your Mobile App Today

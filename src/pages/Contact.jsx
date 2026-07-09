@@ -6,7 +6,6 @@ import Consultation from "../components/Consultation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from "emailjs-com";
-import bg from "/images/schedule_consultant.png";
 import Swal from "sweetalert2";
 
 export default function Contact() {
@@ -63,7 +62,7 @@ export default function Contact() {
         {/* HERO */}
         <section className="relative flex items-center justify-center h-[350px]">
           <img
-            src="/images/Contact_us.jfif"
+            src="/images/Contact_us.jpg"
             alt="contact"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -92,7 +91,7 @@ export default function Contact() {
             >
               <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600" />
               <h3 className="font-semibold">Phone</h3>
-              <p className="text-gray-500">+91 9994883682</p>
+              <p className="text-black dark:text-gray-200">+91 9994883682</p>
             </motion.div>
 
             <motion.div
@@ -102,7 +101,7 @@ export default function Contact() {
               <a href="mailto:jayakumar.k@dbsoltechnologies.com">
                 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
                 <h3>Email</h3>
-                <p className="text-gray-500">jayakumar.k@dbsoltechnologies.com</p>
+                <p className="text-black dark:text-gray-200">jayakumar.k@dbsoltechnologies.com</p>
               </a>
             </motion.div>
 
@@ -124,39 +123,61 @@ export default function Contact() {
         </section>
 
         {/* FORM */}
-        <section className="py-10 bg-white dark:bg-gray-600">
-          <div className="max-w-5xl mx-auto px-6">
+     <section className="py-10 bg-white dark:bg-gray-600">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+      Send Us a Message
+    </h2>
 
-            <h2 className="text-3xl font-bold text-center mb-10 dark:text-white">
-              Send Us a Message
-            </h2>
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="grid gap-6 md:grid-cols-2"
+    >
+      <input
+        name="name"
+        placeholder="Full Name"
+        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
 
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="grid gap-6 md:grid-cols-2"
-            >
-              <input name="name" className="p-3 border rounded" placeholder="Full Name" />
-              <input name="email" className="p-3 border rounded" placeholder="Email" />
-              <input name="company" className="p-3 border rounded" placeholder="Company" />
-              <input name="phone" className="p-3 border rounded" placeholder="Phone" />
+      <input
+        name="email"
+        placeholder="Email"
+        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
 
-              <textarea
-                name="message"
-                className="p-3 border rounded md:col-span-2"
-                placeholder="Message"
-              />
+      <input
+        name="company"
+        placeholder="Company"
+        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
 
-              <button className="bg-blue-600 text-xl text-white py-3 px-32 place-self-center md:col-span-2 rounded-lg">
-                Submit
-              </button>
-            </form>
-          </div>
-        </section>
+      <input
+        name="phone"
+        placeholder="Phone"
+        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <textarea
+        name="message"
+        placeholder="Message"
+        rows="4"
+        className="p-3 border border-gray-300 rounded md:col-span-2 bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <button
+        type="submit"
+        className="bg-blue-600 hover:bg-blue-700 text-xl text-white py-3 px-32 place-self-center md:col-span-2 rounded-lg transition"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
 
         {/* MAP + CONSULTATION */}
 <section
-  style={{ backgroundImage: `url(${bg})` }}
+  style={{ backgroundImage: "url('/images/schedule_consultant.jpg')" }}
   className="relative w-full bg-cover bg-center py-20 px-4"
 >
   {/* overlay (FIXED properly layered) */}

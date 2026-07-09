@@ -56,7 +56,7 @@ export default function Education() {
       industry: "Education",
       desc: "Implemented a unified LMS and student information system.",
       result: "60% improvement in student engagement",
-      image: "/images/ET_2.jpeg",
+      image: "/images/ET_2.jpg",
       tag: "bg-indigo-200 text-indigo-900"
     }
   ]
@@ -69,7 +69,7 @@ export default function Education() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/ET_1.jpeg"
+            src="/images/ET_1.jpg"
             className="w-full h-full object-cover"
             alt="Education"
           />
@@ -171,7 +171,7 @@ export default function Education() {
                 <h3 className="text-xl text-black dark:text-white font-semibold mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -225,7 +225,7 @@ export default function Education() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Ready to Transform Education?
         </h2>

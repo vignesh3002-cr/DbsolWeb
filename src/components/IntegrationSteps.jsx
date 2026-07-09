@@ -5,17 +5,17 @@ const steps = [
 {
   title: "Legacy Systems",
   desc: "AX 2012 / Custom ERP",
-  img:"/images/Legacy.png"
+  img:"/images/Legacy.jpg"
 },
 {
   title: "Data Migration",
   desc: "Secure Transfer",
-  img: "/images/Data_Migration.png"
+  img: "/images/Data_Migration.jpg"
 },
 {
   title: "Dynamics 365",
   desc: "Finance & Operations",
-  img: "/images/Dynamics.png"
+  img: "/images/Dynamics.jpg"
 },
 {
   title: "Azure APIs",
@@ -86,13 +86,13 @@ third-party tools, and cloud infrastructure for a unified business ecosystem.
     <div className="hidden md:inline-block">
     {/* Arrow (only if not last item) */}
     {index !== steps.length - 1 && index!==2 && (
-      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.png" deg/></div>
+      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.jpg" deg/></div>
     )}
     </div>
     <div className="inline-block md:hidden">
           {/* Arrow (only if not last item) */}
     {index !== steps.length - 1 && (
-      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.png" deg/></div>
+      <div><img className="rotate-90 w-[clamp(44px,6vw,52px)] h-[clamp(44px,6vw,52px)] md:rotate-0"src="/images/right.jpg" deg/></div>
     )}
     </div>
   

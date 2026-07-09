@@ -56,7 +56,7 @@ export default function Hospitality() {
       industry: "Hospitality",
       desc: "Implemented Dynamics 365 to unify reservations, CRM, and guest operations.",
       result: "60% improvement in guest satisfaction",
-      image: "/images/HT_2.jpeg",
+      image: "/images/HT_2.jpg",
       tag: "bg-rose-200 text-rose-900",
     },
   ]
@@ -69,7 +69,7 @@ export default function Hospitality() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/HT_1.jpeg"
+            src="/images/HT_1.jpg"
             className="w-full h-full object-cover"
             alt="Hospitality"
           />
@@ -173,7 +173,7 @@ export default function Hospitality() {
                   <h3 className="text-xl text-black dark:text-white font-semibold mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -240,7 +240,7 @@ export default function Hospitality() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Ready to Elevate Guest Experiences?
         </h2>

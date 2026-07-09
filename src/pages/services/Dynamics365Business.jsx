@@ -165,7 +165,7 @@ export default function Dynamics365Business() {
             className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl dark:border-gray-800 dark:bg-gray-900"
           >
             <img
-              src="/images/Dynamics-365-logo.png"
+              src="/images/Dynamics-365-logo.jpg"
               alt="Dynamics 365 logo"
               className="h-full w-full object-cover"
             />

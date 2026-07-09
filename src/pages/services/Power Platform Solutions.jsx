@@ -39,7 +39,7 @@ const categories = [
         title: "Extend",
         description:
           "Accelerate digital transformation with automation-infused apps, websites, and agents in Microsoft Power Platform.",
-        image: "/images/PowerAutomate/Extend.png",
+        image: "/images/PowerAutomate/Extend.jpg",
       },
     ],
   },
@@ -268,7 +268,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            src="/images/PowerAutomate/Power_Automate.webp"
+            src="/images/PowerAutomate/Power_Automate.jpg"
             className="rounded-xl shadow-xl"
           />
         </div>
@@ -339,7 +339,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="/images/PowerAutomate/powerautomate.png"
+            src="/images/PowerAutomate/powerautomate.jpg"
             className=" w-full h-96 object-cover" 
           />
         </div>

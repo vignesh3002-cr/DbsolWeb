@@ -56,7 +56,7 @@ export default function FinanceBanking() {
       industry: "Finance & Banking",
       desc: "Implemented Dynamics 365 Finance to modernize reporting, compliance, and accounting.",
       result: "40% faster financial reporting",
-      image: "/images/F&B_2.jpeg",
+      image: "/images/F&B_2.jpg",
       tag: "bg-emerald-200 text-emerald-900",
     },
   ]
@@ -69,7 +69,7 @@ export default function FinanceBanking() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/F&B_1.jpeg"
+            src="/images/F&B_1.jpg"
             className="w-full h-full object-cover"
             alt="Finance & Banking"
           />
@@ -230,7 +230,7 @@ export default function FinanceBanking() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Transform Your Financial Operations
         </h2>

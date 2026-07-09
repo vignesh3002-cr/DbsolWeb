@@ -5,7 +5,7 @@ const newsData = [
     date: "Jan 2026",
     title: "Dynamics 365 Implementation Success",
     desc: "Delivered a full-scale Dynamics 365 solution improving operational efficiency by 35%.",
-    image: "/images/D365_implemented.png",
+    image: "/images/D365_implemented.jpg",
   },
   {
     date: "Oct 2025",

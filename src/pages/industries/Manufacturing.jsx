@@ -55,7 +55,7 @@ const cases = [
     industry: "Manufacturing",
     desc: "Implemented Dynamics 365 to unify plant-floor and finance systems.",
     result: "40% improvement in operational efficiency",
-    image: "/images/Manufacturing.jpeg",
+    image: "/images/Manufacturing.jpg",
     tag: "bg-blue-200 text-blue-900",
   },
 ]
@@ -68,7 +68,7 @@ const cases = [
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/MIS_1.jpeg"
+            src="/images/MIS_1.jpg"
             className="w-full h-full object-cover"
             alt="Manufacturing"
           />
@@ -170,7 +170,7 @@ const cases = [
                 <h3 className="text-xl font-semibold mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -230,7 +230,7 @@ const cases = [
 
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Ready to Transform Manufacturing?
         </h2>

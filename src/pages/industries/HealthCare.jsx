@@ -56,7 +56,7 @@ export default function Healthcare() {
       industry: "Healthcare",
       desc: "Implemented ERP automation and analytics for hospital operations.",
       result: "50% faster reporting & improved patient outcomes",
-      image: "/images/HC_2.jpeg",
+      image: "/images/HC_2.jpg",
       tag: "bg-rose-200 text-rose-900",
     },
   ]
@@ -69,7 +69,7 @@ export default function Healthcare() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/HC_1.jpeg"
+            src="/images/HC_1.jpg"
             alt="Healthcare Technology"
             className="w-full h-full object-cover"
           />
@@ -174,7 +174,7 @@ export default function Healthcare() {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -233,7 +233,7 @@ export default function Healthcare() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Transform Healthcare with Digital Innovation
         </h2>

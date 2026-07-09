@@ -6,7 +6,6 @@ import Consultation from "../components/Consultation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from "emailjs-com";
-import bg from "/images/schedule_consultant.png";
 import Swal from "sweetalert2";
 
 export default function Contact() {

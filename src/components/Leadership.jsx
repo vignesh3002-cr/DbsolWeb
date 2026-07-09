@@ -1,5 +1,12 @@
 import { useState } from "react";
-
+import {
+  FaChessQueen,
+  FaProjectDiagram,
+  FaCogs,
+  FaChartLine,
+  FaTasks,
+  FaLightbulb,
+} from "react-icons/fa";
 const leaders = [
   {
     initials: "RN",
@@ -13,11 +20,11 @@ const leaders = [
     image: "/images/rema-nanjappan.jpg",
     lines: [
       {
-        icon: "🏆",
+        icon:  FaChessQueen,
         text: "ERP Implementation & Digital Transformation Expert specializing in the design and deployment of global HR and Payroll solutions. Skilled in bridging the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
       },
       {
-        icon: "📈",
+        icon: FaProjectDiagram,
         text: " Former Digital Transformation Manager at Wipro with 16+ years of global experience, exclusively specialized in orchestrating cross-platform ecosystems—including PeopleSoft, Salesforce, and Power Platform—to unify global business units. Expert in leveraging GenAI (Copilot Studio) and high-integrity functional design to automate complex workflows for multi-national entities. Expert in synchronizing complex global business units into unified digital ecosystems. ",
       },
 
@@ -36,11 +43,11 @@ const leaders = [
     image: "/images/maruthanayagam.jpg",
     lines: [
       {
-        icon: "⚙️",
+        icon: FaCogs,
         text: "ERP Implementation & Supply Chain Transformation Expert delivering Microsoft Dynamics 365 solutions for warehouse, inventory, and production, focused on streamlining operations and scalable process improvement.",
       },
       {
-        icon: "🔀",
+        icon: FaChartLine,
         text: "Formerly developed across supply chain operations, SAP, and Microsoft Dynamics 365 environments, with 12+ years of experience in ERP implementation, rollout, support, and process optimization across manufacturing and warehouse functions. Skilled in functional design, warehouse management, business process mapping, UAT, training, and post-go-live support, delivering efficient, business-aligned solutions.",
       },
 
@@ -60,11 +67,11 @@ const leaders = [
 
     lines: [
       {
-        icon: "🔭",
+        icon: FaTasks,
         text: "Results-driven D365 Finance & Operations Functional Consultant with strong expertise in Finance and Supply Chain Management modules, focused on process optimization and ERP solution delivery. Proven ability in requirement analysis, system configuration, user support, and delivering scalable business solutions aligned with organizational objectives. Passionate about leveraging technology to improve operational efficiency and support digital transformation initiatives.",
       },
       {
-        icon: "💡",
+        icon: FaLightbulb,
         text: "Launched 3 flagship features that each added over $5M in annual recurring revenue.",
       },
 
@@ -88,8 +95,8 @@ function LeaderCard({ leader, index }) {
   return (
     <div
       className={`
-        bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 overflow-hidden flex flex-col
-        transition-all duration-300 ease-out
+        bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700overflow-hidden flex flex-col
+        transition-all duration-300 
         ${hovered ? "shadow-xl -translate-y-1.5 border-gray-200" : "shadow-sm"}
       `}
       style={{ animationDelay: `${index * 120}ms` }}

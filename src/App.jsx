@@ -41,6 +41,9 @@ import AdminDashboard from "./pages/emp/AdminDashboard";
 import ApplyLeave from "./pages/emp/ApplyLeave";
 import Dashboard from "./pages/emp/Dashboard";
 import Login from "./pages/emp/Login";
+import EmployeeMaster from "./pages/emp/EmployeeMaster";
+import EmployeeForm from "./pages/emp/EmployeeForm";
+import EmployeeDetails from "./pages/emp/EmployeeDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -88,8 +91,9 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />
         <Route path="/dashboard" element={<Dashboard />} />
-          
-           
+        <Route path="/employee-master" element={<EmployeeMaster />} />
+        <Route path="/employee-form" element={<EmployeeForm />} />
+        <Route path="/employee-details" element={<EmployeeDetails />} />
       </Routes>
     </BrowserRouter>
   );

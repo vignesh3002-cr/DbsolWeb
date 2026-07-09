@@ -179,7 +179,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 {item.title}
 </h3>
 
-<p className="text-sm text-gray-500">
+<p className="text-sm text-gray-500  dark:text-gray-300">
 {item.desc}
 </p>
 
@@ -240,7 +240,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 {/* CALL TO ACTION */}
 
-<section className="py-24 text-center text-white bg-indigo-700 dark:from-gray-800">
+<section className="py-24 text-center text-white bg-indigo-700 dark:bg-gray-800">
 
 <h2 className="mb-6 text-4xl font-bold dark:text-white">
 Build Your Digital Presence Today

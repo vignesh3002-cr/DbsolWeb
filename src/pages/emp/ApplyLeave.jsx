@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 
 export default function ApplyLeave() {
+  const [requestType, setRequestType] = useState("");
+  const [leaveType, setLeaveType] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -19,24 +21,70 @@ export default function ApplyLeave() {
   
   const empId = localStorage.getItem("empId"); // ✅ from login
 
-  const applyLeave = () => {
-    axios.post("http://localhost:5000/api/apply-leave", {
-      empId,
-      fromDate,
-      toDate,
-      reason
+const applyLeave = () => {
+  if (!empId) {
+    alert("Employee not logged in");
+    return;
+  }
+
+  if (!requestType) {
+  alert("Please select request type");
+  return;
+}
+
+if (requestType === "Leave" && !leaveType) {
+  alert("Please select leave type");
+  return;
+}
+
+  if (new Date(toDate) < new Date(fromDate)) {
+    alert("To Date cannot be earlier than From Date");
+    return;
+  }
+
+  const days =
+    Math.floor(
+      (new Date(toDate) - new Date(fromDate)) /
+      (1000 * 60 * 60 * 24)
+    ) + 1;
+
+   axios.post("http://localhost:5000/api/apply-leave", {
+  empId: Number(empId),
+  requestType,
+  leaveType: requestType === "Leave" ? leaveType : null,
+  fromDate,
+  toDate,
+  days,
+  reason,
+})
+    .then((res) => {
+      alert(res.data.message || "Leave applied successfully");
+
+    setRequestType("");
+setLeaveType("");
+setFromDate("");
+setToDate("");
+setReason("");
     })
-    .then(res => alert(res.data.message))
-    .catch(() => alert("Leave apply failed"));
-  };
+    .catch((err) => {
+      console.error("Full error:", err);
 
+      if (err.response) {
+        console.log("Server error:", err.response.data);
+        alert(err.response.data.message || JSON.stringify(err.response.data));
+      } else {
+        alert("Cannot connect to server.");
+      }
+    });
+};
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitted(true);
-  };
-  
-  return (
+ 
+const handleSubmit = (event) => {
+  event.preventDefault();
+  applyLeave();
+};
+
+return (
     <main className="min-h-screen bg-[#f4f7fb] font-jakarta text-slate-900">
       <header className="border-b border-slate-200/80 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
@@ -116,28 +164,44 @@ export default function ApplyLeave() {
             </div>
 
             <div className="space-y-5">
-              <div>
-                <label
-                  htmlFor="leaveType"
-                  className="mb-2 block text-sm font-semibold text-slate-700"
-                >
-                  Leave Type
-                </label>
-                <select
-                  id="leaveType"
-                  required
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select leave type
-                  </option>
-                  <option>Casual Leave</option>
-                  <option>Sick Leave</option>
-                  <option>Earned Leave</option>
-                  <option>Work From Home</option>
-                </select>
-              </div>
+          <div>
+  <label className="mb-2 block text-sm font-semibold text-slate-700">
+    Request Type
+  </label>
+
+  <select
+    value={requestType}
+    onChange={(e) => {
+      setRequestType(e.target.value);
+      setLeaveType("");
+    }}
+    required
+    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5"
+  >
+    <option value="">Select Request Type</option>
+    <option value="Leave">Leave</option>
+    <option value="Work From Home">Work From Home</option>
+  </select>
+</div>
+{requestType === "Leave" && (
+  <div>
+    <label className="mb-2 block text-sm font-semibold text-slate-700">
+      Leave Type
+    </label>
+
+    <select
+      value={leaveType}
+      onChange={(e) => setLeaveType(e.target.value)}
+      required
+      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+    >
+      <option value="">Select Leave Type</option>
+      <option value="Casual Leave">Casual Leave</option>
+      <option value="Sick Leave">Sick Leave</option>
+      <option value="Earned Leave">Earned Leave</option>
+    </select>
+  </div>
+)}
 
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
@@ -148,8 +212,10 @@ export default function ApplyLeave() {
                     From Date
                   </label>
                   <input
-                    id="fromDate"
+                   id="fromDate"
                     type="date"
+                    value={fromDate}
+                    onChange={(e) => setFromDate(e.target.value)}
                     required
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-medium outline-none transition focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
                   />
@@ -163,9 +229,11 @@ export default function ApplyLeave() {
                     To Date
                   </label>
                   <input
-                    id="toDate"
-                    type="date"
-                    required
+                     id="toDate"
+                      type="date"
+                      value={toDate}
+                      onChange={(e) => setToDate(e.target.value)}
+                      required
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-medium outline-none transition focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
                   />
                 </div>
@@ -181,6 +249,8 @@ export default function ApplyLeave() {
                 <textarea
                   id="reason"
                   rows="5"
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
                   required
                   placeholder="Enter leave reason"
                   className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-medium outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
@@ -205,7 +275,7 @@ export default function ApplyLeave() {
                   type="submit"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-700/20 transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100"
                 >
-                  Submit Leave
+                  Submit 
                   <CalendarCheck className="h-5 w-5" />
                 </button>
               </div>

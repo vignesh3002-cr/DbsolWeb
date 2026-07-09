@@ -56,7 +56,7 @@ export default function RetailWholesale() {
       industry: "Retail & Wholesale",
       desc: "Unified multi-store inventory using Dynamics 365 with real-time stock visibility.",
       result: "35% reduction in inventory holding costs",
-      image: "/images/R&W_2.jpeg",
+      image: "/images/R&W_2.jpg",
       tag: "bg-purple-200 text-purple-900",
     },
   ]
@@ -69,7 +69,7 @@ export default function RetailWholesale() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/R&W_1.jpeg"
+            src="/images/R&W_1.jpg"
             alt="Retail industry"
             className="w-full h-full object-cover"
           />
@@ -174,7 +174,7 @@ export default function RetailWholesale() {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -233,7 +233,7 @@ export default function RetailWholesale() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center bg-blue-600">
+      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-white">
           Transform Your Retail Operations
         </h2>
