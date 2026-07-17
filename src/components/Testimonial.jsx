@@ -319,11 +319,11 @@ export default function Testimonials() {
                 {renderStars(review.rating)}
               </div>
 
-              <div className="text-sm text-gray-500 mb-3">
+              <div className="text-sm text-gray-500 dark:text-gray-200 mb-3">
                 {review.rating}/5
               </div>
 
-              <p className="text-gray-700 mb-5">
+              <p className="text-gray-700 dark:text-white mb-5">
                 "{review.review}"
               </p>
 
@@ -331,7 +331,7 @@ export default function Testimonials() {
                 <h4 className="font-semibold text-lg">
                   {review.name}
                 </h4>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-gray-200 text-sm">
                   {review.role}
                 </p>
               </div>

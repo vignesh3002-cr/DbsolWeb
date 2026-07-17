@@ -21,16 +21,16 @@ export default function Home() {
       <Navbar />
       <Hero />
       <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
+      <WhyChooseUs />
       <Industries />
       <ERPImplementationProcess />
       <DataMigrationSection />
       <VideoTestimonials />
       <ResourceLibrary />
-      <WhyChooseUs />
       <CompanyStats />
-      <NewsPage />
       <TrustedClients />
-      <Testimonials />
+      <NewsPage />
+       <Testimonials />
       <CallToAction />
       <Footer />
     </>

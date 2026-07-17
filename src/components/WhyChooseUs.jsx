@@ -8,74 +8,57 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 export default function WhyDbsol() {
-  const strengths = [
-    {
-      icon: <Network size={28} />,
-      title: "ERP Expertise",
-      position: "top",
-    },
-    {
-      icon: <Rocket size={28} />,
-      title: "Digital Transformation",
-      position: "rightTop",
-    },
-    {
-      icon: <Bot size={28} />,
-      title: "Business Automation",
-      position: "rightBottom",
-    },
-    {
-      icon: <Handshake size={28} />,
-      title: "Long-Term Partnership",
-      position: "bottom",
-    },
-    {
-      icon: <Factory size={28} />,
-      title: "Industry Expertise",
-      position: "leftBottom",
-    },
-    {
-      icon: <Cloud size={28} />,
-      title: "Cloud Solutions",
-      position: "leftTop",
-    },
-  ];
+
 
   return (
-    <section className="bg-slate-50 dark:bg-gray-900 py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+   <section className="bg-slate-50 dark:bg-gray-900 py-24 overflow-visible">
 
-        <div className="text-center mb-20">
-          <span className="text-blue-600 font-bold text-2xl tracking-widest uppercase">
-            Why DBSOL
-          </span>
+  {/* Badge */}
+  <div className="flex justify-center -mt-12">
+    <span className="bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold">
+      Microsoft Dynamics 365 Specialists
+    </span>
+  </div>
 
-          <h2 className="text-4xl text-gray-800 dark:text-white font-bold mt-4 mb-4">
-           Technology That Drives Business Growth
-          </h2>
+  {/* Heading */}
+  <div className="text-center mb-16">
 
-          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
-            Delivering enterprise ERP, cloud, automation and digital
-            transformation solutions that help organizations innovate,
-            scale and succeed.
-          </p>
-        </div>
+    <h2 className="text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mb-6">
+      Why Leading Businesses Choose DBSOL
+    </h2>
 
-      
-<div className="relative h-[750px] hidden lg:block">
+    <p className="max-w-4xl mx-auto text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+      Helping Retail, Manufacturing and Distribution businesses transform
+      Finance, Supply Chain and Warehouse Operations through Microsoft
+      Dynamics 365, Power Platform, Azure Cloud Services and Enterprise
+      Integrations.
+    </p>
 
-  {/* CENTER */}
- 
-<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white dark:text-black dark:bg-gray-800 flex flex-col items-center justify-center shadow-2xl">
-              <h3 className="text-3xl font-bold">DBSOL</h3>
-              <p className="text-center mt-2 text-blue-100 dark:text-gray-900">
-                Digital Transformation
-                <br />
-                Experts
-              </p>
-            </div>
-          </div>
+  </div>
+
+  {/* Wheel Section */}
+  <div className="relative h-[800px] hidden lg:block">
+
+    {/* Center Circle */}
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+      <div className="w-56 h-56 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex flex-col items-center justify-center shadow-2xl">
+
+        <h3 className="text-3xl font-bold">
+          DBSOL
+        </h3>
+
+        <p className="text-center mt-4 text-blue-100 font-medium leading-relaxed">
+          Dynamics 365
+          <br />
+          Finance & Operations
+          <br />
+          Experts
+        </p>
+
+      </div>
+    </div>
+
+  
 
 
   {/* CONNECTION LINES */}
@@ -146,48 +129,49 @@ export default function WhyDbsol() {
   </svg>
 
   {/* NODES */}
-  <Node
-    className="left-1/2 top-4 -translate-x-1/2 z-10"
-    icon={<Network size={32} />}
-    title="ERP Expertise"
-    description="ERP implementation, customization, integration and support."
-   /> 
-  <Node
-    className="right-24 top-36 z-10"
-     icon={<Rocket size={32} />}
-    title="Digital Transformation"
-    description="Modernize business processes using digital technologies."
-  />
+ <Node
+  className="left-1/2 -top-10 -translate-x-1/2 z-10"
+  icon={<Network size={32} />}
+  title="Dynamics 365 F&O"
+  description="Finance, Supply Chain, Procurement, Inventory and ERP transformation solutions."
+/>
 
-  <Node
-    className="right-24 bottom-44 z-10"
-   icon={<Bot size={32} />}
-  title="Business Automation"
-  description="Automate workflows and improve operational efficiency."
-  />
+<Node
+  className="right-40 top-24 z-10"
+  icon={<Rocket size={32} />}
+  title="Finance Transformation"
+  description="Modernize financial operations, reporting, budgeting and business processes."
+/>
 
-  <Node
-    className="left-1/2 bottom-6 -translate-x-1/2 z-10"
-    icon={<Handshake size={32} />}
-    title="Long-Term Partnership"
-    description="Reliable support, consulting and continuous improvement."
-  />
+<Node
+  className="right-40 bottom-24 z-10"
+  icon={<Bot size={32} />}
+  title="Power Platform"
+  description="Power Apps, Power Automate, Power BI and intelligent workflow automation."
+/>
 
-  <Node
-    className="left-24 bottom-36 z-10"
-     icon={<Factory size={32} />}
-    title="Industry Expertise"
-    description="Industry-specific solutions for manufacturing, retail and more."
-  />
+<Node
+  className="left-1/2 -bottom-6 -translate-x-1/2 z-10"
+  icon={<Handshake size={32} />}
+  title="Enterprise Integrations"
+  description="Integrate Dynamics 365 with Salesforce, SAP, eCommerce platforms and third-party systems."
+/>
 
-  <Node
-    className="left-24 top-36 z-10"
-    icon={<Cloud size={32} />}
-    title="Cloud Solutions"
-    description="Azure, cloud migration, infrastructure management and security."
-  />
+<Node
+  className="left-40 bottom-24 z-10"
+  icon={<Factory size={32} />}
+  title="Warehouse & Retail"
+  description="Warehouse Management, Retail Operations, Inventory Visibility and Logistics Solutions."
+/>
+
+<Node
+  className="left-40 top-24 z-10"
+  icon={<Cloud size={32} />}
+  title="Azure & Cloud Services"
+  description="Cloud migration, infrastructure management, security and scalable business solutions."
+/>
 </div>
-</div>
+
 </section>
   );
 }
@@ -196,7 +180,7 @@ function Node({ icon, title, description, className }) {
     <div className={`absolute ${className}`}>
       <div className="group flex flex-col items-center relative">
         
-        <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
+        <div className="w-20 h-20 rounded-full bg-white shadow-xl flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
           {icon}
         </div>
 
