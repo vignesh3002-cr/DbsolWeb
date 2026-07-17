@@ -50,5 +50,21 @@ html {
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
   transition: filter 0.4s ease;
 }
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
 
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 80s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
 

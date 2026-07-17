@@ -1,131 +1,344 @@
-import { motion } from "framer-motion"
-import { FaStar } from "react-icons/fa"
-import { Link } from "react-router-dom"
+import React from "react";
 
-export default function Testimonials({ limit, minimal }) {
+const reviews = [
+  {
+    name: "Rajesh Kumar",
+    role: "Operations Manager",
+    rating: 5,
+    review:
+      "DBSol delivered our Dynamics 365 project flawlessly. The team was professional and highly responsive.",
+  },
+  {
+    name: "Anita Sharma",
+    role: "CEO",
+    rating: 4,
+    review:
+      "Good technical expertise and smooth implementation. Overall a great experience.",
+  },
+  {
+    name: "Michael Wilson",
+    role: "Director",
+    rating: 3.8,
+    review:
+      "Very knowledgeable team. Final result was impressive and met expectations.",
+  },
+  {
+    name: "Priya Nair",
+    role: "Business Owner",
+    rating: 5,
+    review:
+      "Outstanding development service and excellent project communication.",
+  },
+  {
+    name: "Arjun Mehta",
+    role: "Finance Director",
+    rating: 4,
+    review:
+      "Their Dynamics 365 expertise significantly improved our financial workflows.",
+  },
+  {
+    name: "Sarah Johnson",
+    role: "IT Manager",
+    rating: 5,
+    review:
+      "Delivered a high-quality responsive website and enterprise integrations.",
+  },
+  {
+    name: "David Chen",
+    role: "Operations Head",
+    rating: 4,
+    review:
+      "The implementation streamlined our supply chain and operations.",
+  },
+  {
+    name: "Ahmed Hassan",
+    role: "Sales Manager",
+    rating: 3.8,
+    review:
+      "Reliable support team and strong technical expertise.",
+  },
+  {
+    name: "Lisa Anderson",
+    role: "Technology Lead",
+    rating: 5,
+    review:
+      "Transformed our outdated systems into a modern platform.",
+  },
+  {
+    name: "Kevin White",
+    role: "Product Owner",
+    rating: 4,
+    review:
+      "Excellent support and timely issue resolution.",
+  },
 
-  const testimonials = [
-    {
-      name: "Arjun Mehta",
-      role: "Finance Director",
-      company: "Enterprise Manufacturing Ltd",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      review: "DBSol helped us successfully implement Dynamics 365 Finance & Operations. Their expertise and professionalism significantly improved our financial workflows."
-    },
-    {
-      name: "Sarah Johnson",
-      role: "IT Manager",
-      company: "Retail Solutions Group",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      review: "The DBSol team delivered a high-quality responsive website and enterprise integrations. Their team understands business requirements perfectly."
-    },
-    {
-      name: "David Chen",
-      role: "Operations Head",
-      company: "Global Logistics Corp",
-      image: "https://randomuser.me/api/portraits/men/65.jpg",
-      review: "Outstanding consulting services. Their Dynamics 365 implementation streamlined our supply chain and improved operational efficiency."
-    },
-    {
-      name: "Priya Nair",
-      role: "CEO",
-      company: "Healthcare Innovations",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-      review: "Professional team with deep technical expertise. They built our mobile app and enterprise backend perfectly."
-    }
-  ]
-const shuffleArray = (array) => {
-  return [...array].sort(() => Math.random() - 0.5)
-}
+  // Repeat until 40 Reviews
+  {
+    name: "Rebecca Taylor",
+    role: "CEO",
+    rating: 5,
+    review:
+      "Amazing customer service and quality delivery.",
+  },
+  {
+    name: "Vikram Singh",
+    role: "Operations Director",
+    rating: 4,
+    review:
+      "Helped automate our manual business processes.",
+  },
+  {
+    name: "Daniel Lee",
+    role: "IT Director",
+    rating: 5,
+    review:
+      "Cloud migration was seamless and professionally managed.",
+  },
+  {
+    name: "Neha Kapoor",
+    role: "Business Manager",
+    rating: 4,
+    review:
+      "Professional consultants with deep business knowledge.",
+  },
+  {
+    name: "Maria Rodriguez",
+    role: "IT Manager",
+    rating: 3.8,
+    review:
+      "Responsive support and excellent implementation guidance.",
+  },
+  {
+    name: "Thomas Young",
+    role: "CIO",
+    rating: 5,
+    review:
+      "Scalable solutions that support our long-term growth.",
+  },
+  {
+    name: "Pooja Sharma",
+    role: "Business Director",
+    rating: 4,
+    review:
+      "Very dependable technology partner.",
+  },
+  {
+    name: "Mark Evans",
+    role: "Operations Manager",
+    rating: 5,
+    review:
+      "Productivity improved immediately after deployment.",
+  },
+  {
+    name: "Jennifer Clark",
+    role: "Business Analyst",
+    rating: 4,
+    review:
+      "Great attention to detail and project management.",
+  },
+  {
+    name: "Karthik Raman",
+    role: "CEO",
+    rating: 5,
+    review:
+      "Delivered exactly what was promised.",
+  },
 
-  // ✅ Apply limit
-const shuffled = shuffleArray(testimonials)
-const items = limit ? shuffled.slice(0, limit) : shuffled
+  {
+    name: "William Scott",
+    role: "Director",
+    rating: 4,
+    review:
+      "Strong communication and technical capabilities.",
+  },
+  {
+    name: "Asha Menon",
+    role: "ERP Manager",
+    rating: 5,
+    review:
+      "Excellent Dynamics 365 customization work.",
+  },
+  {
+    name: "Richard Hall",
+    role: "Program Director",
+    rating: 3.8,
+    review:
+      "Quality service and transparent communication.",
+  },
+  {
+    name: "Samantha Green",
+    role: "COO",
+    rating: 5,
+    review:
+      "The team exceeded our expectations.",
+  },
+  {
+    name: "Rohit Verma",
+    role: "Marketing Head",
+    rating: 4,
+    review:
+      "Website redesign significantly boosted engagement.",
+  },
+  {
+    name: "Harish Nair",
+    role: "Managing Director",
+    rating: 5,
+    review:
+      "Fast implementation and exceptional support.",
+  },
+  {
+    name: "Andrew Collins",
+    role: "Project Sponsor",
+    rating: 4,
+    review:
+      "Responsive and professional throughout the project.",
+  },
+  {
+    name: "Olivia Davis",
+    role: "Operations Manager",
+    rating: 5,
+    review:
+      "Cloud transformation project was executed perfectly.",
+  },
+  {
+    name: "Joseph Martin",
+    role: "Technology Manager",
+    rating: 4,
+    review:
+      "Strong Microsoft technology expertise.",
+  },
+  {
+    name: "Deepak Agarwal",
+    role: "Finance Manager",
+    rating: 5,
+    review:
+      "Outstanding ERP implementation experience.",
+  },
+
+  {
+    name: "Stephanie Moore",
+    role: "Business Head",
+    rating: 3.8,
+    review:
+      "High-quality delivery and reliable support.",
+  },
+  {
+    name: "Ramesh Iyer",
+    role: "Managing Partner",
+    rating: 5,
+    review:
+      "Improved efficiency across all departments.",
+  },
+  {
+    name: "Christopher Adams",
+    role: "IT Head",
+    rating: 4,
+    review:
+      "Dependable team with excellent communication.",
+  },
+  {
+    name: "Naveen Prakash",
+    role: "Operations Lead",
+    rating: 5,
+    review:
+      "Smooth and professional project delivery.",
+  },
+  {
+    name: "James Parker",
+    role: "Managing Director",
+    rating: 4,
+    review:
+      "Reliable services and strong technical skills.",
+  },
+  {
+    name: "Daniel Carter",
+    role: "Business Consultant",
+    rating: 5,
+    review:
+      "Excellent engagement from planning to deployment.",
+  },
+  {
+    name: "Grace Mitchell",
+    role: "Project Lead",
+    rating: 4,
+    review:
+      "Trustworthy technology partner.",
+  },
+  {
+    name: "Ryan Cooper",
+    role: "General Manager",
+    rating: 5,
+    review:
+      "Delivered measurable business outcomes.",
+  },
+  {
+    name: "Sophia Bennett",
+    role: "Operations Manager",
+    rating: 3.8,
+    review:
+      "Helpful team and quality implementation.",
+  },
+  {
+    name: "Ethan Walker",
+    role: "Director",
+    rating: 5,
+    review:
+      "Highly recommend DBSol for enterprise projects.",
+  },
+];
+
+const renderStars = (rating) => {
+  const stars = Math.round(rating);
+  return "★".repeat(stars);
+};
+
+export default function Testimonials() {
+  const loopReviews = [...reviews, ...reviews];
 
   return (
-    <section className={`${minimal ? "" : "bg-gray-50 dark:bg-gray-900"}`}>
-        <br></br>
-      <div className={`${minimal ? "" : "px-6 mx-auto max-w-7xl rounded-xl"}`}>
-
-        {/* ✅ Hide title in minimal mode */}
-        {!minimal && (
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-              What Our Clients Say
-            </h2>
-            <p className="max-w-2xl mx-auto text-gray-500">
-              Trusted by businesses across industries for delivering reliable
-              Dynamics 365 solutions, web platforms, and mobile applications.
-            </p>
-          </div>
-        )}
-
-        {/* Grid */}
-        <div className={`grid gap-8 ${minimal ? "" : "md:grid-cols-2 lg:grid-rows-1"}`}>
-
-          {items.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-2xl"
-            >
-
-              {/* Review */}
-              <p className="mb-4 text-gray-600 dark:text-gray-300">
-                "{item.review}"
-              </p>
-
-              {/* Stars */}
-              <div className="flex mb-3 text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
-              </div>
-
-              {/* User */}
-              <div className="flex items-center gap-3">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-800 dark:text-white">
-                    {item.name}
-                  </h4>
-                  <p className="text-xs text-gray-500">{item.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-
-        </div>
+    <section className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-400">
+          What Our Clients Say
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mt-3">
+          Trusted by businesses across industries.
+        </p>
       </div>
 
-      {/* ✅ Hide CTA in minimal mode */}
-      {/*{!minimal && (
-        <section className="py-20 mt-12 text-center text-white bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-800">
-          <h2 className="mb-6 text-4xl font-bold">
-            Start Your Journey Today
-          </h2>
+    <div className="relative overflow-hidden">
+    
+    <div className="flex animate-scroll gap-6 w-max">
+`
+          {loopReviews.map((review, index) => (
+            <div
+              key={index}
+              className="w-[380px] min-h-[220px] bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-6 flex-shrink-0"
+            >
+              <div className="text-yellow-500 text-xl mb-3">
+                {renderStars(review.rating)}
+              </div>
 
-          <p className="max-w-2xl mx-auto mb-10 text-blue-100">
-            We empower enterprises with intelligent ERP, low-code platforms,
-            automation, and insights that reduce complexity and accelerate digital transformation.
-          </p>
+              <div className="text-sm text-gray-500 mb-3">
+                {review.rating}/5
+              </div>
 
-          <Link
-            to="/contact"
-            className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
-          >
-            Get Started
-          </Link>
-        </section>
-      )}*/}
-<br></br>
+              <p className="text-gray-700 mb-5">
+                "{review.review}"
+              </p>
+
+              <div>
+                <h4 className="font-semibold text-lg">
+                  {review.name}
+                </h4>
+                <p className="text-gray-500 text-sm">
+                  {review.role}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
-  )
+  );
 }

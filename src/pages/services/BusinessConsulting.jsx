@@ -306,22 +306,6 @@ export default function BPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-gray-900 py-16 text-center">
-  <div className="max-w-4xl mx-auto px-6">
-    <h2 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">
-      What Our Clients Say
-    </h2>
-
-    <p className="text-lg text-gray-600 dark:text-gray-300 italic">
-      "Their consulting approach transformed our operations. We improved efficiency by 40% within months."
-    </p>
-
-    <p className="mt-4 font-semibold text-gray-800 dark:text-white">
-      — CFO, Logistics Company
-    </p>
-  </div>
-</section>
-
       {/* BUSINESS IMPACT */}
     
 <section className="bg-gray-50 dark:bg-gray-900 py-16">

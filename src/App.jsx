@@ -37,6 +37,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
 import WhyChooseUs from "./components/WhyChooseUs";
+import CompanyStats from "./components/CompanyStats";
 import AdminDashboard from "./pages/emp/AdminDashboard";
 import ApplyLeave from "./pages/emp/ApplyLeave";
 import Dashboard from "./pages/emp/Dashboard";
@@ -87,6 +88,7 @@ function App() {
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CareerForm" element={<CareerForm />} />
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
+        <Route path="/CompanyStats" element={<CompanyStats />} />
         <Route path="/emp-portal" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />

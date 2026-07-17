@@ -144,16 +144,16 @@ const SECURITY_PRIVACY_ITEMS = [
     color: "#5B9BD5",
     rgb: "91,155,213",
     body:
-      "As a responsible corporate enterprise, DbSol takes the handling of personal data very seriously and ensures that processing always follows globally accepted privacy principles. We promote a culture that values privacy through awareness, technology-driven innovation, and strict controls.",
-    points: ["Global privacy principles", "Awareness-led culture", "Strict operational controls"],
+      "DBSol Technologies envisions becoming a globally trusted leader in digital transformation, empowering organizations with innovative, scalable, and future-ready technology solutions.We strive to help businesses unlock their full potential,drive sustainable growth,and achieve operational excellence through continuous innovation, technical expertise, and exceptional value delivery.",
+    points: ["Innovation", "Scalability", "Growth"],
   },
   {
     title: "Our Mission",
     color: "#6BBF7A",
     rgb: "107,191,122",
     body:
-      "DbSol aims to achieve its vision by providing maximum transparency, security, and adherence to data privacy principles. We also strive to incorporate privacy-by-design concepts, methodologies, and technology-driven privacy controls.",
-    points: ["Maximum transparency", "Privacy-by-design", "Technology-driven controls"],
+      " At DBSol Technologies, our mission is to deliver high-quality, reliable, and innovative technology solutions that help businesses transform, optimize, and grow. Through industry expertise, customer-focused partnerships, and excellence in execution, we empower organizations to overcome challenges, accelerate digital adoption, and achieve long-term success.",
+    points: ["Quality Delivery", "Customer Focus", "Digital Growth"],
   },
 ];
 
@@ -581,10 +581,10 @@ export default function DataMigrationSection() {
           ══════════════════════════════════════════ */}
           <div className="mb-16 " style={reveal("0.04s")}>
             {/* Badge */}
-         <h2 className="mb-4 text-4xl text-center font-bold text-gray-800 dark:text-white mt-3">
+         <h2 className="mb-4 text-4xl text-center font-extrabold text-gray-800 dark:text-white mt-3">
 Data Migration Transparency
 </h2> 
-      <p className="max-w-[740px] text-sm mx-auto mb-16 text-center text-[#000000] dark:text-gray-300">
+      <p className="max-w-[740px] text-sm mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">
                   We don't move a single record without a paper trail. Our DMF-driven process, tracked inside Microsoft LCS and Azure DevOps, gives you full transparency from first extract to go-live cutover.
                 </p>
             <div className="flex flex-col justify-between gap-32 lg:flex-row lg:items-end">
@@ -661,7 +661,7 @@ Data Migration Transparency
               <p className="text-[10px] tracking-[0.16em] uppercase font-semibold text-blue-500 mb-2">
                 Data Security & Privacy
               </p>
-              <h3 className="text-3xl font-bold text-gray-800 dm-font-syne dark:text-white">
+              <h3 className="text-4xl font-bold text-gray-800  dark:text-white">
                 Built for compliance and user trust
               </h3>
               <p className="max-w-[760px] mx-auto mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">

@@ -192,7 +192,7 @@ export default function DeliveringTailoredSolutions({
             <span className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
               Our Services
             </span>
-            <h1 className="mb-4 text-4xl font-black text-gray-900 dark:text-white lg:text-5xl">
+            <h1 className="mb-4 text-2xl font-black text-gray-900 dark:text-white lg:text-5xl">
               {service.title}
             </h1>
             <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-300">
