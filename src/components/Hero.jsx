@@ -154,5 +154,7 @@ const scrollRight = () => {
       </div>
       
     </section>
-  )
-}
+
+      );
+    };
+    

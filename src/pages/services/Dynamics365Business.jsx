@@ -268,7 +268,7 @@ export default function Dynamics365Business() {
             Transform Your Business with Dynamics 365
           </h2>
 
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-blue-100">
+          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-blue-100">
             Empower your organization with intelligent ERP solutions designed for
             scalability, efficiency, and long-term growth.
           </p>

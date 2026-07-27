@@ -473,7 +473,7 @@ Login</NavLink>
 }
 {menu && (
 
-<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 w-9/12 px-6 py-6 pb-10 text-black bg-white border-b border-r border-gray-400 left-1 dark:bg-gray-800 dark:text-gray-200 top-12 lg:hidden rounded-xl">
+<motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 top-20 left-0 right-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto px-6 py-6 pb-10 text-black bg-white border-b border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 lg:hidden">
 <ul className="flex flex-col gap-5 text-xl font-semibold ">
 <li className="cursor-pointer hover:text-blue-600">
 <NavLink

@@ -56,7 +56,7 @@ with powerful digital transformation strategies.
 
 {/* Industry Grid */}
 
-<div className="grid grid-cols-2 gap-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
+<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 justify-items-center dark:text-white">
 
 {industries.map((item,index)=>(
 <Link to={item.path} key={index}>
@@ -87,7 +87,7 @@ className="flex flex-col items-center cursor-pointer group"
 
 {/* Label */}
 
-<p className="mt-4 text-sm font-semibold text-center">
+<p className="mt-6 text-sm font-semibold text-center">
 
 {item.title}
 

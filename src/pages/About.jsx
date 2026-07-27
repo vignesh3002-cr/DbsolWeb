@@ -21,7 +21,7 @@ return(
 <section className="relative flex items-center justify-center h-[420px]">
 
 <img
-src="/images/About_1.jpg"
+src="/images/Aboutus.png"
 className="absolute inset-0 object-cover w-full h-full"
 />
 

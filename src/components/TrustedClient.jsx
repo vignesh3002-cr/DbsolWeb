@@ -27,7 +27,12 @@ const clients = [
     name: "apple",
     light: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
     dark: "https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg",
-  },
+ },
+ {     
+  name:"linkdein",
+  light:"https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+  dark:"https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+ },
 ];
 
 export default function TrustedClients() {

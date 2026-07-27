@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import PowerPlatformSolutions from "./pages/services/Power Platform Solutions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import CTASection from "./components/CTASection";
 import BPage from "./pages/services/BusinessConsulting";
 import NewsPage from "./components/NewsPage";
 import FinanceOperations from "./pages/services/FinanceOperations";
@@ -53,6 +54,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/CTAsection" element={<CTASection />} />
         <Route path="/power-platform-solutions" element={<PowerPlatformSolutions />} />
         <Route path="/power-automate" element={<Navigate to="/power-platform-solutions" replace />} />
         <Route path="/modules" element={<ModulesHub />} />

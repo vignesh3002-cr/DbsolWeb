@@ -149,10 +149,10 @@ Contact Us
 <ul className="space-y-3 text-sm text-gray-400 ">
 <a href="mailto:jayakumar.k@dbsoltechnologies.com">
 <li className="hover:text-gray-300">
-✉ jayakumar.k@dbsoltechnologies.com
+✉ aravind.p@dbsoltechnologies.com
 </li></a>
 <li className="hover:text-gray-300">
-📞 +91 9994883682
+📞 +91 9884016853
 </li>
 <li className="hover:text-gray-300">
 📍 VP Chindhan Ave

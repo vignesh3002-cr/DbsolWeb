@@ -91,7 +91,7 @@ export default function Contact() {
             >
               <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600" />
               <h3 className="font-semibold">Phone</h3>
-              <p className="text-black dark:text-gray-200">+91 9994883682</p>
+              <p className="text-black dark:text-gray-200">+91 9884016853</p>
             </motion.div>
 
             <motion.div
@@ -101,7 +101,7 @@ export default function Contact() {
               <a href="mailto:jayakumar.k@dbsoltechnologies.com">
                 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
                 <h3>Email</h3>
-                <p className="text-black dark:text-gray-200">jayakumar.k@dbsoltechnologies.com</p>
+                <p className="text-black dark:text-gray-200">aravind.p@dbsoltechnologies.com</p>
               </a>
             </motion.div>
 

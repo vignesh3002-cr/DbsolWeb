@@ -296,7 +296,7 @@ className="p-6 bg-white/10 backdrop-blur-md rounded-xl"
 
 <section className="py-24 text-center text-white bg-indigo-700 dark:from-gray-800 dark:to-gray-900">
 
-<h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
+<h2 className="mb-6 text-4xl font-bold dark:text-white">
 Transform Your Financial Operations
 </h2>
 

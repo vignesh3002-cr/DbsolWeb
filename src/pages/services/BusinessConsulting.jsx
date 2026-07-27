@@ -354,7 +354,7 @@ export default function BPage() {
         <h2 className="text-3xl font-bold mb-4">
           Ready to Transform Your Business?
         </h2>
-        <p className="mb-6 text-lg opacity-90 max-w-2xl mx-auto">
+        <p className="mb-6 text-base opacity-90 max-w-2xl mx-auto">
           Partner with us to unlock efficiency, innovation, and long‑term value
           using modern enterprise solutions.
         </p>

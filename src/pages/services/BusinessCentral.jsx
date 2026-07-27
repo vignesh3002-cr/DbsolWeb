@@ -223,7 +223,7 @@ export default function BusinessCentral() {
         <h2 className="mb-4 text-3xl font-bold">
          Start Your Business Central Web Journey
         </h2>
-        <p className="mx-auto mb-6 max-w-2xl text-lg text-blue-100">
+        <p className="mx-auto mb-6 max-w-2xl text-base text-blue-100">
          Create a modern web experience that connects directly to your Business Central data—improving efficiency, visibility, and customer engagement.
         </p>
         <Link
