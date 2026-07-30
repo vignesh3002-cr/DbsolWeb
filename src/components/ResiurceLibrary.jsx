@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 export default function ResourceLibrary() {
   return (
-    <section className="relative min-h-screen px-6 py-4 overflow-hidden text-white dark:bg-black md:px-16 lg:px-24">
+    <section className="relative px-6 py-4 overflow-hidden text-white dark:bg-black md:px-16 md:py-8 lg:px-24 lg:py-12">
 
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-yellow-400/20 blur-[180px] -translate-x-1/2"></div>
@@ -12,7 +12,7 @@ export default function ResourceLibrary() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="max-w-4xl mb-16"
+        className="max-w-4xl mb-8 md:mb-16"
       >
         <h2 className="text-4xl font-bold leading-tight text-black dark:text-white md:text-5xl">
           Learn Before You Decide.
@@ -27,7 +27,7 @@ export default function ResourceLibrary() {
       </motion.div>
 
       {/* Resources List */}
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-6 md:gap-12">
 
         {[
           {

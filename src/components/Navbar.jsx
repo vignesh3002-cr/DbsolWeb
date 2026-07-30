@@ -2,10 +2,13 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import { FaChevronDown, FaChevronUp, FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { useEffect } from "react";
 import lightLogo from "../assets/LOGO dbsol.png";
 export default function Header() {
 
+const [learnOpen, setLearnOpen] = useState(false);  
+const [aboutOpen, setAboutOpen] = useState(false);
 const [, setPowerPlatformOpen] = useState(false);
 const [servicesOpen,setServicesOpen] = useState(false);
 const [industriesOpen,setIndustriesOpen] = useState(false);
@@ -72,16 +75,14 @@ return(
     </svg>
   </div>
 </div>
-
-{/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer pl-2 md:pl-4">
   <button
   onClick={() => setMenu(!menu)}
-  className="text-2xl lg:hidden text-black dark:text-white ml-2"
+  className="text-2xl lg:hidden text-black  ml-2"
 >
   {menu ? "✕" : "☰"}
 </button>
-
+</div>
 {/* LOGO */}
 <div className="flex items-center gap-4 cursor-pointer pl-2 md:pl-4">
   
@@ -100,7 +101,7 @@ return(
 
 </div>
 </div>
-</div>
+
 {/* NAVIGATION */}
 <div className="flex-1 flex justify-end pr-4 lg:pr-8">
 
@@ -116,6 +117,47 @@ Home
 </NavLink>
 </li>
 
+
+<li
+className="relative"
+onMouseEnter={() => setAboutOpen(true)}
+onMouseLeave={() => setAboutOpen(false)}
+>
+<div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 text-black dark:text-white dark:hover:text-blue-600">
+About Us
+{aboutOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
+</div>
+
+<AnimatePresence>
+{aboutOpen && (
+<motion.ul
+initial={{ opacity: 0, y: -10 }}
+animate={{ opacity: 1, y: 0 }}
+exit={{ opacity: 0, y: -10 }}
+className="absolute left-0 w-48 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/80 dark:bg-black/45 dark:text-white dropdown"
+>
+<li>
+<NavLink
+to="/aboutUs"
+className={({ isActive }) =>
+isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"}
+>
+Company
+</NavLink>
+</li>
+<li>
+<NavLink
+to="/careers"
+className={({ isActive }) =>
+isActive ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1" : "hover:text-black dark:hover:text-white"}
+>
+Careers
+</NavLink>
+</li>
+</motion.ul>
+)}
+</AnimatePresence>
+</li>
 
 {/* SERVICES MENU */}
 
@@ -388,15 +430,101 @@ Hospitality</NavLink>
 
 </li>
 
-<li className="cursor-pointer hover:text-blue-600 whitespace-nowrap">
-
-<NavLink
-to="/aboutUs"
-className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-600" :"text-black hover:text-blue-600 dark:text-white dark:hover:text-blue-600"}
+{/* LEARN WITH US */}
+<li
+  className="relative"
+  onMouseEnter={() => setLearnOpen(true)}
+  onMouseLeave={() => setLearnOpen(false)}
 >
-About Us
-</NavLink>
+  <div
+    className="flex items-center gap-1 cursor-pointer  hover:text-blue-600 text-black dark:text-white dark:hover:text-blue-600 "
+    onClick={() => setLearnOpen(!learnOpen)}
+  >
+    Learn With Us
+
+    {learnOpen ? (
+      <FaChevronUp size={12} />
+    ) : (
+      <FaChevronDown size={12} />
+    )}
+  </div>
+
+  <AnimatePresence>
+    {learnOpen && (
+      <motion.ul
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.25 }}
+        className="absolute left-0 w-64 p-6 space-y-3 font-semibold text-black rounded-lg bg-white/90 dark:bg-black/45 dark:text-white dropdown"
+      >
+        <li className="cursor-pointer">
+          <NavLink
+            to="/security-privacy"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Security & Privacy
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer">
+          <NavLink
+            to="/internship"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Internship
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer">
+          <NavLink
+            to="/training"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Training
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer">
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Blogs
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer">
+          <NavLink
+            to="/certifications"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Certifications
+          </NavLink>
+        </li>
+      </motion.ul>
+    )}
+  </AnimatePresence>
 </li>
 
 {/*
@@ -474,30 +602,69 @@ Login</NavLink>
 {menu && (
 
 <motion.div initial={{opacity: 0,x: -60 }} whileInView={{opacity: 1, x: 0}} transition={{delay:0.3}} className="fixed z-40 top-20 left-0 right-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto px-6 py-6 pb-10 text-black bg-white border-b border-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 lg:hidden">
-<ul className="flex flex-col gap-5 text-xl font-semibold ">
-<li className="cursor-pointer hover:text-blue-600">
+<ul className="flex flex-col gap-0 text-lg font-semibold">
+<li className="cursor-pointer hover:text-blue-600 py-3 border-b border-gray-100 dark:border-gray-700">
 <NavLink
   to="/" onClick={() => {
   window.location.href = "/";
 }}
   className={({isActive}) =>
-  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600 "}
+  isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
 Home
 </NavLink>
 </li>
 
 
+<li className="relative py-3 border-b border-gray-100 dark:border-gray-700">
+<div
+onClick={() => setAboutOpen(prev => !prev)}
+className="flex items-center cursor-pointer hover:text-blue-600"
+>
+About Us
+</div>
+
+<AnimatePresence>
+{aboutOpen && (
+<motion.ul
+initial={{opacity:0,y:-10}}
+animate={{opacity:1,y:0}}
+exit={{opacity:0,y:-10}}
+transition={{duration:0.25}}
+className="mt-3 ml-4 space-y-3"
+>
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/aboutUs"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
+Company
+</NavLink>
+</li>
+<li className="cursor-pointer hover:text-blue-600">
+<NavLink
+to="/careers"
+className={({isActive}) =>
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+>
+Careers
+</NavLink>
+</li>
+</motion.ul>
+)}
+</AnimatePresence>
+</li>
+
 {/* SERVICES MENU */}
 
-<li className="relative">
+<li className="relative py-3 border-b border-gray-100 dark:border-gray-700">
 
   <div 
     onClick={toggleServices}
-    className="flex items-center gap-2 cursor-pointer hover:text-blue-600"
+    className="flex items-center cursor-pointer hover:text-blue-600"
   >
      Services
-    {servicesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
   </div>
 
   <AnimatePresence>
@@ -659,14 +826,12 @@ Inventory Management System</NavLink>
 {/* INDUSTRIES MENU */}
 
 <li
-className="relative"
+className="relative py-3 border-b border-gray-100 dark:border-gray-700"
 >
 
-<div onClick={toggleIndustries} className="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+<div onClick={toggleIndustries} className="flex items-center cursor-pointer hover:text-blue-600">
 
 Industries
-
-{industriesOpen ? <FaChevronUp size={12}/> : <FaChevronDown size={12}/>}
 
 </div>
 
@@ -754,16 +919,47 @@ Health Care</NavLink>
 </AnimatePresence>
 
 </li>
+<li className="w-full py-3 border-b border-gray-100 dark:border-gray-700">
+  <button
+    onClick={() => setLearnOpen(!learnOpen)}
+    className="flex items-center justify-start w-full font-medium"
+  >
+    <span>Learn With Us</span>
+  </button>
 
+  <AnimatePresence>
+    {learnOpen && (
+      <motion.ul
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "auto", opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        className="ml-5 mt-2 space-y-3 overflow-hidden border-l border-gray-200 pl-4"
+      >
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/security-privacy" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Security & Privacy</NavLink>
+        </li>
 
-<li className="cursor-pointer hover:text-blue-600">
-<NavLink
-to="/aboutUs"
-className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
->
-About Us</NavLink>
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/internship" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Internship</NavLink>
+        </li>
+
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/training" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Training</NavLink>
+        </li>
+
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/blogs" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Blogs</NavLink>
+        </li>
+
+        <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/certifications" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Certifications</NavLink>
+        </li>
+      </motion.ul>
+    )}
+  </AnimatePresence>
 </li>
+
 {/*
 
 Case Study Navbar Mobile
@@ -795,21 +991,21 @@ Careers
 </NavLink>
 </li>
 */}
-<li className="cursor-pointer hover:text-blue-600">
+<li className="cursor-pointer hover:text-blue-600 py-3 border-b border-gray-100 dark:border-gray-700">
 <NavLink
- to="/Contact"  
-className={({isActive})=>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
+ to="/contact"
+ className={({isActive})=>
+ isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
 Contact Us</NavLink>
 </li>
 
 
-<li className="cursor-pointer hover:text-white whitespace-nowrap ml-2">
+<li className="cursor-pointer hover:text-blue-600 py-3">
 <NavLink
 to="/emp-portal"
 className={({isActive}) =>
-isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "  hover:text-blue-600  dark:text-white"}
+isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}
 >
 Login</NavLink>
 </li>

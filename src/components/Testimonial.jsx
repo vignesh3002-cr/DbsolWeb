@@ -296,7 +296,7 @@ export default function Testimonials() {
   const loopReviews = [...reviews, ...reviews];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <section className="py-4 md:py-8 lg:py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-400">
           What Our Clients Say
@@ -328,7 +328,7 @@ export default function Testimonials() {
               </p>
 
               <div>
-                <h4 className="font-semibold text-lg">
+                <h4 className="font-semibold dark:text-gray-200 text-lg ">
                   {review.name}
                 </h4>
                 <p className="text-gray-500 dark:text-gray-200 text-sm">

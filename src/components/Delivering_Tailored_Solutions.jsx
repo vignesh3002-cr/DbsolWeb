@@ -286,45 +286,7 @@ export default function DeliveringTailoredSolutions({
         </div>
       </section>
 
-      <section className="bg-blue-50/60 py-16 lg:py-24 dark:bg-gray-900/80">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-                Technologies We Use
-              </h2>
-              <div className="grid gap-3">
-                {service.technologies.map((tech) => (
-                  <div
-                    key={tech}
-                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-blue-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500/30"
-                  >
-                    <span className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400" />
-                    <span className="font-medium text-gray-900 dark:text-white">{tech}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            <div>
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-                Use Cases
-              </h2>
-              <div className="grid gap-3">
-                {service.useCases.map((useCase) => (
-                  <div
-                    key={useCase}
-                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-blue-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500/30"
-                  >
-                    <ArrowRight className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
-                    <span className="text-gray-600 dark:text-gray-300">{useCase}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

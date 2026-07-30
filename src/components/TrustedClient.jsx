@@ -37,7 +37,7 @@ const clients = [
 
 export default function TrustedClients() {
   return (
-    <section className="py-12 overflow-hidden bg-white dark:bg-gray-900">
+    <section className="py-4 md:py-8 lg:py-12 overflow-hidden bg-white dark:bg-gray-900">
       <div className="px-6 mx-auto max-w-7xl">
         <h2 className="mb-8 text-3xl font-bold text-center text-gray-800 dark:text-gray-200">Trusted by Industry Leaders</h2>
         <div className="relative overflow-hidden">

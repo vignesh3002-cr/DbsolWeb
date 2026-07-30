@@ -69,12 +69,12 @@ export default function Contact() {
           <div className="absolute inset-0 bg-black/60" />
 
           <div className="relative z-10 text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
+            <h1 className="text-5xl font-bold">Contact Us</h1>
 
             <p className="mt-2 text-sm text-gray-200">
               <Link to="/" className="hover:text-blue-400">Home</Link>
-              <span className="mx-2">»</span>
-              <span className="text-blue-400">Contact</span>
+              <span className="mx-2">➜</span>
+              <span className="text-blue-600">Contact</span>
             </p>
           </div>
         </section>

@@ -23,7 +23,7 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white dark:bg-gradient-to-b dark:from-gray-800  dark:to-gray-900 dark:text-white py-20 px-6 md:px-16">
+    <section className="bg-gradient-to-b from-gray-50 to-white dark:bg-gradient-to-b dark:from-gray-800  dark:to-gray-900 dark:text-white py-4 md:py-8 lg:py-20 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}

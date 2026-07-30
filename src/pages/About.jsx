@@ -2,14 +2,13 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import CountUp from "react-countup"
 import GlobePage from "../components/Globepage"
 import TrustedClients from "../components/TrustedClient"
 import GrowthJourney from "../components/GrowthHistory"
 import LeadershipSection from "../components/Leadership"
 
+
 export default function About(){
-  
 return(
 <>
 <div className="min-h-screen text-black transition-colors duration-500 bg-white dark:bg-gray-900 dark:text-white">
@@ -78,98 +77,6 @@ Our mission is to help businesses streamline operations, improve financial visib
 
 </section>
 
-{/* MISSION & VISION - PREMIUM */}
-
-<section className="relative overflow-hidden py-28 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-
-{/* Background Glow */}
-<div className="absolute w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl top-[-100px] left-[-100px]"></div>
-<div className="absolute w-[400px] h-[400px] bg-indigo-400/20 rounded-full blur-3xl bottom-[-100px] right-[-100px]"></div>
-
-<div className="relative z-10 max-w-6xl px-6 mx-auto">
-
-<h2 className="mb-4 text-4xl font-bold text-center">
-Our Mission & Vision
-</h2>
-<p className="max-w-2xl mx-auto mb-20 text-center">We envision empowering businesses with scalable mobile and web platforms for sustainable success.</p>
-<div className="grid gap-16 md:grid-cols-2">
-
-{/* MISSION */}
-
-<motion.div
-initial={{opacity:0, x:-60}}
-whileInView={{opacity:1, x:0}}
-transition={{duration:0.8}}
-className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 rounded-2xl"
->
-
-{/* Floating Icon */}
-<div className="absolute text-6xl text-blue-500 opacity-100 dark:opacity-80 top-4 right-6">
-🚀
-</div>
-
-<h3 className="mb-4 text-2xl font-semibold text-blue-600">
-Our Mission
-</h3>
-
-<p className="mb-4 text-gray-600 dark:text-gray-300">
-Our mission is to empower businesses by delivering intelligent ERP solutions that streamline operations, enhance productivity, and enable data-driven decision-making.
-</p>
-
-<p className="text-gray-600 dark:text-gray-300">
-We focus on building scalable, secure, and future-ready systems using modern technologies like Microsoft Dynamics 365, cloud computing, and automation frameworks.
-</p>
-
-{/* Highlights */}
-<ul className="mt-6 space-y-2 text-gray-700 dark:text-gray-300">
-<li>✔ Optimize business processes</li>
-<li>✔ Deliver scalable ERP solutions</li>
-<li>✔ Enable digital transformation</li>
-</ul>
-
-</motion.div>
-
-
-{/* VISION */}
-
-<motion.div
-initial={{opacity:0, x:60}}
-whileInView={{opacity:1, x:0}}
-transition={{duration:0.8}}
-className="relative p-10 overflow-hidden bg-white shadow-2xl dark:bg-gray-900 rounded-2xl"
->
-
-{/* Floating Icon */}
-<div className="absolute text-6xl text-indigo-500 opacity-100 dark:opacity-80 top-4 right-6">
-🌍
-</div>
-
-<h3 className="mb-4 text-2xl font-semibold text-indigo-600">
-Our Vision
-</h3>
-
-<p className="mb-4 text-gray-600 dark:text-gray-300">
-Our vision is to become a global leader in ERP consulting and digital innovation by helping organizations achieve operational excellence and sustainable growth.
-</p>
-
-<p className="text-gray-600 dark:text-gray-300">
-We aim to bridge the gap between technology and business by delivering world-class solutions that drive efficiency, innovation, and long-term success.
-</p>
-
-{/* Highlights */}
-<ul className="mt-6 space-y-2 text-gray-700 dark:text-gray-300">
-<li>✔ Global ERP leadership</li>
-<li>✔ Innovation-driven solutions</li>
-<li>✔ Long-term client success</li>
-</ul>
-
-</motion.div>
-
-</div>
-
-</div>
-
-</section>
 
 <LeadershipSection/>
 {/* WHY CHOOSE US */}

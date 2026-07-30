@@ -58,7 +58,7 @@ Microsoft Partner
 
 </div>
 
-<p className="text-sm leading-relaxed text-justify text-gray-400 max-w-xs hover:text-gray-300">
+<p className="text-sm leading-7  text-gray-400 max-w-xs hover:text-gray-300">
 
 We specialize in enterprise digital transformation services, including Dynamics 365 Finance & Operations, strategic Business Consulting, Customer Engagement solutions, and advanced web and cross-platform mobile application development.
 
@@ -76,7 +76,7 @@ We specialize in enterprise digital transformation services, including Dynamics 
 <FaTwitter/>
 </a>
 
-<a className="p-3 transition bg-gray-800 rounded-lg hover:bg-blue-700">
+<a href="https://www.linkedin.com/company/dbsol-technologies-private-limited/" target="_blank" rel="noopener noreferrer" className="p-3 transition bg-gray-800 rounded-lg hover:bg-blue-700">
 <FaLinkedinIn/>
 </a>
 

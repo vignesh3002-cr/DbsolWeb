@@ -1,204 +1,208 @@
-import {
-  Cloud,
-  Network,
-  Rocket,
-  Bot,
-  Handshake,
-  Factory,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Cloud, Network, Rocket, Bot, Handshake, Factory, ArrowUpRight } from "lucide-react";
+
 
 const FEATURES = [
   {
     icon: Network,
     title: "Dynamics 365 F&O",
-    description:
-      "Finance, Supply Chain, Procurement, Inventory and ERP transformation solutions.",
-    wheelClassName: "left-1/2 top-2 -translate-x-1/2 z-10",
+    description: "Finance, Supply Chain, Procurement, Inventory and ERP transformation solutions.",
+    color: "#2563eb",
   },
   {
     icon: Rocket,
     title: "Finance Transformation",
-    description:
-      "Modernize financial operations, reporting, budgeting and business processes.",
-    wheelClassName: "right-40 top-24 z-10",
+    description: "Modernize financial operations, reporting, budgeting and business processes.",
+    color: "#4f46e5",
   },
   {
     icon: Bot,
     title: "Power Platform",
-    description:
-      "Power Apps, Power Automate, Power BI and intelligent workflow automation.",
-    wheelClassName: "right-40 bottom-24 z-10",
+    description: "Power Apps, Power Automate, Power BI and intelligent workflow automation.",
+    color: "#7c3aed",
   },
   {
     icon: Handshake,
     title: "Enterprise Integrations",
-    description:
-      "Integrate Dynamics 365 with Salesforce, SAP, eCommerce platforms and third-party systems.",
-    wheelClassName: "left-1/2 -bottom-6 -translate-x-1/2 z-10",
+    description: "Integrate Dynamics 365 with Salesforce, SAP, eCommerce platforms and third-party systems.",
+    color: "#9333ea",
   },
   {
     icon: Factory,
     title: "Warehouse & Retail",
-    description:
-      "Warehouse Management, Retail Operations, Inventory Visibility and Logistics Solutions.",
-    wheelClassName: "left-40 bottom-24 z-10",
+    description: "Warehouse Management, Retail Operations, Inventory Visibility and Logistics Solutions.",
+    color: "#0d9488",
   },
   {
     icon: Cloud,
     title: "Azure & Cloud Services",
-    description:
-      "Cloud migration, infrastructure management, security and scalable business solutions.",
-    wheelClassName: "left-40 top-24 z-10",
+    description: "Cloud migration, infrastructure management, security and scalable business solutions.",
+    color: "#0284c7",
   },
 ];
 
-export default function WhyDbsol() {
+function useInView(threshold = 0.15) {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => e.isIntersecting && setVis(true), { threshold });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return [ref, vis];
+}
+
+function FeatureRow({ feature, index, isLast }) {
+  const [ref, visible] = useInView(0.25);
+  const Icon = feature.icon;
+
   return (
-    <section className="bg-slate-50 dark:bg-gray-900 py-6 overflow-visible">
-
-      {/* Badge */}
-      <div className="flex justify-center -mt-2">
-        <span className="bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold">
-          Microsoft Dynamics 365 Specialists
-        </span>
-      </div>
-
-      {/* Heading */}
-      <div className="text-center mb-4">
-
-        <h2 className="text-3xl md:text-4xl text-gray-900 dark:text-white font-bold mb-2">
-          Why Choose DBSOL
-        </h2>
-
-        <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 text-base leading-relaxed">
-          Helping Retail, Manufacturing and Distribution businesses transform
-          Finance, Supply Chain and Warehouse Operations through Microsoft
-          Dynamics 365, Power Platform, Azure Cloud Services and Enterprise
-          Integrations.
-        </p>
-
-      </div>
-
-      {/* Wheel Section — desktop / large screens only */}
-      <div className="relative h-[560px] hidden lg:block">
-
-        {/* Center Circle */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-          <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex flex-col items-center justify-center shadow-2xl">
-
-            <h3 className="text-2xl font-bold">
-              DBSOL
-            </h3>
-
-            <p className="text-center mt-2 text-sm text-blue-100 font-medium leading-snug">
-              Dynamics 365
-              <br />
-              Finance & Operations
-              <br />
-              Experts
-            </p>
-
-          </div>
-        </div>
-
-        {/* CONNECTION LINES */}
-        <svg
-          className="absolute inset-0 w-full h-full z-0"
-          viewBox="0 0 1000 650"
-          preserveAspectRatio="none"
+    <div
+      ref={ref}
+      className="relative flex gap-6 pb-10 group last:pb-0"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateX(0)" : "translateX(-16px)",
+        transition: `opacity 0.6s ease ${index * 80}ms, transform 0.6s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms`,
+      }}
+    >
+      {/* Connecting line + node */}
+      <div className="flex flex-col items-center shrink-0">
+        <div
+          className="flex items-center justify-center transition-transform duration-300 rounded-full w-14 h-14 group-hover:scale-110"
+          style={{ background: `${feature.color}14`, border: `1.5px solid ${feature.color}40`, color: feature.color }}
         >
-          <line x1="500" y1="325" x2="500" y2="100" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-          <line x1="500" y1="325" x2="820" y2="200" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-          <line x1="500" y1="325" x2="820" y2="470" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-          <line x1="500" y1="325" x2="500" y2="560" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-          <line x1="500" y1="325" x2="180" y2="470" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-          <line x1="500" y1="325" x2="180" y2="200" stroke="#2563eb" strokeOpacity="0.4" strokeWidth="3" />
-        </svg>
-
-        {/* NODES */}
-        {FEATURES.map((feature) => (
-          <Node
-            key={feature.title}
-            className={feature.wheelClassName}
-            icon={<feature.icon size={26} />}
-            title={feature.title}
-            description={feature.description}
+          <Icon size={24} />
+        </div>
+        {!isLast && (
+          <div
+            className="w-px flex-1 mt-2"
+            style={{ background: "linear-gradient(to bottom, currentColor, transparent)", color: `${feature.color}50`, minHeight: "40px" }}
           />
-        ))}
+        )}
       </div>
 
-      {/* Feature Grid — tablet / mobile fallback (wheel is desktop-only) */}
-      <div className="grid grid-cols-1 gap-6 px-6 max-w-4xl mx-auto sm:grid-cols-2 lg:hidden">
-        {FEATURES.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <div
-              key={feature.title}
-              className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800"
-            >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300">
-                <Icon size={26} />
-              </div>
-              <div>
-                <h4 className="mb-1 font-semibold text-gray-800 dark:text-white">
-                  {feature.title}
-                </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+      {/* Content */}
+      <div className="flex-1 pt-2">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold tracking-widest" style={{ color: feature.color }}>
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h4 className="mt-1 mb-2 text-lg font-bold text-gray-900 dark:text-white">{feature.title}</h4>
+            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-md">{feature.description}</p>
+          </div>
+          <ArrowUpRight
+            className="transition-transform duration-300 shrink-0 mt-1 group-hover:translate-x-1 group-hover:-translate-y-1"
+            size={20}
+            style={{ color: feature.color }}
+          />
+        </div>
       </div>
-
-    </section>
+    </div>
   );
 }
 
-function Node({ icon, title, description, className }) {
+export default function WhyDbsol() {
+  const [headerRef, headerVisible] = useInView(0.3);
+  const [bannerRef, bannerVisible] = useInView(0.2);
+
   return (
-    <div className={`absolute ${className}`}>
-      <div className="group flex flex-col items-center relative">
+    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 sm:py-24">
+      {/* Decorative glow blobs */}
+      <div className="absolute rounded-full pointer-events-none -left-24 -top-32 h-96 w-96 bg-blue-400/20 blur-3xl dark:bg-blue-600/10" />
+      <div className="absolute rounded-full pointer-events-none -right-24 top-1/2 h-96 w-96 -translate-y-1/2 bg-purple-400/20 blur-3xl dark:bg-purple-600/10" />
+      <div className="absolute rounded-full pointer-events-none -bottom-32 left-1/3 h-80 w-80 bg-teal-400/10 blur-3xl dark:bg-teal-600/10" />
 
-        <div className="w-16 h-16 rounded-full bg-white shadow-xl flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
-          {icon}
-        </div>
-
-        <h4 className="mt-3 text-sm font-semibold text-gray-800 dark:text-white text-center max-w-[140px]">
-          {title}
-        </h4>
-
-        {/* Tooltip */}
+      <div className="relative max-w-6xl px-6 mx-auto">
+        {/* Header */}
         <div
-          className="
-            absolute
-            top-full
-            mt-3
-            w-64
-            rounded-xl
-            bg-white
-            dark:bg-gray-800
-            p-4
-            shadow-2xl
-            border
-            border-gray-100
-            dark:border-gray-700
-            opacity-0
-            invisible
-            group-hover:opacity-100
-            group-hover:visible
-            transition-all
-            duration-300
-            z-50
-          "
+          ref={headerRef}
+          className="max-w-3xl mx-auto mb-14 text-center"
+          style={{
+            opacity: headerVisible ? 1 : 0,
+            transform: headerVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
+          }}
         >
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
-            {description}
+          <span className="inline-block px-5 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900/40 dark:text-blue-300">
+            Microsoft Dynamics 365 Specialists
+          </span>
+
+          <h2 className="mt-5 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+            Why Choose{" "}
+            <span className="text-3xl font-bold text-gray-900 dark:text-white bg-clip-text">
+              DBSOL
+            </span>
+          </h2>
+
+          <p className="max-w-2xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+            Helping Retail, Manufacturing and Distribution businesses transform Finance, Supply Chain and Warehouse
+            Operations through Microsoft Dynamics 365, Power Platform, Azure Cloud Services and Enterprise
+            Integrations.
           </p>
         </div>
 
+        {/* Identity Banner */}
+        <div
+          ref={bannerRef}
+          className="relative p-8 mb-16 overflow-hidden shadow-2xl rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 shadow-blue-900/30 sm:p-10"
+          style={{
+            opacity: bannerVisible ? 1 : 0,
+            transform: bannerVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
+          }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none opacity-10"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div className="absolute rounded-full pointer-events-none -right-10 -top-10 h-56 w-56 bg-white/10 blur-2xl" />
+          <div className="absolute rounded-full pointer-events-none -bottom-16 left-10 h-48 w-48 bg-white/10 blur-2xl" />
+
+          <div className="relative flex flex-col items-center justify-between gap-8 md:flex-row">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-white sm:text-3xl">DBSOL</h3>
+              <p className="max-w-md mt-2 text-sm font-medium leading-relaxed text-blue-100 sm:text-base">
+                Dynamics 365 Finance &amp; Operations Experts — one partner for every pillar of your enterprise
+                transformation.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {FEATURES.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex items-center justify-center w-12 h-12 text-white rounded-xl bg-white/10 ring-1 ring-white/20 backdrop-blur-sm"
+                  title={feature.title}
+                >
+                  <feature.icon size={20} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Timeline — replaces the boxed grid */}
+        <div className="grid gap-x-16 md:grid-cols-2">
+          <div>
+            {FEATURES.slice(0, 3).map((feature, i) => (
+              <FeatureRow key={feature.title} feature={feature} index={i} isLast={i === 2} />
+            ))}
+          </div>
+          <div>
+            {FEATURES.slice(3, 6).map((feature, i) => (
+              <FeatureRow key={feature.title} feature={feature} index={i + 3} isLast={i === 2} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

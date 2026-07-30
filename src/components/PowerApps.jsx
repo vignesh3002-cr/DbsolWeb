@@ -177,7 +177,7 @@ const PowerApps = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="images/PowerAutomate/Powerapps_logo.jpg"
+            src="images/PowerAutomate/Powerapps_logo.png"
             className=" w-full h-full py-8 object-cover" 
           />
         </div>

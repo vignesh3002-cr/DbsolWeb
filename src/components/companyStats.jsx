@@ -35,7 +35,7 @@ threshold:0.3,
   
 return(
 
-<section ref={ref} className="py-8 text-black dark:text-white dark:bg-gray-900 ">
+<section ref={ref} className="py-4 md:py-8 lg:py-12 text-black dark:text-white dark:bg-gray-900 ">
 
 <div className="px-6 mx-auto max-w-7xl">
 

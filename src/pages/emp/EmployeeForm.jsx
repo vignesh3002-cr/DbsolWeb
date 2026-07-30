@@ -222,18 +222,18 @@ const [employee, setEmployee] = useState({
             </div>
 <div>
   <label className="block text-sm font-semibold mb-2">
-    Employee Type
+   Martial Status
   </label>
 
   <select
-    name="employeeType"
-    value={employee.employeeType}
+    name="MartialStatus"
+    value={employee.MartialStatus}
     onChange={handleChange}
     className="w-full border rounded-xl p-3"
   >
-    <option value="">Select Employee Type</option>
-    <option value="Permanent">Permanent</option>
-    <option value="Temporary">Temporary</option>
+    <option value="">Select Martial Status</option>
+    <option value="Single">Single</option>
+    <option value="Married">Married</option>
   </select>
 </div>
             <div>

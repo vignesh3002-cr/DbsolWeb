@@ -339,7 +339,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="/images/PowerAutomate/powerautomate.jpg"
+            src="/images/PowerAutomate/powerautomate.png"
             className=" w-full h-96 object-cover" 
           />
         </div>

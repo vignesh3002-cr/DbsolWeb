@@ -381,7 +381,7 @@ export default function TestimonialsSection() {
              bg-gradient-to-br from-gray-100 via-white to-gray-200 
              dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-950 dark:to-black 
              text-gray-900 dark:text-white 
-             py-[8px] md:py-[8px]"
+             py-4 md:py-8 lg:py-12"
 >
                       <h2 className="mb-2 text-[clamp(38px,6vw,60px)] font-bold text-center text-gray-950 dark:text-white">
 Client Success Stories

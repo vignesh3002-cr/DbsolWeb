@@ -1,21 +1,23 @@
-﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Home from "./pages/Home";
-import PowerPlatformSolutions from "./pages/services/Power Platform Solutions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CTASection from "./components/CTASection";
-import BPage from "./pages/services/BusinessConsulting";
-import NewsPage from "./components/NewsPage";
-import FinanceOperations from "./pages/services/FinanceOperations";
-import Dynamics365Business from "./pages/services/Dynamics365Business";
+import PowerPlatformSolutions from "./pages/services/Power Platform Solutions";
+import ModulesHub from "./pages/ModulesHub";
+import ModuleDetail from "./pages/ModuleDetail";
 import BusinessCentral from "./pages/services/BusinessCentral";
 import CustomerEngagement from "./pages/services/CustomerEngagement";
+import BPage from "./pages/services/BusinessConsulting";
+import FinanceOperations from "./pages/services/FinanceOperations";
+import Dynamics365Business from "./pages/services/Dynamics365Business";
 import WebDevelopment from "./pages/services/Webdevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
-import ITITES from "./pages/industries/IT&ITES";
 import ServicePage from "./components/Delivering_Tailored_Solutions";
+import ITITES from "./pages/industries/IT&ITES";
 import Manufacturing from "./pages/industries/Manufacturing";
+import NewsPage from "./components/NewsPage";
 import RetailWholesale from "./pages/industries/Retail&WholeSale";
 import LogisticsSupplyChain from "./pages/industries/LogisticsSupplyChain";
 import FinanceBanking from "./pages/industries/Finance";
@@ -32,9 +34,6 @@ import Careers from "./pages/Careers";
 import ContactExperts from "./pages/expert";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
-import ModulesHub from "./pages/ModulesHub";
-import ModuleDetail from "./pages/ModuleDetail";
-import ScrollToTop from "./components/ScrollToTop";
 import CareerForm from "./components/Careers_Form";
 import GlobePage from "./components/Globepage";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -46,10 +45,14 @@ import Login from "./pages/emp/Login";
 import EmployeeMaster from "./pages/emp/EmployeeMaster";
 import EmployeeForm from "./pages/emp/EmployeeForm";
 import EmployeeDetails from "./pages/emp/EmployeeDetails";
+import ScrollToTop from "./components/ScrollToTop";
+import SecurityPrivacy from "./pages/LearnWithUs/SecurityPrivacy";
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<About />} />
@@ -89,6 +92,7 @@ function App() {
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CareerForm" element={<CareerForm />} />
+        <Route path="/security-privacy" element={<SecurityPrivacy />} />
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
         <Route path="/CompanyStats" element={<CompanyStats />} />
         <Route path="/emp-portal" element={<Login />} />
@@ -104,4 +108,3 @@ function App() {
 }
 
 export default App;
-
