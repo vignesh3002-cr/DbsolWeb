@@ -29,7 +29,7 @@ const clients = [
     dark: "https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg",
  },
  {     
-  name:"linkdein",
+  name:"linkedin",
   light:"https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
   dark:"https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
  },

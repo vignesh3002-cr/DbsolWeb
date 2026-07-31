@@ -68,8 +68,7 @@ function MissionVisionSection() {
           className="text-center"
         >
          
-
-          <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+         <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Our </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Mission</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"> & </span>
