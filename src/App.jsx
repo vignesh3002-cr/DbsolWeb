@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CTASection from "./components/CTASection";
-import PowerPlatformSolutions from "./pages/services/Power Platform Solutions";
+import PowerPlatformSolutions from "./pages/services/PowerPlatformSolutions";
 import ModulesHub from "./pages/ModulesHub";
 import ModuleDetail from "./pages/ModuleDetail";
 import BusinessCentral from "./pages/services/BusinessCentral";
@@ -12,20 +12,20 @@ import CustomerEngagement from "./pages/services/CustomerEngagement";
 import BPage from "./pages/services/BusinessConsulting";
 import FinanceOperations from "./pages/services/FinanceOperations";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
-import WebDevelopment from "./pages/services/Webdevelopment";
+import WebDevelopment from "./pages/services/WebDevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ServicePage from "./components/Delivering_Tailored_Solutions";
-import ITITES from "./pages/industries/IT&ITES";
+import ITITES from "./pages/industries/ITITES";
 import Manufacturing from "./pages/industries/Manufacturing";
 import NewsPage from "./components/NewsPage";
-import RetailWholesale from "./pages/industries/Retail&WholeSale";
+import RetailWholesale from "./pages/industries/RetailWholeSale";
 import LogisticsSupplyChain from "./pages/industries/LogisticsSupplyChain";
 import FinanceBanking from "./pages/industries/Finance";
 import Healthcare from "./pages/industries/HealthCare";
 import Education from "./pages/industries/Education";
 import Hospitality from "./pages/industries/Hospitality";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
-import FinancialManagementSystem from "./pages/solutions/financialManagementSystem";
+import FinancialManagementSystem from "./pages/solutions/FinancialManagementSystem";
 import HumanResourceManagementSystem from "./pages/solutions/HumanResourceManagementSystem";
 import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
@@ -71,11 +71,11 @@ function App() {
         <Route path="/WebDevelopment" element={<WebDevelopment />} />
         <Route path="/services/:slug" element={<ServicePage />} />
         <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment />} />
-        <Route path="/IT.ITES" element={<ITITES />} />
+        <Route path="/IT-ITES" element={<ITITES />} />
         <Route path="/Manufacturing" element={<Manufacturing />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/Globe" element={<GlobePage />} />
-        <Route path="/Retail&Wholesale" element={<RetailWholesale />} />
+        <Route path="/Retail-Wholesale" element={<RetailWholesale />} />
         <Route path="/LogisticsSupplyChain" element={<LogisticsSupplyChain />} />
         <Route path="/FinanceBanking" element={<FinanceBanking />} />
         <Route path="/HealthCare" element={<Healthcare />} />
