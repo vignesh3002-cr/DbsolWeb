@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CompanyStats from "../components/CompanyStats";
 import TrustedClients from "../components/TrustedClient";
-import CTASection from "../components/CTASection";
+import CTASection from "../components/Ctasection";
 import Testimonials from "../components/Testimonial";
 import ERPImplementationProcess from "../components/ERP";
 import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solutions";
