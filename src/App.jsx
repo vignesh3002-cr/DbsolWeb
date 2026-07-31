@@ -3,7 +3,7 @@
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs/Company";
 import Contact from "./pages/Contact";
-import CTASection from "./components/Ctasection";
+import Ctasection from "./components/Ctasection";
 import PowerPlatformSolutions from "./pages/services/PowerPlatformSolutions";
 import ModulesHub from "./pages/ModulesHub";
 import ModuleDetail from "./pages/ModuleDetail";
@@ -61,7 +61,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/CTASection" element={<CTASection />} />
+        <Route path="/Ctasection" element={<Ctasection />} />
 
         <Route
           path="/power-platform-solutions"
