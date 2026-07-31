@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import GlobePage from "../components/Globepage"
-import TrustedClients from "../components/TrustedClient"
-import GrowthJourney from "../components/GrowthHistory"
-import LeadershipSection from "../components/Leadership"
+import GlobePage from "../../components/Globepage"
+import TrustedClients from "../../components/TrustedClient"
+import GrowthJourney from "../../components/GrowthHistory"
+import LeadershipSection from "../../components/Leadership"
 
 
 export default function About(){

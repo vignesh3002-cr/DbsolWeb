@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import {
