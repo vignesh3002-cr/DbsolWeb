@@ -358,9 +358,13 @@ export default function BPage() {
           Partner with us to unlock efficiency, innovation, and long‑term value
           using modern enterprise solutions.
         </p>
-        <button className="bg-white text-indigo-700 px-8 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">
-          Get Started
-        </button>
+         <Link
+                to="/contact"
+             className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:bg-gray-100"
+              >
+               Get Started
+              </Link>
+      
       </section>
 
       <Footer />

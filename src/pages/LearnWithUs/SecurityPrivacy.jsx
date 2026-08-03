@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import DataMigrationSection from "../DataMigrationSection";
 
+
 export default function SecurityPrivacy() {
   return (
     <div className="min-h-screen bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-white">
@@ -39,8 +40,27 @@ export default function SecurityPrivacy() {
 
         <DataMigrationSection />
       </main>
+{/* CTA SECTION */}
+  <section className="bg-indigo-700 dark:bg-gray-800 text-white py-16 px-6 text-center">
+       <h2 className="mb-4 text-3xl font-bold">
+           Ready to Migrate Your Business Data Securely?
+        </h2> 
+               <p className="mb-6 text-base opacity-90 max-w-2xl mx-auto">
+                Protect your valuable business information with our secure,
+                reliable, and compliance-driven data migration services. Our
+                experts ensure a smooth transition with minimal downtime and
+                maximum security.
+              </p>
+             
+              <Link
+                to="/contact"
+             className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:bg-gray-100"
+              >
+                Get Free Consultation
+              </Link>
 
-      <Footer />
+         </section>
+     <Footer />
     </div>
   );
 }
