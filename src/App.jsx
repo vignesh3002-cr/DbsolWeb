@@ -2,20 +2,22 @@
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs/Company";
-import Contact from "./pages/Contact";
-
-import PowerPlatformSolutions from "./pages/services/PowerPlatformSolutions";
+import Careers from "./pages/AboutUs/Careers";
+import BPage from "./pages/services/BusinessConsulting";
+import Dynamics365Business from "./pages/services/Dynamics365Business";
+import BusinessCentral from "./pages/services/BusinessCentral";
 import ModulesHub from "./pages/ModulesHub";
 import ModuleDetail from "./pages/ModuleDetail";
-import BusinessCentral from "./pages/services/BusinessCentral";
-import CustomerEngagement from "./pages/services/CustomerEngagement";
-import BPage from "./pages/services/BusinessConsulting";
 import FinanceOperations from "./pages/services/FinanceOperations";
-import Dynamics365Business from "./pages/services/Dynamics365Business";
+import CustomerEngagement from "./pages/services/CustomerEngagement";
+import PowerPlatformSolutions from "./pages/services/PowerPlatformSolutions";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
-import ServicePage from "./components/Delivering_Tailored_Solutions";
+import Contact from "./pages/Contact";
 
+
+import ServicePage from "./components/Delivering_Tailored_Solutions";
+import CTASection from "./components/Ctasection";
 import ITITES from "./pages/industries/ITITES";
 import Manufacturing from "./pages/industries/Manufacturing";
 import RetailWholesale from "./pages/industries/RetailWholeSale";
@@ -35,7 +37,6 @@ import InventoryManagementSystem from "./pages/solutions/IMS";
 import ContactExperts from "./pages/expert";
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
-import Careers from "./pages/AboutUs/Careers";
 import GlobePage from "./components/Globepage";
 import NewsPage from "./components/NewsPage";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -61,7 +62,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-   \
+   
 
         <Route
           path="/power-platform-solutions"
@@ -73,7 +74,7 @@ function App() {
         />
 
         <Route path="/modules" element={<ModulesHub />} />
-       
+        <Route path="/CtaSection" element={<CTASection />} />
         <Route path="/modules/:slug" element={<ModuleDetail />} />
 
         <Route path="/BusinessCentral" element={<BusinessCentral />} />
@@ -114,6 +115,7 @@ function App() {
         <Route path="/IMS" element={<InventoryManagementSystem />} />
 
         <Route path="/careers" element={<Careers />} />
+        <Route path="/Company" element={<AboutUs />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CaseStudies" element={<CaseStudies />} />
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />

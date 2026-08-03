@@ -60,6 +60,8 @@ export default function SecurityPrivacy() {
               </Link>
 
          </section>
+     
+     
      <Footer />
     </div>
   );

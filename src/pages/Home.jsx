@@ -12,6 +12,7 @@ import ERPImplementationProcess from "../components/ERP";
 import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solutions";
 import VideoTestimonials from "./VideoTestimonials";
 import ResourceLibrary from "../components/ResiurceLibrary";
+import CTASection from "../components/Ctasection";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <TrustedClients />
       <NewsPage />
       <Testimonials />
+      <CTASection />
       <Footer />
     </>
   );
