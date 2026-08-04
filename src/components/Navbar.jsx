@@ -460,6 +460,19 @@ Hospitality</NavLink>
       >
         <li className="cursor-pointer">
           <NavLink
+            to="/knowledge-and-resources"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 border-b-2 dark:text-white border-blue-600 pb-1"
+                : "hover:text-black dark:hover:text-white"
+            }
+          >
+            Knowledge & Resources
+          </NavLink>
+        </li>
+
+        <li className="cursor-pointer">
+          <NavLink
             to="/security-privacy"
             className={({ isActive }) =>
               isActive
@@ -471,7 +484,7 @@ Hospitality</NavLink>
           </NavLink>
         </li>
 
-        <li className="cursor-pointer">
+       {/* <li className="cursor-pointer">
           <NavLink
             to="/internship"
             className={({ isActive }) =>
@@ -521,7 +534,7 @@ Hospitality</NavLink>
           >
             Certifications
           </NavLink>
-        </li>
+        </li> */}
       </motion.ul>
     )}
   </AnimatePresence>
@@ -937,12 +950,14 @@ Health Care</NavLink>
         className="ml-5 mt-2 space-y-3 overflow-hidden border-l border-gray-200 pl-4"
       >
         <li className="cursor-pointer hover:text-blue-600">
+          <NavLink to="/knowledge-and-resources" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Knowledge & Resources</NavLink>
+        </li>
+
+       <li className="cursor-pointer hover:text-blue-600">
           <NavLink to="/security-privacy" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Security & Privacy</NavLink>
         </li>
 
-        <li className="cursor-pointer hover:text-blue-600">
-          <NavLink to="/internship" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Internship</NavLink>
-        </li>
+        {/*
 
         <li className="cursor-pointer hover:text-blue-600">
           <NavLink to="/training" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Training</NavLink>
@@ -954,7 +969,7 @@ Health Care</NavLink>
 
         <li className="cursor-pointer hover:text-blue-600">
           <NavLink to="/certifications" className={({isActive}) => isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "hover:text-blue-600"}>Certifications</NavLink>
-        </li>
+        </li> */}
       </motion.ul>
     )}
   </AnimatePresence>

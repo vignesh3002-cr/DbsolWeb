@@ -11,7 +11,6 @@ import Testimonials from "../components/Testimonial";
 import ERPImplementationProcess from "../components/ERP";
 import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solutions";
 import VideoTestimonials from "./VideoTestimonials";
-import ResourceLibrary from "../components/ResiurceLibrary";
 import CTASection from "../components/Ctasection";
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
       <Industries />
       <ERPImplementationProcess />
       <VideoTestimonials />
-      <ResourceLibrary />
       <TrustedClients />
       <NewsPage />
       <Testimonials />

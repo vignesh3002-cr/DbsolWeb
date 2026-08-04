@@ -3,6 +3,8 @@
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs/Company";
 import Careers from "./pages/AboutUs/Careers";
+import CareerForm from "./components/Careers_Form";
+import JobDescription from "./components/Jobdescription";
 import BPage from "./pages/services/BusinessConsulting";
 import Dynamics365Business from "./pages/services/Dynamics365Business";
 import BusinessCentral from "./pages/services/BusinessCentral";
@@ -52,6 +54,7 @@ import EmployeeForm from "./pages/emp/EmployeeForm";
 import EmployeeDetails from "./pages/emp/EmployeeDetails";
 
 import SecurityPrivacy from "./pages/LearnWithUs/SecurityPrivacy";
+import ResourceLibraryPage from "./pages/LearnWithUs/ResourceLibraryPage";
 
 function App() {
   return (
@@ -115,6 +118,8 @@ function App() {
         <Route path="/IMS" element={<InventoryManagementSystem />} />
 
         <Route path="/careers" element={<Careers />} />
+        <Route path="/CareerForm" element={<CareerForm />} />
+        <Route path="/jobs/:id" element={<JobDescription />} />
         <Route path="/Company" element={<AboutUs />} />
         <Route path="/ContactExperts" element={<ContactExperts />} />
         <Route path="/CaseStudies" element={<CaseStudies />} />
@@ -126,6 +131,7 @@ function App() {
         <Route path="/WhyChooseUs" element={<WhyChooseUs />} />
         <Route path="/CompanyStats" element={<CompanyStats />} />
         <Route path="/security-privacy" element={<SecurityPrivacy />} />
+        <Route path="/knowledge-and-resources" element={<ResourceLibraryPage />} />
 
         <Route path="/emp-portal" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />

@@ -39,34 +39,42 @@ desc:"Access training and mentorship programs to upgrade your skills."
 
 ]
 
-const jobs=[
-
+const jobs = [
 {
+id: "sales-executive",
+title: "Sales Executive",
+location: "On-site",
+type: "Full Time",
+},
+{
+id: "d365-finance-operations-consultant",
 title:"Dynamics 365 Finance & Operations Consultant",
-location:"Chennai / Remote",
+location:"On-site",
 type:"Full Time"
 },
 
 {
+id: "full-stack-developer",
 title:"Full Stack Developer (React + Node.js)",
-location:"Remote",
+location:"On-site",
 type:"Full Time"
 },
 
 {
+id: "erp-implementation-specialist",
 title:"ERP Implementation Specialist",
-location:"Chennai",
+location:"On-site",
 type:"Full Time"
 },
 
 {
+id: "ui-ux-designer",
 title:"UI/UX Designer",
-location:"Remote",
-type:"Contract"
+location:"On-site",
+type:"Full Time"
 }
 
 ]
-
 return(
 
 <div className="bg-gray-50 dark:bg-gray-900">
@@ -155,59 +163,47 @@ className="p-8 bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 </section>
 
-
 {/* OPEN POSITIONS */}
 
 <section className="py-24 bg-gray-100 dark:bg-gray-800">
+  <div className="max-w-5xl px-6 mx-auto">
+    <h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+      Open Positions
+    </h2>
 
-<div className="max-w-5xl px-6 mx-auto">
+    <div className="space-y-6">
+      {jobs.map((job, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl dark:bg-gray-900"
+        >
+          <div>
+            <h3 className="text-lg font-semibold dark:text-white">
+              {job.title}
+            </h3>
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
-Open Positions
-</h2>
+            <p className="text-sm text-gray-500">
+              {job.location} • {job.type}
+            </p>
+          </div>
 
-<div className="space-y-6">
-
-{jobs.map((job,index)=>(
-
-<motion.div
-key={index}
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*0.1}}
-className="flex items-center justify-between p-6 bg-white shadow-lg rounded-xl dark:bg-gray-900"
->
-
-<div>
-
-<h3 className="text-lg font-semibold dark:text-white">
-{job.title}
-</h3>
-
-<p className="text-sm text-gray-500">
-{job.location} • {job.type}
-</p>
-
-</div>
-
-<Link
-to="/CareerForm"
-className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
->
-
-Apply
-
-</Link>
-
-</motion.div>
-
-))}
-
-</div>
-
-</div>
-
+          <Link
+            to={`/jobs/${job.id}`}
+            state={{ job }}
+            className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+          >
+            Check Details
+          </Link>
+        </motion.div>
+      ))}
+    </div>
+  </div>
 </section>
+
+
 
 
 {/* CTA */}
