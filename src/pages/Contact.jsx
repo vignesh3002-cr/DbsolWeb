@@ -101,7 +101,7 @@ export default function Contact() {
               <a href="mailto:jayakumar.k@dbsoltechnologies.com">
                 <FaEnvelope className="mx-auto mb-4 text-3xl text-blue-600" />
                 <h3>Email</h3>
-                <p className="text-black dark:text-gray-200">aravind.p@dbsoltechnologies.com</p>
+                <p className="text-black dark:text-gray-200">aravinth.p@dbsoltechnologies.com</p>
               </a>
             </motion.div>
 

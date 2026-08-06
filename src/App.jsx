@@ -36,7 +36,7 @@ import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
 import InventoryManagementSystem from "./pages/solutions/IMS";
 
-import ContactExperts from "./pages/expert";
+
 import CaseStudies from "./pages/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import GlobePage from "./components/Globepage";
@@ -55,6 +55,7 @@ import EmployeeDetails from "./pages/emp/EmployeeDetails";
 
 import SecurityPrivacy from "./pages/LearnWithUs/SecurityPrivacy";
 import ResourceLibraryPage from "./pages/LearnWithUs/ResourceLibraryPage";
+import ERPGuide from "./pages/LearnWithUs/Erpguide";
 
 function App() {
   return (
@@ -121,7 +122,7 @@ function App() {
         <Route path="/CareerForm" element={<CareerForm />} />
         <Route path="/jobs/:id" element={<JobDescription />} />
         <Route path="/Company" element={<AboutUs />} />
-        <Route path="/ContactExperts" element={<ContactExperts />} />
+       
         <Route path="/CaseStudies" element={<CaseStudies />} />
         <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
       
@@ -132,7 +133,7 @@ function App() {
         <Route path="/CompanyStats" element={<CompanyStats />} />
         <Route path="/security-privacy" element={<SecurityPrivacy />} />
         <Route path="/knowledge-and-resources" element={<ResourceLibraryPage />} />
-
+        <Route path="/erp-guide" element={<ERPGuide />} />
         <Route path="/emp-portal" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />

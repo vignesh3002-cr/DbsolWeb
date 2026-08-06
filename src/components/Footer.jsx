@@ -149,7 +149,7 @@ Contact Us
 <ul className="space-y-3 text-sm text-gray-400 ">
 <a href="mailto:jayakumar.k@dbsoltechnologies.com">
 <li className="hover:text-gray-300">
-✉ aravind.p@dbsoltechnologies.com
+✉ aravinth.p@dbsoltechnologies.com
 </li></a>
 <li className="hover:text-gray-300">
 📞 +91 9884016853

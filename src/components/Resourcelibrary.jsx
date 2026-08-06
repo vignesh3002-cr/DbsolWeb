@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import {Link, useNavigate } from "react-router-dom";
 import {
   Download,
   ArrowRight,
@@ -7,41 +8,90 @@ import {
   Rocket,
   PlayCircle,
 } from "lucide-react";
-
 export default function ResourceLibrary() {
-  const resources = [
-    {
-      title: "ERP Implementation Blueprint",
-      desc: "Learn the complete ERP implementation lifecycle from planning to go-live with best practices.",
-      icon: <BookOpen size={24} />,
-      file: "/files/erp.pdf",
-      button: "Read Guide",
-    },
-    {
-      title: "UAT Checklist",
-      desc: "A practical checklist to ensure your testing phase is smooth and error-free.",
-      icon: <ClipboardCheck size={24} />,
-      file: "/files/uat.pdf",
-      button: "Download",
-    },
-    {
-      title: "D365 Migration Readiness Guide",
-      desc: "Understand your system's readiness before transitioning to Microsoft Dynamics 365.",
-      icon: <Rocket size={24} />,
-      file: "/files/d365.pdf",
-      button: "Read Guide",
-    },
-    {
-      title: "Webinars & Learning",
-      desc: "Watch product demos, implementation strategies, and expert sessions from DBSol.",
-      icon: <PlayCircle size={24} />,
-      file: "#",
-      button: "Watch Now",
-    },
-  ];
+ 
+  
+ const navigate = useNavigate();
+ const resources = [
+  {
+    title: "ERP Implementation Blueprint",
+    desc: "Learn the complete ERP implementation lifecycle from planning to go-live with best practices.",
+    icon: <BookOpen size={24} />,
+    button: "Read Guide",
+    type: "page",
+    link: "/erp-guide",
+  },
+  {
+    title: "UAT Checklist",
+    desc: "A practical checklist to ensure your testing phase is smooth and error-free.",
+    icon: <ClipboardCheck size={24} />,
+    button: "Download",
+    type: "download",
+    link: "/pdfs/uat-checklist.pdf",
+  },
+  {
+    title: "D365 Migration Readiness Guide",
+    desc: "Understand your system's readiness before transitioning to Microsoft Dynamics 365.",
+    icon: <Rocket size={24} />,
+    button: "Read Guide",
+    type: "page",
+    link: "/migration-guide",
+  },
+  {
+    title: "Webinars & Learning",
+    desc: "Watch product demos, implementation strategies, and expert sessions from DBSol.",
+    button: "Watch Now",
+    icon: <PlayCircle size={24} />,
+    type: "page",
+    link: "/webinars",
+  },
+];
+const handleResourceClick = (item) => {
+  if (item.type === "page") {
+    navigate(item.link);
+  }
+
+  if (item.type === "download") {
+    window.open(item.link, "_blank");
+  }
+
+  if (item.type === "external") {
+    window.open(item.link, "_blank");
+  }
+};
 
   return (
-    <section className="relative px-6 py-16 overflow-hidden bg-white dark:bg-black md:px-16 lg:px-24">
+     
+      <div className="min-h-screen bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-white">
+        <main>
+          <section className="relative flex items-center justify-center h-[420px] overflow-hidden">
+            <img
+              src="/images/Knowledge&Resourses.jpg"
+              alt="Knowledge & Resources"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+  
+            <div className="absolute inset-0 bg-black/60"></div>
+  
+            <div className="relative z-10 text-center text-white px-4">
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-5xl font-bold"
+              >
+                Knowledge & Resources
+              </motion.h1>
+  
+              <p className="mt-4 text-gray-200">
+                <Link className="hover:text-blue-600" to="/">
+                  Home
+                </Link>{" "}
+                ➜ <span className="text-blue-600">Knowledge & Resources</span>
+              </p>
+            </div>
+          </section>
+
+<section className="relative px-6 py-16 overflow-hidden bg-white dark:bg-black md:px-16 lg:px-24">
 
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-yellow-400/20 blur-[180px] -translate-x-1/2"></div>
@@ -53,9 +103,7 @@ export default function ResourceLibrary() {
         transition={{ duration: 0.7 }}
         className="max-w-4xl mb-14"
       >
-       
-
-        <h2 className="mt-6 text-4xl font-bold leading-tight text-black dark:text-white md:text-5xl">
+       <h2 className="mt-6 text-4xl font-bold leading-tight text-black dark:text-white md:text-5xl">
           Learn Before You Decide.
           <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
             We Guide. You Succeed.
@@ -99,20 +147,18 @@ export default function ResourceLibrary() {
                 </div>
 
               </div>
+       <button
+           onClick={() => handleResourceClick(item)}
+            className="inline-flex items-center gap-2 px-5 py-3 font-medium text-white transition bg-blue-600 rounded-lg hover:bg-yellow-400 hover:text-black"
+        >
+          {item.button}
 
-              <a
-                href={item.file}
-                download={item.button === "Download"}
-                className="inline-flex items-center gap-2 px-5 py-3 font-medium text-white transition bg-blue-600 rounded-lg hover:bg-yellow-400 hover:text-black"
-              >
-                {item.button}
-
-                {item.button === "Download" ? (
-                  <Download size={18} />
-                ) : (
-                  <ArrowRight size={18} />
-                )}
-              </a>
+         {item.button === "Download" ? (
+        <Download size={18} />
+        ) : (
+        <ArrowRight size={18} />
+        )}
+       </button>
 
             </div>
 
@@ -124,14 +170,17 @@ export default function ResourceLibrary() {
 
       {/* Bottom Button */}
       <div className="mt-14 text-center">
-        <a
-          href="/learnwithus"
+      
+          <Link to="/knowledge-and-resources"
           className="inline-flex items-center gap-3 px-8 py-4 font-semibold text-white transition bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:scale-105"
         >
           View All Resources
           <ArrowRight size={20} />
-        </a>
+       </Link>
       </div>
+      
     </section>
+    </main>
+    </div>
   );
 }
