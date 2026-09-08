@@ -55,7 +55,6 @@ import EmployeeDetails from "./pages/emp/EmployeeDetails";
 
 import SecurityPrivacy from "./pages/LearnWithUs/SecurityPrivacy";
 import ResourceLibraryPage from "./pages/LearnWithUs/ResourceLibraryPage";
-import ERPGuide from "./pages/LearnWithUs/Erpguide";
 
 function App() {
   return (
@@ -133,7 +132,7 @@ function App() {
         <Route path="/CompanyStats" element={<CompanyStats />} />
         <Route path="/security-privacy" element={<SecurityPrivacy />} />
         <Route path="/knowledge-and-resources" element={<ResourceLibraryPage />} />
-        <Route path="/erp-guide" element={<ERPGuide />} />
+    
         <Route path="/emp-portal" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/apply-leave" element={<ApplyLeave />} />

@@ -171,18 +171,26 @@ useEffect(() => {
 const displayedEmployees = showAll
   ? employees
   : employees.slice(0, VISIBLE_EMPLOYEE_COUNT);
-
- const saveLeaveStatus = async (requestLeaveID, status) => {
+const saveLeaveStatus = async (requestLeaveID, status) => {
   try {
-    await axios.patch(
+    const response = await axios.patch(
       `http://localhost:5000/api/leave-requests/${requestLeaveID}/status`,
       { status }
     );
 
+    console.log("Success:", response.data);
+
     updateLeaveStatus(requestLeaveID, status);
-  } catch (err) {
-    console.log(err);
-    alert("Unable to update leave status");
+
+    alert("Leave updated successfully");
+  } catch (error) {
+    console.error("Update Error:", error);
+
+    alert(
+      error.response?.data?.message ||
+      error.message ||
+      "Unable to update leave status"
+    );
   }
 };
 

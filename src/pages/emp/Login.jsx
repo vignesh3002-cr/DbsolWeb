@@ -207,11 +207,7 @@ export default function Login() {
             </button>
           </form>
 
-          <p className="mt-8 rounded-xl bg-slate-50 px-4 py-3 text-center text-xs font-semibold text-slate-500">
-           Demo credentials:
-            Admin User → ID: 1 Password: admin123
-            John Smith → ID: 2 Password: john@123
-          </p>
+     
         </div>
       </section>
     </main>

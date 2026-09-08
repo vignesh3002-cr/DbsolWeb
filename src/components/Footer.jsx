@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 import React, { useRef } from "react";
 import logoDark from "../assets/Dbsol logo.dark.png";
 
-export default function Footer(){
+export default function Footer() {
 const form = useRef();
 const scrollTop = ()=>{
 window.scrollTo({top:0,behavior:"smooth"})
@@ -13,10 +13,10 @@ window.scrollTo({top:0,behavior:"smooth"})
 const sendEmail = (e) =>{
     e.preventDefault();
  emailjs.sendForm(
-        "service_zakxdhu",
-        "template_f8if95g",
+        "service_0vgpqhl",
+        "template_ynlyhlp",
         form.current,
-        "WqsGjD4ltQ3Kgu4PA"
+        "tR4NHJObJtf9X3WOW"
     )
     .then(
         (result)=>{
@@ -147,7 +147,7 @@ Contact Us
 </h3>
 
 <ul className="space-y-3 text-sm text-gray-400 ">
-<a href="mailto:jayakumar.k@dbsoltechnologies.com">
+<a href="mailto:aravinth.p@dbsoltechnologies.com">
 <li className="hover:text-gray-300">
 ✉ aravinth.p@dbsoltechnologies.com
 </li></a>

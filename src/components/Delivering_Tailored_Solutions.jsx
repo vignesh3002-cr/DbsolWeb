@@ -285,8 +285,6 @@ export default function DeliveringTailoredSolutions({
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }

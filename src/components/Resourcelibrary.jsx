@@ -61,40 +61,10 @@ const handleResourceClick = (item) => {
 };
 
   return (
-     
       <div className="min-h-screen bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-white">
         <main>
-          <section className="relative flex items-center justify-center h-[420px] overflow-hidden">
-            <img
-              src="/images/Knowledge&Resourses.jpg"
-              alt="Knowledge & Resources"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-  
-            <div className="absolute inset-0 bg-black/60"></div>
-  
-            <div className="relative z-10 text-center text-white px-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-5xl font-bold"
-              >
-                Knowledge & Resources
-              </motion.h1>
-  
-              <p className="mt-4 text-gray-200">
-                <Link className="hover:text-blue-600" to="/">
-                  Home
-                </Link>{" "}
-                ➜ <span className="text-blue-600">Knowledge & Resources</span>
-              </p>
-            </div>
-          </section>
-
-<section className="relative px-6 py-16 overflow-hidden bg-white dark:bg-black md:px-16 lg:px-24">
-
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-yellow-400/20 blur-[180px] -translate-x-1/2"></div>
+          <section className="relative overflow-hidden bg-white px-6 py-16 dark:bg-black md:px-16 lg:px-24">
+            <div className="py-4 md:py-8 lg:py-12 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
 
       {/* Heading */}
       <motion.div
@@ -178,9 +148,9 @@ const handleResourceClick = (item) => {
           <ArrowRight size={20} />
        </Link>
       </div>
-      
-    </section>
-    </main>
-    </div>
+      </div>
+          </section>
+        </main>
+      </div>
   );
 }

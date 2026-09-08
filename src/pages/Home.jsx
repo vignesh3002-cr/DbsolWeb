@@ -8,7 +8,6 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import CompanyStats from "../components/CompanyStats";
 import TrustedClients from "../components/TrustedClient";
 import Testimonials from "../components/Testimonial";
-import ERPImplementationProcess from "../components/ERP";
 import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solutions";
 import VideoTestimonials from "./VideoTestimonials";
 import CTASection from "../components/Ctasection";
@@ -23,7 +22,6 @@ export default function Home() {
       <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
       <WhyChooseUs />
       <Industries />
-      <ERPImplementationProcess />
       <VideoTestimonials />
       <TrustedClients />
       <NewsPage />
