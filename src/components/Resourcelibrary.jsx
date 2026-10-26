@@ -37,14 +37,6 @@ export default function ResourceLibrary() {
     type: "page",
     link: "/migration-guide",
   },
-  {
-    title: "Webinars & Learning",
-    desc: "Watch product demos, implementation strategies, and expert sessions from DBSol.",
-    button: "Watch Now",
-    icon: <PlayCircle size={24} />,
-    type: "page",
-    link: "/webinars",
-  },
 ];
 const handleResourceClick = (item) => {
   if (item.type === "page") {

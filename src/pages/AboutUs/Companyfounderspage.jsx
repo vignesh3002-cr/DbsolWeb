@@ -2,47 +2,47 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function LeadershipSection() {
-  const [activeTab, setActiveTab] = useState("founders");
+  const [activeTab, setActiveTab] = useState("board");
 
-  const tabs = [
-    { id: "board", label: "Founders" },
-    { id: "executive", label: "Advisor" },
-    { id: "founders", label: "Executive Leadership team" },
-  ];
+ const tabs = [
+  { id: "board", label: "Founders" },
+  { id: "executive", label: "Advisor" },
+  { id: "leadership", label: "Executive Leadership Team" },
+];
+const leadershipData = {
+  board: [
+    {
+      name: "John Smith",
+      role: "Founder",
+      bio: "...",
+    },
+  ],
 
-  const leadershipData = {
-    board: [
-      {
-        name: "John Smith",
-        role: "Chairman",
-        image: "/images/board1.jpg",
-        bio: "John has steered the company’s strategic direction with a focus on long-term growth, governance, and value creation for clients and partners.",
-      },
-    ],
-    executive: [
-      {
-        name: "David Wilson",
-        role: "Chief Executive Officer",
-        image: "/images/executive1.jpg",
-        bio: "David leads the company’s strategic execution and customer-first transformation initiatives across global digital programs.",
-      },
-    ],
-    founders: [
-      {
-        name: "Remapriya Nanjappan",
-        role: "Strategic Consultant",
-        image: "/images/rema-nanjappan.jpg",
-        bio: "ERP Implementation & Digital Transformation Expert specializing in the design and deployment of global HR and Payroll solutions. Skilled in bridging the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
-      },
-      {
-        name: "Maruthanayagam Jeyachandran",
-        role: "Business Analyst",
-        image: "/images/maruthanayagam.jpg",
-        bio: "ERP Implementation & Supply Chain Transformation Expert delivering Microsoft Dynamics 365 solutions for warehouse, inventory, and production, focused on streamlining operations and scalable process improvement.",
-      },
-    ],
-  };
+  executive: [
+    {
+      name: "David Wilson",
+      role: "Advisor",
+      bio: "...",
+    },
+  ],
 
+  leadership: [
+    {
+      name: "Remapriya Nanjappan",
+      role: "Strategic Consultant",
+      image: "/images/rema-nanjappan.jpg",
+      bio: ["ERP Implementation & Digital Transformation Expert specializing in the design and deployment of global HR and Payroll solutions. Skilled in bridging the gap between technical infrastructure and business operations, transforming fragmented global units into streamlined digital ecosystems.",
+        "Former Digital Transformation Manager at Wipro with 16+ years of global experience, exclusively specialized in orchestrating cross-platform ecosystems—including PeopleSoft, Salesforce, and Power Platform—to unify global business units. Expert in leveraging GenAI (Copilot Studio) and high-integrity functional design to automate complex workflows for multi-national entities. Expert in synchronizing complex global business units into unified digital ecosystems.",]
+      },
+    {
+      name: "Maruthanayagam Jeyachandran",
+      role: "Business Analyst",
+      image: "/images/maruthanayagam.jpg",
+      bio: ["ERP Implementation & Supply Chain Transformation Expert delivering Microsoft Dynamics 365 solutions for warehouse, inventory, and production, focused on streamlining operations and scalable process improvement.",
+           "Formerly developed across supply chain operations, SAP, and Microsoft Dynamics 365 environments, with 12+ years of experience in ERP implementation, rollout, support, and process optimization across manufacturing and warehouse functions. Skilled in functional design, warehouse management, business process mapping, UAT, training, and post-go-live support, delivering efficient, business-aligned solutions.",
+      ],},
+  ],
+};
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl px-6 mx-auto">
@@ -84,41 +84,40 @@ export default function LeadershipSection() {
           {tabs.find((tab) => tab.id === activeTab)?.label}
         </motion.h3>
 
-        <div className="space-y-8">
-          {leadershipData[activeTab].map((person, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5 }}
-              className="overflow-hidden bg-white shadow-lg rounded-2xl"
+        <motion.div
+          key={`${activeTab}-content`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid gap-8 md:grid-cols-2"
+        >
+          {leadershipData[activeTab].map((person) => (
+            <article
+              key={person.name}
+              className="p-8 bg-white shadow-lg dark:bg-gray-800 rounded-xl"
             >
-              <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-[350px]">
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    className="object-cover w-full h-full min-h-[350px]"
-                  />
-                </div>
-
-                <div className="flex-1 p-8 md:p-12">
-                  <h3 className="mb-2 text-3xl font-semibold text-gray-900">
-                    {person.name}
-                  </h3>
-
-                  <p className="mb-4 text-xl text-gray-600">{person.role}</p>
-
-                  <button className="mb-6 text-xl font-medium text-indigo-900 underline">
-                    Read Bio ↗
-                  </button>
-
-                  <p className="max-w-2xl leading-8 text-gray-600">{person.bio}</p>
-                </div>
+              {person.image && (
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="object-cover w-32 h-32 mx-auto mb-6 rounded-full"
+                />
+              )}
+              <h4 className="mb-2 text-2xl font-semibold text-center">
+                {person.name}
+              </h4>
+              <p className="mb-4 text-center text-gray-500 dark:text-gray-300">
+                {person.role}
+              </p>
+              <div className="space-y-4 text-center text-gray-600 dark:text-gray-300">
+                {(Array.isArray(person.bio) ? person.bio : [person.bio]).map(
+                  (paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ),
+                )}
               </div>
-            </motion.div>
+            </article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

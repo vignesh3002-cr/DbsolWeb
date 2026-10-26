@@ -55,26 +55,25 @@ const leaders = [
     linkedin: "#",
   },
   {
-    initials: "AK",
-    name: "Arun Kumar Babu",
-    role: "D365 functional consultant",
+    initials: "AP",
+    name: "Aravind Periyanayagam",
+    role: "Technology & Digital Transformation Leader",
     department: "Product",
     deptColor: "bg-purple-100 text-purple-800 border-purple-200",
     avatarBg: "bg-orange-100",
     avatarText: "text-orange-800",
     ringColor: "ring-orange-200",
-    image: "/images/arunkumar.jpg",
+    image: "/images/Aravind.png",
 
     lines: [
       {
         icon: FaTasks,
-        text: "Results-driven D365 Finance & Operations Functional Consultant with strong expertise in Finance and Supply Chain Management modules, focused on process optimization and ERP solution delivery. Proven ability in requirement analysis, system configuration, user support, and delivering scalable business solutions aligned with organizational objectives. Passionate about leveraging technology to improve operational efficiency and support digital transformation initiatives.",
+        text: "With over 18 years of experience in enterprise IT and digital transformation, he brings a strong combination of technology expertise, project leadership, and business acumen. His experience spans Microsoft Dynamics 365, ERP, Identity and Access Management (IAM), Microsoft Entra ID, Active Directory, SailPoint, IT Infrastructure, and Service Delivery.",
       },
       {
         icon: FaLightbulb,
-        text: "Launched 3 flagship features that each added over $5M in annual recurring revenue.",
+        text: "Formerly involved in leading enterprise IT and digital transformation initiatives,he specializes in understanding business challenges, translating them into effective technology solutions, and leading teams through implementation, integration, support, and continuous improvement. His focus is on delivering scalable, secure, efficient, and business-driven solutions that create measurable value for organizations.",
       },
-
     ],
     linkedin: "#",
   },
@@ -164,6 +163,49 @@ export default function LeadershipSection() {
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-blue-900 dark:via-gray-800  dark:to-black-900 py-20 px-6 font-sans">
       <div className="max-w-5xl mx-auto">
+
+        {/* Founder Message */}
+<div className="mb-16 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+  <div className="max-w-4xl">
+<span className="inline-flex items-center gap-2 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-5">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Founding Team
+          </span>
+
+
+    <h3
+      className="text-3xl font-normal text-gray-900 dark:text-white mb-2"
+      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+    >
+      DBSol Technologies
+    </h3>
+
+    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      A technology professional and entrepreneur with a strong vision for
+      helping organizations leverage technology to simplify business operations
+      and accelerate digital transformation. As the Founder of DBSol
+      Technologies, he drives the company’s strategic direction, focusing on
+      delivering practical, scalable, and business-focused technology
+      solutions.
+    </p>
+
+    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      With extensive experience across Microsoft Dynamics 365, ERP solutions,
+      business applications, cloud technologies, automation, and enterprise IT,
+      he works closely with clients to understand their business challenges and
+      transform them into effective technology solutions.
+    </p>
+
+    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      His leadership philosophy is centered on customer success, innovation,
+      continuous learning, and long-term partnerships, with a commitment to
+      building a technology organization that delivers measurable value to
+      every client.
+    </p>
+  </div>
+</div>
 
         {/* Header */}
         <div className="mb-14">

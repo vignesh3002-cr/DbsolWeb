@@ -69,11 +69,11 @@ export default function About() {
           </div>
         </section>
 
-        {/* FOUNDERS & ADVISORS */}
-        <FoundersLeadershipSection />
+        {/* FOUNDERS & ADVISORS 
+        <FoundersLeadershipSection />*/}
 
-        {/* LEADERSHIP TEAM 
-        <LeadershipSection />*/}
+        {/* LEADERSHIP TEAM */}
+        <LeadershipSection />
 
         {/* COMPANY JOURNEY 
         <GrowthJourney />*/}
