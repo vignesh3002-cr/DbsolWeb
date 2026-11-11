@@ -31,9 +31,9 @@ const sendEmail = (e) =>{
  }
 return(
 
-<footer className="relative pt-20 text-gray-300 bg-black">
+<footer className="relative pt-12 text-gray-300 bg-black">
 
-<div className="grid max-w-7xl mx-auto gap-12 px-6 pb-16 md:grid-cols-2 lg:grid-cols-4 items-start">
+<div className="grid max-w-7xl mx-auto gap-8 px-6 pb-8 md:grid-cols-2 lg:grid-cols-5 items-start">
 
   {/* Company Info */}
   <div>
@@ -138,6 +138,36 @@ className={({isActive}) =>
 
 </div>
 
+{/* Services and Resources */}
+
+<div className="space-y-8">
+
+<div>
+<h3 className="mb-4 font-semibold text-white">
+Services
+</h3>
+
+<ul className="space-y-3 text-sm text-gray-400">
+<li><NavLink className="transition-colors hover:text-blue-400" to="/Dynamics365Business">Dynamics 365</NavLink></li>
+<li><NavLink className="transition-colors hover:text-blue-400" to="/BusinessCentral">Business Central</NavLink></li>
+<li><NavLink className="transition-colors hover:text-blue-400" to="/services/erp">ERP Solutions</NavLink></li>
+</ul>
+</div>
+
+<div>
+<h3 className="mb-4 font-semibold text-white">
+Resources
+</h3>
+
+<ul className="space-y-3 text-sm text-gray-400">
+<li><NavLink className="transition-colors hover:text-blue-400" to="/news">Blogs</NavLink></li>
+<li><NavLink className="transition-colors hover:text-blue-400" to="/CaseStudies">Case Studies</NavLink></li>
+<li><NavLink className="transition-colors hover:text-blue-400" to="/contact">FAQs</NavLink></li>
+</ul>
+</div>
+
+</div>
+
 {/* Contact */}
 
 <div>
@@ -232,9 +262,65 @@ Submit
 </div>
 </div>
 
+{/* Frequently Asked Questions */}
+
+<section
+  aria-labelledby="footer-faq-heading"
+  className="max-w-7xl mx-auto px-6 pb-10"
+>
+  <h2 id="footer-faq-heading" className="mb-5 text-xl font-semibold text-white">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="grid gap-4 md:grid-cols-2">
+    <details className="rounded-lg border border-gray-700 p-4">
+      <summary className="cursor-pointer font-medium text-gray-200">
+        Why choose Dynamics 365?
+      </summary>
+      <p className="mt-3 text-sm leading-6 text-gray-400">
+        Dynamics 365 connects business processes and data in one flexible
+        platform, helping teams work more efficiently and make informed
+        decisions.
+      </p>
+    </details>
+
+    <details className="rounded-lg border border-gray-700 p-4">
+      <summary className="cursor-pointer font-medium text-gray-200">
+        How long does implementation take?
+      </summary>
+      <p className="mt-3 text-sm leading-6 text-gray-400">
+        Timelines depend on your project scope, integrations, data, and
+        customizations. We can provide a clearer estimate after learning about
+        your requirements.
+      </p>
+    </details>
+
+    <details className="rounded-lg border border-gray-700 p-4">
+      <summary className="cursor-pointer font-medium text-gray-200">
+        What industries do you support?
+      </summary>
+      <p className="mt-3 text-sm leading-6 text-gray-400">
+        We work with organizations in industries including finance, healthcare,
+        education, manufacturing, retail, logistics, hospitality, and
+        professional services.
+      </p>
+    </details>
+
+    <details className="rounded-lg border border-gray-700 p-4">
+      <summary className="cursor-pointer font-medium text-gray-200">
+        Do you provide post-launch support?
+      </summary>
+      <p className="mt-3 text-sm leading-6 text-gray-400">
+        Contact our team to discuss post-launch assistance, training, and
+        ongoing improvements for your solution.
+      </p>
+    </details>
+  </div>
+</section>
+
 {/* Bottom Bar */}
 
-<div className="py-6 border-t border-gray-700">
+<div className="py-4 border-t border-gray-700">
 
 <div className="flex flex-col items-center justify-between gap-4 px-6 mx-auto max-w-7xl md:flex-row">
 

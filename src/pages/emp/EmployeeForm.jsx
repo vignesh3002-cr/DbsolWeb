@@ -1,11 +1,14 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { apiRequest } from "../../lib/api";
 
 export default function EmployeeForm() {
   const location = useLocation();
   const navigate = useNavigate();
 
   const existing = location.state;
+  const [error, setError] = useState("");
+  const [saving, setSaving] = useState(false);
 const [employee, setEmployee] = useState({
   empId: existing?.empId || "",
   firstName: existing?.firstName || "",
@@ -21,6 +24,7 @@ const [employee, setEmployee] = useState({
   salary: existing?.salary || "",
   employeeType: existing?.employeeType || "",
   leaveBalance: existing?.leaveBalance || 0,
+  maritalStatus: existing?.maritalStatus || existing?.MartialStatus || "",
   permanentAddress: existing?.permanentAddress || "",
   temporaryAddress: existing?.temporaryAddress || "",
   status: existing?.status || "Active",
@@ -33,45 +37,50 @@ const [employee, setEmployee] = useState({
     });
   };
 
- const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
+  setError("");
+  setSaving(true);
 
-  let employees =
-    JSON.parse(localStorage.getItem("employees")) || [];
+  const row = {
+    emp_id: employee.empId.trim(),
+    first_name: employee.firstName.trim(),
+    last_name: employee.lastName.trim(),
+    email: employee.email.trim().toLowerCase(),
+    mobile: employee.mobile.trim(),
+    alternate_mobile: employee.alternateMobile || null,
+    gender: employee.gender || null,
+    dob: employee.dob || null,
+    department: employee.department || null,
+    designation: employee.designation || null,
+    joining_date: employee.joiningDate || null,
+    salary: employee.salary === "" ? null : Number(employee.salary),
+    employee_type: employee.employeeType || null,
+    leave_balance: Number(employee.leaveBalance || 0),
+    permanent_address: employee.permanentAddress || null,
+    temporary_address: employee.temporaryAddress || null,
+    marital_status: employee.maritalStatus || null,
+    status: employee.status || "Active",
+  };
 
-  // Duplicate Check (Only for New Employee)
-  if (!existing) {
-    const employeeExists = employees.some(
-      (emp) =>
-        emp.empId === employee.empId ||
-        emp.email.toLowerCase() === employee.email.toLowerCase()
+  try {
+    await apiRequest(
+      existing
+        ? `/api/employees/${encodeURIComponent(existing.empId)}`
+        : "/api/employees",
+      {
+        method: existing ? "PATCH" : "POST",
+        body: row,
+      },
     );
 
-    if (employeeExists) {
-      alert(
-        "This employee is already created. Please use a different Employee ID or Email."
-      );
-      return;
-    }
-
-    employees.push(employee);
-
-    alert("Employee Added Successfully ✅");
-  } else {
-    // Edit Employee
-    employees = employees.map((emp) =>
-      emp.empId === existing.empId ? employee : emp
-    );
-
-    alert("Employee Updated Successfully ✅");
+    navigate("/employee-master");
+  } catch (saveError) {
+    console.error("Save employee error:", saveError);
+    setError(saveError.message || "Unable to save employee.");
+  } finally {
+    setSaving(false);
   }
-
-  localStorage.setItem(
-    "employees",
-    JSON.stringify(employees)
-  );
-
-  navigate("/employee-master");
 };
   return (
     <div className="min-h-screen bg-[#f4f7fb] p-6">
@@ -86,6 +95,11 @@ const [employee, setEmployee] = useState({
         </div>
 
         <form onSubmit={handleSubmit} className="p-8">
+          {error && (
+            <p role="alert" className="mb-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+              {error}
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <div>
@@ -226,8 +240,8 @@ const [employee, setEmployee] = useState({
   </label>
 
   <select
-    name="MartialStatus"
-    value={employee.MartialStatus}
+    name="maritalStatus"
+    value={employee.maritalStatus}
     onChange={handleChange}
     className="w-full border rounded-xl p-3"
   >
@@ -393,9 +407,10 @@ const [employee, setEmployee] = useState({
 
   <button
     type="submit"
+    disabled={saving}
     className="px-6 py-3 rounded-xl bg-blue-700 text-white font-semibold hover:bg-blue-800"
   >
-    {existing ? "Update Employee" : "Save Employee"}
+    {saving ? "Saving..." : existing ? "Update Employee" : "Save Employee"}
   </button>
 </div>
           

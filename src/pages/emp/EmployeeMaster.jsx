@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
+import { apiRequest } from "../../lib/api";
 import {
   FaEye,
   FaEdit,
@@ -9,32 +10,41 @@ import {
 
 export default function EmployeeMaster() {
   const navigate = useNavigate();
+  const [employees, setEmployees] = useState([]);
+  const [loadError, setLoadError] = useState("");
+  const loadEmployees = useCallback(async () => {
+    const data = await apiRequest("/api/employees");
 
-  // =====================================================
-  // EMPLOYEE DATA
-  // =====================================================
-  const [employees, setEmployees] = useState(() => {
-    try {
-      const savedEmployees = localStorage.getItem("employees");
+    setEmployees(
+      data.map((employee) => ({
+        empId: employee.emp_id,
+        firstName: employee.first_name,
+        lastName: employee.last_name,
+        email: employee.email,
+        mobile: employee.mobile,
+        alternateMobile: employee.alternate_mobile,
+        gender: employee.gender,
+        dob: employee.dob,
+        department: employee.department,
+        designation: employee.designation,
+        joiningDate: employee.joining_date,
+        salary: employee.salary,
+        employeeType: employee.employee_type,
+        leaveBalance: employee.leave_balance,
+        permanentAddress: employee.permanent_address,
+        temporaryAddress: employee.temporary_address,
+        maritalStatus: employee.marital_status,
+        status: employee.status,
+      })),
+    );
+  }, []);
 
-      if (!savedEmployees) {
-        return [];
-      }
-
-      const parsedEmployees = JSON.parse(savedEmployees);
-
-      return Array.isArray(parsedEmployees)
-        ? parsedEmployees
-        : [];
-    } catch (error) {
-      console.error(
-        "Error loading employees:",
-        error
-      );
-
-      return [];
-    }
-  });
+  useEffect(() => {
+    loadEmployees().catch((error) => {
+      console.error("Error loading employees:", error);
+      setLoadError(error.message || "Unable to load employees from Supabase.");
+    });
+  }, [loadEmployees]);
 
   // =====================================================
   // FILTER INPUT VALUES
@@ -55,16 +65,6 @@ export default function EmployeeMaster() {
     employeeType: "",
     empId: "",
   });
-
-  // =====================================================
-  // SAVE EMPLOYEES
-  // =====================================================
-  useEffect(() => {
-    localStorage.setItem(
-      "employees",
-      JSON.stringify(employees)
-    );
-  }, [employees]);
 
   // =====================================================
   // APPLY FILTER
@@ -100,7 +100,7 @@ export default function EmployeeMaster() {
   // =====================================================
   // DELETE EMPLOYEE
   // =====================================================
-  const handleDelete = (empId) => {
+  const handleDelete = async (empId) => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this employee?"
     );
@@ -109,12 +109,19 @@ export default function EmployeeMaster() {
       return;
     }
 
-    const updatedEmployees = employees.filter(
-      (emp) =>
-        String(emp.empId) !== String(empId)
-    );
+    try {
+      await apiRequest(`/api/employees/${encodeURIComponent(empId)}`, {
+        method: "DELETE",
+      });
 
-    setEmployees(updatedEmployees);
+      setEmployees((current) =>
+        current.filter((employee) => String(employee.empId) !== String(empId)),
+      );
+      setLoadError("");
+    } catch (error) {
+      console.error("Error deleting employee:", error);
+      setLoadError(error.message || "Unable to delete employee.");
+    }
   };
 
   // =====================================================
@@ -221,6 +228,12 @@ export default function EmployeeMaster() {
 
         </div>
       </div>
+
+      {loadError && (
+        <p role="alert" className="mb-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+          {loadError}
+        </p>
+      )}
 
       {/* =================================================
           FILTER SECTION

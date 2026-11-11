@@ -32,7 +32,7 @@ export default function CaseStudyDetail() {
       title: "Manufacturing ERP Implementation",
       Link: "/manufacturing",
       industry: "Manufacturing Case Study",
-      image: "/images/Manufacturing.jpeg",
+      image: "/images/Manufacturing.jpg",
       challenge:
         "The client faced operational inefficiencies due to disconnected financial and production systems.",
       solution:
@@ -44,7 +44,7 @@ export default function CaseStudyDetail() {
     title: "Finance & Banking",
     Link:   "/FinanceBanking",
     industry: "Finance Case Study",
-    image: "/images/F&B_2.jpeg",
+    image: "/images/F&B_2.jpg",
     challenge:
         "The bank faced inefficiencies due to siloed customer data, manual loan processing, and limited real-time financial visibility.",
     solution:
@@ -57,7 +57,7 @@ export default function CaseStudyDetail() {
       title: "Retail Inventory Optimization",
       Link: "/Retail&Wholesale",
       industry: "Retail",
-      image: "/images/Retail_1.jpeg",
+      image: "/images/Retail_1.jpg",
       challenge:
         "Retail chain struggled with stock management across multiple warehouses.",
       solution:
@@ -70,7 +70,7 @@ export default function CaseStudyDetail() {
       title: "Healthcare ERP Transformation",
       Link: "/HealthCare",
       industry: "Healthcare",
-      image: "/images/Healthcare_1.jfif",
+      image: "/images/Healthcare_1.jpg",
       challenge:
         "Healthcare provider had slow financial reporting and manual processes.",
       solution:
@@ -82,7 +82,7 @@ export default function CaseStudyDetail() {
     logistics: {
       title: "Logistics Supply Chain Automation",
       industry: "Logistics",
-      image: "/images/Logistics_1.jpeg",
+      image: "/images/Logistics_1.jpg",
       challenge:
         "Manual logistics operations caused delays in order fulfillment.",
       solution:
@@ -94,7 +94,7 @@ export default function CaseStudyDetail() {
       title: "Education Technology",
       Link: "/Education",
       industry: "Education",
-      image: "/images/ET_1.jpeg",
+      image: "/images/ET_1.jpg",
       challenge:
         "Disconnected academic systems and manual processes made it difficult to manage student records, learning delivery, and performance tracking efficiently.",
       solution:
@@ -106,7 +106,7 @@ hospitality: {
   title: "Hospitality",
   Link: "/hospitality",
   industry: "Hospitality  Dynamics Case Study",
-  image: "/images/HT_2.jpeg",
+  image: "/images/HT_2.jpg",
 
   challenge:
     "Fragmented reservation systems, disconnected guest data, and manual service workflows limited real-time visibility across hotel operations, finance, and guest engagement teams. This resulted in inconsistent guest experiences, revenue leakage, and slow operational decision-making.",
@@ -121,7 +121,7 @@ it_ites: {
   title: "IT & ITES",
   Link: "/it-ites",
   industry: "IT & ITES – Dynamics 365 Case Study",
-  image: "/images/IT_2.jfif",
+  image: "/images/IT_2.jpg",
 
   challenge:
     "Disparate service management tools, disconnected customer and project data, and manual financial processes limited real-time visibility across IT operations, delivery teams, and finance. This led to delayed service delivery, SLA breaches, cost overruns, and reduced customer satisfaction.",

@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, LockKeyhole, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, LockKeyhole, Mail } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { apiRequest } from "../../lib/api";
+import { supabase } from "../../lib/supabase";
 
 export default function Login() {
-  const [employeeId, setEmployeeId] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const rememberedEmployeeId = localStorage.getItem("rememberedEmployeeId");
+    const rememberedEmail = localStorage.getItem("rememberedEmail");
 
-    if (rememberedEmployeeId) {
-      setEmployeeId(rememberedEmployeeId);
+    if (rememberedEmail) {
+      setEmail(rememberedEmail);
       setRememberMe(true);
     }
   }, []);
 
-  const handleEmployeeIdChange = (event) => {
-    setEmployeeId(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
     setError("");
   };
 
@@ -32,45 +33,43 @@ export default function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const enteredId = employeeId.trim();
+    const enteredEmail = email.trim().toLowerCase();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        empId:  Number(enteredId),
-        password: password,
+      const response = await apiRequest("/api/login", {
+        method: "POST",
+        auth: false,
+        body: { email: enteredEmail, password },
       });
 
-    // ✅ READ ROLE FROM BACKEND RESPONSE
-      const isAdmin = response?.data?.user?.isAdmin;
+      const { error: sessionError } = await supabase.auth.setSession({
+        access_token: response.session.access_token,
+        refresh_token: response.session.refresh_token,
+      });
+      if (sessionError) throw sessionError;
 
-      if (isAdmin === undefined) {
-      throw new Error("isAdmin missing from server response");
-      }
-     
-    // ✅ Store role and ID
-      localStorage.setItem("empId", enteredId);
-      localStorage.setItem("isAdmin", isAdmin);
-    
+      const isAdmin = response.user.role === "admin";
+
+      localStorage.removeItem("empId");
+      localStorage.setItem("userEmail", response.user.email);
+      localStorage.setItem("isAdmin", isAdmin ? "1" : "0");
+
       if (rememberMe) {
-        localStorage.setItem("rememberedEmployeeId", enteredId);
+        localStorage.setItem("rememberedEmail", enteredEmail);
       } else {
-        localStorage.removeItem("rememberedEmployeeId");
+        localStorage.removeItem("rememberedEmail");
       }
-
 
       setError("");
-
-    // ✅ ROUTE USING ROLE (FIX)
-     if (Number(isAdmin) === 1) {
-      navigate("/admin-dashboard");
-      } else {
-      navigate("/dashboard");
-     }
+      navigate(isAdmin ? "/admin-dashboard" : "/dashboard");
     } catch (err) {
       console.error("Login error:", err);
-      setError("Invalid employee or password");
+      setError(
+        err.message === "Invalid login credentials"
+          ? "Invalid email or password"
+          : err.message || "Unable to sign in. Check your Supabase setup and try again.",
+      );
     }
-
   };
 
   return (
@@ -131,20 +130,20 @@ export default function Login() {
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
               <label
-                htmlFor="employeeId"
+                htmlFor="email"
                 className="mb-2 block text-sm font-semibold text-slate-700"
               >
-                Employee ID 
+                Email
               </label>
               <div className="relative">
-                <UserRound className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
                 <input
-                  id="employeeId"
-                  type="text"
-                  value={employeeId}
-                  onChange={handleEmployeeIdChange}
-                  placeholder="Enter employee ID"
-                  autoComplete="username"
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  placeholder="Enter your email"
+                  autoComplete="email"
                   required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-12 pr-4 text-sm font-medium outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100"
                 />

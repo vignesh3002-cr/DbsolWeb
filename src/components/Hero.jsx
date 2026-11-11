@@ -7,21 +7,14 @@ export default function Home() {
   const navigate = useNavigate();
   const slides = [
     {
-      title: "Microsoft Dynamics 365 Finance & Operations Solutions",
-      desc: "Empowering enterprises with scalable ERP solutions, seamless financial management, and operational excellence.",
+      title: "Transform Your Enterprise with Microsoft Dynamics 365",
+      desc: `DBSol Technologies helps businesses modernise their financial
+             operations, supply chains and enterprise processes through Microsoft
+             Dynamics 365 implementation, ERP consulting, data migration and
+             customised technology solutions.`,
       img: "/images/Home1.jpg",
     },
-    {
-      title: "Professional Web Development",
-      desc: "Building modern, responsive, and scalable websites for businesses using cutting-edge technologies.",
-      img: "/images/Home2.jpg",
-    },
-    {
-      title: "Mobile App Development",
-      desc: "Creating powerful Android and iOS applications designed to deliver exceptional user experiences.",
-      img: "/images/Home3.jpg",
-    },
-  ];
+];
 
   const [curnt, setCurrent] = useState(0);
  const scrollRef = useRef(null);
@@ -43,54 +36,13 @@ const scrollRight = () => {
   return (
     <section className="relative w-full h-screen">
       {/* Background */}
-<button
-  onClick={scrollLeft}
-  aria-label="Previous slide"
-  className="
-    absolute left-0 top-0 z-30
-    h-full w-20 md:w-28
-    flex items-center justify-center
-    bg-gradient-to-r from-white/40 to-transparent
-    hover:from-black/70
-    transition-all duration-300
-  "
->
-  <svg
-    className="w-6 h-6 md:w-8 md:h-8 rotate-180 text-white"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 320 512"
-  >
-    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
-  </svg>
-</button>
 
-<button
-  onClick={scrollRight}
-  aria-label="Next slide"
-  className="
-    absolute right-0 top-0 z-30
-    h-full w-20 md:w-28
-    flex items-center justify-center
-    bg-gradient-to-l from-white/40 to-transparent
-    hover:from-black/70
-    transition-all duration-300
-  "
->
-  <svg
-    className="w-6 h-6 md:w-8 md:h-8 text-white"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 320 512"
-  >
-    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
-  </svg>
-</button>
       <img
         src={slides[curnt].img}
         alt="Hero Background"
         className="absolute object-cover w-full h-full transition-all duration-1000"
       />
       <div ref={scrollRef} className="absolute inset-0 bg-black/60 overflow-x-auto scrollbar-hide "></div>
-
       {/* Content */}
       <div className="relative z-10 flex items-center h-full px-6 mx-auto max-w-7xl">
           
@@ -105,11 +57,11 @@ const scrollRight = () => {
           transition={{ duration: 2 ,ease:"easeInOut"}}
           className="max-w-2xl text-white"
         >
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
+          <h1 className="mb-6 text-2xl font-bold leading-tight md:text-6xl">
             {slides[curnt].title}
           </h1>
 
-          <p className="mb-8 text-lg text-gray-200 max-w-md">
+          <p className="mb-8 text-md text-gray-200 max-w-md">
             {slides[curnt].desc}
           </p>
           
@@ -123,18 +75,15 @@ const scrollRight = () => {
             <HashLink smooth to="/#clients-section">
 
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
-                Explore Services
+                Book a Free D365 Assessment 
               </button>
             </HashLink>
-
-
-       
-            {/* Contact button */}
+     {/* Contact button */}
             <button
               onClick={() => navigate("/Contact")}
               className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black"
             >
-              Contact Us
+               Explore Our Solutions
             </button>
           </div>
         </motion.div>

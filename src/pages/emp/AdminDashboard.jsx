@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { apiRequest } from "../../lib/api";
+import { supabase } from "../../lib/supabase";
 import {
   CalendarCheck,
   CalendarDays,
@@ -60,48 +61,14 @@ const formatLeaveType = (request) => {
 };
 const VISIBLE_EMPLOYEE_COUNT = 3;
 
-const getEmployeeId = (employee) =>
-  employee.EmpId ?? employee.EmpID ?? employee.empId;
-
-const normalizeApiEmployee = (employee) => ({
-  EmpId: getEmployeeId(employee),
-  Name: employee.Name,
-  Email: employee.Email,
-  Role: employee.Role,
-  Status: employee.Status || "Active",
-  IsAdmin: employee.IsAdmin || 0,
-});
-
-const normalizeSavedEmployee = (employee) => ({
-  EmpId: employee.empId,
-  Name: `${employee.firstName || ""} ${employee.lastName || ""}`.trim(),
+const normalizeEmployee = (employee) => ({
+  EmpId: employee.emp_id,
+  Name: `${employee.first_name || ""} ${employee.last_name || ""}`.trim(),
   Email: employee.email,
   Role: employee.designation || employee.department || "Employee",
   Status: employee.status || "Active",
-  IsAdmin: 0,
+  IsAdmin: employee.is_admin ? 1 : 0,
 });
-
-const getSavedEmployees = () => {
-  try {
-    return JSON.parse(localStorage.getItem("employees")) || [];
-  } catch {
-    return [];
-  }
-};
-
-const mergeEmployees = (apiEmployees, savedEmployees) => {
-  const employeeMap = new Map();
-
-  apiEmployees.map(normalizeApiEmployee).forEach((employee) => {
-    employeeMap.set(String(employee.EmpId), employee);
-  });
-
-  savedEmployees.map(normalizeSavedEmployee).forEach((employee) => {
-    employeeMap.set(String(employee.EmpId), employee);
-  });
-
-  return Array.from(employeeMap.values());
-};
 
 export default function AdminDashboard() {
 
@@ -109,34 +76,24 @@ export default function AdminDashboard() {
     const [leaveRequests, setLeaveRequests] = useState([]);
     const [activeView, setActiveView] = useState("dashboard");
     const [showAll, setShowAll] = useState(false);
+    const [loadError, setLoadError] = useState("");
 
-    const fetchLeaveRequests = () => {
-      axios.get("http://localhost:5000/api/leave-requests")
-    .then((res) => {
-    console.log("First Record:", res.data[0]);
-    console.log("All Records:", res.data); // ✅ DEBUG
-      setLeaveRequests(res.data);
-    })
-    .catch((err) => console.log(err));
-    };
     useEffect(() => {
-    const savedEmployees = getSavedEmployees();
+      const fetchAdminData = async () => {
+        const [employeeResult, leaveResult] = await Promise.all([
+          apiRequest("/api/employees"),
+          apiRequest("/api/leave-requests"),
+        ]);
 
-    axios
-    .get("http://localhost:5000/api/employees")
-    .then((res) => {
-      console.log("EMPLOYEES DATA:", res.data);
-      setEmployees(mergeEmployees(res.data, savedEmployees));
-    })
-    .catch((err) => {
-      console.log(err);
-      setEmployees(mergeEmployees([], savedEmployees));
-    });
-  }, []);
-  
-useEffect(() => {
-  fetchLeaveRequests();
-}, []);
+        setEmployees(employeeResult.map(normalizeEmployee));
+        setLeaveRequests(leaveResult);
+      };
+
+      fetchAdminData().catch((error) => {
+        console.error("Admin dashboard load error:", error);
+        setLoadError(error.message || "Unable to load Supabase data.");
+      });
+    }, []);
 
  const stats = useMemo(() => {
     const pendingLeaves = leaveRequests.filter(
@@ -173,24 +130,17 @@ const displayedEmployees = showAll
   : employees.slice(0, VISIBLE_EMPLOYEE_COUNT);
 const saveLeaveStatus = async (requestLeaveID, status) => {
   try {
-    const response = await axios.patch(
-      `http://localhost:5000/api/leave-requests/${requestLeaveID}/status`,
-      { status }
-    );
-
-    console.log("Success:", response.data);
+    await apiRequest(`/api/leave-requests/${requestLeaveID}/status`, {
+      method: "PATCH",
+      body: { status },
+    });
 
     updateLeaveStatus(requestLeaveID, status);
 
-    alert("Leave updated successfully");
+    setLoadError("");
   } catch (error) {
     console.error("Update Error:", error);
-
-    alert(
-      error.response?.data?.message ||
-      error.message ||
-      "Unable to update leave status"
-    );
+    setLoadError(error.message || "Unable to update leave status.");
   }
 };
 
@@ -221,6 +171,15 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
             </Link>
             <Link
               to="/emp-portal"
+              onClick={async (event) => {
+                event.preventDefault();
+                const { error } = await supabase.auth.signOut();
+                if (error) {
+                  setLoadError(error.message);
+                  return;
+                }
+                window.location.assign("/emp-portal");
+              }}
               className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
             >
               <LogOut className="h-4 w-4" />
@@ -231,6 +190,11 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
       </header>
 
       <section className="mx-auto grid max-w-7xl gap-6 px-5 py-8 sm:px-6 lg:grid-cols-[1fr_340px] lg:px-8">
+        {loadError && (
+          <p role="alert" className="col-span-full rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+            {loadError}
+          </p>
+        )}
         <div className="space-y-6">
           <div className="overflow-hidden rounded-3xl bg-slate-950 text-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
             <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 px-6 py-7 sm:px-8">

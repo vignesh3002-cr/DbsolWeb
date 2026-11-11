@@ -292,8 +292,12 @@ const renderStars = (rating) => {
   return "★".repeat(stars);
 };
 
-export default function Testimonials() {
-  const loopReviews = [...reviews, ...reviews];
+export default function Testimonials({ limit }) {
+  const displayedReviews = limit ? reviews.slice(0, limit) : reviews;
+  const loopReviews = limit ? displayedReviews : [...displayedReviews, ...displayedReviews];
+  const listClassName = limit
+    ? "flex-wrap justify-center"
+    : "animate-scroll w-max";
 
   return (
     <section className="py-4 md:py-8 lg:py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden">
@@ -307,9 +311,7 @@ export default function Testimonials() {
       </div>
 
     <div className="relative overflow-hidden">
-    
-    <div className="flex animate-scroll gap-6 w-max">
-`
+      <div className={`flex gap-6 ${listClassName}`}>
           {loopReviews.map((review, index) => (
             <div
               key={index}

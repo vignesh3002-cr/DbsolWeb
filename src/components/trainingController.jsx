@@ -46,7 +46,7 @@ const controllerSteps = [
     step:"04"
     },
    { title: "Reporting", desc: "Real-time financial dashboards.",
-    image:"/images/TC_Step-5.png",
+    image:"/images/TC_Step-5.jpg",
     step:"05"
     },
    { title: "Decision Support", desc: "Insights for strategic growth.",

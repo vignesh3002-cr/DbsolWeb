@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { apiRequest } from "../../lib/api";
+import { supabase } from "../../lib/supabase";
 import {
   ArrowLeft,
   CalendarCheck,
@@ -18,71 +19,57 @@ export default function ApplyLeave() {
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const [reason, setReason] = useState("");
-  
-  const empId = localStorage.getItem("empId"); // ✅ from login
+    const [submitting, setSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
-const applyLeave = () => {
-  if (!empId) {
-    alert("Employee not logged in");
-    return;
-  }
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      setError("");
 
-  if (!requestType) {
-  alert("Please select request type");
-  return;
-}
-
-if (requestType === "Leave" && !leaveType) {
-  alert("Please select leave type");
-  return;
-}
-
-  if (new Date(toDate) < new Date(fromDate)) {
-    alert("To Date cannot be earlier than From Date");
-    return;
-  }
-
-  const days =
-    Math.floor(
-      (new Date(toDate) - new Date(fromDate)) /
-      (1000 * 60 * 60 * 24)
-    ) + 1;
-
-   axios.post("http://localhost:5000/api/apply-leave", {
-  empId: Number(empId),
-  requestType,
-  leaveType: requestType === "Leave" ? leaveType : null,
-  fromDate,
-  toDate,
-  days,
-  reason,
-})
-    .then((res) => {
-      alert(res.data.message || "Leave applied successfully");
-
-    setRequestType("");
-setLeaveType("");
-setFromDate("");
-setToDate("");
-setReason("");
-    })
-    .catch((err) => {
-      console.error("Full error:", err);
-
-      if (err.response) {
-        console.log("Server error:", err.response.data);
-        alert(err.response.data.message || JSON.stringify(err.response.data));
-      } else {
-        alert("Cannot connect to server.");
+      if (!requestType || (requestType === "Leave" && !leaveType)) {
+        setError("Select a request type and leave type.");
+        return;
       }
-    });
-};
 
- 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  applyLeave();
-};
+      if (!fromDate || !toDate || new Date(toDate) < new Date(fromDate)) {
+        setError("Enter valid dates. The end date cannot be before the start date.");
+        return;
+      }
+
+      setSubmitting(true);
+
+      try {
+        const days =
+          Math.floor(
+            (new Date(`${toDate}T00:00:00`) - new Date(`${fromDate}T00:00:00`)) /
+              (1000 * 60 * 60 * 24),
+          ) + 1;
+
+        await apiRequest("/api/apply-leave", {
+          method: "POST",
+          body: {
+          requestType,
+            leaveType: requestType === "Leave" ? leaveType : null,
+          fromDate,
+          toDate,
+          days,
+          reason,
+          },
+        });
+
+        setSubmitted(true);
+        setRequestType("");
+        setLeaveType("");
+        setFromDate("");
+        setToDate("");
+        setReason("");
+      } catch (submitError) {
+        console.error("Leave submission error:", submitError);
+        setError(submitError.message || "Unable to submit your leave request.");
+      } finally {
+        setSubmitting(false);
+      }
+    };
 
 return (
     <main className="min-h-screen bg-[#f4f7fb] font-jakarta text-slate-900">
@@ -112,6 +99,15 @@ return (
             </Link>
             <Link
               to="/emp-portal"
+              onClick={async (event) => {
+                event.preventDefault();
+                const { error: signOutError } = await supabase.auth.signOut();
+                if (signOutError) {
+                  setError(signOutError.message);
+                  return;
+                }
+                window.location.assign("/emp-portal");
+              }}
               className="hidden items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 sm:inline-flex"
             >
               <LogOut className="h-4 w-4" />
@@ -263,6 +259,11 @@ return (
                   Leave request submitted successfully.
                 </p>
               )}
+              {error && (
+                <p role="alert" className="rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                  {error}
+                </p>
+              )}
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <Link
@@ -273,9 +274,10 @@ return (
                 </Link>
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-700/20 transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100"
                 >
-                  Submit 
+                  {submitting ? "Submitting..." : "Submit"}
                   <CalendarCheck className="h-5 w-5" />
                 </button>
               </div>
