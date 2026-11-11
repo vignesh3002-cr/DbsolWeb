@@ -39,7 +39,8 @@
     "server": "^1.0.42",
     "sql": "^0.78.0",
     "sweetalert2": "^11.26.24",
-    "three": "^0.183.2"
+    "three": "^0.183.2",
+    "vite-plugin-prerender": "^1.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
