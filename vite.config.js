@@ -9,7 +9,8 @@ const vitePrerender = require('vite-plugin-prerender')
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const supabaseEnv = loadEnv(mode, resolve(process.cwd(), 'Backend'), '')
-  const prerenderPlugin = mode === 'production'
+  const shouldPrerender = mode === 'production' && process.env.VERCEL !== '1'
+  const prerenderPlugin = shouldPrerender
     ? vitePrerender({
         staticDir: resolve(process.cwd(), 'dist'),
         routes: ['/'],
