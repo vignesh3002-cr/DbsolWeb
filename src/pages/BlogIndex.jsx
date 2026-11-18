@@ -42,10 +42,10 @@ export default function BlogIndex() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-200">
               DBSol Insights
             </p>
-            <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl">
               Practical answers for your ERP decisions
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-md">
               Explore planning and implementation guidance for Microsoft
               Dynamics 365, with industry perspectives for manufacturing and
               healthcare teams.

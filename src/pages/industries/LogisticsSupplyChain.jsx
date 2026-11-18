@@ -146,13 +146,12 @@ export default function LogisticsSupplyChain() {
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-                1. Common Challenges in Logistics and Supply Chain Management
+                 Common Challenges in Logistics and Supply Chain Management
               </h2>
               <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-200">
                 {challenges.map((challenge) => (
-                  <li key={challenge} className="flex items-start gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-600" />
-                    <span>{challenge}</span>
+                  <li key={challenge}>
+                    {challenge}
                   </li>
                 ))}
               </ul>
@@ -176,7 +175,7 @@ export default function LogisticsSupplyChain() {
       <section className="bg-slate-50 py-20 dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            2. How Dynamics 365 Improves Supply Chain Visibility
+             How Dynamics 365 Improves Supply Chain Visibility
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -201,7 +200,7 @@ export default function LogisticsSupplyChain() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            3. Warehouse and Inventory Management
+             Warehouse and Inventory Management
           </h2>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -222,7 +221,7 @@ export default function LogisticsSupplyChain() {
       <section className="bg-white py-20 dark:bg-gray-800">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            4. Procurement and Transportation Management
+             Procurement and Transportation Management
           </h2>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -243,7 +242,7 @@ export default function LogisticsSupplyChain() {
       <section className="bg-slate-50 py-20 dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            5. Our Implementation Approach
+             Our Implementation Approach
           </h2>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {implementationSteps.map((step, index) => (
@@ -261,7 +260,7 @@ export default function LogisticsSupplyChain() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 flex items-center justify-between gap-4">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            6. Frequently Asked Questions
+             Frequently Asked Questions
           </h2>
           <div className="hidden items-center gap-2 text-blue-600 md:flex">
             <FaCog />

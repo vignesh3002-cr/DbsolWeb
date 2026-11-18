@@ -153,7 +153,7 @@ processes and building integrated reporting systems.
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-                1. Common Challenges in Finance and Banking Operations
+                 Common Challenges in Finance and Banking Operations
               </h2>
               <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-200">
                 {challenges.map((challenge) => (
@@ -182,7 +182,7 @@ processes and building integrated reporting systems.
       <section className="bg-slate-50 py-20 dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            2. How Dynamics 365 Improves Financial Visibility
+             How Dynamics 365 Improves Financial Visibility
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -207,7 +207,7 @@ processes and building integrated reporting systems.
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            3. Financial Management and Banking Capabilities
+            Financial Management and Banking Capabilities
           </h2>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -228,7 +228,7 @@ processes and building integrated reporting systems.
       <section className="bg-white py-20 dark:bg-gray-800">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            4. Compliance, Security, and Data Control
+             Compliance, Security, and Data Control
           </h2>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -249,7 +249,7 @@ processes and building integrated reporting systems.
       <section className="bg-slate-50 py-20 dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            5. Our Implementation Approach
+           Our Implementation Approach
           </h2>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {implementationSteps.map((step, index) => (
@@ -267,7 +267,7 @@ processes and building integrated reporting systems.
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 flex items-center justify-between gap-4">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-            6. Frequently Asked Questions
+             Frequently Asked Questions
           </h2>
           <div className="hidden items-center gap-2 text-blue-600 md:flex">
             <FaCog />

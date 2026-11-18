@@ -26,7 +26,7 @@ export default function About() {
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl font-bold"
+              className="text-4xl font-bold"
             >
               About Our Company
             </motion.h1>
@@ -49,7 +49,7 @@ export default function About() {
             />
 
             <div>
-              <h2 className="mb-6 text-4xl font-bold">
+              <h2 className="mb-6 text-3xl font-bold">
                 Who We Are
               </h2>
 
@@ -81,7 +81,7 @@ export default function About() {
         {/* WHY CHOOSE US */}
         <section className="py-24">
           <div className="max-w-6xl px-6 mx-auto">
-            <h2 className="mb-4 text-4xl font-bold text-center">
+            <h2 className="mb-4 text-3xl font-bold text-center">
               Why Choose Us
             </h2>
 
@@ -116,7 +116,7 @@ export default function About() {
 
         {/* STATS */}
         <section className="py-8 bg-gray-100 dark:bg-gray-800">
-          <h2 className="mb-12 text-4xl font-bold text-center text-gray-800 dark:text-white">
+          <h2 className="mb-12 text-3xl font-bold text-center text-gray-800 dark:text-white">
             Our Impact
           </h2>
 
@@ -143,7 +143,7 @@ export default function About() {
 
         {/* FINAL CTA */}
         <section className="py-24 text-center text-white bg-gradient-to-r from-indigo-700 via-blue-700 to-purple-700 dark:from-gray-800">
-          <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
+          <h2 className="mb-6 text-3xl font-bold dark:text-blue-600">
             Ready to Transform Your Business?
           </h2>
 

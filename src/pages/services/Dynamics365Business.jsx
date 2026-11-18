@@ -97,7 +97,7 @@ export default function Dynamics365Business() {
               Our Services
             </span>
 
-            <h1 className="text-3xl font-black tracking-tight text-white">
+            <h1 className="text-4xl font-black tracking-tight text-white">
               Dynamics 365 Business Solutions
             </h1>
 

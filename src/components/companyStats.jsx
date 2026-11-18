@@ -1,60 +1,64 @@
-import { Briefcase, Users, Award } from "lucide-react";
+import { Briefcase, Users, Building2, Award } from "lucide-react";
 import { motion } from "framer-motion"
-import CountUp from "react-countup"
 import { useInView } from "react-intersection-observer"
 
 
 export default function CompanyStats() {
-  const {ref, inView} = useInView({
-triggerOnce:true,
-threshold:0.3,
-})
+  const {ref} = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  })
   const stats = [
     {
-      icon: <Award size={40} />,
-      number: "100%",
-      label: "Data Integrity",
+      icon: <Briefcase size={44} strokeWidth={2} />,
+      number: 50,
+      label: "Projects Delivered",
     },
     {
-      icon: <Briefcase size={40} />,
-      number: "0",
-      label: "Days Downtime",
+      icon: <Users size={44} strokeWidth={2} />,
+      number: 30,
+      label: "Enterprise Clients",
     },
     {
-      icon: <Users size={40} />,
-      number: "3x",
-      label: "Faster Reports",
+      icon: <Building2 size={44} strokeWidth={2} />,
+      number: 10,
+      label: "Industries Served",
+    },
+    {
+      icon: <Award size={44} strokeWidth={2} />,
+      number: 8,
+      label: "Years Experience",
     },
   ];
 
   
 return(
 
-<section ref={ref} className="py-4 md:py-8 lg:py-12 text-black dark:text-white dark:bg-gray-900 ">
+<section ref={ref} className="py-12 md:py-16 lg:py-20 text-black dark:text-white dark:bg-gray-900">
 
-<div className="px-6 mx-auto max-w-7xl">
+<div className="px-6 mx-auto max-w-[1750px]">
 
 {/* TITLE */}
 
-<div className="mb-20 text-center">
+<div className="mb-16 md:mb-20 text-center">
   
-   <span className="uppercase tracking-widest text-blue-600 font-semibold">
+   <span className="text-sm sm:text- uppercase tracking-[0.2em] text-blue-600 font-semibold">
             Company Statistics
           </span>
-<h2 className="mb-4 text-4xl font-bold dark:text-blue-600">
+<h2 className="mt-3 mb-5 text-4xl sm:text-3xl font-bold leading-tight dark:text-white">
 
  Trusted Technology Partner
 
 </h2>
 
-<p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-   Delivering ERP, cloud, and digital transformation solutions that drive business growth and operational excellence.
+<p className="max-w-[980px] mx-auto text-lg md:text-md leading-relaxed text-gray-600 dark:text-gray-300">
+   Delivering ERP, cloud, and digital transformation solutions that drive business growth and<br className="hidden xl:block" /> operational excellence.
 </p>
 
 </div>
         {/* COUNTER CARDS */}
 
-<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
 
 {stats.map((item,index)=>(
 
@@ -64,12 +68,8 @@ initial={{opacity:0,y:40}}
 whileInView={{opacity:1,y:0}}
 transition={{duration:0.6, delay:index*0.2}}
 whileHover={{scale:1.08}}
-className="relative p-10 text-center border shadow-xl bg-white/5 backdrop-blur-md rounded-2xl border-white/10 group"
+className="relative min-h-[300px] px-8 py-10 flex flex-col items-center justify-center text-center border border-gray-100 bg-white shadow-[0_12px_32px_rgba(15,23,42,0.10)] rounded-2xl group dark:border-gray-700 dark:bg-gray-800"
 >
-
-{/* Glow Effect */}
-
-<div className="absolute inset-0 transition opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl"></div>
 
 {/* Icon */}
 
@@ -84,27 +84,15 @@ className="relative p-10 text-center border shadow-xl bg-white/5 backdrop-blur-m
 
 
 
-<h3 className="mb-2 text-4xl font-bold">
-  {/*{inView ? (
-    <CountUp
-      key={item.number}   // ✅ IMPORTANT FIX
-      start={0}
-      end={Number(item.number || 0)}
-      duration={2}
-      separator=","
-    />
-  ) : (
-    0
-  )}
-  +*/}
-  {item.number}+
+<h3 className="mb-3 text-5xl sm:text-3xl font-bold leading-none">
+  {item.number}<span>+</span>
 </h3>
 
 
 
 {/* Label */}
 
-<p className="text-gray-600 dark:text-gray-200">
+<p className="text-lg sm:text-mdtext-gray-600 dark:text-gray-200">
 
 {item.label}
 

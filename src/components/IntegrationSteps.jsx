@@ -41,7 +41,7 @@ return(
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="mb-6 text-4xl font-bold dark:text-white">
+<h2 className="mb-6 text-3xl font-bold dark:text-white">
 How We Integrate With Your Existing Systems
 </h2>
 
