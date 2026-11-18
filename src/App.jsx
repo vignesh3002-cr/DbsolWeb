@@ -14,13 +14,13 @@ import ModuleDetail from "./pages/ModuleDetail";
 import FinanceOperations from "./pages/services/FinanceOperations";
 import CustomerEngagement from "./pages/services/CustomerEngagement";
 import PowerPlatformSolutions from "./pages/services/PowerPlatformSolutions";
-import WebDevelopment from "./pages/services/WebDevelopment";
+import WebDevelopment from "./pages/services/Webdevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import Contact from "./pages/Contact";
 
 
 import ServicePage from "./components/Delivering_Tailored_Solutions";
-import CTASection from "./components/Ctasection";
+import CTASection from "./components/CTAsection";
 import ITITES from "./pages/industries/ITITES";
 import Manufacturing from "./pages/industries/Manufacturing";
 import RetailWholesale from "./pages/industries/RetailWholeSale";
@@ -31,7 +31,7 @@ import Education from "./pages/industries/Education";
 import Hospitality from "./pages/industries/Hospitality";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
-import FinancialManagementSystem from "./pages/solutions/FinancialManagementSystem";
+import FinancialManagementSystem from "./pages/solutions/financialManagementSystem";
 import HumanResourceManagementSystem from "./pages/solutions/HumanResourceManagementSystem";
 import SupplyChainManagementSystem from "./pages/solutions/SCMS";
 import WarehouseManagementSystem from "./pages/solutions/WMS";
@@ -43,7 +43,7 @@ import CaseStudyDetail from "./pages/CaseStudiesDetail";
 import GlobePage from "./components/Globepage";
 import NewsPage from "./components/NewsPage";
 import WhyChooseUs from "./components/WhyChooseUs";
-import CompanyStats from "./components/CompanyStats";
+import CompanyStats from "./components/companyStats";
 import ScrollToTop from "./components/ScrollToTop";
 
 import AdminDashboard from "./pages/emp/AdminDashboard";

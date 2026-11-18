@@ -4,12 +4,12 @@ import MissionVisionSection from "../components/MissionVisionSection";
 import Industries from "../components/Industries";
 import Footer from "../components/Footer";
 import WhyChooseUs from "../components/WhyChooseUs";
-import CompanyStats from "../components/CompanyStats";
+import CompanyStats from "../components/companyStats";
 import TrustedClients from "../components/TrustedClient";
 import Testimonials from "../components/Testimonial";
 import DeliveringTailoredSolutions from "../components/Delivering_Tailored_Solutions";
 import VideoTestimonials from "./VideoTestimonials";
-import CTASection from "../components/Ctasection";
+import CTASection from "../components/CTAsection";
 
 export default function Home() {
   return (
