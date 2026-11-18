@@ -96,7 +96,7 @@ export default function Dashboard() {
               <p className="text-xs font-bold uppercase text-blue-700">
                 EMP Portal
               </p>
-              <h1 className="font-syne text-2xl font-bold text-slate-950">
+              <h1 className="font-syne text-4xl font-bold text-slate-950">
                 Dashboard
               </h1>
             </div>
@@ -120,7 +120,7 @@ export default function Dashboard() {
               localStorage.removeItem("empId");
               localStorage.removeItem("isAdmin");
               localStorage.removeItem("userEmail");
-              navigate("/emp-portal");
+              navigate("/employee-portal/");
             }}
              className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
             >
@@ -194,7 +194,7 @@ export default function Dashboard() {
                 </p>
               </div>
               <button
-                onClick={() => navigate("/apply-leave")}
+                onClick={() => navigate("/apply-leave/")}
                 className="inline-flex w-fit items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-800"
               >
                 Apply Leave

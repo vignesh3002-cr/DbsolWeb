@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AX 2012 to Dynamics 365 Migration Guide | DBSol Technologies</title>
+    <style>
+      body { color: #172033; font: 16px/1.6 Arial, sans-serif; margin: 0 auto; max-width: 850px; padding: 32px 20px; }
+      h1, h2 { color: #123b70; }
+      h1 { line-height: 1.2; }
+      h2 { border-bottom: 1px solid #d5deea; margin-top: 28px; padding-bottom: 6px; }
+      li { margin: 8px 0; }
+      .intro { color: #526174; }
+      .callout { background: #edf4fc; border-left: 4px solid #2362a6; padding: 12px 16px; }
+      @media print { body { padding: 0; } }
+    </style>
+  </head>
+  <body>
+    <h1>AX 2012 to Dynamics 365 Migration Guide</h1>
+    <p class="intro">A phased planning guide for organizations assessing a move from Microsoft Dynamics AX 2012 to Dynamics 365 Finance and Supply Chain Management.</p>
+
+    <h2>1. Discover the current environment</h2>
+    <ul>
+      <li>Record AX version, modules, legal entities, locations, environments, and operational owners.</li>
+      <li>Inventory customizations, reports, batch jobs, integrations, ISV solutions, and infrastructure dependencies.</li>
+      <li>Map critical end-to-end processes and note where workarounds or manual controls exist.</li>
+    </ul>
+
+    <h2>2. Define the target design</h2>
+    <ul>
+      <li>Confirm business goals, release scope, process owners, and success measures.</li>
+      <li>Classify each customization: retire, use standard functionality, configure, or rebuild.</li>
+      <li>Document security roles, reporting requirements, integrations, and target operating processes.</li>
+    </ul>
+
+    <h2>3. Prepare and migrate data</h2>
+    <ul>
+      <li>Define master and transactional data scope, history requirements, retention, and ownership.</li>
+      <li>Profile source data; resolve duplicates and quality issues with accountable business owners.</li>
+      <li>Create source-to-target mappings and rehearse extraction, transformation, and loading with representative data.</li>
+      <li>Reconcile balances, open transactions, inventory, and other agreed control totals after each rehearsal.</li>
+    </ul>
+
+    <h2>4. Test business scenarios</h2>
+    <ul>
+      <li>Validate finance close, purchasing, sales, inventory, production, reporting, and integration scenarios.</li>
+      <li>Include security, exception handling, performance, and recovery tests where appropriate.</li>
+      <li>Use business-owned acceptance criteria and record sign-offs and unresolved issues.</li>
+    </ul>
+
+    <h2>5. Plan cutover and support</h2>
+    <ul>
+      <li>Assign owners and timing for data freeze, final migration, integrations, access, and go-live checks.</li>
+      <li>Agree go/no-go criteria, escalation paths, and contingency actions before the cutover rehearsal.</li>
+      <li>Prepare role-based training, support coverage, issue triage, and post-go-live stabilization.</li>
+    </ul>
+
+    <p class="callout"><strong>Important:</strong> Treat the migration as a business transformation, not just a technical upgrade. Validate current product lifecycle, licensing, and platform guidance with Microsoft and your implementation partner.</p>
+  </body>
+</html>

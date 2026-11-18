@@ -74,7 +74,7 @@ const [employee, setEmployee] = useState({
       },
     );
 
-    navigate("/employee-master");
+    navigate("/employee-master/");
   } catch (saveError) {
     console.error("Save employee error:", saveError);
     setError(saveError.message || "Unable to save employee.");
@@ -86,7 +86,7 @@ const [employee, setEmployee] = useState({
     <div className="min-h-screen bg-[#f4f7fb] p-6">
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200">
         <div className="px-8 py-6 border-b border-slate-200">
-          <h1 className="text-3xl font-bold text-slate-900">
+          <h1 className="text-4xl font-bold text-slate-900">
             {existing ? "Edit Employee" : "Create New Employee"}
           </h1>
           <p className="text-slate-500 mt-2">
@@ -399,7 +399,7 @@ const [employee, setEmployee] = useState({
         <div className="flex justify-end gap-3 mt-8">
      <button
        type="button"
-        onClick={() => navigate("/employee-master")}
+        onClick={() => navigate("/employee-master/")}
         className="px-6 py-3 rounded-xl border border-slate-300 font-semibold bg-white hover:bg-gray-100"
   >
      ← Back

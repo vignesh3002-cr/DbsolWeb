@@ -72,7 +72,7 @@ const reviews = [
       "Excellent support and timely issue resolution.",
   },
 
-  // Repeat until 40 Reviews
+  // Repeat until 20 Reviews
   {
     name: "Rebecca Taylor",
     role: "CEO",
@@ -122,169 +122,7 @@ const reviews = [
     review:
       "Very dependable technology partner.",
   },
-  {
-    name: "Mark Evans",
-    role: "Operations Manager",
-    rating: 5,
-    review:
-      "Productivity improved immediately after deployment.",
-  },
-  {
-    name: "Jennifer Clark",
-    role: "Business Analyst",
-    rating: 4,
-    review:
-      "Great attention to detail and project management.",
-  },
-  {
-    name: "Karthik Raman",
-    role: "CEO",
-    rating: 5,
-    review:
-      "Delivered exactly what was promised.",
-  },
-
-  {
-    name: "William Scott",
-    role: "Director",
-    rating: 4,
-    review:
-      "Strong communication and technical capabilities.",
-  },
-  {
-    name: "Asha Menon",
-    role: "ERP Manager",
-    rating: 5,
-    review:
-      "Excellent Dynamics 365 customization work.",
-  },
-  {
-    name: "Richard Hall",
-    role: "Program Director",
-    rating: 3.8,
-    review:
-      "Quality service and transparent communication.",
-  },
-  {
-    name: "Samantha Green",
-    role: "COO",
-    rating: 5,
-    review:
-      "The team exceeded our expectations.",
-  },
-  {
-    name: "Rohit Verma",
-    role: "Marketing Head",
-    rating: 4,
-    review:
-      "Website redesign significantly boosted engagement.",
-  },
-  {
-    name: "Harish Nair",
-    role: "Managing Director",
-    rating: 5,
-    review:
-      "Fast implementation and exceptional support.",
-  },
-  {
-    name: "Andrew Collins",
-    role: "Project Sponsor",
-    rating: 4,
-    review:
-      "Responsive and professional throughout the project.",
-  },
-  {
-    name: "Olivia Davis",
-    role: "Operations Manager",
-    rating: 5,
-    review:
-      "Cloud transformation project was executed perfectly.",
-  },
-  {
-    name: "Joseph Martin",
-    role: "Technology Manager",
-    rating: 4,
-    review:
-      "Strong Microsoft technology expertise.",
-  },
-  {
-    name: "Deepak Agarwal",
-    role: "Finance Manager",
-    rating: 5,
-    review:
-      "Outstanding ERP implementation experience.",
-  },
-
-  {
-    name: "Stephanie Moore",
-    role: "Business Head",
-    rating: 3.8,
-    review:
-      "High-quality delivery and reliable support.",
-  },
-  {
-    name: "Ramesh Iyer",
-    role: "Managing Partner",
-    rating: 5,
-    review:
-      "Improved efficiency across all departments.",
-  },
-  {
-    name: "Christopher Adams",
-    role: "IT Head",
-    rating: 4,
-    review:
-      "Dependable team with excellent communication.",
-  },
-  {
-    name: "Naveen Prakash",
-    role: "Operations Lead",
-    rating: 5,
-    review:
-      "Smooth and professional project delivery.",
-  },
-  {
-    name: "James Parker",
-    role: "Managing Director",
-    rating: 4,
-    review:
-      "Reliable services and strong technical skills.",
-  },
-  {
-    name: "Daniel Carter",
-    role: "Business Consultant",
-    rating: 5,
-    review:
-      "Excellent engagement from planning to deployment.",
-  },
-  {
-    name: "Grace Mitchell",
-    role: "Project Lead",
-    rating: 4,
-    review:
-      "Trustworthy technology partner.",
-  },
-  {
-    name: "Ryan Cooper",
-    role: "General Manager",
-    rating: 5,
-    review:
-      "Delivered measurable business outcomes.",
-  },
-  {
-    name: "Sophia Bennett",
-    role: "Operations Manager",
-    rating: 3.8,
-    review:
-      "Helpful team and quality implementation.",
-  },
-  {
-    name: "Ethan Walker",
-    role: "Director",
-    rating: 5,
-    review:
-      "Highly recommend DBSol for enterprise projects.",
-  },
+  
 ];
 
 const renderStars = (rating) => {
@@ -293,16 +131,13 @@ const renderStars = (rating) => {
 };
 
 export default function Testimonials({ limit }) {
-  const displayedReviews = limit ? reviews.slice(0, limit) : reviews;
-  const loopReviews = limit ? displayedReviews : [...displayedReviews, ...displayedReviews];
-  const listClassName = limit
-    ? "flex-wrap justify-center"
-    : "animate-scroll w-max";
+  const displayedReviews = reviews.slice(0, limit ?? 3);
+  const listClassName = "flex-wrap justify-center";
 
   return (
     <section className="py-4 md:py-8 lg:py-16 bg-gray-50 dark:bg-gray-950 overflow-hidden">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-400">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-400">
           What Our Clients Say
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-3">
@@ -312,10 +147,10 @@ export default function Testimonials({ limit }) {
 
     <div className="relative overflow-hidden">
       <div className={`flex gap-6 ${listClassName}`}>
-          {loopReviews.map((review, index) => (
+          {displayedReviews.map((review, index) => (
             <div
               key={index}
-              className="w-[380px] min-h-[220px] bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-6 flex-shrink-0"
+              className="w-full min-h-[220px] max-w-[380px] bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-6"
             >
               <div className="text-yellow-500 text-xl mb-3">
                 {renderStars(review.rating)}

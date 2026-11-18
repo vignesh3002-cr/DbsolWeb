@@ -98,7 +98,7 @@ export default function CustomerEngagement() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center text-white">
         
-          <h1 className="mb-5 text-4xl font-bold md:text-6xl">
+          <h1 className="mb-5 text-4xl font-bold">
             Customer Engagement
           </h1>
          
@@ -221,7 +221,7 @@ export default function CustomerEngagement() {
           Create a connected, fast, and responsive website that seamlessly supports your Dynamics 365 customer engagement workflows.
         </p>
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:bg-gray-100"
         >
           Contact Us

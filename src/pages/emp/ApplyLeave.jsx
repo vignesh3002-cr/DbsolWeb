@@ -83,7 +83,7 @@ return (
               <p className="text-xs font-bold uppercase text-blue-700">
                 EMP Portal
               </p>
-              <h1 className="font-syne text-2xl font-bold text-slate-950">
+              <h1 className="font-syne text-4xl font-bold text-slate-950">
                 Apply Leave
               </h1>
             </div>
@@ -91,14 +91,14 @@ return (
 
           <div className="flex items-center gap-3">
             <Link
-              to="/dashboard"
+              to="/dashboard/"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-blue-200 hover:text-blue-700"
             >
               <LayoutDashboard className="h-4 w-4" />
               Dashboard
             </Link>
             <Link
-              to="/emp-portal"
+              to="/employee-portal/"
               onClick={async (event) => {
                 event.preventDefault();
                 const { error: signOutError } = await supabase.auth.signOut();
@@ -106,7 +106,7 @@ return (
                   setError(signOutError.message);
                   return;
                 }
-                window.location.assign("/emp-portal");
+                window.location.assign("/employee-portal/");
               }}
               className="hidden items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 sm:inline-flex"
             >
@@ -122,7 +122,7 @@ return (
           <div className="overflow-hidden rounded-3xl bg-slate-950 text-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
             <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 px-6 py-7 sm:px-8">
               <Link
-                to="/dashboard"
+                to="/dashboard/"
                 className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-100 transition hover:text-white"
               >
                 <ArrowLeft className="h-4 w-4" />
@@ -267,7 +267,7 @@ return (
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-bold text-slate-600 transition hover:border-blue-200 hover:text-blue-700"
                 >
                   Cancel

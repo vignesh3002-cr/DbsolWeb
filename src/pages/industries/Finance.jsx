@@ -11,41 +11,77 @@ import {
   FaChartLine,
   FaShieldAlt,
   FaUserShield,
-  FaDatabase
+  FaDatabase,
+  FaClipboardList,
+  FaArrowRight,
+  FaCog,
 } from "react-icons/fa"
 
 export default function FinanceBanking() {
+  const challenges = [
+    "Complex regulatory reporting and compliance requirements",
+    "Manual financial processes creating errors and delays",
+    "Limited visibility into cash flow, budgets, and operational performance",
+    "Security and fraud risks across transactions, data, and reporting",
+  ]
 
   const solutions = [
     {
       icon: FaUniversity,
-      title: "Digital Banking Platforms",
-      desc: "Modern banking platforms delivering secure and seamless digital experiences.",
+      title: "Financial Management",
+      desc: "Modernize accounting, budgeting, treasury, and financial close processes with connected ERP workflows.",
     },
     {
       icon: FaMoneyCheckAlt,
-      title: "Financial Process Automation",
-      desc: "Automate core finance operations to reduce manual effort and errors.",
+      title: "Process Automation",
+      desc: "Automate invoice processing, approvals, payment workflows, and reporting to reduce manual effort and errors.",
     },
     {
       icon: FaChartLine,
       title: "Financial Analytics",
-      desc: "Advanced analytics for forecasting, planning, and decision-making.",
+      desc: "Gain real-time visibility into performance metrics, trends, and operational insights for better decisions.",
     },
     {
       icon: FaShieldAlt,
       title: "Fraud Detection & Security",
-      desc: "Identify and prevent fraudulent transactions using intelligent systems.",
+      desc: "Protect business-critical financial data with secure transactions, controls, and intelligent monitoring.",
     },
     {
       icon: FaUserShield,
-      title: "Regulatory Compliance",
-      desc: "Ensure compliance with evolving financial regulations efficiently.",
+      title: "Compliance Management",
+      desc: "Stay ahead of evolving financial regulations through standardized controls and reporting frameworks.",
     },
     {
       icon: FaDatabase,
       title: "Secure Data Management",
-      desc: "Protect financial data with secure cloud and encryption technologies.",
+      desc: "Unify finance data across teams and systems while ensuring governance, accuracy, and accessibility.",
+    },
+  ]
+
+  const implementationSteps = [
+    "Business process assessment and financial requirement mapping",
+    "ERP and reporting design for finance teams",
+    "System configuration, controls, and workflows",
+    "Data migration and user training",
+    "Go-live support and continuous optimization",
+  ]
+
+  const faqs = [
+    {
+      q: "How does Dynamics 365 improve financial operations?",
+      a: "It brings finance, reporting, budgeting, and operational data together so businesses can streamline processes and make faster decisions.",
+    },
+    {
+      q: "Can DBSol support compliance and financial reporting requirements?",
+      a: "Yes. We design finance solutions with governance, standardization, and reporting structures tailored to your compliance needs.",
+    },
+    {
+      q: "Is this suitable for banking and financial institutions?",
+      a: "Yes. The solution helps financial organizations manage transactions, reporting, controls, and operational visibility with greater accuracy and security.",
+    },
+    {
+      q: "Do you provide support after go-live?",
+      a: "Yes. We offer support, optimization, and training to help teams continuously improve financial operations after implementation.",
     },
   ]
 
@@ -54,7 +90,7 @@ export default function FinanceBanking() {
       id: "Finance",
       title: "Financial ERP & Compliance Automation",
       industry: "Finance & Banking",
-      desc: "Implemented Dynamics 365 Finance to modernize reporting, compliance, and accounting.",
+      desc: "Implemented Dynamics 365 Finance to modernize reporting, compliance, and accounting across business-critical processes.",
       result: "40% faster financial reporting",
       image: "/images/F&B_2.jpg",
       tag: "bg-emerald-200 text-emerald-900",
@@ -65,41 +101,46 @@ export default function FinanceBanking() {
     <div className="bg-gray-50 dark:bg-gray-900">
       <Navbar />
 
-      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/F&B_1.jpg"
-            className="w-full h-full object-cover"
-            alt="Finance & Banking"
+            className="h-full w-full object-cover"
+            alt="Finance and banking solutions"
+            width="1920"
+            height="720"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-40 text-white">
+        <div className="relative mx-auto max-w-6xl px-6 py-40 text-white">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl lg:text-6xl font-bold max-w-3xl"
+            className="max-w-4xl text-4xl font-black tracking-tight lg:text-3xl"
           >
-            Finance & Banking Solutions
+            Microsoft Dynamics 365 Solutions for Banking & Financial Services
+
           </motion.h1>
 
-          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
-            Drive secure, compliant, and intelligent financial operations with
-            modern digital finance platforms.
+          <p className="mt-6 max-w-3xl text-md leading-8 text-gray-200">
+            DBSol Technologies helps financial organisations streamline financial management, reporting and operational workflows through Microsoft 
+Dynamics 365. Our ERP consulting and implementation services support organisations in improving financial visibility, automating business 
+processes and building integrated reporting systems.
           </p>
 
-          <div className="mt-10 flex gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              to="/contact"
-              className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
+              to="/contact-us/"
+              className="rounded-lg bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-700"
             >
               Talk to Experts
             </Link>
             <HashLink
               to="#case-studies"
-              className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition"
+              className="rounded-lg border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/10"
             >
               View Case Studies
             </HashLink>
@@ -107,117 +148,195 @@ export default function FinanceBanking() {
         </div>
       </section>
 
-      {/* VALUE STRIP */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-          {[
-            ["40%+", "Faster Financial Reporting"],
-            ["50%+", "Reduced Operational Costs"],
-            ["99%", "Data & Compliance Accuracy"],
-          ].map((item, i) => (
-            <div key={i}>
-              <p className="text-4xl font-bold text-blue-600">{item[0]}</p>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">{item[1]}</p>
+      <section className="bg-white py-16 dark:bg-gray-800">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+                1. Common Challenges in Finance and Banking Operations
+              </h2>
+              <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-200">
+                {challenges.map((challenge) => (
+                  <li key={challenge}>
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-3xl bg-slate-50 p-8 shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+              <div className="mb-5 flex items-center gap-3">
+                <FaClipboardList className="text-2xl text-blue-600" />
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  Why finance teams struggle
+                </h3>
+              </div>
+              <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+                Many organizations still operate with fragmented systems for accounting, approvals, reporting, and controls. This creates delays, inconsistent data, weak governance, and difficulty meeting compliance requirements in a fast-moving market.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20 dark:bg-gray-900">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+            2. How Dynamics 365 Improves Financial Visibility
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              "Unified financial and operational data for faster reporting",
+              "Improved forecasting, budgeting, and cash visibility",
+              "Connected workflows across finance, compliance, and risk teams",
+            ].map((item) => (
+              <motion.div
+                whileHover={{ y: -4 }}
+                key={item}
+                className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200 dark:bg-gray-800 dark:ring-slate-700"
+              >
+                <FaChartLine className="mb-4 text-3xl text-blue-600" />
+                <p className="text-lg leading-7 text-gray-700 dark:text-gray-200">{item}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+            3. Financial Management and Banking Capabilities
+          </h2>
+
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {solutions.slice(0, 3).map((item) => {
+              const Icon = item.icon
+              return (
+                <div key={item.title} className="rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800">
+                  <Icon className="mb-5 text-3xl text-blue-600" />
+                  <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="text-base leading-7 text-gray-600 dark:text-gray-300">{item.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 dark:bg-gray-800">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+            4. Compliance, Security, and Data Control
+          </h2>
+
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {solutions.slice(3).map((item) => {
+              const Icon = item.icon
+              return (
+                <div key={item.title} className="rounded-2xl bg-slate-50 p-8 shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+                  <Icon className="mb-5 text-3xl text-blue-600" />
+                  <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="text-base leading-7 text-gray-600 dark:text-gray-300">{item.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20 dark:bg-gray-900">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+            5. Our Implementation Approach
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+            {implementationSteps.map((step, index) => (
+              <div key={step} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 dark:bg-gray-800 dark:ring-slate-700">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                  {index + 1}
+                </div>
+                <p className="text-base leading-7 text-gray-700 dark:text-gray-200">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mb-10 flex items-center justify-between gap-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+            6. Frequently Asked Questions
+          </h2>
+          <div className="hidden items-center gap-2 text-blue-600 md:flex">
+            <FaCog />
+            <span className="font-medium">Finance ERP expertise</span>
+          </div>
+        </div>
+
+        <div className="space-y-5">
+          {faqs.map((faq) => (
+            <div key={faq.q} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 dark:bg-gray-800 dark:ring-slate-700">
+              <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">{faq.q}</h3>
+              <p className="text-base leading-7 text-gray-600 dark:text-gray-300">{faq.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CHALLENGES */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
-            Financial Challenges We Solve
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              "Regulatory compliance and complex reporting requirements",
-              "Cybersecurity threats and financial fraud",
-              "High volume transaction processing",
-              "Need for secure digital banking experiences",
-            ].map((c, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -4 }}
-                className="p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg"
-              >
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
-                  {c}
-                </p>
-              </motion.div>
-            ))}
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <div className="rounded-3xl bg-gradient-to-r from-blue-700 to-indigo-700 p-10 text-white shadow-xl">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-100">Financial transformation</p>
+              <h2 className="text-3xl font-bold">Ready to modernize your finance operations?</h2>
+            </div>
+            <Link
+              to="/contact-us/"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-blue-700 transition hover:bg-blue-50"
+            >
+              Talk to Our Experts <FaArrowRight />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* SOLUTIONS */}
-      <section className="py-28 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
-            Our Finance & Banking Capabilities
-          </h2>
+      <section id="case-studies" className="mx-auto max-w-5xl px-6 pb-20">
+        <p className="mb-2 text-xs font-medium uppercase tracking-[2px] text-gray-500">Case Study</p>
+        <h2 className="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Featured Project</h2>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((item, i) => (
-              <motion.div
-                whileHover={{ scale: 1.04 }}
-                key={i}
-                className="rounded-2xl p-8 bg-white/10 backdrop-blur-lg border border-white/20 text-white"
-              >
-                <div className="text-3xl text-blue-400 mb-4">
-                  <item.icon />
-                </div>
-                <h3 className="text-xl text-black dark:text-white font-semibold mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CASE STUDY */}
-      <section
-        id="case-studies"
-        className="py-16 max-w-5xl mx-auto px-6"
-      >
-        <p className="text-xs tracking-[2px] uppercase text-gray-400 font-medium mb-2">
-          Case Study
-        </p>
-
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
-          Featured Project
-        </h2>
-
-        <div className="grid gap-5">
+        <div className="grid gap-6">
           {cases.map((item, index) => (
-            <Link to={`/case-studies/${item.id}`} key={item.id}>
+            <Link to={`/case-studies/${item.id}/`} key={item.id}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md"
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
               >
                 <div className="relative h-44">
                   <img
                     src={item.image}
+                    className="h-full w-full object-cover"
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="176"
                   />
-                  <span className={`absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full ${item.tag}`}>
+                  <span className={`absolute bottom-3 left-4 rounded-full px-3 py-1 text-xs font-medium ${item.tag}`}>
                     {item.industry}
                   </span>
                 </div>
 
                 <div className="p-5">
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-500 mb-4">{item.desc}</p>
-                  <div className="text-xs bg-emerald-50 text-emerald-700 px-3 py-2 rounded-lg">
+                  <h3 className="mb-2 font-semibold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+
+                  <div className="flex items-center gap-2 rounded-lg bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
                     {item.result}
                   </div>
                 </div>
@@ -227,23 +346,6 @@ export default function FinanceBanking() {
 
           <Testimonials limit={2} />
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
-        <h2 className="text-4xl font-bold text-white">
-          Transform Your Financial Operations
-        </h2>
-        <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
-          Modernize processes, ensure compliance, and gain real-time financial insights.
-        </p>
-
-        <Link
-          to="/contact"
-          className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition"
-        >
-          Talk to Our Experts
-        </Link>
       </section>
 
       <Footer />

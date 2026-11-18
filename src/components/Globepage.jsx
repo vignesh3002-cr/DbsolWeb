@@ -49,7 +49,7 @@ export default function GlobePage() {
 
         {/* 📝 Title */}
         <div className="relative z-10 pt-4 text-center">
-          <h1 className="text-xl md:text-3xl font-bold text-black dark:text-gray-200">
+          <h1 className="text-4xl font-bold text-black dark:text-gray-200">
             Our Clients Around the World 🌍
           </h1>
 

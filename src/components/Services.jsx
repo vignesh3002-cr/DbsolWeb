@@ -40,31 +40,31 @@ export default function Home() {
       title: "Dynamics 365 Business",
       desc: "Transform business productivity...",
       icon: <FaCloud size={40} />,
-      path: "/Dynamics365Business",
+      path: "/dynamics-365-business/",
     },
     {
       title: "Business Central",
       desc: "Connect your website to Business Central workflows...",
       icon: <FaLaptopCode size={40} />,
-      path: "/BusinessCentral",
+      path: "/business-central/",
     },
     {
       title: "Customer Engagement",
       desc: "Connect sales, service, and marketing journeys...",
       icon: <FaCloud size={40} />,
-      path: "/CustomerEngagement",
+      path: "/customer-engagement/",
     },
     {
       title: "Responsive Website",
       desc: "We design modern websites...",
       icon: <FaLaptopCode size={40} />,
-      path: "/WebDevelopment",
+      path: "/web-development/",
     },
     {
       title: "Mobile App Development",
       desc: "Build powerful mobile apps...",
       icon: <FaMobileAlt size={40} />,
-      path: "/MobileAppDevelopment",
+      path: "/mobile-app-development/",
     },
   ];
 

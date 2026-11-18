@@ -131,9 +131,9 @@ export default function WhyDbsol() {
             Microsoft Dynamics 365 Specialists
           </span>
 
-          <h2 className="mt-5 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+          <h2 className="mt-5 text-3xl font-bold text-gray-900 dark:text-blue-400 md:text-4xl">
             Why Choose{" "}
-            <span className="text-3xl font-bold text-gray-900 dark:text-white bg-clip-text">
+            <span className="text-3xl font-bold text-gray-900 dark:text-blue-400 bg-clip-text">
               DBSOL
             </span>
           </h2>

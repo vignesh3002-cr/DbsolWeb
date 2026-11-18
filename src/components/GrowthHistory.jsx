@@ -349,7 +349,7 @@ export default function GrowthJourney() {
           <div className="absolute bottom-0 w-48 h-24 rounded-full left-1/3 bg-yellow-300/10 blur-2xl" />
 
           <div className="relative">
-            <h1 className="text-2xl font-medium tracking-tight text-white">Our Growth Journey</h1>
+            <h1 className="text-4xl font-medium tracking-tight text-white">Our Growth Journey</h1>
             <p className="mt-1 text-sm text-blue-200">Milestones that define who we are & where we're headed</p>
           </div>
           <div className="absolute hidden -translate-y-1/2 right-8 top-1/2 sm:block">

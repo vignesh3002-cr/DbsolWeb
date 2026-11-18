@@ -67,7 +67,7 @@ export default function ModulesHub() {
           <span className="inline-flex rounded-full border border-cyan-200 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:border-white/15 dark:bg-white/10 dark:text-cyan-100">
             Dynamics 365 Reference
           </span>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight">
             Documentation hub for Dynamics 365 modules
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-200">
@@ -138,7 +138,7 @@ export default function ModulesHub() {
                     </div>
                     <div className="space-y-2 md:space-y-3">
                       <Link
-                        to={`/module/${module.slug}`}
+                        to={`/modules/${module.slug}/`}
                         className="block text-lg font-semibold leading-tight text-slate-900 transition hover:text-cyan-700 dark:text-white dark:hover:text-cyan-100 md:text-xl"
                       >
                         {module.title}
@@ -155,7 +155,7 @@ export default function ModulesHub() {
                     {module.sections.map((section) => (
                       <Link
                         key={section.slug}
-                        to={`/module/${module.slug}#${section.slug}`}
+                        to={`/modules/${module.slug}/#${section.slug}`}
                         className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-600 transition hover:border-cyan-300 hover:text-cyan-700 dark:border-white/10 dark:text-slate-200 dark:hover:border-cyan-300/50 dark:hover:text-cyan-100"
                       >
                         {section.title}
@@ -164,7 +164,7 @@ export default function ModulesHub() {
                   </div>
 
                   <Link
-                    to={`/module/${module.slug}`}
+                    to={`/modules/${module.slug}/`}
                     className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition hover:gap-3 hover:text-cyan-800 dark:text-cyan-200 dark:hover:text-cyan-100"
                   >
                     Open module page

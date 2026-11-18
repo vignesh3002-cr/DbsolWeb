@@ -139,7 +139,7 @@ const Powerbi = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-6 text-center text-4xl font-bold text-gray-800 md:text-left dark:text-white">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-800 md:text-left dark:text-white">
               Power BI
             </h2>
 
@@ -156,7 +156,8 @@ const Powerbi = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="images/PowerAutomate/powerbi.png"
+            src="/images/PowerAutomate/powerbi.png"
+            alt="Power BI"
             className=" w-full h-96 py-8 object-cover" 
           />
         </div>
@@ -166,7 +167,7 @@ const Powerbi = () => {
             <span className="text-heading font-semibold text-sm tracking-wide uppercase">
               Power Bi
             </span>
-            <h2 className="mt-2 text-3xl font-display font-bold text-foreground lg:text-4xl dark:text-blue-600">
+            <h2 className="mt-2 text-3xl font-display font-bold text-foreground dark:text-blue-600">
               “Turn data-driven insights into real, results‑driven outcomes.”
             </h2>
           </div>

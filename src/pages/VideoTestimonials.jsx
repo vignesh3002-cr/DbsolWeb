@@ -383,7 +383,7 @@ export default function TestimonialsSection() {
              text-gray-900 dark:text-white 
              py-4 md:py-8 lg:py-12"
 >
-                      <h2 className="mb-2 text-[clamp(38px,6vw,60px)] font-bold text-center text-gray-950 dark:text-white">
+                      <h2 className="mb-2 text-4xl font-bold text-center text-gray-950 dark:text-white">
 Client Success Stories
 </h2>
       <p className="text-[16px] text-[#575757] max-w-[740px] mb-16 text-center mx-auto dark:text-white/60">
@@ -429,8 +429,7 @@ Client Success Stories
             {/* Badge */}
 
             {/* Headline */}
-            <h2 className="font-semibold  leading-[1.06] tracking-[-0.03em] text-black mb-[18px]
-                           text-[clamp(28px,5vw,40px)] md:text-[clamp(32px,4vw,48px)] dark:text-white">
+            <h2 className="mb-[18px] text-3xl font-semibold leading-[1.06] tracking-[-0.03em] text-black dark:text-white">
               Real migrations.<br />
               <span
                 className="text-black dark:text-white"

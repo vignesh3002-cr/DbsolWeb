@@ -137,6 +137,14 @@ const primaryButtonClass =
 const secondaryButtonClass =
   "inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700";
 
+const serviceRoutes = {
+  erp: "/finance-operation/",
+  "process-automation": "/power-platform-solutions/",
+  dms: "/modules/",
+  "app-development": "/mobile-app-development/",
+  "business-intelligence": "/power-platform-solutions/",
+};
+
 export default function DeliveringTailoredSolutions({
   slug: slugProp,
   showNavbar = true,
@@ -154,13 +162,14 @@ export default function DeliveringTailoredSolutions({
     : selectedSlug;
 
   const service = servicesData[resolvedSlug];
+  const SectionHeading = showNavbar ? "h1" : "h2";
 
   if (!service) {
     return (
       <div className="min-h-screen bg-white dark:bg-gray-950">
         {showNavbar && <Navbar />}
         <div className="container mx-auto px-4 py-24 text-center">
-          <h1 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+          <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             Service Not Found
           </h1>
           <Link to="/" className="text-blue-600 hover:underline dark:text-blue-400">
@@ -192,10 +201,10 @@ export default function DeliveringTailoredSolutions({
             <span className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
               Our Services
             </span>
-            <h1 className="mb-4 text-2xl font-black text-gray-900 dark:text-white lg:text-5xl">
+            <SectionHeading className="mb-4 text-2xl font-black text-gray-900 dark:text-blue-400 lg:text-4xl">
               {service.title}
-            </h1>
-            <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+            </SectionHeading>
+            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               {service.subtitle}
             </p>
           </div>
@@ -206,26 +215,9 @@ export default function DeliveringTailoredSolutions({
                 const isActive = serviceKey === resolvedSlug;
 
                 return (
-                  <button
+                  <Link
                     key={serviceKey}
-                    type="button"
-                    onClick={() => {
-                      setSelectedSlug(serviceKey);
-                      setTimeout(() => {
-                        if (contentRef.current) {
-                          const yOffset = -120;
-                          const y =
-                            contentRef.current.getBoundingClientRect().top +
-                            window.pageYOffset +
-                            yOffset;
-
-                          window.scrollTo({
-                            top: y,
-                            behavior: "smooth",
-                          });
-                        }
-                      }, 100);
-                    }}
+                    to={serviceRoutes[serviceKey]}
                     className={`flex flex-col h-full min-w-0 rounded-2xl border p-5 text-left transition-all ${
                       isActive
                         ? "border-blue-600 bg-blue-600 text-white shadow-lg dark:border-blue-500 dark:bg-blue-600"
@@ -242,7 +234,7 @@ export default function DeliveringTailoredSolutions({
                     >
                       {serviceItem.subtitle}
                     </p>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -257,11 +249,11 @@ export default function DeliveringTailoredSolutions({
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Overview
               </h2>
-              <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+              <p className="text-md leading-relaxed text-gray-600 dark:text-gray-300">
                 {service.description}
               </p>
               <div className="pt-4">
-                <Link to="/Contact">
+                <Link to="/contact-us/">
                   <button type="button" className={primaryButtonClass}>
                     Get Started <ArrowRight className="h-4 w-4" />
                   </button>
@@ -270,14 +262,14 @@ export default function DeliveringTailoredSolutions({
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                 Key Benefits
               </h2>
               <ul className="space-y-3">
                 {service.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3">
                     <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-blue-600 dark:text-blue-400" />
-                    <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
+                    <span className="text-gray-600 text-md dark:text-gray-300">{benefit}</span>
                   </li>
                 ))}
               </ul>

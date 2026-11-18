@@ -19,7 +19,7 @@ const cases = [
     tag: "bg-blue-200 text-blue-900",
   },
     {
-    id: "Finance",
+    id: "finance",
     title: "Finance & Banking Solutions",
     industry: "Finance",
     desc: "Microsoft Dynamics 365 helps banks manage financial operations like accounting, reporting, and compliance in one system.",
@@ -96,7 +96,7 @@ const cases = [
   tag: "bg-indigo-200 text-indigo-900",
 },
 {
-  id: "it_ites",
+  id: "it-ites",
   title: "Dynamics 365 IT & ITES Services Transformation",
   industry: "IT & ITES Services",
   desc: "Implemented Microsoft Dynamics 365 to unify service delivery, CRM, finance, and project operations, enabling end-to-end visibility across IT services, resource management, and customer engagements.",
@@ -156,7 +156,7 @@ export default function CaseStudies() {
 
         <div className="grid gap-5 md:grid-cols-2">
           {cases.map((item, index) => (
-            <Link to={`/case-studies/${item.id}`} key={item.id}>
+            <Link to={`/case-studies/${item.id}/`} key={item.id}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -224,7 +224,7 @@ export default function CaseStudies() {
           Our team helps businesses implement powerful ERP and digital transformation solutions tailored to your industry.
         </p>
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="inline-block bg-white text-blue-900 font-medium text-sm px-7 py-3 rounded-lg hover:bg-blue-100 transition-colors"
         >
           Start your project <bold>→</bold>

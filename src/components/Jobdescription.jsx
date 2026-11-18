@@ -161,7 +161,7 @@ export default function Jobdescription() {
           )}
 
           <Link
-            to="/CareerForm"
+            to="/careers/apply/"
             className="px-8 py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
           >
             Apply for this Job

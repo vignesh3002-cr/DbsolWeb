@@ -362,7 +362,7 @@ advanced supply chain management platform.
 </p>
 
 <Link
-to="/contact"
+to="/contact-us/"
 className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
 >
 

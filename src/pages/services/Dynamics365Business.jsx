@@ -53,7 +53,7 @@ const subDivisions = [
   {
     title: "Business Central",
     desc: "A complete ERP solution for small and medium businesses, covering finance, sales, purchasing, inventory, and operations.",
-    href: "/BusinessCentral",
+    href: "/business-central/",
     icon: <FaChartPie />,
   },
   {
@@ -65,7 +65,7 @@ const subDivisions = [
   {
     title: "Customer Engagement",
     desc: "CRM capabilities for sales, customer service, marketing, field service, and stronger customer relationships.",
-    href: "/CustomerEngagement",
+    href: "/customer-engagement/",
     icon: <FaUsers />,
   },
 ];
@@ -97,11 +97,11 @@ export default function Dynamics365Business() {
               Our Services
             </span>
 
-            <h1 className="text-4xl font-black tracking-tight text-white lg:text-5xl">
+            <h1 className="text-3xl font-black tracking-tight text-white">
               Dynamics 365 Business Solutions
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-blue-50/90">
+            <p className="mt-5 max-w-2xl text-md leading-8 text-blue-50/90">
               Smart ERP and connected business applications built to streamline operations,
               improve visibility, and support scalable growth.
             </p>
@@ -116,13 +116,13 @@ export default function Dynamics365Business() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="/contact-us/"
                 className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
               >
                 Talk to Our Experts
               </Link>
               <Link
-                to="/modules"
+                to="/modules/"
                 className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15"
               >
                 Explore Modules
@@ -143,14 +143,14 @@ export default function Dynamics365Business() {
             <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
               Overview
             </span>
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
               Smart ERP Solutions for Modern Businesses
             </h2>
-            <p className="mb-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <p className="mb-4 text-md leading-8 text-gray-600 dark:text-gray-300">
               Microsoft Dynamics 365 Business solutions provide an integrated platform to
               manage finance, sales, operations, and customer relationships.
             </p>
-            <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <p className="text-md leading-8 text-gray-600 dark:text-gray-300">
               Our experts help organizations deploy scalable Dynamics 365 solutions tailored
               to their industry needs while ensuring seamless integration and optimized
               performance.
@@ -179,10 +179,10 @@ export default function Dynamics365Business() {
             <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
               Dynamics 365 Business
             </span>
-            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">
+            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
               Three Core Sub-Divisions
             </h2>
-            <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <p className="text-md leading-8 text-gray-600 dark:text-gray-300">
               Choose the Dynamics 365 solution area that fits your business model,
               operating scale, and customer engagement needs.
             </p>
@@ -221,10 +221,10 @@ export default function Dynamics365Business() {
             <span className="mb-4 inline-block rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-blue-700 shadow-sm dark:bg-gray-800 dark:text-blue-300">
               Capabilities
             </span>
-            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">
+            <h2 className="mb-5 text-3xl font-bold text-gray-900 dark:text-white lg:text-3xl">
               Key Business Capabilities
             </h2>
-            <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <p className="text-md leading-8 text-gray-600 dark:text-gray-300">
               Empowering organizations with integrated tools and intelligent solutions to
               streamline operations, enhance decision-making, and drive business growth.
             </p>
@@ -264,17 +264,17 @@ export default function Dynamics365Business() {
 
       <section className=" bg-indigo-700  py-16 text-center text-white dark:bg-gray-900  lg:py-20">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-6 text-3xl font-bold lg:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold lg:text-3xl">
             Transform Your Business with Dynamics 365
           </h2>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-blue-100">
+          <p className="mx-auto mb-10 max-w-2xl text-mdleading-relaxed text-blue-100">
             Empower your organization with intelligent ERP solutions designed for
             scalability, efficiency, and long-term growth.
           </p>
 
           <Link
-            to="/contact"
+            to="/contact-us/"
             className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 font-semibold text-blue-600 transition hover:bg-gray-100"
           >
             Start Your Digital Transformation

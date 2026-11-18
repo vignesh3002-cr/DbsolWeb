@@ -3,6 +3,50 @@ Options -MultiViews
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^www\.dbsoltechnologies\.com$ [NC]
+  RewriteRule ^ https://www.dbsoltechnologies.com%{REQUEST_URI} [R=301,L]
+
+  RewriteRule ^(?:aboutUs|AboutUs|Company)/?$ /about-us/ [R=301,L]
+  RewriteRule ^(?:contact|Contact)/?$ /contact-us/ [R=301,L]
+  RewriteRule ^CtaSection/?$ /cta-section/ [R=301,L]
+  RewriteRule ^BusinessCentral/?$ /business-central/ [R=301,L]
+  RewriteRule ^CustomerEngagement/?$ /customer-engagement/ [R=301,L]
+  RewriteRule ^BusinessConsulting/?$ /business-consulting/ [R=301,L]
+  RewriteRule ^(?:Dynamics365Business|dynamics-365-business-central)/?$ /dynamics-365-business/ [R=301,L]
+  RewriteRule ^WebDevelopment/?$ /web-development/ [R=301,L]
+  RewriteRule ^MobileAppDevelopment/?$ /mobile-app-development/ [R=301,L]
+  RewriteRule ^(?:IT-ITES|IT\.ITES)/?$ /industries/it-ites/ [R=301,L]
+  RewriteRule ^Manufacturing/?$ /industries/manufacturing/ [R=301,L]
+  RewriteRule ^(?:Retail-Wholesale|Retail&Wholesale)/?$ /industries/retail-wholesale/ [R=301,L]
+  RewriteRule ^LogisticsSupplyChain/?$ /industries/logistics-supply-chain/ [R=301,L]
+  RewriteRule ^FinanceBanking/?$ /industries/banking-finance/ [R=301,L]
+  RewriteRule ^(?:HealthCare|Healthcare)/?$ /industries/healthcare/ [R=301,L]
+  RewriteRule ^Education/?$ /industries/education/ [R=301,L]
+  RewriteRule ^Hospitality/?$ /industries/hospitality/ [R=301,L]
+  RewriteRule ^ProfessionalServices/?$ /industries/professional-services/ [R=301,L]
+  RewriteRule ^FinancialManagementSystem/?$ /solutions/financial-management-system/ [R=301,L]
+  RewriteRule ^HumanResourceManagementSystem/?$ /solutions/human-resource-management-system/ [R=301,L]
+  RewriteRule ^SCMS/?$ /solutions/supply-chain-management-system/ [R=301,L]
+  RewriteRule ^WMS/?$ /solutions/warehouse-management-system/ [R=301,L]
+  RewriteRule ^IMS/?$ /solutions/inventory-management-system/ [R=301,L]
+  RewriteRule ^CareerForm/?$ /careers/apply/ [R=301,L]
+  RewriteRule ^CaseStudies/?$ /case-studies/ [R=301,L]
+  RewriteRule ^Globe/?$ /globe/ [R=301,L]
+  RewriteRule ^WhyChooseUs/?$ /why-choose-us/ [R=301,L]
+  RewriteRule ^CompanyStats/?$ /company-stats/ [R=301,L]
+  RewriteRule ^emp-portal/?$ /employee-portal/ [R=301,L]
+  RewriteRule ^power-automate/?$ /power-platform-solutions/ [R=301,L]
+  RewriteRule ^case-studies/Finance/?$ /case-studies/finance/ [R=301,L]
+  RewriteRule ^case-studies/it_ites/?$ /case-studies/it-ites/ [R=301,L]
+  RewriteRule ^module/([^/]+)/?$ /modules/$1/ [R=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ /$1/ [R=301,L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]

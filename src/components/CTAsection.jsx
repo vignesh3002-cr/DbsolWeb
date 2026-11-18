@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-   <section className="bg-indigo-700 px-6 py-4 md:py-8 lg:py-16 text-center text-white dark:bg-gray-800">
+   <section className="bg-indigo-700 px-6 py-4 md:py-8 lg:py-16 text-center  dark:text-white dark:bg-gray-800">
 
-       <h2 className="mb-4 text-3xl font-bold">
+       <h2 className="mb-4 text-3xl font-bold dark:text-blue-400 text-white ">
             Ready to Transform Your Business?
           </h2>
 
@@ -17,7 +17,7 @@ const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-5">
             <Link
-              to="/contact"
+              to="/contact-us/"
              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:bg-gray-100"
             >
               Contact Our Experts

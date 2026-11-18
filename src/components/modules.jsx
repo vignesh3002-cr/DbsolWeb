@@ -42,7 +42,7 @@ export default function Modules({ modules, showAllLink = true }) {
           </div>
 
           <Link
-            to="/modules"
+            to="/modules/"
             className="inline-flex items-center gap-2 self-start rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             Open full documentation hub
@@ -84,7 +84,7 @@ export default function Modules({ modules, showAllLink = true }) {
 
                 <div>
                   <Link
-                    to={`/module/${mod.slug}`}
+                    to={`/modules/${mod.slug}/`}
                     className="block text-lg font-semibold hover:text-cyan-700"
                   >
                     {mod.title}
@@ -106,7 +106,7 @@ export default function Modules({ modules, showAllLink = true }) {
                 {mod.sections.slice(0, 4).map((section) => (
                   <Link
                     key={section.slug}
-                    to={`/module/${mod.slug}#${section.slug}`}
+                    to={`/modules/${mod.slug}/#${section.slug}`}
                     className="rounded-full border px-3 py-1 text-xs hover:border-cyan-300 hover:text-cyan-700"
                   >
                     {section.title}
@@ -118,7 +118,7 @@ export default function Modules({ modules, showAllLink = true }) {
               <div className="mt-auto flex items-center justify-between">
 
                 <Link
-                  to={`/module/${mod.slug}`}
+                  to={`/modules/${mod.slug}/`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:gap-3"
                 >
                   Open module
@@ -141,7 +141,7 @@ export default function Modules({ modules, showAllLink = true }) {
 
           {showAllLink && (
             <Link
-              to="/modules"
+              to="/modules/"
               className="flex h-1/6 w-full mt-10 items-center justify-center rounded-3xl border-2 ring-offset-border-soft border-cyan-100 bg-cyan-50 p-6 text-center transition hover:bg-cyan-100 dark:border-cyan-400/30 dark:bg-cyan-400/10 dark:hover:bg-cyan-400/20"
             >
                 <div className="mt-2 flex items-center justify-center gap-2 text-sm text-cyan-600">

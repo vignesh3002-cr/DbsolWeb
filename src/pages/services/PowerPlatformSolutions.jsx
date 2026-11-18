@@ -230,7 +230,7 @@ const PowerAutomateFeatures = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold md:text-5xl"
+            className="text-5xl font-bold md:text-4xl"
           >
             Power Platform Solutions
           </motion.h1>
@@ -251,7 +251,7 @@ const PowerAutomateFeatures = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-6 text-center text-4xl font-bold text-gray-800 md:text-left dark:text-white">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-800 md:text-left dark:text-white">
               Power Platform
             </h2>
 
@@ -322,7 +322,7 @@ const PowerAutomateFeatures = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-6 text-center text-4xl font-bold text-gray-800 md:text-left dark:text-white">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-800 md:text-left dark:text-white">
               Power Automate
             </h2>
 
@@ -348,7 +348,7 @@ const PowerAutomateFeatures = () => {
             <span className="text-heading font-semibold text-sm tracking-wide uppercase">
               Power Automate
             </span>
-            <h2 className="mt-2 text-3xl font-display font-bold text-foreground lg:text-4xl dark:text-blue-600">
+            <h2 className="mt-2 text-3xl font-display font-bold text-foreground dark:text-blue-600">
               Automate and optimize business processes
             </h2>
           </div>
@@ -459,7 +459,7 @@ const PowerAutomateFeatures = () => {
       </section>
 
       <section className="bg-indigo-700 py-24 text-center text-white dark:bg-gray-800">
-        <h2 className="mb-6 text-4xl font-bold dark:text-blue-600">
+        <h2 className="mb-6 text-3xl font-bold dark:text-blue-600">
           Start Your Automation Journey
         </h2>
 
@@ -468,7 +468,7 @@ const PowerAutomateFeatures = () => {
         </p>
 
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="rounded-lg bg-white px-8 py-4 font-semibold text-blue-600 transition hover:bg-gray-100"
         >
           Get Started

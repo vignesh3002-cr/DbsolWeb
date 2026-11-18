@@ -17,14 +17,7 @@ export default function Home() {
 ];
 
   const [curnt, setCurrent] = useState(0);
- const scrollRef = useRef(null);
-const scrollLeft = () => {
-  setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-};
-
-const scrollRight = () => {
-  setCurrent((prev) => (prev + 1) % slides.length);
-};
+  const scrollRef = useRef(null);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -35,29 +28,30 @@ const scrollRight = () => {
 
   return (
     <section className="relative w-full h-screen">
-      {/* Background */}
-
       <img
         src={slides[curnt].img}
         alt="Hero Background"
         className="absolute object-cover w-full h-full transition-all duration-1000"
+        width="1920"
+        height="1080"
+        fetchPriority="high"
+        decoding="async"
       />
       <div ref={scrollRef} className="absolute inset-0 bg-black/60 overflow-x-auto scrollbar-hide "></div>
+
       {/* Content */}
       <div className="relative z-10 flex items-center h-full px-6 mx-auto max-w-7xl">
           
         {/* Sliding Steps */}
         
-
-  
-        <motion.div
+      <motion.div
           key={curnt}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 ,ease:"easeInOut"}}
           className="max-w-2xl text-white"
         >
-          <h1 className="mb-6 text-2xl font-bold leading-tight md:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold">
             {slides[curnt].title}
           </h1>
 
@@ -88,20 +82,6 @@ const scrollRight = () => {
           </div>
         </motion.div>
         </div>
-
-      {/* Indicators */}
-      <div className="absolute flex gap-3 -translate-x-1/2 bottom-10 left-1/2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`w-3 h-2 rounded-full ${
-              curnt === index ? "bg-white" : "bg-gray-400"
-            }`}
-          ></button>
-        ))}
-      </div>
-      
     </section>
 
       );

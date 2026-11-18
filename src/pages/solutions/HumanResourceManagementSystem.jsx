@@ -354,7 +354,7 @@ for workforce management, recruitment, payroll, and analytics.
 </p>
 
 <Link
-to="/contact"
+to="/contact-us/"
 className="px-8 py-4 font-semibold  bg-white text-blue-700 rounded-lg hover:bg-gray-100"
 >
 

@@ -67,7 +67,7 @@ export default function ModuleDetail() {
   }, [module]);
 
   if (!module) {
-    return <Navigate to="/modules" replace />;
+    return <Navigate to="/modules/" replace />;
   }
 
   const otherModules = d365Modules.filter((item) => item.slug !== module.slug).slice(0, 4);
@@ -95,7 +95,7 @@ export default function ModuleDetail() {
 
         <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-16">
           <Link
-            to="/modules"
+            to="/modules/"
             className="inline-flex items-center gap-2 text-sm text-slate-600 transition hover:text-slate-900 dark:text-white/80 dark:hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -107,7 +107,7 @@ export default function ModuleDetail() {
               <div className="mb-4 inline-flex rounded-full border border-cyan-200 bg-white/75 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:border-white/15 dark:bg-white/10 dark:text-cyan-100">
                 Dynamics 365 Module
               </div>
-              <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight">
                 {module.title}
               </h1>
               <p className="mt-4 text-base text-slate-700 dark:text-white/85 md:text-lg">{module.tagline}</p>
@@ -264,7 +264,7 @@ export default function ModuleDetail() {
                 Keep navigating through the rest of the Dynamics reference guide.
               </p>
             </div>
-            <Link to="/modules" className="text-sm font-semibold text-cyan-700 transition hover:text-cyan-800 dark:text-cyan-200 dark:hover:text-cyan-100">
+            <Link to="/modules/" className="text-sm font-semibold text-cyan-700 transition hover:text-cyan-800 dark:text-cyan-200 dark:hover:text-cyan-100">
               Back to hub
             </Link>
           </div>
@@ -273,7 +273,7 @@ export default function ModuleDetail() {
             {otherModules.map((item) => (
               <Link
                 key={item.slug}
-                to={`/module/${item.slug}`}
+                to={`/modules/${item.slug}/`}
                 className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-cyan-300 hover:bg-cyan-50 dark:border-white/10 dark:bg-slate-900/70 dark:hover:border-cyan-300/40 dark:hover:bg-slate-900"
               >
                 <div className={`mb-3 inline-flex rounded-2xl p-3 ${item.color}`}>

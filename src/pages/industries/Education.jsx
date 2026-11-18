@@ -80,19 +80,19 @@ export default function Education() {
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl lg:text-6xl font-bold max-w-3xl"
+            className="text-5xl lg:text-4xl font-bold max-w-3xl"
           >
             Education Technology for the Digital Era
           </motion.h1>
 
-          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+          <p className="mt-6 text-md text-gray-200 max-w-2xl">
             Modernize learning experiences with connected platforms,
             real‑time student insights, and secure education systems.
           </p>
 
           <div className="mt-10 flex gap-4">
             <Link
-              to="/contact"
+              to="/contact-us/"
               className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
               Talk to Experts
@@ -126,7 +126,7 @@ export default function Education() {
       {/* CHALLENGES */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-16">
             Education Challenges We Solve
           </h2>
 
@@ -154,7 +154,7 @@ export default function Education() {
       {/* SOLUTIONS */}
       <section className="py-28 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-20">
             Our Education Technology Capabilities
           </h2>
 
@@ -193,7 +193,7 @@ export default function Education() {
         </h2>
 
         {cases.map((item, index) => (
-          <Link to={`/case-studies/${item.id}`} key={item.id}>
+          <Link to={`/case-studies/${item.id}/`} key={item.id}>
             <motion.div
               whileHover={{ y: -4 }}
               initial={{ opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ export default function Education() {
 
       {/* CTA */}
       <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
-        <h2 className="text-4xl font-bold text-white">
+        <h2 className="text-3xl font-bold text-white">
           Ready to Transform Education?
         </h2>
         <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
@@ -234,7 +234,7 @@ export default function Education() {
         </p>
 
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100"
         >
           Start Your Transformation

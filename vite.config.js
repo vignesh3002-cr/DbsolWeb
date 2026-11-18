@@ -1,13 +1,27 @@
 import { resolve } from 'node:path'
+import { createRequire } from 'node:module'
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+
+const require = createRequire(import.meta.url)
+const vitePrerender = require('vite-plugin-prerender')
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const supabaseEnv = loadEnv(mode, resolve(process.cwd(), 'Backend'), '')
+  const prerenderPlugin = mode === 'production'
+    ? vitePrerender({
+        staticDir: resolve(process.cwd(), 'dist'),
+        routes: ['/'],
+        renderer: new vitePrerender.PuppeteerRenderer({
+          renderAfterElementExists: 'h1',
+          maxConcurrentRoutes: 1,
+        }),
+      })
+    : null
 
   return {
-    plugins: [react()],
+    plugins: [react(), ...(prerenderPlugin ? [prerenderPlugin] : [])],
     define: {
       'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(supabaseEnv.NEXT_PUBLIC_SUPABASE_URL),
       'import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY': JSON.stringify(

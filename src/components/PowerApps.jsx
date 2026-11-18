@@ -38,25 +38,25 @@ const categories = [
         title: "Plan smarter",
         description:
           "Quickly turn ideas into working solutions. Capture requirements, map processes, and shape data models in Power Apps, aligning your team before building a single component",
-        video: "images/PowerAutomate/ElevateDevelopment/mapjourney.mp4" 
+        video: "/images/ElevateDevelopment/mapjourney.mp4"
       },
       {
         title: "Define your vision",
         description:
           "Use natural language to outline goals, roles, and workflows. AI instantly translates your intent into structured solution blueprints.",
-        video: "images/PowerAutomate/ElevateDevelopment/Define_Your_Vision.mp4" 
+        video: "/images/ElevateDevelopment/Define_Your_Vision.mp4"
       },
       {
         title: "Map the journey",
         description:
           "Visualize processes and decision points to clarify logic and optimize automation paths.",
-        video: "images/PowerAutomate/ElevateDevelopment/mapjourney.mp4"    
+        video: "/images/ElevateDevelopment/mapjourney.mp4"
          },
       {
         title: "Structure your data",
         description:
           "Design secure, scalable data models with AI-assisted suggestions. Easily refine tables, relationships, and fields using a visual data workspace.",
-        video:"images/PowerAutomate/ElevateDevelopment/Structure_Your_Data.mp4"
+        video: "/images/ElevateDevelopment/Structure_Your_Data.mp4"
       },
     ],
   },
@@ -69,20 +69,20 @@ const categories = [
         title: "Work with your trusted Copilot",
         description:
           "Bring Microsoft 365 Copilot into your custom apps to ground assistance in the real business context. Copilot delivers a seamless chat experience that travels with you across Microsoft 365 and your custom apps",
-        video:"images/PowerAutomate/ElevateDevelopment/TrustCopilot.mp4",
+        video: "/images/ElevateDevelopment/TrustCopilot.mp4",
       },
       {
         title: "Monitor agent activity in one place",
         description:
           "Oversee, collaborate with, and guide AI agents inside your apps. The agent feed gives users control and oversight, guiding them to the most valuable actions.",
 
-        video:"images/PowerAutomate/ElevateDevelopment/MonitorAgent.mp4",
+        video: "/images/ElevateDevelopment/MonitorAgent.mp4",
       },
       {
         title: "Work smarter",
         description:
           "Speed up data entry and reduce errors with AI that autofills forms from emails, chats, documents, and images, eliminating repetitive work and boosting productivity.",
-        video:"images/PowerAutomate/ElevateDevelopment/WorkSmarter.mp4",
+        video: "/images/ElevateDevelopment/WorkSmarter.mp4",
       },
     ],
   },
@@ -95,20 +95,20 @@ const categories = [
         title: "Move rapidly from concept to creation",
         description:
           "Build apps your way—drag and drop, generative AI, or custom code. Easily deploy across web and mobile. ",
-        video:"images/PowerAutomate/ElevateDevelopment/RapidlyConcept.mp4",
+        video: "/images/ElevateDevelopment/RapidlyConcept.mp4",
       },
       {
         title: "Innovate faster",
         description:
           "Accelerate UI design and data modeling work with AI assistance using natural language instructions, templates, and reusable components.",
 
-        video:"images/PowerAutomate/ElevateDevelopment/InnovateFaster.mp4",
+        video: "/images/ElevateDevelopment/InnovateFaster.mp4",
       },
       {
         title: "Empower your teams",
         description:
           "Empower business users and developers to collaborate in one workspace. Business users can describe what they need in natural language and generate rich, custom app experiences, powered by reliable code and refined through conversation.",
-        video:"images/PowerAutomate/ElevateDevelopment/EmpowerTeams.mp4",
+        video: "/images/ElevateDevelopment/EmpowerTeams.mp4",
       },
     ],
   },
@@ -162,7 +162,7 @@ const PowerApps = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-6 text-center text-4xl font-bold text-gray-800 md:text-left dark:text-white">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-800 md:text-left dark:text-white">
               Power Apps 
             </h2>
 
@@ -177,7 +177,8 @@ const PowerApps = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            src="images/PowerAutomate/Powerapps_logo.png"
+            src="/images/PowerAutomate/Powerapps_logo.png"
+            alt="Power Apps"
             className=" w-full h-full py-8 object-cover" 
           />
         </div>
@@ -187,7 +188,7 @@ const PowerApps = () => {
             <span className="text-heading font-semibold text-sm tracking-wide uppercase">
               Power apps
             </span>
-            <h2 className="mt-2 text-3xl font-display font-bold text-foreground lg:text-4xl dark:text-blue-600">
+            <h2 className="mt-2 text-3xl font-display font-bold text-foreground dark:text-blue-600">
               “Transform your business with modern, AI-first applications.”
             </h2>
           </div>

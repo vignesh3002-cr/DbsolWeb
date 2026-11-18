@@ -155,7 +155,7 @@ export default function About() {
           <div className="flex justify-center gap-6">
             <Link
               className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
-              to="/contact"
+              to="/contact-us/"
             >
               Contact Us
             </Link>

@@ -61,7 +61,7 @@ export default function Login() {
       }
 
       setError("");
-      navigate(isAdmin ? "/admin-dashboard" : "/dashboard");
+      navigate(isAdmin ? "/admin-dashboard/" : "/dashboard/");
     } catch (err) {
       console.error("Login error:", err);
       setError(
@@ -184,7 +184,7 @@ export default function Login() {
               </label>
 
               <Link
-                to="/contact"
+                to="/contact-us/"
                 className="w-fit font-semibold text-blue-700 transition hover:text-blue-900 hover:underline"
               >
                 Forgot password?

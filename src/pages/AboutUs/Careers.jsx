@@ -99,7 +99,7 @@ className="absolute inset-0 object-cover w-full h-full"
 initial={{opacity:0,y:40}}
 animate={{opacity:1,y:0}}
 transition={{duration:0.7}}
-className="text-5xl font-bold"
+className="text-4xl font-bold"
 >
 
 Join Our Team
@@ -127,7 +127,7 @@ Join Our Team
 
 <div className="max-w-6xl px-6 mx-auto text-center">
 
-<h2 className="text-4xl font-bold text-gray-800 mb-14 dark:text-white">
+<h2 className="text-3xl font-bold text-gray-800 mb-14 dark:text-white">
 Why Work With Us
 </h2>
 
@@ -167,7 +167,7 @@ className="p-8 bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 <section className="py-24 bg-gray-100 dark:bg-gray-800">
   <div className="max-w-5xl px-6 mx-auto">
-    <h2 className="text-4xl font-bold text-center text-gray-800 mb-14 dark:text-white">
+    <h2 className="text-3xl font-bold text-center text-gray-800 mb-14 dark:text-white">
       Open Positions
     </h2>
 
@@ -191,7 +191,7 @@ className="p-8 bg-white shadow-lg rounded-xl dark:bg-gray-800"
           </div>
 
           <Link
-            to={`/jobs/${job.id}`}
+            to={`/jobs/${job.id}/`}
             state={{ job }}
             className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
           >
@@ -210,7 +210,7 @@ className="p-8 bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 <section className="py-24 text-center text-white bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-gray-900 dark:to-gray-900 ">
 
-<h2 className="mb-6 text-4xl font-bold">
+<h2 className="mb-6 text-3xl font-bold">
 Don't See the Right Role?
 </h2>
 
@@ -223,7 +223,7 @@ when a suitable role becomes available.
 </p>
 
 <Link
-to="/CareerForm"
+to="/careers/apply/"
 className="px-8 py-4 font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100"
 >
 

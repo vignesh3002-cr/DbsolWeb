@@ -7,11 +7,7 @@ const clients = [
   light: "/images/Shelter.png",
   medium: true,
   },
-  {
-    name: "amazon",
-    light: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    medium: true,
-  },
+  
   {
     name: "Eclosia",
     light: "/images/eclosia.jpg",
@@ -34,7 +30,7 @@ export default function TrustedClients() {
   return (
     <section className="py-4 overflow-hidden bg-white text-gray-900 md:py-8 lg:py-12">
       <div className="px-6 mx-auto max-w-7xl">
-        <h2 className="mb-8 text-3xl font-bold text-center text-gray-900">
+        <h2 className="mb-8 text-3xl font-bold text-center text-gray-900 dark:text-blue-600 md:text-4xl lg:mb-12">
           Trusted by Industry Leaders
         </h2>
         <div className="relative overflow-hidden">

@@ -156,7 +156,7 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
               <p className="text-xs font-bold uppercase text-blue-700">
                 Admin Portal
               </p>
-              <h1 className="font-syne text-2xl font-bold text-slate-950">
+              <h1 className="font-syne text-4xl font-bold text-slate-950">
                 Admin Dashboard
               </h1>
             </div>
@@ -170,7 +170,7 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
               Website
             </Link>
             <Link
-              to="/emp-portal"
+              to="/employee-portal/"
               onClick={async (event) => {
                 event.preventDefault();
                 const { error } = await supabase.auth.signOut();
@@ -178,7 +178,7 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
                   setLoadError(error.message);
                   return;
                 }
-                window.location.assign("/emp-portal");
+                window.location.assign("/employee-portal/");
               }}
               className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
             >
@@ -383,7 +383,7 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
 
 
             <Link
-             to="/employee-master"
+             to="/employee-master/"
               className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-bold text-slate-600"
            >
             <UserPlus className="h-5 w-5" />

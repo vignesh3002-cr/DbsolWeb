@@ -20,9 +20,9 @@ export default function Contact() {
   // phone click
   const handleClick = () => {
     if (isMobile) {
-      window.location.href = "tel:+919994883682";
+      window.location.href = "tel:+918667498131";
     } else {
-      navigator.clipboard.writeText("+91 9994883682");
+      navigator.clipboard.writeText("+91 8667498131");
 
       Swal.fire({
         title: "Copied!",
@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-black/60" />
 
           <div className="relative z-10 text-center text-white">
-            <h1 className="text-5xl font-bold">Contact Us</h1>
+            <h1 className="text-4xl font-bold">Contact Us</h1>
 
             <p className="mt-2 text-sm text-gray-200">
               <Link to="/" className="hover:text-blue-400">Home</Link>
@@ -91,7 +91,7 @@ export default function Contact() {
             >
               <FaPhoneAlt className="mx-auto mb-4 text-3xl text-blue-600" />
               <h3 className="font-semibold">Phone</h3>
-              <p className="text-black dark:text-gray-200">+91 9884016853</p>
+              <p className="text-black dark:text-gray-200">+91 8667498131</p>
             </motion.div>
 
             <motion.div
@@ -134,40 +134,59 @@ export default function Contact() {
       onSubmit={sendEmail}
       className="grid gap-6 md:grid-cols-2"
     >
-      <input
-        name="name"
-        placeholder="Full Name"
-        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <label className="flex flex-col gap-2 text-sm font-medium text-gray-800 dark:text-white">
+        Full Name
+        <input
+          name="name"
+          autoComplete="name"
+          required
+          className="min-h-12 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-200"
+        />
+      </label>
 
-      <input
-        name="email"
-        placeholder="Email"
-        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <label className="flex flex-col gap-2 text-sm font-medium text-gray-800 dark:text-white">
+        Work Email
+        <input
+          type="email"
+          name="email"
+          autoComplete="email"
+          required
+          className="min-h-12 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-200"
+        />
+      </label>
 
-      <input
-        name="company"
-        placeholder="Company"
-        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <label className="flex flex-col gap-2 text-sm font-medium text-gray-800 dark:text-white">
+        Company
+        <input
+          name="company"
+          autoComplete="organization"
+          className="min-h-12 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-200"
+        />
+      </label>
 
-      <input
-        name="phone"
-        placeholder="Phone"
-        className="p-3 border border-gray-300 rounded bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <label className="flex flex-col gap-2 text-sm font-medium text-gray-800 dark:text-white">
+        Phone (optional)
+        <input
+          type="tel"
+          name="phone"
+          autoComplete="tel"
+          className="min-h-12 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-200"
+        />
+      </label>
 
-      <textarea
-        name="message"
-        placeholder="Message"
-        rows="4"
-        className="p-3 border border-gray-300 rounded md:col-span-2 bg-white dark:bg-gray-200 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <label className="flex flex-col gap-2 text-sm font-medium text-gray-800 dark:text-white md:col-span-2">
+        How can we help?
+        <textarea
+          name="message"
+          rows="4"
+          required
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-200"
+        />
+      </label>
 
       <button
         type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-xl text-white py-3 px-32 place-self-center md:col-span-2 rounded-lg transition"
+        className="min-h-12 w-full rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 md:col-span-2 md:w-auto md:justify-self-center"
       >
         Submit
       </button>

@@ -208,7 +208,7 @@ export default function EmployeeMaster() {
           {/* BACK */}
           <button
             onClick={() =>
-              navigate("/admin-dashboard")
+              navigate("/admin-dashboard/")
             }
             className="px-4 py-2"
           >
@@ -218,7 +218,7 @@ export default function EmployeeMaster() {
           {/* CREATE NEW EMPLOYEE */}
           <button
             onClick={() =>
-              navigate("/employee-form")
+              navigate("/employee-form/")
             }
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl flex items-center gap-2"
           >
@@ -520,7 +520,7 @@ export default function EmployeeMaster() {
                         className="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded"
                         onClick={() =>
                           navigate(
-                            "/employee-details",
+                            "/employee-details/",
                             {
                               state: emp,
                             }
@@ -536,7 +536,7 @@ export default function EmployeeMaster() {
                         className="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded"
                         onClick={() =>
                           navigate(
-                            "/employee-form",
+                            "/employee-form/",
                             {
                               state: emp,
                             }

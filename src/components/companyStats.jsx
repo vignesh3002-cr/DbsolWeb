@@ -1,4 +1,4 @@
-import { Briefcase, Users, Building2, Award } from "lucide-react";
+import { Briefcase, Users, Award } from "lucide-react";
 import { motion } from "framer-motion"
 import CountUp from "react-countup"
 import { useInView } from "react-intersection-observer"
@@ -11,24 +11,19 @@ threshold:0.3,
 })
   const stats = [
     {
+      icon: <Award size={40} />,
+      number: "100%",
+      label: "Data Integrity",
+    },
+    {
       icon: <Briefcase size={40} />,
-      number: "50",
-      label: "Projects Delivered",
+      number: "0",
+      label: "Days Downtime",
     },
     {
       icon: <Users size={40} />,
-      number: "30",
-      label: "Enterprise Clients",
-    },
-    {
-      icon: <Building2 size={40} />,
-      number: "10",
-      label: "Industries Served",
-    },
-    {
-      icon: <Award size={40} />,
-      number: "8",
-      label: "Years Experience",
+      number: "3x",
+      label: "Faster Reports",
     },
   ];
 

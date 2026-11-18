@@ -30,7 +30,7 @@ export default function CaseStudyDetail() {
   const cases = {
     manufacturing: {
       title: "Manufacturing ERP Implementation",
-      Link: "/manufacturing",
+      Link: "/industries/manufacturing/",
       industry: "Manufacturing Case Study",
       image: "/images/Manufacturing.jpg",
       challenge:
@@ -40,9 +40,9 @@ export default function CaseStudyDetail() {
       result:
         "40% increase in operational efficiency and improved reporting visibility.",
     },
-    Finance: {
+    finance: {
     title: "Finance & Banking",
-    Link:   "/FinanceBanking",
+    Link:   "/industries/banking-finance/",
     industry: "Finance Case Study",
     image: "/images/F&B_2.jpg",
     challenge:
@@ -55,7 +55,7 @@ export default function CaseStudyDetail() {
 
     retail: {
       title: "Retail Inventory Optimization",
-      Link: "/Retail&Wholesale",
+      Link: "/industries/retail-wholesale/",
       industry: "Retail",
       image: "/images/Retail_1.jpg",
       challenge:
@@ -68,7 +68,7 @@ export default function CaseStudyDetail() {
 
     healthcare: {
       title: "Healthcare ERP Transformation",
-      Link: "/HealthCare",
+      Link: "/industries/healthcare/",
       industry: "Healthcare",
       image: "/images/Healthcare_1.jpg",
       challenge:
@@ -92,7 +92,7 @@ export default function CaseStudyDetail() {
     },
     education: {
       title: "Education Technology",
-      Link: "/Education",
+      Link: "/industries/education/",
       industry: "Education",
       image: "/images/ET_1.jpg",
       challenge:
@@ -104,7 +104,7 @@ export default function CaseStudyDetail() {
     },
 hospitality: {
   title: "Hospitality",
-  Link: "/hospitality",
+  Link: "/industries/hospitality/",
   industry: "Hospitality  Dynamics Case Study",
   image: "/images/HT_2.jpg",
 
@@ -117,9 +117,9 @@ hospitality: {
   result:
     "55% faster reservation and service processing, improved guest satisfaction and loyalty, reduced operational inefficiencies, enhanced revenue visibility, and greater agility in managing peak demand and seasonal fluctuations."
 },
-it_ites: {
+"it-ites": {
   title: "IT & ITES",
-  Link: "/it-ites",
+  Link: "/industries/it-ites/",
   industry: "IT & ITES – Dynamics 365 Case Study",
   image: "/images/IT_2.jpg",
 
@@ -295,7 +295,7 @@ it_ites: {
           Let us help you drive measurable transformation with ERP solutions.
         </p>
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100"
         >
           Contact Our Experts

@@ -532,7 +532,7 @@ export default function DataMigrationSection() {
               HEADER
           ══════════════════════════════════════════ */}
           <div className="mb-16" style={reveal("0.04s")}>
-            <h2 className="mb-4 text-4xl text-center font-extrabold text-gray-800 dark:text-white mt-3">
+            <h2 className="mb-4 lg:text-3xl text-center font-extrabold text-gray-800 dark:text-white mt-3">
               Data Migration Transparency
             </h2>
             <p className="max-w-[740px] text-sm mx-auto mb-16 text-center text-gray-600 dark:text-gray-300">

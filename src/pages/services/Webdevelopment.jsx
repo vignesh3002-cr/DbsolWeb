@@ -78,7 +78,8 @@ className="absolute inset-0 object-cover w-full h-full"
 initial={{opacity:0,y:40}}
 animate={{opacity:1,y:0}}
 transition={{duration:0.7}}
-className="text-5xl font-bold"
+className="text-4xl font-bold sm:text-4xl"
+style={{ fontSize: "36px" }}
 >
 
 Responsive Website Development
@@ -112,7 +113,7 @@ whileInView={{opacity:1,x:0}}
 transition={{duration:0.6}}
 >
 
-<h2 className="text-center md:text-left mb-6 text-4xl font-bold text-gray-800 dark:text-white">
+<h2 className="mb-6 md:text-3xl font-bold text-left text-gray-800  dark:text-white" style={{ fontSize: "30px" }}>
 
 Build Powerful Digital Experiences
 
@@ -154,7 +155,7 @@ className="shadow-xl rounded-xl"
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
+<h2 className="text-3xl font-bold text-center text-gray-800 mb-5 sm:text-3xl md:text-3xl lg:text-3xl dark:text-blue-600" style={{ fontSize: "30px" }}>
 Our Web Development Expertise
 </h2>
 <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
@@ -200,7 +201,7 @@ className="p-8 text-center transition shadow-lg rounded-xl bg-gray-50 dark:bg-gr
 
 <div className="max-w-6xl px-6 mx-auto">
 
-<h2 className="text-4xl font-bold text-center text-gray-800 mb-5 dark:text-blue-600">
+<h2 className="text-3xl font-bold text-center text-gray-800 mb-5 md:text-3xl dark:text-blue-600" style={{ fontSize: "30px" }}>
 Our Development Process
 </h2>
 <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto ">
@@ -242,7 +243,7 @@ className="p-8 text-center bg-white shadow-lg rounded-xl dark:bg-gray-800"
 
 <section className="py-24 text-center text-white bg-indigo-700 dark:bg-gray-800">
 
-<h2 className="mb-6 text-4xl font-bold dark:text-white">
+<h2 className="mb-6 text-3xl font-bold sm:text-3xl md:text-3xl lg:text-3xl dark:text-white" style={{ fontSize: "30px" }}>
 Build Your Digital Presence Today
 </h2>
 
@@ -254,7 +255,7 @@ drives traffic, engagement, and business growth.
 </p>
 
 <Link
-to="/contact"
+to="/contact-us/"
 className="px-8 py-4 font-semibold text-blue-600 transition bg-white rounded-lg hover:bg-gray-100"
 >
 

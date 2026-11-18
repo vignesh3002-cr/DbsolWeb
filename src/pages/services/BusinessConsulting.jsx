@@ -86,7 +86,7 @@ export default function BPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-4xl font-bold mb-4"
           >
             Business Consulting Services
           </motion.h1>
@@ -106,7 +106,7 @@ export default function BPage() {
 
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+      <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
         Business Consulting Overview
       </h2>
 
@@ -310,7 +310,7 @@ export default function BPage() {
     
 <section className="bg-gray-50 dark:bg-gray-900 py-16">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-    <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 md:col-span-4">
+    <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-12 md:col-span-4">
       Our Business Impact
     </h1>
 
@@ -359,7 +359,7 @@ export default function BPage() {
           using modern enterprise solutions.
         </p>
          <Link
-                to="/contact"
+                to="/contact-us/"
              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 font-semibold text-blue-700 transition hover:bg-gray-100"
               >
                Get Started

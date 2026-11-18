@@ -24,7 +24,7 @@ export default function EmployeeDetails() {
           </h2>
 
           <button
-            onClick={() => navigate("/employee-master")}
+            onClick={() => navigate("/employee-master/")}
             className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded"
           >
             ← Back

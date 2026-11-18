@@ -16,15 +16,15 @@ export default function Industries(){
 
 const industries = [
 
-{title:"Finance",path:"/FinanceBanking", icon:<FaUniversity size={28}/>},
-{title:"Manufacturing", path:"/Manufacturing", icon:<FaIndustry size={28}/>},
-{title:"Retail", path:"/Retail&Wholesale", icon:<FaShoppingBag size={28}/>},
-{title:"Logistics", path:"/LogisticsSupplyChain", icon:<FaTruck size={28}/>},
-{title:"Healthcare", path:"/HealthCare",icon:<FaHeartbeat size={28}/>},
-{title:"Education", path:"/ProfessionalServices", icon:<FaGraduationCap size={28}/>},
-{title:"Hospitality", path:"/Hospitality", icon:<FaHotel size={28}/>},
-{title:"IT / ITES", path:"/IT.ITES",icon:<FaLaptopCode size={28}/>},
-{title:"Professional Services", path:"/ProfessionalServices", icon:<FaBriefcase size={28}/>}
+{title:"Finance",path:"/industries/banking-finance/", icon:<FaUniversity size={28}/>},
+{title:"Manufacturing", path:"/industries/manufacturing/", icon:<FaIndustry size={28}/>},
+{title:"Retail", path:"/industries/retail-wholesale/", icon:<FaShoppingBag size={28}/>},
+{title:"Logistics", path:"/industries/logistics-supply-chain/", icon:<FaTruck size={28}/>},
+{title:"Healthcare", path:"/industries/healthcare/",icon:<FaHeartbeat size={28}/>},
+{title:"Education", path:"/industries/education/", icon:<FaGraduationCap size={28}/>},
+{title:"Hospitality", path:"/industries/hospitality/", icon:<FaHotel size={28}/>},
+{title:"IT / ITES", path:"/industries/it-ites/",icon:<FaLaptopCode size={28}/>},
+{title:"Professional Services", path:"/industries/professional-services/", icon:<FaBriefcase size={28}/>}
 
 ]
 

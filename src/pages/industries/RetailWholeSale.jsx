@@ -80,19 +80,19 @@ export default function RetailWholesale() {
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl lg:text-6xl font-bold max-w-3xl"
+            className="text-5xl lg:text-4xl font-bold max-w-3xl"
           >
             Retail & Wholesale Solutions
           </motion.h1>
 
-          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+          <p className="mt-6 text-md text-gray-200 max-w-2xl">
             Modernize retail operations with unified commerce, intelligent inventory,
             and customer-centric digital platforms.
           </p>
 
           <div className="mt-10 flex gap-4">
             <Link
-              to="/contact"
+              to="/contact-us/"
               className="px-8 py-4 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
               Talk to Experts
@@ -127,7 +127,7 @@ export default function RetailWholesale() {
       {/* CHALLENGES */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-16">
             Retail Challenges We Solve
           </h2>
 
@@ -155,7 +155,7 @@ export default function RetailWholesale() {
       {/* SOLUTIONS */}
       <section className="py-28 bg-white dark:bg-gray-800 ">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-20">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-20">
             Our Retail & Wholesale Capabilities
           </h2>
 
@@ -198,7 +198,7 @@ export default function RetailWholesale() {
 
         <div className="grid gap-5">
           {cases.map((item, index) => (
-            <Link to={`/case-studies/${item.id}`} key={item.id}>
+            <Link to={`/case-studies/${item.id}/`} key={item.id}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -234,7 +234,7 @@ export default function RetailWholesale() {
 
       {/* CTA */}
       <section className="py-32 text-center bg-indigo-700 dark:bg-gray-800">
-        <h2 className="text-4xl font-bold text-white">
+        <h2 className="text-3xl font-bold text-white">
           Transform Your Retail Operations
         </h2>
         <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
@@ -243,7 +243,7 @@ export default function RetailWholesale() {
         </p>
 
         <Link
-          to="/contact"
+          to="/contact-us/"
           className="inline-block mt-10 px-10 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition"
         >
           Talk to Our Experts

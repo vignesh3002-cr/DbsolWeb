@@ -68,11 +68,8 @@ function MissionVisionSection() {
           className="text-center"
         >
          
-         <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Our </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Mission</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"> & </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Vision</span>
+         <h2 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-blue-400 md:text-4xl">
+            Our Mission & Vision
           </h2>
 
           <motion.div
@@ -80,7 +77,7 @@ function MissionVisionSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-24 h-1 mx-auto mb-8 origin-center rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"
+            className="mx-auto mb-8 h-1 w-24 origin-center rounded-full bg-black dark:bg-blue-400"
           ></motion.div>
 
           <p className="max-w-2xl mx-auto mb-20 text-lg text-gray-600 dark:text-gray-300">

@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import MissionVisionSection from "../components/MissionVisionSection";
 import Industries from "../components/Industries";
-import NewsPage from "../components/NewsPage";
 import Footer from "../components/Footer";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CompanyStats from "../components/CompanyStats";
@@ -17,14 +16,13 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <MissionVisionSection />
       <CompanyStats />
-      <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
-      <WhyChooseUs />
-      <Industries />
-      <VideoTestimonials />
       <TrustedClients />
-      <NewsPage />
+      <MissionVisionSection />
+      <DeliveringTailoredSolutions showNavbar={false} showBackLink={false} />
+      <Industries />
+      <WhyChooseUs />
+      <VideoTestimonials />
       <Testimonials />
       <CTASection />
       <Footer />
