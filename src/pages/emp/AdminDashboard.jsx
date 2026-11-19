@@ -173,7 +173,7 @@ const saveLeaveStatus = async (requestLeaveID, status) => {
               to="/employee-portal/"
               onClick={async (event) => {
                 event.preventDefault();
-                const { error } = await supabase.auth.signOut();
+                const { error } = supabase ? await supabase.auth.signOut() : { error: null };
                 if (error) {
                   setLoadError(error.message);
                   return;

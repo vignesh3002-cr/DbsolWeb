@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, LockKeyhole, Mail } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { apiRequest } from "../../lib/api";
-import { supabase } from "../../lib/supabase";
+import { getSupabaseClient, isSupabaseConfigured } from "../../lib/supabase";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,6 +33,11 @@ export default function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
+    if (!isSupabaseConfigured) {
+      setError("Employee portal is unavailable because Supabase is not configured for this deployment.");
+      return;
+    }
+
     const enteredEmail = email.trim().toLowerCase();
 
     try {
@@ -42,7 +47,7 @@ export default function Login() {
         body: { email: enteredEmail, password },
       });
 
-      const { error: sessionError } = await supabase.auth.setSession({
+      const { error: sessionError } = await getSupabaseClient().auth.setSession({
         access_token: response.session.access_token,
         refresh_token: response.session.refresh_token,
       });

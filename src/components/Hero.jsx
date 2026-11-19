@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
-import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const navigate = useNavigate();
   const slides = [
     {
       title: "Transform Your Enterprise with Microsoft Dynamics 365",
@@ -62,23 +60,17 @@ export default function Home() {
           <div className="flex gap-4">
 
 
-            {/* 🔥 THIS BUTTON WORKS 
-            <HashLink smooth to="/services#services">
-
-            {/* Services button */}
-            <HashLink smooth to="/#clients-section">
+            <HashLink smooth to="/contact-us/">
 
               <button className="px-6 py-3 font-semibold bg-blue-600 rounded-lg hover:bg-blue-700">
                 Book a Free D365 Assessment 
               </button>
             </HashLink>
-     {/* Contact button */}
-            <button
-              onClick={() => navigate("/Contact")}
-              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black"
-            >
-               Explore Our Solutions
-            </button>
+            <HashLink smooth to="/#clients-section">
+              <button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
+                Explore Our Solutions
+              </button>
+            </HashLink>
           </div>
         </motion.div>
         </div>

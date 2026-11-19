@@ -101,7 +101,7 @@ return (
               to="/employee-portal/"
               onClick={async (event) => {
                 event.preventDefault();
-                const { error: signOutError } = await supabase.auth.signOut();
+                const { error: signOutError } = supabase ? await supabase.auth.signOut() : { error: null };
                 if (signOutError) {
                   setError(signOutError.message);
                   return;

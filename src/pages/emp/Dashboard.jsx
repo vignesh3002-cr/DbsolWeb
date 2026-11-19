@@ -111,7 +111,7 @@ export default function Dashboard() {
 
             <button
              onClick={async () => {
-              const { error } = await supabase.auth.signOut();
+              const { error } = supabase ? await supabase.auth.signOut() : { error: null };
               if (error) {
                 console.error("Logout error:", error);
                 setLogoutError("Unable to log out. Please try again.");

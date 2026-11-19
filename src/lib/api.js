@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { getSupabaseClient } from "./supabase";
 
 const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -6,7 +6,7 @@ export async function apiRequest(path, { method = "GET", body, auth = true } = {
   const headers = { "Content-Type": "application/json" };
 
   if (auth) {
-    const { data, error } = await supabase.auth.getSession();
+    const { data, error } = await getSupabaseClient().auth.getSession();
     if (error) throw error;
     if (!data.session?.access_token) {
       throw new Error("Please sign in again.");

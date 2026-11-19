@@ -91,9 +91,9 @@ export default function UATSection() {
             "
           >
             <img
-              src="/images/ERP3.png"
+              src="/images/ERP.jpg"
               alt="ERP Illustration"
-              className="max-w-full rounded-lg"
+              className="w-full max-w-xs rounded-lg object-contain"
             />
           </div>
 

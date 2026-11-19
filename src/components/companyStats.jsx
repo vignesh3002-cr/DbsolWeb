@@ -34,7 +34,7 @@ export default function CompanyStats() {
   
 return(
 
-<section ref={ref} className="py-12 md:py-16 lg:py-20 text-black dark:text-white dark:bg-gray-900">
+<section className="py-4 md:py-8 lg:py-12 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
 
 <div className="px-6 mx-auto max-w-[1750px]">
 
@@ -50,10 +50,9 @@ return(
  Trusted Technology Partner
 
 </h2>
-
-<p className="max-w-[980px] mx-auto text-lg md:text-md leading-relaxed text-gray-600 dark:text-gray-300">
-   Delivering ERP, cloud, and digital transformation solutions that drive business growth and<br className="hidden xl:block" /> operational excellence.
-</p>
+<p className="max-w-2xl mx-auto mb-20 text-lg text-gray-600 dark:text-gray-300">
+          Delivering ERP, cloud, and digital transformation solutions that drive business growth and operational excellence.
+          </p>
 
 </div>
         {/* COUNTER CARDS */}
