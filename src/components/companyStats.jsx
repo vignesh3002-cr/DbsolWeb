@@ -45,7 +45,7 @@ return(
    <span className="text-sm sm:text- uppercase tracking-[0.2em] text-blue-600 font-semibold">
             Company Statistics
           </span>
-<h2 className="mt-3 mb-5 text-4xl sm:text-3xl font-bold leading-tight dark:text-white">
+<h2 className="mt-3 mb-2 text-4xl sm:text-3xl font-bold leading-tight dark:text-white">
 
  Trusted Technology Partner
 
@@ -72,7 +72,7 @@ className="relative min-h-[300px] px-8 py-10 flex flex-col items-center justify-
 
 {/* Icon */}
 
-<div className="flex justify-center mb-6 text-blue-600">
+<div className="flex justify-center mb-4 text-blue-600">
 
 {item.icon}
 
